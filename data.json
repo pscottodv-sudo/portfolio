@@ -15,9 +15,10 @@
       "year": "2026",
       "tag": "Fashion editorial",
       "desc": "Un progetto editoriale che esplora la tensione tra moda e controtendenza.",
-      "cover": "",
+      "cover": "https://raw.githubusercontent.com/pscottodv-sudo/portfolio/main/foto/editorial/punk-ture-cover.jpg?token=CDKK6E7VTIUZTH32SKWKKYLKEA3DY",
       "imgs": [],
-      "sw": "s2"
+      "sw": "s2",
+      "featured": false
     },
     {
       "name": "Neon Therapy",
