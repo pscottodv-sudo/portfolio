@@ -1194,7 +1194,7 @@ function mOpen(){document.getElementById('mob').classList.add('open');document.b
 function mClose(){document.getElementById('mob').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){galClose();mClose()}});
 if(window.matchMedia('(hover: hover)').matches){const cur=document.getElementById('cur');document.addEventListener('mousemove',e=>{cur.style.transform='translate(calc('+e.clientX+'px - 50%), calc('+e.clientY+'px - 50%))';cur.classList.add('on')},{passive:true});document.addEventListener('mouseleave',()=>cur.classList.remove('on'));const SEL='a,button,[role="button"],.pc,.cc,.feat-img';function bindCur(){document.querySelectorAll(SEL).forEach(el=>{if(el._cb)return;el._cb=true;el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}bindCur();new MutationObserver(bindCur).observe(document.body,{childList:true,subtree:true})}
-<\/script>
+</'+'script>
 </body>
 </html>`;
 }
