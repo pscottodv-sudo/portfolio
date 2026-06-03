@@ -1,0 +1,130 @@
+{
+  "editorial": [
+    {
+      "name": "Aethereal",
+      "year": "2026",
+      "tag": "Personal project",
+      "desc": "A personal project exploring identity through light and form — fashion aesthetics rooted in a documentary soul.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s1",
+      "featured": true
+    },
+    {
+      "name": "PUNK-TURE",
+      "year": "2026",
+      "tag": "Fashion editorial",
+      "desc": "Un progetto editoriale che esplora la tensione tra moda e controtendenza.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s2"
+    },
+    {
+      "name": "Neon Therapy",
+      "year": "2026",
+      "tag": "Fashion editorial",
+      "desc": "Luci artificiali come terapia. Un progetto sul corpo e la luce urbana.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s3"
+    }
+  ],
+  "reportage": [
+    {
+      "name": "I Volti di Piazza Vittorio",
+      "year": "2026",
+      "tag": "Urban portraits",
+      "desc": "Ritratti degli abitanti di Piazza Vittorio Emanuele, Roma.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s4"
+    },
+    {
+      "name": "iPhone Portraits",
+      "year": "2026",
+      "tag": "Mobile photography",
+      "desc": "Ritratti realizzati interamente con iPhone.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s5"
+    },
+    {
+      "name": "Diario Metropolitano",
+      "year": "2025",
+      "tag": "Street · Winner 2025",
+      "desc": "Vincitore del contest Microracconti Urbani 2025.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s6"
+    },
+    {
+      "name": "Pescatori all'alba",
+      "year": "2026",
+      "tag": "Documentary",
+      "desc": "Documentario fotografico sui pescatori del golfo di Napoli.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s7"
+    },
+    {
+      "name": "Napoli",
+      "year": "2025",
+      "tag": "Urban reportage",
+      "desc": "Napoli attraverso uno sguardo diretto e affettuoso.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s1"
+    },
+    {
+      "name": "Scudetto",
+      "year": "2025",
+      "tag": "Sports reportage",
+      "desc": "La festa del Napoli campione d'Italia.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s2"
+    },
+    {
+      "name": "Napoli B&W",
+      "year": "2025",
+      "tag": "Urban reportage",
+      "desc": "La città in bianco e nero.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s3"
+    },
+    {
+      "name": "Asia Stories",
+      "year": "2025",
+      "tag": "Travel documentary",
+      "desc": "Un viaggio tra Giappone, Corea e Vietnam.",
+      "cover": "",
+      "imgs": [],
+      "sw": "s8"
+    }
+  ],
+  "commercial": {
+    "brand": "Visual identity photography for brands. Lookbooks, campaigns, and commercial content with a natural-light documentary approach.",
+    "portrait": "Professional portraits for executives and personal branding. Honest, documentary-style images that communicate identity.",
+    "editorial": "Production for magazines and fashion clients. A documentary visual language applied to fashion.",
+    "event": "Documentary coverage of events, launches, and gatherings. Candid high-quality images capturing the energy of the moment."
+  },
+  "landing": {
+    "tagline": "Documentary · Fashion · Reportage",
+    "cta": "Explore my work",
+    "hero": ""
+  },
+  "about": {
+    "bio1": "I am a photographer working at the intersection of documentary photography and fashion. My practice is rooted in the street — in the observation of places, people, and the textures of everyday life.",
+    "bio2": "I am drawn to the unguarded moment: the gesture that reveals something true about a person, the light that defines a place without declaring it. In fashion, clothing becomes document, the body becomes landscape.",
+    "bio3": "Currently based in Naples, pursuing a Master in Fashion Photography at IED Milan.",
+    "email": "info@paoloscotto.it",
+    "instagram": "@paoloscottodv",
+    "tiktok": "@paoloscotto",
+    "awards": [
+      { "title": "Winner — Microracconti Urbani, \"Diario Metropolitano\"", "year": "2025" },
+      { "title": "International street photography exhibitions", "year": "2024–25" },
+      { "title": "UK gallery presentations", "year": "2024" }
+    ]
+  }
+}
