@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Paolo Scotto di Vettimo — Documentary-inspired photography for brands and people. Based in Naples, available worldwide.">
 <title>Paolo Scotto di Vettimo — Photographer</title>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color" content="#eceae6">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -35,7 +38,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 .mob a:hover{color:var(--white)}
 #landing{position:relative;width:100%;height:100svh;min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;background:#181512;overflow:hidden}
-.hero-img{width:100%;height:100%;object-fit:cover;opacity:.68;animation:hZoom 16s ease forwards}
+.hero-img{width:100%;height:100%;object-fit:cover;opacity:.68;animation:hZoom 16s ease forwards;will-change:transform}
 @keyframes hZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 .hero-ph{width:100%;height:100%;background:linear-gradient(150deg,#1d1b17 0%,#28241e 50%,#181512 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
 .hero-ph span{font-family:var(--serif);font-style:italic;font-size:14px;color:rgba(255,255,255,.15);letter-spacing:.06em}
@@ -85,7 +88,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 .pg{display:grid;grid-template-columns:repeat(3,1fr)}
 .pc{border-right:.5px solid var(--border);border-bottom:.5px solid var(--border);cursor:none;overflow:hidden;background:var(--white);transition:background .25s}
 .pc:nth-child(3n){border-right:none}.pc:hover{background:var(--bg)}
-.pt{width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pt{width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;contain:strict}
 .pt img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
 .pc:hover .pt img{transform:scale(1.05)}
 .pt-ph{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--mid);padding:8px;text-align:center}
@@ -278,12 +281,13 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 <script>
 // Carica i dati da data.json e popola il sito
 async function loadSite() {
+  // Mostra scheletro subito, poi carica i dati
   try {
     const res = await fetch('/data.json?v=' + Date.now());
     const D = await res.json();
     // Hero
     if (D.landing.hero) {
-      document.getElementById('hero-bg').innerHTML = '<img class="hero-img" src="' + D.landing.hero + '" alt="Paolo Scotto di Vettimo">';
+      document.getElementById('hero-bg').innerHTML = '<img class="hero-img" fetchpriority="high" decoding="async" src="' + D.landing.hero + '" alt="Paolo Scotto di Vettimo">';
     }
     document.getElementById('hero-tag').textContent = D.landing.tagline;
     document.getElementById('hero-cta').textContent = D.landing.cta;
@@ -329,7 +333,7 @@ async function loadSite() {
 
 function mkCard(p) {
   return '<div class="pc" onclick="galOpen(\'' + p.name.replace(/'/g,"\\'") + '\',\'' + p.year + ' · ' + p.tag + '\',\'' + p.desc.replace(/'/g,"\\'") + '\',' + JSON.stringify(p.imgs) + ')">' +
-    '<div class="pt ' + p.sw + '">' + (p.cover ? '<img src="' + p.cover + '" alt="' + p.name + '" loading="lazy">' : '<span class="pt-ph">' + p.name + '</span>') + '</div>' +
+    '<div class="pt ' + p.sw + '">' + (p.cover ? '<img src="' + p.cover + '" alt="' + p.name + '" loading="lazy" decoding="async">' : '<span class="pt-ph">' + p.name + '</span>') + '</div>' +
     '<div class="pi"><div class="py">' + p.year + '</div><div class="pn">' + p.name + '</div><div class="ptg">' + p.tag + '</div></div></div>';
 }
 
