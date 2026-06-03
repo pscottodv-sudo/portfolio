@@ -44,12 +44,13 @@
     },
     {
       "name": "iPhone Portraits",
-      "year": "2026",
+      "year": "2025",
       "tag": "Mobile photography",
       "desc": "Ritratti realizzati interamente con iPhone.",
-      "cover": "",
+      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/iphone-portraits-cover.jpg",
       "imgs": [],
-      "sw": "s5"
+      "sw": "s5",
+      "featured": false
     },
     {
       "name": "Diario Metropolitano",
