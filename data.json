@@ -4,8 +4,8 @@
       "name": "Aethereal",
       "year": "2026",
       "tag": "Personal project",
-      "desc": "A personal project exploring identity through light and form — fashion aesthetics rooted in a documentary soul.",
-      "cover": "",
+      "desc": "A personal project exploring identity through light and form â fashion aesthetics rooted in a documentary soul.",
+      "cover": "https://raw.githubusercontent.com/pscottodv-sudo/portfolio/main/foto/editorial/aethereal-cover.jpg?token=CDKK6E5ELXQG25I5C3QL5A3KEA2OO",
       "imgs": [],
       "sw": "s1",
       "featured": true
@@ -51,7 +51,7 @@
     {
       "name": "Diario Metropolitano",
       "year": "2025",
-      "tag": "Street · Winner 2025",
+      "tag": "Street Â· Winner 2025",
       "desc": "Vincitore del contest Microracconti Urbani 2025.",
       "cover": "",
       "imgs": [],
@@ -88,7 +88,7 @@
       "name": "Napoli B&W",
       "year": "2025",
       "tag": "Urban reportage",
-      "desc": "La città in bianco e nero.",
+      "desc": "La cittÃ  in bianco e nero.",
       "cover": "",
       "imgs": [],
       "sw": "s3"
@@ -110,21 +110,30 @@
     "event": "Documentary coverage of events, launches, and gatherings. Candid high-quality images capturing the energy of the moment."
   },
   "landing": {
-    "tagline": "Documentary · Fashion · Reportage",
+    "tagline": "Documentary Â· Fashion Â· Reportage",
     "cta": "Explore my work",
-    "hero": ""
+    "hero": "https://raw.githubusercontent.com/pscottodv-sudo/portfolio/main/foto/hero.jpg?token=CDKK6E4XW6WYKEVDIBRWBL3KEA2GE"
   },
   "about": {
-    "bio1": "I am a photographer working at the intersection of documentary photography and fashion. My practice is rooted in the street — in the observation of places, people, and the textures of everyday life.",
+    "bio1": "I am a photographer working at the intersection of documentary photography and fashion. My practice is rooted in the street â in the observation of places, people, and the textures of everyday life.",
     "bio2": "I am drawn to the unguarded moment: the gesture that reveals something true about a person, the light that defines a place without declaring it. In fashion, clothing becomes document, the body becomes landscape.",
     "bio3": "Currently based in Naples, pursuing a Master in Fashion Photography at IED Milan.",
     "email": "info@paoloscotto.it",
     "instagram": "@paoloscottodv",
     "tiktok": "@paoloscotto",
     "awards": [
-      { "title": "Winner — Microracconti Urbani, \"Diario Metropolitano\"", "year": "2025" },
-      { "title": "International street photography exhibitions", "year": "2024–25" },
-      { "title": "UK gallery presentations", "year": "2024" }
+      {
+        "title": "Winner â Microracconti Urbani, \"Diario Metropolitano\"",
+        "year": "2025"
+      },
+      {
+        "title": "International street photography exhibitions",
+        "year": "2024â25"
+      },
+      {
+        "title": "UK gallery presentations",
+        "year": "2024"
+      }
     ]
   }
 }
