@@ -445,11 +445,12 @@ async function upf(file, path) {
   try {
     const b64 = await tb64(file);
     const data = b64.split(',')[1];
+    // Legge SEMPRE lo SHA fresco per evitare conflitti 409
     let sha='';
     try {
-      const c=await fetch('https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+path,
-        {headers:{Authorization:'Bearer '+C.tok}});
-      if (c.ok) sha=(await c.json()).sha;
+      const c=await fetch('https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+path+'?t='+Date.now(),
+        {headers:{Authorization:'Bearer '+C.tok,'Cache-Control':'no-cache'}});
+      if (c.ok) { const j=await c.json(); sha=j.sha||''; }
     } catch(e){}
     const body={message:'Upload: '+path,content:data,branch:C.br};
     if (sha) body.sha=sha;
