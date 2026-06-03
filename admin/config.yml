@@ -1,0 +1,87 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "foto"
+public_folder: "/foto"
+
+locale: 'it'
+
+collections:
+
+  # ─────────────────────────────
+  # EDITORIAL & PORTRAITS
+  # ─────────────────────────────
+  - name: "editorial"
+    label: "Editorial & Portraits"
+    label_singular: "Progetto editoriale"
+    folder: "_editorial"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Anno", name: "year", widget: "string", default: "2026" }
+      - { label: "Tag / sottotitolo", name: "tag", widget: "string", hint: "Es: Fashion editorial" }
+      - { label: "Descrizione", name: "desc", widget: "text", required: false }
+      - { label: "Foto copertina", name: "cover", widget: "image", required: false }
+      - label: "Galleria foto"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "Foto", name: "image", widget: "image" }
+      - { label: "In evidenza (featured)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Ordine", name: "order", widget: "number", default: 0, required: false }
+
+  # ─────────────────────────────
+  # REPORTAGE
+  # ─────────────────────────────
+  - name: "reportage"
+    label: "Reportage"
+    label_singular: "Progetto reportage"
+    folder: "_reportage"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Anno", name: "year", widget: "string", default: "2026" }
+      - { label: "Tag / sottotitolo", name: "tag", widget: "string", hint: "Es: Urban reportage" }
+      - { label: "Descrizione", name: "desc", widget: "text", required: false }
+      - { label: "Foto copertina", name: "cover", widget: "image", required: false }
+      - label: "Galleria foto"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "Foto", name: "image", widget: "image" }
+      - { label: "Ordine", name: "order", widget: "number", default: 0, required: false }
+
+  # ─────────────────────────────
+  # IMPOSTAZIONI SITO
+  # ─────────────────────────────
+  - name: "settings"
+    label: "Impostazioni sito"
+    files:
+
+      - label: "Landing page"
+        name: "landing"
+        file: "_data/landing.yml"
+        fields:
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Documentary · Fashion · Reportage" }
+          - { label: "Testo CTA", name: "cta", widget: "string", default: "Explore my work" }
+          - { label: "Foto hero", name: "hero_image", widget: "image", required: false }
+
+      - label: "About & Bio"
+        name: "about"
+        file: "_data/about.yml"
+        fields:
+          - { label: "Bio (paragrafo 1)", name: "bio1", widget: "text" }
+          - { label: "Bio (paragrafo 2)", name: "bio2", widget: "text", required: false }
+          - { label: "Bio (paragrafo 3)", name: "bio3", widget: "text", required: false }
+          - { label: "Email", name: "email", widget: "string", default: "info@paoloscotto.it" }
+          - { label: "Instagram", name: "instagram", widget: "string", default: "@paoloscottodv" }
+          - { label: "TikTok", name: "tiktok", widget: "string", default: "@paoloscotto" }
+          - label: "Riconoscimenti"
+            name: "awards"
+            widget: "list"
+            fields:
+              - { label: "Titolo", name: "title", widget: "string" }
+              - { label: "Anno", name: "year", widget: "string" }
