@@ -283,7 +283,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 async function loadSite() {
   // Mostra scheletro subito, poi carica i dati
   try {
-    const res = await fetch('/data.json?v=' + Date.now());
+    const res = await fetch('/portfolio/data.json?v=' + Date.now());
     const D = await res.json();
     // Hero
     if (D.landing.hero) {
