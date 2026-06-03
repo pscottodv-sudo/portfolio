@@ -440,28 +440,36 @@ async function upHero(input) {
   }
 }
 
-// Upload file su GitHub — restituisce URL Netlify pubblico
-async function upf(file, path) {
+// Upload file su GitHub con retry automatico in caso di conflitto SHA
+async function upf(file, path, retries=4) {
   try {
     const b64 = await tb64(file);
     const data = b64.split(',')[1];
-    // Legge SEMPRE lo SHA fresco per evitare conflitti 409
-    let sha='';
-    try {
-      const c=await fetch('https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+path+'?t='+Date.now(),
-        {headers:{Authorization:'Bearer '+C.tok,'Cache-Control':'no-cache'}});
-      if (c.ok) { const j=await c.json(); sha=j.sha||''; }
-    } catch(e){}
-    const body={message:'Upload: '+path,content:data,branch:C.br};
-    if (sha) body.sha=sha;
-    const r=await fetch('https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+path,{
-      method:'PUT',
-      headers:{Authorization:'Bearer '+C.tok,'Content-Type':'application/json'},
-      body:JSON.stringify(body)
-    });
-    if (!r.ok) throw new Error(await r.text());
-    // Restituisce URL Netlify (non raw.githubusercontent che richiede autenticazione)
-    return C.site + '/' + path;
+    for (let attempt = 0; attempt < retries; attempt++) {
+      // Legge SHA fresco ad ogni tentativo
+      let sha = '';
+      try {
+        const c = await fetch(
+          'https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+encodeURIComponent(path)+'?t='+Date.now(),
+          {headers:{Authorization:'Bearer '+C.tok,'Cache-Control':'no-cache','Pragma':'no-cache'}}
+        );
+        if (c.ok) { const j = await c.json(); sha = j.sha || ''; }
+      } catch(e) {}
+      const body = {message:'Upload: '+path, content:data, branch:C.br};
+      if (sha) body.sha = sha;
+      const r = await fetch(
+        'https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+encodeURIComponent(path),
+        {method:'PUT', headers:{Authorization:'Bearer '+C.tok,'Content-Type':'application/json'}, body:JSON.stringify(body)}
+      );
+      if (r.ok) return C.site + '/' + path;
+      const errText = await r.text();
+      if (r.status === 409 && attempt < retries-1) {
+        // Conflitto SHA — aspetta e riprova
+        await new Promise(res => setTimeout(res, 800 * (attempt+1)));
+        continue;
+      }
+      throw new Error(errText);
+    }
   } catch(e) { toast('Errore upload: '+e.message,'er'); return null; }
 }
 
