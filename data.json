@@ -5,7 +5,7 @@
       "year": "2026",
       "tag": "Personal project",
       "desc": "A personal project exploring identity through light and form Ã¢ÂÂ fashion aesthetics rooted in a documentary soul.",
-      "cover": "https://raw.githubusercontent.com/pscottodv-sudo/portfolio/main/foto/editorial/aethereal-cover.jpg?token=CDKK6E5ELXQG25I5C3QL5A3KEA2OO",
+      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-cover.jpg",
       "imgs": [],
       "sw": "s1",
       "featured": true
@@ -15,7 +15,7 @@
       "year": "2026",
       "tag": "Fashion editorial",
       "desc": "Un progetto editoriale che esplora la tensione tra moda e controtendenza.",
-      "cover": "https://raw.githubusercontent.com/pscottodv-sudo/portfolio/main/foto/editorial/punk-ture-cover.jpg?token=CDKK6E7VTIUZTH32SKWKKYLKEA3DY",
+      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/punk-ture-cover.jpg",
       "imgs": [],
       "sw": "s2",
       "featured": false
@@ -113,7 +113,7 @@
   "landing": {
     "tagline": "Documentary · Fashion · Reportage",
     "cta": "Explore my work",
-    "hero": "https://raw.githubusercontent.com/pscottodv-sudo/portfolio/main/foto/hero.jpg?token=CDKK6E4XW6WYKEVDIBRWBL3KEA2GE"
+    "hero": "https://comfy-croissant-fe957e.netlify.app/foto/hero.jpg"
   },
   "about": {
     "bio1": "I am a photographer working at the intersection of documentary photography and fashion. My practice is rooted in the street in the observation of places, people, and the textures of everyday life.",
@@ -135,6 +135,16 @@
         "title": "UK gallery presentations",
         "year": "2025"
       }
+    ],
+    "education": [
+      {
+        "title": "Master in Fashion Photography — IED Milan",
+        "year": "2026"
+      }
     ]
+  },
+  "footer": {
+    "copy": "© 2026 Paolo Scotto di Vettimo",
+    "domain": "paoloscotto.it"
   }
 }
