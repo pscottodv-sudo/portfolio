@@ -90,12 +90,18 @@
     {
       "name": "Diario Metropolitano",
       "year": "2025",
-      "tag": "Street Photography ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· Winner 2025",
-      "desc": "Vincitore del contest Microracconti Urbani 2025.",
+      "tag": "Reportage · Street · Tokyo",
+      "desc": "In the subways and elevated trains of Tokyo, millions of people move every day, immersed in an unceasing rhythm. Within the folds of that constant flow, moments of suspension emerge — brief instants in which passengers retreat into their own inner worlds. A metropolitan diary made of solitude, thoughts, and silent escapes from the crowd. Winner — Microracconti Urbani 2025.",
       "cover": "https://pscottodv-sudo.github.io/portfolio/foto/reportage/diario-metropolitano-cover.jpg",
-      "imgs": [],
+      "imgs": [
+        "https://pscottodv-sudo.github.io/portfolio/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
+        "https://pscottodv-sudo.github.io/portfolio/foto/reportage/diario-metropolitano-1780517987159a0e8.jpg",
+        "https://pscottodv-sudo.github.io/portfolio/foto/reportage/diario-metropolitano-1780517991922a168.jpg",
+        "https://pscottodv-sudo.github.io/portfolio/foto/reportage/diario-metropolitano-17805179948030guj.jpg",
+        "https://pscottodv-sudo.github.io/portfolio/foto/reportage/diario-metropolitano-1780517999036jdrt.jpg"
+      ],
       "sw": "s6",
-      "featured": false
+      "featured": true
     },
     {
       "name": "Pescatori all'alba",
