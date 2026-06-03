@@ -4,7 +4,7 @@
       "name": "Aethereal",
       "year": "2026",
       "tag": "Personal project",
-      "desc": "A personal project exploring identity through light and form ÃÂ¢ÃÂÃÂ fashion aesthetics rooted in a documentary soul.",
+      "desc": "A personal project exploring identity through light and form ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ fashion aesthetics rooted in a documentary soul.",
       "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-cover.jpg",
       "imgs": [],
       "sw": "s1",
@@ -52,7 +52,7 @@
     {
       "name": "Diario Metropolitano",
       "year": "2025",
-      "tag": "Street ÃÂÃÂ· Winner 2025",
+      "tag": "Street ÃÂÃÂÃÂÃÂ· Winner 2025",
       "desc": "Vincitore del contest Microracconti Urbani 2025.",
       "cover": "",
       "imgs": [],
@@ -89,7 +89,7 @@
       "name": "Napoli B&W",
       "year": "2025",
       "tag": "Urban reportage",
-      "desc": "La cittÃÂÃÂ  in bianco e nero.",
+      "desc": "La cittÃÂÃÂÃÂÃÂ  in bianco e nero.",
       "cover": "",
       "imgs": [],
       "sw": "s3"
@@ -111,12 +111,12 @@
     "event": "Documentary coverage of events, launches, and gatherings. Candid high-quality images capturing the energy of the moment."
   },
   "landing": {
-    "tagline": "Documentary Â· Fashion Â· Reportage",
+    "tagline": "Documentary ÃÂ· Fashion ÃÂ· Reportage",
     "cta": "Explore my work",
     "hero": "https://comfy-croissant-fe957e.netlify.app/foto/hero.jpg"
   },
   "about": {
-    "bio1": "I am a photographer working at the intersection of documentary photography and fashion. My practice is rooted in the streetÂ in the observation of places, people, and the textures of everyday life.",
+    "bio1": "I am a photographer working at the intersection of documentary photography and fashion. My practice is rooted in the streetÃÂ in the observation of places, people, and the textures of everyday life.",
     "bio2": "I am drawn to the unguarded moment: the gesture that reveals something true about a person, the light that defines a place without declaring it. In fashion, clothing becomes document, the body becomes landscape.",
     "bio3": "Currently based in Naples, pursuing a Master in Fashion Photography at IED Milan.",
     "email": "info@paoloscotto.it",
@@ -138,15 +138,15 @@
     ],
     "education": [
       {
-        "title": "Master in Fashion Photography â IED Milan",
+        "title": "Master in Fashion Photography Ã¢ÂÂ IED Milan",
         "year": "2026"
       }
     ],
-    "subtitle": "Photographer · Naples · b. 2002",
+    "subtitle": "Photographer Â· Naples Â· b. 2002",
     "website": "paoloscotto.it"
   },
   "footer": {
-    "copy": "Â© 2026 Paolo Scotto di Vettimo",
+    "copy": "ÃÂ© 2026 Paolo Scotto di Vettimo",
     "domain": "paoloscotto.it"
   }
 }
