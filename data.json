@@ -5,7 +5,7 @@
       "year": "2026",
       "tag": "Personal project",
       "desc": "A personal project exploring identity through light and form ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ fashion aesthetics rooted in a documentary soul.",
-      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-cover.jpg",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/editorial/aethereal-cover.jpg",
       "imgs": [],
       "sw": "s1",
       "featured": true
@@ -15,7 +15,7 @@
       "year": "2026",
       "tag": "Fashion editorial",
       "desc": "Un progetto editoriale che esplora la tensione tra moda e controtendenza.",
-      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/punk-ture-cover.jpg",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/editorial/punk-ture-cover.jpg",
       "imgs": [],
       "sw": "s2",
       "featured": false
@@ -25,7 +25,7 @@
       "year": "2026",
       "tag": "Fashion editorial",
       "desc": "Luci artificiali come terapia. Un progetto sul corpo e la luce urbana.",
-      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/neon-therapy-cover.jpg",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/editorial/neon-therapy-cover.jpg",
       "imgs": [],
       "sw": "s3",
       "featured": false
@@ -37,7 +37,7 @@
       "year": "2026",
       "tag": "Urban portraits",
       "desc": "Ritratti degli abitanti di Piazza Vittorio Emanuele, Roma.",
-      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/i-volti-di-piazza-vittorio-cover.jpg",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/reportage/i-volti-di-piazza-vittorio-cover.jpg",
       "imgs": [],
       "sw": "s4",
       "featured": false
@@ -47,7 +47,7 @@
       "year": "2025",
       "tag": "Mobile photography",
       "desc": "Ritratti realizzati interamente con iPhone.",
-      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/iphone-portraits-cover.jpg",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/reportage/iphone-portraits-cover.jpg",
       "imgs": [],
       "sw": "s5",
       "featured": false
@@ -57,7 +57,7 @@
       "year": "2025",
       "tag": "Street Photography ÃÂÃÂ· Winner 2025",
       "desc": "Vincitore del contest Microracconti Urbani 2025.",
-      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/diario-metropolitano-cover.jpg",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/reportage/diario-metropolitano-cover.jpg",
       "imgs": [],
       "sw": "s6",
       "featured": false
@@ -67,7 +67,7 @@
       "year": "2026",
       "tag": "Documentary",
       "desc": "Documentario fotografico sui pescatori del golfo di Napoli.",
-      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/pescatori-all-alba-cover.jpg",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/reportage/pescatori-all-alba-cover.jpg",
       "imgs": [],
       "sw": "s7",
       "featured": false
@@ -118,7 +118,7 @@
   "landing": {
     "tagline": "Documentary ÃÂÃÂ· Fashion ÃÂÃÂ· Reportage",
     "cta": "Explore my work",
-    "hero": "https://comfy-croissant-fe957e.netlify.app/foto/hero.jpg"
+    "hero": "https://pscottodv-sudo.github.io/portfolio/foto/hero.jpg"
   },
   "about": {
     "bio1": "I am a photographer working at the intersection of documentary photography and fashion. My practice is rooted in the streets, in the observation of places, people, and the textures of everyday life.",
