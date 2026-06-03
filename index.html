@@ -302,9 +302,10 @@ async function loadSite() {
     }
     // Grids
     const rest = D.editorial.filter(p => !p.featured && p !== feat);
-    document.getElementById('ed-grid').innerHTML = rest.map(p => mkCard(p)).join('');
+    let gIdx = 0;
+    document.getElementById('ed-grid').innerHTML = rest.map(p => mkCard(p, gIdx++)).join('');
     document.getElementById('ed-c').textContent = D.editorial.length + ' series';
-    document.getElementById('re-grid').innerHTML = D.reportage.map(p => mkCard(p)).join('');
+    document.getElementById('re-grid').innerHTML = D.reportage.map((p,i) => mkCard(p, 100+i)).join('');
     document.getElementById('re-c').textContent = D.reportage.length + ' series';
     // Commercial
     const cc = D.commercial;
@@ -331,10 +332,33 @@ async function loadSite() {
   } catch(e) { console.error('Errore caricamento dati:', e); }
 }
 
-function mkCard(p) {
-  return '<div class="pc" onclick="galOpen(\'' + p.name.replace(/'/g,"\\'") + '\',\'' + p.year + ' · ' + p.tag + '\',\'' + p.desc.replace(/'/g,"\\'") + '\',' + JSON.stringify(p.imgs) + ')">' +
+// Store globale per le gallerie — evita problemi con caratteri speciali negli onclick
+window.GDATA = [];
+
+function mkCard(p, globalIdx) {
+  window.GDATA[globalIdx] = p;
+  return '<div class="pc" onclick="galOpen(' + globalIdx + ')">' +
     '<div class="pt ' + p.sw + '">' + (p.cover ? '<img src="' + p.cover + '" alt="' + p.name + '" loading="lazy" decoding="async">' : '<span class="pt-ph">' + p.name + '</span>') + '</div>' +
     '<div class="pi"><div class="py">' + p.year + '</div><div class="pn">' + p.name + '</div><div class="ptg">' + p.tag + '</div></div></div>';
+}
+
+function galOpen(idx) {
+  const p = typeof idx === 'number' ? window.GDATA[idx] : null;
+  const name = p ? p.name : idx;
+  const sub  = p ? p.year + ' · ' + p.tag : '';
+  const desc = p ? p.desc : '';
+  const imgs = p ? (p.imgs || []) : [];
+  document.getElementById('ov-title').textContent = name;
+  document.getElementById('ov-sub').textContent = sub;
+  document.getElementById('ov-desc').textContent = desc;
+  const grid = document.getElementById('gal-grid');
+  if (imgs && imgs.length > 0) {
+    grid.innerHTML = imgs.map(src => '<div class="gal-item"><img src="' + src + '" alt="' + name + '" loading="lazy"></div>').join('');
+  } else {
+    grid.innerHTML = '<div class="gal-ph"><h3>' + name + '</h3><p>Le foto appariranno qui dopo averle caricate dal pannello admin.</p></div>';
+  }
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function mkCC(title, desc) {
