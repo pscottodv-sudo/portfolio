@@ -25,9 +25,10 @@
       "year": "2026",
       "tag": "Fashion editorial",
       "desc": "Luci artificiali come terapia. Un progetto sul corpo e la luce urbana.",
-      "cover": "",
+      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/neon-therapy-cover.jpg",
       "imgs": [],
-      "sw": "s3"
+      "sw": "s3",
+      "featured": false
     }
   ],
   "reportage": [
