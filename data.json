@@ -55,20 +55,22 @@
     {
       "name": "Diario Metropolitano",
       "year": "2025",
-      "tag": "Street ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· Winner 2025",
+      "tag": "Street Photography · Winner 2025",
       "desc": "Vincitore del contest Microracconti Urbani 2025.",
-      "cover": "",
+      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/diario-metropolitano-cover.jpg",
       "imgs": [],
-      "sw": "s6"
+      "sw": "s6",
+      "featured": false
     },
     {
       "name": "Pescatori all'alba",
       "year": "2026",
       "tag": "Documentary",
       "desc": "Documentario fotografico sui pescatori del golfo di Napoli.",
-      "cover": "",
+      "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/pescatori-all-alba-cover.jpg",
       "imgs": [],
-      "sw": "s7"
+      "sw": "s7",
+      "featured": false
     },
     {
       "name": "Napoli",
