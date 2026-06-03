@@ -403,7 +403,7 @@ function rg(i) { if (ei>=0) { D[cs][ei].imgs.splice(i,1); om(cs,ei); } }
 async function sp2() {
   const name = document.getElementById('mn').value.trim();
   if (!name) { toast('Inserisci il titolo','er'); return; }
-  toast('Salvataggio in corso...','');
+  
   const base = ei>=0 ? {...D[cs][ei]} : {imgs:[],sw:'s1'};
   const proj = {...base, name,
     year: document.getElementById('my').value,
@@ -411,14 +411,34 @@ async function sp2() {
     desc: document.getElementById('md').value,
     featured: document.getElementById('mfe').value==='true'
   };
+
+  const total = (cf ? 1 : 0) + gf.length;
+  let done = 0;
+
+  if (total > 0) {
+    toast('Caricamento 0/' + total + '...','');
+  }
+
+  // Carica cover
   if (cf) {
     const url = await upf(cf, 'foto/'+cs+'/'+sl(name)+'-cover.jpg');
     if (url) proj.cover = url;
+    done++;
+    toast('Caricamento '+done+'/'+total+'...','');
   }
+
+  // Carica galleria UNA FOTO ALLA VOLTA in sequenza
   for (const file of gf) {
-    const url = await upf(file, 'foto/'+cs+'/'+sl(name)+'-'+Date.now()+'.jpg');
+    // Usa timestamp unico per ogni file
+    const ts = Date.now() + Math.random().toString(36).slice(2,6);
+    const url = await upf(file, 'foto/'+cs+'/'+sl(name)+'-'+ts+'.jpg');
     if (url) proj.imgs.push(url);
+    done++;
+    if (done <= total) toast('Caricamento '+done+'/'+total+'...','');
+    // Piccola pausa tra upload per evitare conflitti SHA
+    await new Promise(res => setTimeout(res, 600));
   }
+
   if (ei>=0) { D[cs][ei]=proj; } else { D[cs].push(proj); }
   renderList(cs); cm();
   toast('Salvato — clicca Pubblica per aggiornare il sito','ok');
