@@ -4,22 +4,9 @@
       "name": "Aethereal",
       "year": "2026",
       "tag": "Personal project",
-      "desc": "A personal project exploring identity through light and form ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ fashion aesthetics rooted in a documentary soul.",
+      "desc": "A personal project exploring identity through light and form ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ fashion aesthetics rooted in a documentary soul.",
       "cover": "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-cover.jpg",
-      "imgs": [
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511179812.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511181790.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511183893.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511186101.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511188175.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511190110.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511191862.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511193883.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511195760.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511198320.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511200038.jpg",
-        "https://comfy-croissant-fe957e.netlify.app/foto/editorial/aethereal-1780511202073.jpg"
-      ],
+      "imgs": [],
       "sw": "s1",
       "featured": true
     },
@@ -68,7 +55,7 @@
     {
       "name": "Diario Metropolitano",
       "year": "2025",
-      "tag": "Street Photography ÃÂ· Winner 2025",
+      "tag": "Street Photography ÃÂÃÂ· Winner 2025",
       "desc": "Vincitore del contest Microracconti Urbani 2025.",
       "cover": "https://comfy-croissant-fe957e.netlify.app/foto/reportage/diario-metropolitano-cover.jpg",
       "imgs": [],
@@ -107,7 +94,7 @@
       "name": "Napoli B&W",
       "year": "2025",
       "tag": "Urban reportage",
-      "desc": "La cittÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ  in bianco e nero.",
+      "desc": "La cittÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ  in bianco e nero.",
       "cover": "",
       "imgs": [],
       "sw": "s3"
@@ -129,7 +116,7 @@
     "event": "Documentary coverage of events, launches, and gatherings. Candid high-quality images capturing the energy of the moment."
   },
   "landing": {
-    "tagline": "Documentary ÃÂ· Fashion ÃÂ· Reportage",
+    "tagline": "Documentary ÃÂÃÂ· Fashion ÃÂÃÂ· Reportage",
     "cta": "Explore my work",
     "hero": "https://comfy-croissant-fe957e.netlify.app/foto/hero.jpg"
   },
@@ -160,11 +147,11 @@
         "year": "2026"
       }
     ],
-    "subtitle": "Photographer ÃÂ· Naples ÃÂ· b. 2002",
+    "subtitle": "Photographer ÃÂÃÂ· Naples ÃÂÃÂ· b. 2002",
     "website": "paoloscotto.it"
   },
   "footer": {
-    "copy": "ÃÂ© 2026 Paolo Scotto di Vettimo",
+    "copy": "ÃÂÃÂ© 2026 Paolo Scotto di Vettimo",
     "domain": "paoloscotto.it"
   }
 }
