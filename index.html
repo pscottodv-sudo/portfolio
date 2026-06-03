@@ -16,7 +16,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 .cur{position:fixed;width:8px;height:8px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;top:0;left:0;transform:translate(-50%,-50%);mix-blend-mode:difference;opacity:0;transition:width .2s ease,height .2s ease,opacity .3s ease;will-change:transform}
 .cur.on{opacity:1}.cur.big{width:40px;height:40px}
 @media(hover:none){.cur{display:none}body{cursor:auto}}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:transparent;border-bottom:.5px solid transparent;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:background .5s,border-color .5s,backdrop-filter .5s}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:transparent;border-bottom:.5px solid transparent;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:background .5s,border-color .5s}
 .nav.solid{background:rgba(236,234,230,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom-color:var(--border)}
 .nav-logo{font-family:var(--serif);font-size:17px;font-weight:300;letter-spacing:.02em;color:rgba(255,255,255,.9);text-decoration:none;cursor:none;min-height:var(--tap);display:flex;align-items:center;transition:color .4s}
 .nav.solid .nav-logo{color:var(--black)}
@@ -208,13 +208,15 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
   </div>
 </div>
 <section id="landing" style="scroll-margin-top:0">
-  <div class="hero-bg"><div class="hero-ph"><span>La tua foto migliore va qui</span><code>img src="foto/hero.jpg"</code></div></div>
+  <div class="hero-bg" id="hero-bg">
+    <div class="hero-ph"><span>La tua foto migliore va qui</span><code>caricala dal pannello admin</code></div>
+  </div>
   <div class="hero-vig"></div><div class="hero-bot"></div>
   <div class="hero-inner">
     <p class="hero-eye">Photography · Naples · Worldwide</p>
     <h1 class="hero-name">Paolo Scotto<br><em>di Vettimo</em></h1>
-    <p class="hero-tag">Documentary · Fashion · Reportage</p>
-    <div class="cta-bar"><a href="#editorial"><div class="cta-line"></div><span class="cta-txt">Explore my work</span></a></div>
+    <p class="hero-tag" id="hero-tag">Documentary · Fashion · Reportage</p>
+    <div class="cta-bar"><a href="#editorial"><div class="cta-line"></div><span class="cta-txt" id="hero-cta">Explore my work</span></a></div>
   </div>
   <div class="scr-hint"><span>scroll</span><div class="scr-bar"></div></div>
   <p class="hero-loc">Based in Naples · Available worldwide</p>
@@ -232,12 +234,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 </section>
 <section id="commercial" class="sb">
   <div class="sh"><h2>Commercial</h2><span class="sh-sub">Available worldwide</span></div>
-  <div class="cg">
-    <div class="cc"><div class="cc-line"></div><div class="cc-title">Brand &amp; Product</div><div class="cc-desc">Visual identity photography for brands. Lookbooks, campaigns, and commercial content with a natural-light documentary approach.</div></div>
-    <div class="cc"><div class="cc-line"></div><div class="cc-title">Portrait &amp; Corporate</div><div class="cc-desc">Professional portraits for executives and personal branding. Honest, documentary-style images that communicate identity.</div></div>
-    <div class="cc"><div class="cc-line"></div><div class="cc-title">Editorial &amp; Fashion</div><div class="cc-desc">Production for magazines and fashion clients. A documentary visual language applied to fashion.</div></div>
-    <div class="cc"><div class="cc-line"></div><div class="cc-title">Event &amp; Reportage</div><div class="cc-desc">Documentary coverage of events, launches, and gatherings. Candid high-quality images capturing the energy of the moment.</div></div>
-  </div>
+  <div class="cg" id="comm-grid"></div>
   <div class="comm-strip"><div><h3>Interested in working together?</h3><p>Get in touch — available for commissions worldwide.</p></div><a class="pill" href="#about">Contact me &nbsp;→</a></div>
 </section>
 <section id="about" class="sb">
@@ -246,26 +243,16 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
     <div class="al">
       <h2>Paolo Scotto<br><em>di Vettimo</em></h2>
       <p class="a-sub">Photographer · Naples · b. 2002</p>
-      <div class="a-body">
-        <p>I am a photographer working at the intersection of documentary photography and fashion.</p>
-        <p>I am drawn to the unguarded moment: the gesture that reveals something true about a person.</p>
-        <p>Currently based in Naples, pursuing a Master in Fashion Photography at IED Milan.</p>
-      </div>
-      <div class="a-ctas">
-        <a class="pill" href="mailto:info@paoloscotto.it">Email &nbsp;→</a>
-        <a class="pill" href="https://instagram.com/paoloscottodv" target="_blank" rel="noopener">Instagram &nbsp;↗</a>
-        <a class="pill" href="#editorial">Portfolio &nbsp;↑</a>
-      </div>
+      <div class="a-body" id="about-body"></div>
+      <div class="a-ctas" id="about-ctas"></div>
     </div>
     <div class="ar">
       <div class="a-lbl">Recognition</div>
-      <ul class="a-ul"><li><span>Winner — Microracconti Urbani, "Diario Metropolitano"</span><span class="yr">2025</span></li><li><span>International street photography exhibitions</span><span class="yr">2024–25</span></li><li><span>UK gallery presentations</span><span class="yr">2024</span></li></ul>
+      <ul class="a-ul" id="awards-list"></ul>
       <div class="a-lbl">Education</div>
       <ul class="a-ul"><li><span>Master in Fashion Photography — IED Milan</span><span class="yr">2026</span></li></ul>
       <div class="a-lbl">Contact</div>
-      <a class="cl" href="mailto:info@paoloscotto.it">info@paoloscotto.it</a>
-      <a class="cl" href="https://instagram.com/paoloscottodv" target="_blank" rel="noopener">Instagram — @paoloscottodv</a>
-      <a class="cl" href="https://tiktok.com/@paoloscotto" target="_blank" rel="noopener">TikTok — @paoloscotto</a>
+      <div id="contact-links"></div>
     </div>
   </div>
   <div class="form-wrap">
@@ -279,7 +266,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
       <div class="ff"><label>Tipo di richiesta</label><select name="type"><option value="">Seleziona...</option><option>Editorial / Fashion</option><option>Commercial / Brand</option><option>Portrait / Corporate</option><option>Event / Reportage</option><option>Altro</option></select></div>
       <div class="ff"><label>Budget indicativo</label><select name="budget"><option value="">Seleziona...</option><option>Fino a €500</option><option>€500 – €1.000</option><option>€1.000 – €2.000</option><option>Oltre €2.000</option><option>Da definire</option></select></div>
       <div class="ff ff-full"><label>Messaggio</label><textarea name="message" placeholder="Descrivi il progetto..." required></textarea></div>
-      <div class="f-row"><span class="f-note">info@paoloscotto.it · rispondo entro 24h</span><button type="submit" class="f-btn">Invia &nbsp;→</button></div>
+      <div class="f-row"><span class="f-note" id="form-note">info@paoloscotto.it · rispondo entro 24h</span><button type="submit" class="f-btn">Invia &nbsp;→</button></div>
     </form>
   </div>
 </section>
@@ -289,25 +276,126 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
   <span>paoloscotto.it</span>
 </footer>
 <script>
-const ED=[{"name":"Aethereal","year":"2026","tag":"Personal project","desc":"A personal project exploring identity through light and form.","cover":"","imgs":[],"sw":"s1"},{"name":"PUNK-TURE","year":"2026","tag":"Fashion editorial","desc":"Un progetto editoriale che esplora moda e controtendenza.","cover":"","imgs":[],"sw":"s2"},{"name":"Neon Therapy","year":"2026","tag":"Fashion editorial","desc":"Luci artificiali come terapia. Corpo e luce urbana.","cover":"","imgs":[],"sw":"s3"}];
-const RE=[{"name":"I Volti di Piazza Vittorio","year":"2026","tag":"Urban portraits","desc":"Ritratti degli abitanti di Piazza Vittorio.","cover":"","imgs":[],"sw":"s4"},{"name":"iPhone Portraits","year":"2026","tag":"Mobile photography","desc":"Ritratti con iPhone. La tecnologia come libertà.","cover":"","imgs":[],"sw":"s5"},{"name":"Diario Metropolitano","year":"2025","tag":"Street · Winner 2025","desc":"Vincitore Microracconti Urbani 2025.","cover":"","imgs":[],"sw":"s6"},{"name":"Pescatori all'alba","year":"2026","tag":"Documentary","desc":"Documentario sui pescatori del golfo di Napoli.","cover":"","imgs":[],"sw":"s7"},{"name":"Napoli","year":"2025","tag":"Urban reportage","desc":"Napoli attraverso uno sguardo diretto.","cover":"","imgs":[],"sw":"s1"},{"name":"Scudetto","year":"2025","tag":"Sports reportage","desc":"La festa del Napoli campione d'Italia.","cover":"","imgs":[],"sw":"s2"},{"name":"Napoli B&W","year":"2025","tag":"Urban reportage","desc":"La città in bianco e nero.","cover":"","imgs":[],"sw":"s3"},{"name":"Asia Stories","year":"2025","tag":"Travel documentary","desc":"Un viaggio tra Giappone, Corea e Vietnam.","cover":"","imgs":[],"sw":"s8"}];
-function mkCard(p){return '<div class="pc" onclick="galOpen(''+p.name.replace(/'/g,"\'")+'',' +'''+p.year+' · '+p.tag+'',' +'''+p.desc.replace(/'/g,"\'")+'',' +JSON.stringify(p.imgs)+')">'+'<div class="pt '+p.sw+'">'+(p.cover?'<img src="'+p.cover+'" alt="'+p.name+'" loading="lazy">':'<span class="pt-ph">'+p.name+'</span>')+'</div>'+'<div class="pi"><div class="py">'+p.year+'</div><div class="pn">'+p.name+'</div><div class="ptg">'+p.tag+'</div></div></div>'}
-function buildFeat(p,id){document.getElementById(id).innerHTML='<div class="feat-img '+(p.sw||'s1')+'">'+(p.cover?'<img src="'+p.cover+'" alt="'+p.name+'">':'<span class="feat-ph">'+p.name+'</span>')+'</div><div class="feat-body"><div><div class="feat-lbl">Featured · '+p.year+'</div><div class="feat-title">'+p.name+'<br><em>'+p.year+'</em></div><div class="feat-desc">'+p.desc+'</div><a class="feat-open" href="#" onclick="galOpen(''+p.name.replace(/'/g,"\'")+'',' +'''+p.year+' · '+p.tag+'',' +'''+p.desc.replace(/'/g,"\'")+'',' +JSON.stringify(p.imgs)+');return false"><div class="feat-open-line"></div>Open project</a></div><div class="feat-meta">'+p.tag+' · Naples</div></div>'}
-buildFeat(ED[0],'feat-ed');
-document.getElementById('ed-grid').innerHTML=ED.slice(1).map(mkCard).join('');
-document.getElementById('re-grid').innerHTML=RE.map(mkCard).join('');
-document.getElementById('ed-c').textContent=ED.length+' series';
-document.getElementById('re-c').textContent=RE.length+' series';
-function galOpen(name,sub,desc,imgs){document.getElementById('ov-title').textContent=name;document.getElementById('ov-sub').textContent=sub;document.getElementById('ov-desc').textContent=desc;const grid=document.getElementById('gal-grid');if(imgs&&imgs.length>0){grid.innerHTML=imgs.map(src=>'<div class="gal-item"><img src="'+src+'" alt="'+name+'" loading="lazy"></div>').join('')}else{grid.innerHTML='<div class="gal-ph"><h3>'+name+'</h3><p>Le foto appariranno qui dopo averle caricate dal pannello admin.</p></div>'}document.getElementById('overlay').classList.add('open');document.body.style.overflow='hidden'}
-function galClose(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow=''}
-const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('solid',window.scrollY>80)},{passive:true});
-const nlMap={editorial:document.getElementById('nl-ed'),reportage:document.getElementById('nl-re'),commercial:document.getElementById('nl-co'),about:document.getElementById('nl-ab')};
-function setNL(id){Object.values(nlMap).forEach(a=>a&&a.classList.remove('active'));if(nlMap[id])nlMap[id].classList.add('active')}
-['landing','editorial','reportage','commercial','about'].forEach(id=>{const el=document.getElementById(id);if(el)new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)setNL(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'}).observe(el)});
-function mOpen(){document.getElementById('mob').classList.add('open');document.body.style.overflow='hidden'}
-function mClose(){document.getElementById('mob').classList.remove('open');document.body.style.overflow=''}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){galClose();mClose()}});
-if(window.matchMedia('(hover: hover)').matches){const cur=document.getElementById('cur');document.addEventListener('mousemove',e=>{cur.style.transform='translate(calc('+e.clientX+'px - 50%), calc('+e.clientY+'px - 50%))';cur.classList.add('on')},{passive:true});document.addEventListener('mouseleave',()=>cur.classList.remove('on'));const SEL='a,button,[role="button"],.pc,.cc,.feat-img';function bindCur(){document.querySelectorAll(SEL).forEach(el=>{if(el._cb)return;el._cb=true;el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}bindCur();new MutationObserver(bindCur).observe(document.body,{childList:true,subtree:true})}
-</'+'script>
+// Carica i dati da data.json e popola il sito
+async function loadSite() {
+  try {
+    const res = await fetch('/data.json?v=' + Date.now());
+    const D = await res.json();
+    // Hero
+    if (D.landing.hero) {
+      document.getElementById('hero-bg').innerHTML = '<img class="hero-img" src="' + D.landing.hero + '" alt="Paolo Scotto di Vettimo">';
+    }
+    document.getElementById('hero-tag').textContent = D.landing.tagline;
+    document.getElementById('hero-cta').textContent = D.landing.cta;
+    // Editorial featured
+    const feat = D.editorial.find(p => p.featured) || D.editorial[0];
+    if (feat) {
+      document.getElementById('feat-ed').innerHTML =
+        '<div class="feat-img ' + feat.sw + '">' + (feat.cover ? '<img src="' + feat.cover + '" alt="' + feat.name + '">' : '<span class="feat-ph">' + feat.name + '</span>') + '</div>' +
+        '<div class="feat-body"><div><div class="feat-lbl">Featured · ' + feat.year + '</div><div class="feat-title">' + feat.name + '<br><em>' + feat.year + '</em></div><div class="feat-desc">' + feat.desc + '</div>' +
+        '<a class="feat-open" href="#" onclick="galOpen(\'' + feat.name.replace(/'/g,"\\'") + '\',\'' + feat.year + ' · ' + feat.tag + '\',\'' + feat.desc.replace(/'/g,"\\'") + '\',' + JSON.stringify(feat.imgs) + ');return false"><div class="feat-open-line"></div>Open project</a></div>' +
+        '<div class="feat-meta">' + feat.tag + ' · Naples</div></div>';
+    }
+    // Grids
+    const rest = D.editorial.filter(p => !p.featured && p !== feat);
+    document.getElementById('ed-grid').innerHTML = rest.map(p => mkCard(p)).join('');
+    document.getElementById('ed-c').textContent = D.editorial.length + ' series';
+    document.getElementById('re-grid').innerHTML = D.reportage.map(p => mkCard(p)).join('');
+    document.getElementById('re-c').textContent = D.reportage.length + ' series';
+    // Commercial
+    const cc = D.commercial;
+    document.getElementById('comm-grid').innerHTML =
+      mkCC('Brand &amp; Product', cc.brand) + mkCC('Portrait &amp; Corporate', cc.portrait) +
+      mkCC('Editorial &amp; Fashion', cc.editorial) + mkCC('Event &amp; Reportage', cc.event);
+    // About
+    const ab = D.about;
+    document.getElementById('about-body').innerHTML =
+      '<p>' + ab.bio1 + '</p>' + (ab.bio2 ? '<p>' + ab.bio2 + '</p>' : '') + (ab.bio3 ? '<p>' + ab.bio3 + '</p>' : '');
+    document.getElementById('about-ctas').innerHTML =
+      '<a class="pill" href="mailto:' + ab.email + '">Email &nbsp;→</a>' +
+      '<a class="pill" href="https://instagram.com/' + ab.instagram.replace('@','') + '" target="_blank" rel="noopener">Instagram &nbsp;↗</a>' +
+      '<a class="pill" href="#editorial">Portfolio &nbsp;↑</a>';
+    document.getElementById('awards-list').innerHTML = ab.awards.map(a =>
+      '<li><span>' + a.title + '</span><span class="yr">' + a.year + '</span></li>'
+    ).join('');
+    document.getElementById('contact-links').innerHTML =
+      '<a class="cl" href="mailto:' + ab.email + '">' + ab.email + '</a>' +
+      '<a class="cl" href="https://instagram.com/' + ab.instagram.replace('@','') + '" target="_blank" rel="noopener">Instagram — ' + ab.instagram + '</a>' +
+      '<a class="cl" href="https://tiktok.com/' + ab.tiktok + '" target="_blank" rel="noopener">TikTok — ' + ab.tiktok + '</a>';
+    document.getElementById('form-note').textContent = ab.email + ' · rispondo entro 24h';
+    bindCur();
+  } catch(e) { console.error('Errore caricamento dati:', e); }
+}
+
+function mkCard(p) {
+  return '<div class="pc" onclick="galOpen(\'' + p.name.replace(/'/g,"\\'") + '\',\'' + p.year + ' · ' + p.tag + '\',\'' + p.desc.replace(/'/g,"\\'") + '\',' + JSON.stringify(p.imgs) + ')">' +
+    '<div class="pt ' + p.sw + '">' + (p.cover ? '<img src="' + p.cover + '" alt="' + p.name + '" loading="lazy">' : '<span class="pt-ph">' + p.name + '</span>') + '</div>' +
+    '<div class="pi"><div class="py">' + p.year + '</div><div class="pn">' + p.name + '</div><div class="ptg">' + p.tag + '</div></div></div>';
+}
+
+function mkCC(title, desc) {
+  return '<div class="cc"><div class="cc-line"></div><div class="cc-title">' + title + '</div><div class="cc-desc">' + desc + '</div></div>';
+}
+
+function galOpen(name, sub, desc, imgs) {
+  document.getElementById('ov-title').textContent = name;
+  document.getElementById('ov-sub').textContent = sub;
+  document.getElementById('ov-desc').textContent = desc;
+  const grid = document.getElementById('gal-grid');
+  if (imgs && imgs.length > 0) {
+    grid.innerHTML = imgs.map(src => '<div class="gal-item"><img src="' + src + '" alt="' + name + '" loading="lazy"></div>').join('');
+  } else {
+    grid.innerHTML = '<div class="gal-ph"><h3>' + name + '</h3><p>Le foto appariranno qui dopo averle caricate dal pannello admin.</p></div>';
+  }
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function galClose() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('solid', window.scrollY > 80); }, { passive: true });
+
+const nlMap = { editorial: document.getElementById('nl-ed'), reportage: document.getElementById('nl-re'), commercial: document.getElementById('nl-co'), about: document.getElementById('nl-ab') };
+function setNL(id) { Object.values(nlMap).forEach(a => a && a.classList.remove('active')); if (nlMap[id]) nlMap[id].classList.add('active'); }
+['landing','editorial','reportage','commercial','about'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) setNL(e.target.id); }); }, { rootMargin: '-40% 0px -55% 0px' }).observe(el);
+});
+
+function mOpen()  { document.getElementById('mob').classList.add('open');    document.body.style.overflow = 'hidden'; }
+function mClose() { document.getElementById('mob').classList.remove('open'); document.body.style.overflow = ''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { galClose(); mClose(); } });
+
+// Cursore custom
+function bindCur() {
+  if (!window.matchMedia('(hover: hover)').matches) return;
+  const cur = document.getElementById('cur');
+  if (!cur) return;
+  document.addEventListener('mousemove', e => {
+    cur.style.transform = 'translate(calc(' + e.clientX + 'px - 50%), calc(' + e.clientY + 'px - 50%))';
+    cur.classList.add('on');
+  }, { passive: true });
+  document.addEventListener('mouseleave', () => cur.classList.remove('on'));
+  const SEL = 'a,button,[role="button"],.pc,.cc,.feat-img';
+  document.querySelectorAll(SEL).forEach(el => {
+    if (el._cb) return; el._cb = true;
+    el.addEventListener('mouseenter', () => cur.classList.add('big'));
+    el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+  });
+  new MutationObserver(() => {
+    document.querySelectorAll(SEL).forEach(el => {
+      if (el._cb) return; el._cb = true;
+      el.addEventListener('mouseenter', () => cur.classList.add('big'));
+      el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+    });
+  }).observe(document.body, { childList: true, subtree: true });
+}
+
+loadSite();
+</script>
 </body>
 </html>
