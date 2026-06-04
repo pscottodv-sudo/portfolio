@@ -621,7 +621,7 @@ function upf(file, path, cb, attempt) {
   reader.onload = function() {
     var data = reader.result.split(',')[1];
     fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/' + path + '?t=' + Date.now(),
-      { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
+      { headers: { Authorization: 'Bearer ' + C.tok } })
       .then(function(r) { return r.ok ? r.json() : null; })
       .then(function(existing) {
         var sha = existing && existing.sha ? existing.sha : '';
@@ -665,7 +665,7 @@ function publish() {
   document.getElementById('sov').classList.add('show');
 
   fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json?t=' + Date.now(),
-    { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
+    { headers: { Authorization: 'Bearer ' + C.tok } })
     .then(function(r) { return r.json(); })
     .then(function(cur) {
       var json = JSON.stringify(D, null, 2);
