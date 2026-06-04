@@ -288,8 +288,17 @@ if (sessionStorage.getItem('ok') === '1') {
 
 function load() {
   toast('Caricamento dati...', '');
-  // Carica data.json direttamente dal sito pubblico (evita problemi di decode UTF-8)
-  fetch(C.site + '/data.json?t=' + Date.now(), { cache: 'no-store' })
+  // Carica via API GitHub usando download_url per UTF-8 corretto
+  fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json?t=' + Date.now(),
+    { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
+    .then(function(r) {
+      if (!r.ok) throw new Error('GitHub API ' + r.status);
+      return r.json();
+    })
+    .then(function(f) {
+      // Usa download_url che restituisce JSON puro con UTF-8 corretto
+      return fetch(f.download_url + '?t=' + Date.now(), { cache: 'no-store' });
+    })
     .then(function(r) { return r.json(); })
     .then(function(data) {
       D = data;
