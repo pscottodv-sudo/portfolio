@@ -288,11 +288,11 @@ if (sessionStorage.getItem('ok') === '1') {
 
 function load() {
   toast('Caricamento dati...', '');
-  fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json?t=' + Date.now(),
-    { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
+  // Carica data.json direttamente dal sito pubblico (evita problemi di decode UTF-8)
+  fetch(C.site + '/data.json?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r) { return r.json(); })
-    .then(function(f) {
-      D = JSON.parse(decodeURIComponent(escape(atob(f.content.replace(/\n/g, '')))));
+    .then(function(data) {
+      D = data;
       // Garantisce strutture
       if (!Array.isArray(D.commercial)) D.commercial = [];
       if (!D.commercialIntro) D.commercialIntro = '';
