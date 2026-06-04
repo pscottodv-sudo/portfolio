@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Paolo Scotto di Vettimo - Documentary-inspired photography. Naples, worldwide.">
+<meta name="description" id="meta-desc" content="Paolo Scotto di Vettimo - Documentary-inspired photography. Naples, worldwide.">
 <title>Paolo Scotto di Vettimo - Photographer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
 :root{--bg:#eceae6;--bg2:#e4e1dc;--white:#f9f8f5;--black:#0f0e0d;--ink:#3a3733;--mid:#888480;--border:#d2cfc9;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans","Helvetica Neue",Arial,sans-serif;--nav-h:64px;--tap:52px}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;cursor:none}
+img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;user-select:none;-webkit-user-select:none;pointer-events:none}
 .cur{position:fixed;width:8px;height:8px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;top:0;left:0;transform:translate(-50%,-50%);mix-blend-mode:difference;opacity:0;transition:width .2s,height .2s,opacity .3s;will-change:transform}
 .cur.on{opacity:1}.cur.big{width:40px;height:40px}
 @media(hover:none){.cur{display:none}body{cursor:auto}}
@@ -63,6 +64,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 .sh{padding:64px 48px 36px;border-bottom:.5px solid var(--border);display:flex;align-items:flex-end;justify-content:space-between;background:var(--bg)}
 .sh h2{font-family:var(--serif);font-size:clamp(32px,4.5vw,52px);font-weight:300;letter-spacing:-.015em;line-height:1}
 .sh-sub{font-size:11px;color:var(--mid);letter-spacing:.1em;text-transform:uppercase}
+.sec-intro{padding:24px 48px 0;max-width:760px}
+.sec-intro p{font-size:14px;color:var(--ink);line-height:1.8}
 .feat{display:grid;grid-template-columns:58% 42%;min-height:520px;border-bottom:.5px solid var(--border)}
 .feat-img{overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;cursor:none}
 .feat-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
@@ -103,25 +106,18 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);-webkit-fon
 .ov-body{flex:1;overflow-y:auto;padding:32px 48px 48px}
 .ov-desc{font-size:14px;color:rgba(255,255,255,.45);line-height:1.8;max-width:560px;margin-bottom:36px;border-left:.5px solid rgba(255,255,255,.12);padding-left:20px}
 .gal-grid{columns:3;column-gap:6px}
-.gal-item{break-inside:avoid;margin-bottom:6px;overflow:hidden}
+.gal-item{break-inside:avoid;margin-bottom:6px;overflow:hidden;position:relative}
 .gal-item img{width:100%;display:block}
+.gal-shield{position:absolute;inset:0;z-index:2}
 .gal-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:80px 0;text-align:center}
 .gal-ph h3{font-family:var(--serif);font-size:28px;font-weight:300;color:rgba(255,255,255,.6)}
 .gal-ph p{font-size:13px;color:rgba(255,255,255,.25);line-height:1.7;max-width:400px}
-.cg{display:grid;grid-template-columns:1fr 1fr}
-.cc{padding:48px;border-right:.5px solid var(--border);border-bottom:.5px solid var(--border);background:var(--white);transition:background .25s}
-.cc:nth-child(2n){border-right:none}.cc:hover{background:var(--bg)}
-.cc-line{width:20px;height:.5px;background:var(--black);margin-bottom:24px}
-.cc-title{font-family:var(--serif);font-size:23px;font-weight:300;margin-bottom:10px}
-.cc-desc{font-size:14px;color:var(--ink);line-height:1.82}
-.comm-strip{padding:44px 48px;background:var(--white);border-top:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
-.comm-strip h3{font-family:var(--serif);font-size:26px;font-weight:300;margin-bottom:6px}
-.comm-strip p{font-size:13px;color:var(--ink)}
 .aw{display:grid;grid-template-columns:1fr 1fr}
 .al{padding:64px 48px;border-right:.5px solid var(--border);background:var(--white)}
 .al h2{font-family:var(--serif);font-size:clamp(38px,4vw,56px);font-weight:300;line-height:.95;margin-bottom:8px}
 .al h2 em{font-style:italic;color:var(--mid)}
 .a-sub{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:40px}
+.a-photo{width:100%;max-width:280px;aspect-ratio:3/4;object-fit:cover;margin-bottom:32px;border-radius:2px;display:block}
 .a-body{font-size:14px;color:var(--ink);line-height:1.92}
 .a-body p{margin-bottom:16px}
 .a-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
@@ -158,6 +154,7 @@ body{cursor:auto}.cur{display:none}
 .nav{padding:0 16px}.nav-links{display:none}.burger{display:flex}.nav-logo,.mob a,.mob-x{cursor:pointer}
 .hero-name{font-size:clamp(52px,18vw,84px)}.cta-bar a{cursor:pointer}
 .sh{padding:40px 16px 24px;flex-direction:column;gap:6px}.sh-sub{display:none}
+.sec-intro{padding:20px 16px 0}
 .feat{grid-template-columns:1fr}.feat-img{min-height:280px}
 .feat-body{padding:28px 16px 32px;border-left:none;border-top:.5px solid var(--border)}.feat-open{cursor:pointer}
 .gh{padding:20px 16px 14px}
@@ -165,11 +162,9 @@ body{cursor:auto}.cur{display:none}
 .pc:nth-child(3n){border-right:.5px solid var(--border)}.pc:nth-child(2n){border-right:none}
 .pi{padding:12px 14px 16px}.pn{font-size:15px}
 .ov-header{padding:0 16px}.ov-body{padding:24px 16px 40px}.gal-grid{columns:2}.ov-close{cursor:pointer}
-.cg{grid-template-columns:1fr}.cc{padding:28px 16px;border-right:none}.comm-strip{padding:28px 16px}
-.pill,.cl,.f-btn,.ft-top{cursor:pointer}
 .aw{grid-template-columns:1fr}
 .al{padding:40px 16px;border-right:none;border-bottom:.5px solid var(--border)}
-.ar{padding:36px 16px}
+.ar{padding:36px 16px}.pill,.cl,.f-btn,.ft-top{cursor:pointer}
 .form-wrap{padding:40px 16px}.cf{grid-template-columns:1fr}.ff-full{grid-column:1}
 .ft{padding:16px;flex-direction:column;gap:8px;text-align:center}
 }
@@ -224,18 +219,22 @@ body{cursor:auto}.cur{display:none}
 </section>
 <section id="reportage" class="sb">
 <div class="sh"><h2>Reportage</h2><span class="sh-sub">Urban &#183; Documentary &#183; Street</span></div>
+<div id="feat-re"></div>
 <div class="gh"><h3>All reportage series</h3><span id="re-c"></span></div>
 <div class="pg" id="re-grid"></div>
 </section>
 <section id="commercial" class="sb">
 <div class="sh"><h2>Commercial</h2><span class="sh-sub">Available worldwide</span></div>
-<div class="cg" id="comm-grid"></div>
-<div class="comm-strip"><div><h3>Interested in working together?</h3><p>Get in touch.</p></div><a class="pill" href="#about">Contact me &#8594;</a></div>
+<div class="sec-intro" id="comm-intro"></div>
+<div id="feat-co"></div>
+<div class="gh"><h3>All commercial work</h3><span id="co-c"></span></div>
+<div class="pg" id="co-grid"></div>
 </section>
 <section id="about" class="sb">
 <div class="sh"><h2>About &amp; Contact</h2><span class="sh-sub">Naples &#183; Italy &#183; b. 2002</span></div>
 <div class="aw">
 <div class="al">
+<img class="a-photo" id="about-photo" style="display:none" alt="Paolo Scotto di Vettimo">
 <h2>Paolo Scotto<br><em>di Vettimo</em></h2>
 <p class="a-sub" id="about-sub">Photographer &#183; Naples &#183; b. 2002</p>
 <div class="a-body" id="about-body"></div>
@@ -267,7 +266,7 @@ body{cursor:auto}.cur{display:none}
 <span id="ft-domain">paoloscotto.it</span>
 </footer>
 <script>
-var PROJECTS = { editorial: [], reportage: [] };
+var PROJECTS = { editorial: [], reportage: [], commercial: [] };
 
 function el(tag, cls, html) {
   var e = document.createElement(tag);
@@ -293,8 +292,52 @@ function mkCard(p, section, idx) {
   return card;
 }
 
-function mkCC(title, desc) {
-  return '<div class="cc"><div class="cc-line"></div><div class="cc-title">' + title + '</div><div class="cc-desc">' + (desc || '') + '</div></div>';
+function buildFeatured(section, containerId) {
+  var list = PROJECTS[section];
+  var featured = list.filter(function(p) { return p.featured && !p.hidden; })[0];
+  var container = document.getElementById(containerId);
+  if (!featured) { container.innerHTML = ''; return; }
+  var fIdx = list.indexOf(featured);
+  container.innerHTML = '';
+  var wrap = el('div', 'feat');
+  var fimgD = el('div', 'feat-img ' + (featured.sw || 's1'));
+  fimgD.style.cursor = 'pointer';
+  fimgD.addEventListener('click', function() { galOpen(section, fIdx); });
+  if (featured.cover) {
+    var fi = document.createElement('img'); fi.src = featured.cover; fi.alt = featured.name;
+    fi.setAttribute('fetchpriority', 'high'); fimgD.appendChild(fi);
+  } else { fimgD.appendChild(el('span', 'feat-ph', featured.name)); }
+  wrap.appendChild(fimgD);
+  var fbody = el('div', 'feat-body');
+  var finner = el('div', null,
+    '<div class="feat-lbl">Featured &#183; ' + featured.year + '</div>' +
+    '<div class="feat-title">' + featured.name + '<br><em>' + featured.year + '</em></div>' +
+    '<div class="feat-desc">' + (featured.desc || '') + '</div>');
+  var ob = el('a', 'feat-open', '<div class="feat-open-line"></div>Open project');
+  ob.href = '#';
+  ob.addEventListener('click', function(ev) { ev.preventDefault(); galOpen(section, fIdx); });
+  finner.appendChild(ob);
+  fbody.appendChild(finner);
+  fbody.appendChild(el('div', 'feat-meta', featured.tag + ' &#183; Naples'));
+  wrap.appendChild(fbody);
+  container.appendChild(wrap);
+  return featured;
+}
+
+function buildGrid(section, gridId, countId) {
+  var list = PROJECTS[section];
+  var featured = list.filter(function(p) { return p.featured && !p.hidden; })[0];
+  var grid = document.getElementById(gridId);
+  grid.innerHTML = '';
+  var visible = 0;
+  list.forEach(function(p, i) {
+    if (p.hidden) return;
+    if (featured && p === featured) return;
+    grid.appendChild(mkCard(p, section, i));
+    visible++;
+  });
+  var totalVisible = list.filter(function(p){ return !p.hidden; }).length;
+  document.getElementById(countId).textContent = totalVisible + ' series';
 }
 
 function galOpen(section, idx) {
@@ -312,6 +355,8 @@ function galOpen(section, idx) {
       var img = document.createElement('img');
       img.src = src; img.alt = p.name; img.loading = 'lazy';
       item.appendChild(img);
+      var shield = el('div', 'gal-shield');
+      item.appendChild(shield);
       grid.appendChild(item);
     });
   } else {
@@ -366,12 +411,22 @@ function initNav() {
   });
 }
 
+function initProtection() {
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG' || e.target.className === 'gal-shield') { e.preventDefault(); return false; }
+  });
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
+  });
+}
+
 function loadSite() {
   fetch('/portfolio/data.json?v=' + Date.now())
     .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
     .then(function(D) {
       PROJECTS.editorial = D.editorial || [];
       PROJECTS.reportage = D.reportage || [];
+      PROJECTS.commercial = D.commercial || [];
 
       if (D.landing && D.landing.hero) {
         var hbg = document.getElementById('hero-bg');
@@ -386,57 +441,23 @@ function loadSite() {
         document.getElementById('hero-cta').textContent = D.landing.cta || 'Explore my work';
       }
 
-      var featured = PROJECTS.editorial.filter(function(p) { return p.featured; })[0] || PROJECTS.editorial[0];
-      if (featured) {
-        var featIdx = PROJECTS.editorial.indexOf(featured);
-        var fe = document.getElementById('feat-ed');
-        fe.innerHTML = '';
-        var wrap = el('div', 'feat');
-        var fimgD = el('div', 'feat-img ' + (featured.sw || 's1'));
-        fimgD.style.cursor = 'pointer';
-        fimgD.addEventListener('click', function() { galOpen('editorial', featIdx); });
-        if (featured.cover) {
-          var fi = document.createElement('img'); fi.src = featured.cover; fi.alt = featured.name;
-          fi.setAttribute('fetchpriority', 'high'); fimgD.appendChild(fi);
-        } else { fimgD.appendChild(el('span', 'feat-ph', featured.name)); }
-        wrap.appendChild(fimgD);
-        var fbody = el('div', 'feat-body');
-        var finner = el('div', null,
-          '<div class="feat-lbl">Featured &#183; ' + featured.year + '</div>' +
-          '<div class="feat-title">' + featured.name + '<br><em>' + featured.year + '</em></div>' +
-          '<div class="feat-desc">' + (featured.desc || '') + '</div>');
-        var ob = el('a', 'feat-open', '<div class="feat-open-line"></div>Open project');
-        ob.href = '#';
-        ob.addEventListener('click', function(ev) { ev.preventDefault(); galOpen('editorial', featIdx); });
-        finner.appendChild(ob);
-        fbody.appendChild(finner);
-        fbody.appendChild(el('div', 'feat-meta', featured.tag + ' &#183; Naples'));
-        wrap.appendChild(fbody);
-        fe.appendChild(wrap);
-      }
+      buildFeatured('editorial', 'feat-ed');
+      buildGrid('editorial', 'ed-grid', 'ed-c');
+      buildFeatured('reportage', 'feat-re');
+      buildGrid('reportage', 're-grid', 're-c');
+      buildFeatured('commercial', 'feat-co');
+      buildGrid('commercial', 'co-grid', 'co-c');
 
-      var edGrid = document.getElementById('ed-grid');
-      edGrid.innerHTML = '';
-      PROJECTS.editorial.forEach(function(p, i) {
-        if (featured && i === PROJECTS.editorial.indexOf(featured)) return;
-        edGrid.appendChild(mkCard(p, 'editorial', i));
-      });
-      document.getElementById('ed-c').textContent = PROJECTS.editorial.length + ' series';
-
-      var reGrid = document.getElementById('re-grid');
-      reGrid.innerHTML = '';
-      PROJECTS.reportage.forEach(function(p, i) { reGrid.appendChild(mkCard(p, 'reportage', i)); });
-      document.getElementById('re-c').textContent = PROJECTS.reportage.length + ' series';
-
-      if (D.commercial) {
-        var c = D.commercial;
-        document.getElementById('comm-grid').innerHTML =
-          mkCC('Brand &amp; Product', c.brand) + mkCC('Portrait &amp; Corporate', c.portrait) +
-          mkCC('Editorial &amp; Fashion', c.editorial) + mkCC('Event &amp; Reportage', c.event);
+      if (D.commercialIntro) {
+        document.getElementById('comm-intro').innerHTML = '<p>' + D.commercialIntro + '</p>';
       }
 
       if (D.about) {
         var ab = D.about;
+        if (ab.photo) {
+          var ph = document.getElementById('about-photo');
+          ph.src = ab.photo; ph.style.display = 'block';
+        }
         if (ab.subtitle) document.getElementById('about-sub').textContent = ab.subtitle;
         var bio = '';
         if (ab.bio1) bio += '<p>' + ab.bio1 + '</p>';
@@ -468,6 +489,7 @@ function loadSite() {
 
       initCursor();
       initNav();
+      initProtection();
     })
     .catch(function(e) { console.error('Errore caricamento:', e); });
 }
