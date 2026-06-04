@@ -288,40 +288,39 @@ if (sessionStorage.getItem('ok') === '1') {
 
 function load() {
   toast('Caricamento dati...', '');
-  // Carica via API GitHub usando download_url per UTF-8 corretto
-  fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json?t=' + Date.now(),
-    { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
-    .then(function(r) {
-      if (!r.ok) throw new Error('GitHub API ' + r.status);
-      return r.json();
-    })
-    .then(function(f) {
-      // Usa download_url che restituisce JSON puro con UTF-8 corretto
-      return fetch(f.download_url + '?t=' + Date.now(), { cache: 'no-store' });
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      D = data;
-      // Garantisce strutture
-      if (!Array.isArray(D.commercial)) D.commercial = [];
-      if (!D.commercialIntro) D.commercialIntro = '';
-      if (!D.footer) D.footer = { copy: '\u00a9 2026 Paolo Scotto di Vettimo', domain: 'paoloscotto.it' };
-      if (!D.about.education) D.about.education = [];
-      if (!D.about.subtitle) D.about.subtitle = 'Photographer \u00b7 Naples \u00b7 b. 2002';
-      if (!D.about.photo) D.about.photo = '';
-      ['editorial', 'reportage', 'commercial'].forEach(function(sec) {
-        (D[sec] || []).forEach(function(p) {
-          if (p.hidden === undefined) p.hidden = false;
-          if (p.featured === undefined) p.featured = false;
-          if (p.seoTitle === undefined) p.seoTitle = '';
-          if (p.seoDesc === undefined) p.seoDesc = '';
-          if (!p.imgs) p.imgs = [];
-        });
+  fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json?t=' + Date.now(), {
+    headers: { Authorization: 'Bearer ' + C.tok, 'Accept': 'application/vnd.github.v3+json' }
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('API ' + r.status);
+    return r.json();
+  })
+  .then(function(f) {
+    // Decodifica base64 -> bytes -> UTF-8 string (gestisce accenti)
+    var raw = atob(f.content.replace(/\s/g, ''));
+    var bytes = new Uint8Array(raw.length);
+    for (var i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+    var text = new TextDecoder('utf-8').decode(bytes);
+    D = JSON.parse(text);
+    if (!Array.isArray(D.commercial)) D.commercial = [];
+    if (!D.commercialIntro) D.commercialIntro = '';
+    if (!D.footer) D.footer = { copy: '\u00a9 2026 Paolo Scotto di Vettimo', domain: 'paoloscotto.it' };
+    if (!D.about.education) D.about.education = [];
+    if (!D.about.subtitle) D.about.subtitle = 'Photographer \u00b7 Naples \u00b7 b. 2002';
+    if (!D.about.photo) D.about.photo = '';
+    ['editorial', 'reportage', 'commercial'].forEach(function(sec) {
+      (D[sec] || []).forEach(function(p) {
+        if (p.hidden === undefined) p.hidden = false;
+        if (p.featured === undefined) p.featured = false;
+        if (p.seoTitle === undefined) p.seoTitle = '';
+        if (p.seoDesc === undefined) p.seoDesc = '';
+        if (!p.imgs) p.imgs = [];
       });
-      renderAll();
-      toast('Dati caricati', 'ok');
-    })
-    .catch(function(e) { toast('Errore: ' + e.message, 'er'); });
+    });
+    renderAll();
+    toast('Dati caricati', 'ok');
+  })
+  .catch(function(e) { toast('Errore: ' + e.message, 'er'); });
 }
 
 function renderAll() {
