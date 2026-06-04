@@ -3,69 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin — Paolo Scotto di Vettimo</title>
+<title>Admin - Paolo Scotto di Vettimo</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f0eeeb;--white:#faf9f7;--black:#111110;--ink:#3a3835;--mid:#888480;--border:#d5d2cc;--green:#16a34a;--red:#dc2626;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif;--serif:'Georgia',serif}
+:root{--bg:#f0eeeb;--white:#faf9f7;--black:#111110;--ink:#3a3835;--mid:#888480;--border:#d5d2cc;--green:#16a34a;--red:#dc2626;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif;--serif:"Georgia",serif}
 body{font-family:var(--sans);background:var(--bg);color:var(--black);min-height:100vh;-webkit-font-smoothing:antialiased}
 #login{min-height:100vh;display:flex;align-items:center;justify-content:center}
-.lbox{background:var(--white);border:0.5px solid var(--border);padding:48px 40px;width:100%;max-width:380px}
+.lbox{background:var(--white);border:.5px solid var(--border);padding:48px 40px;width:100%;max-width:380px}
 .lbox h1{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:6px}
 .lbox p{font-size:13px;color:var(--mid);margin-bottom:32px}
 .fi{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.fi label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
-.fi input{padding:12px 14px;border:0.5px solid var(--border);background:var(--bg);font-family:var(--sans);font-size:14px;color:var(--black);outline:none;border-radius:3px;transition:border-color 0.2s}
+.fi label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+.fi input{padding:12px 14px;border:.5px solid var(--border);background:var(--bg);font-size:14px;color:var(--black);outline:none;border-radius:3px}
 .fi input:focus{border-color:var(--mid)}
-.bfull{width:100%;padding:13px;border:none;background:var(--black);color:var(--white);font-family:var(--sans);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-radius:3px;margin-top:8px}
+.bfull{width:100%;padding:13px;border:none;background:var(--black);color:var(--white);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:3px;margin-top:8px}
 .lerr{color:var(--red);font-size:12px;margin-top:8px;display:none}
 #shell{display:none;min-height:100vh;flex-direction:column}
-.tb{height:56px;background:var(--white);border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:50}
+.tb{height:56px;background:var(--white);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:50}
 .tb-logo{font-family:var(--serif);font-size:16px}
-.pb{padding:8px 24px;border-radius:100px;background:var(--black);color:var(--white);border:none;font-family:var(--sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+.tb-r{display:flex;align-items:center;gap:14px}
+.prev-btn{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);cursor:pointer;background:none;border:.5px solid var(--border);padding:8px 16px;border-radius:100px;text-decoration:none}
+.prev-btn:hover{background:var(--bg)}
+.pb{padding:8px 24px;border-radius:100px;background:var(--black);color:var(--white);border:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
 .pb:hover{background:var(--ink)}.pb:disabled{background:var(--mid);cursor:not-allowed}
-.ob{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);cursor:pointer;background:none;border:none}
+.ob{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);cursor:pointer;background:none;border:none}
 .ob:hover{color:var(--black)}
 .bdy{display:grid;grid-template-columns:220px 1fr;flex:1}
-.sb{background:var(--white);border-right:0.5px solid var(--border);padding:24px 0}
-.slbl{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);padding:0 20px 8px;margin-top:8px}
-.si{display:block;padding:10px 20px;font-size:13px;color:var(--ink);cursor:pointer;border:none;background:none;width:100%;text-align:left;transition:background 0.15s}
+.sb{background:var(--white);border-right:.5px solid var(--border);padding:24px 0}
+.slbl{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);padding:0 20px 8px;margin-top:8px}
+.si{display:block;padding:10px 20px;font-size:13px;color:var(--ink);cursor:pointer;border:none;background:none;width:100%;text-align:left}
 .si:hover{background:var(--bg)}.si.on{background:var(--bg);color:var(--black);font-weight:500}
 .ct{padding:32px 40px;max-width:920px}
 .pn{display:none}.pn.on{display:block}
 .pt{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:6px}
 .ps{font-size:13px;color:var(--mid);margin-bottom:28px}
-.toast{position:fixed;bottom:24px;right:24px;z-index:1000;padding:12px 20px;border-radius:4px;font-size:13px;background:var(--black);color:var(--white);opacity:0;transform:translateY(8px);transition:all 0.3s;pointer-events:none}
+.toast{position:fixed;bottom:24px;right:24px;z-index:1000;padding:12px 20px;border-radius:4px;font-size:13px;background:var(--black);color:var(--white);opacity:0;transform:translateY(8px);transition:all .3s;pointer-events:none;max-width:400px}
 .toast.show{opacity:1;transform:translateY(0)}.toast.ok{background:var(--green)}.toast.er{background:var(--red)}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
 .fgf{grid-column:1/-1}
 .f{display:flex;flex-direction:column;gap:6px}
-.f label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
-.f input,.f textarea,.f select{padding:11px 13px;border:0.5px solid var(--border);border-radius:3px;background:var(--bg);font-family:var(--sans);font-size:14px;color:var(--black);outline:none;transition:border-color 0.2s}
+.f label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+.f input,.f textarea,.f select{padding:11px 13px;border:.5px solid var(--border);border-radius:3px;background:var(--bg);font-size:14px;color:var(--black);outline:none}
 .f input:focus,.f textarea:focus,.f select:focus{border-color:var(--mid)}
 .f textarea{resize:vertical;min-height:90px;line-height:1.6}
 .pl{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.pi{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:14px 16px;background:var(--white);border:0.5px solid var(--border);border-radius:4px}
-.pt2{width:48px;height:36px;background:var(--bg);border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--mid);flex-shrink:0}
+.pi2{display:grid;grid-template-columns:24px 48px 1fr auto;gap:12px;align-items:center;padding:14px 16px;background:var(--white);border:.5px solid var(--border);border-radius:4px;cursor:grab}
+.pi2.dragging{opacity:.4}
+.pi2.hidden-proj{opacity:.55;background:var(--bg)}
+.drag-h{color:var(--border);font-size:16px;cursor:grab;user-select:none;text-align:center}
+.pt2{width:48px;height:36px;background:var(--bg);border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--mid)}
 .pt2 img{width:100%;height:100%;object-fit:cover}
 .pii h3{font-size:14px;font-weight:500;margin-bottom:2px}
 .pii span{font-size:11px;color:var(--mid)}
 .pa{display:flex;gap:6px}
-.ib{width:32px;height:32px;border:0.5px solid var(--border);border-radius:3px;background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--mid);transition:all 0.15s}
-.ib:hover{background:var(--bg);color:var(--black)}.ib.d:hover{background:#fef2f2;color:var(--red);border-color:#fecaca}
-.ab{padding:10px 20px;border:0.5px dashed var(--border);border-radius:4px;background:transparent;font-family:var(--sans);font-size:12px;color:var(--mid);cursor:pointer;width:100%;text-align:center;transition:all 0.2s}
+.ib{width:32px;height:32px;border:.5px solid var(--border);border-radius:3px;background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--mid)}
+.ib:hover{background:var(--bg);color:var(--black)}
+.ib.d:hover{background:#fef2f2;color:var(--red);border-color:#fecaca}
+.ib.on{background:#111;color:#fff;border-color:#111}
+.ab{padding:10px 20px;border:.5px dashed var(--border);border-radius:4px;background:transparent;font-size:12px;color:var(--mid);cursor:pointer;width:100%;text-align:center}
 .ab:hover{border-color:var(--mid);color:var(--black);background:var(--white)}
-.mbg{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;padding:20px}
+.mbg{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;padding:20px}
 .mbg.open{display:flex}
-.mo{background:var(--white);border:0.5px solid var(--border);width:100%;max-width:640px;max-height:92vh;overflow-y:auto;border-radius:4px}
-.mh{padding:20px 24px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--white);z-index:1}
+.mo{background:var(--white);border:.5px solid var(--border);width:100%;max-width:640px;max-height:92vh;overflow-y:auto;border-radius:4px}
+.mh{padding:20px 24px;border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--white);z-index:1}
 .mh h2{font-family:var(--serif);font-size:20px;font-weight:400}
 .mx{width:32px;height:32px;border:none;background:none;font-size:18px;color:var(--mid);cursor:pointer}
 .mx:hover{color:var(--black)}
 .mb{padding:24px}
-.mf{padding:16px 24px;border-top:0.5px solid var(--border);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:var(--white)}
-.bs{padding:10px 20px;border:0.5px solid var(--border);border-radius:100px;background:transparent;font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer}
+.mf{padding:16px 24px;border-top:.5px solid var(--border);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:var(--white)}
+.bs{padding:10px 20px;border:.5px solid var(--border);border-radius:100px;background:transparent;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .bs:hover{background:var(--bg)}
-.bp{padding:10px 24px;border:none;border-radius:100px;background:var(--black);color:var(--white);font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer}
+.bp{padding:10px 24px;border:none;border-radius:100px;background:var(--black);color:var(--white);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .bp:hover{background:var(--ink)}
 .uz{border:1px dashed var(--border);border-radius:4px;padding:24px;text-align:center;cursor:pointer;background:var(--bg);display:block}
 .uz:hover{border-color:var(--mid);background:var(--white)}
@@ -74,17 +82,19 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);min-height:
 .gg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
 .gi{aspect-ratio:1;border-radius:3px;overflow:hidden;position:relative;background:var(--bg)}
 .gi img{width:100%;height:100%;object-fit:cover}
-.gd{position:absolute;top:4px;right:4px;width:22px;height:22px;background:rgba(220,38,38,0.85);border-radius:2px;border:none;color:#fff;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.ga{aspect-ratio:1;border:1px dashed var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--mid);cursor:pointer;transition:all 0.2s;background:var(--bg)}
+.gd{position:absolute;top:4px;right:4px;width:22px;height:22px;background:rgba(220,38,38,.85);border-radius:2px;border:none;color:#fff;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ga{aspect-ratio:1;border:1px dashed var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--mid);cursor:pointer;background:var(--bg)}
 .ga:hover{border-color:var(--mid);background:var(--white)}
-.hp{width:100%;height:180px;background:var(--bg);border:0.5px solid var(--border);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:13px;color:var(--mid)}
+.hp{width:100%;height:180px;background:var(--bg);border:.5px solid var(--border);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:13px;color:var(--mid)}
 .hp img{width:100%;height:100%;object-fit:cover}
-.sov{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:999;display:none;align-items:center;justify-content:center}
+.hp.portrait{height:240px}
+.sov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;display:none;align-items:center;justify-content:center}
 .sov.show{display:flex}
 .sbox{background:var(--white);padding:32px 40px;border-radius:4px;text-align:center}
-.sp{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--black);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 12px}
+.sp{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--black);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 12px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.divider{height:0.5px;background:var(--border);margin:24px 0}
+.divider{height:.5px;background:var(--border);margin:24px 0}
+.note{font-size:12px;color:var(--mid);background:var(--bg);border:.5px solid var(--border);border-radius:4px;padding:12px 14px;margin-bottom:16px;line-height:1.5}
 @media(max-width:700px){.bdy{grid-template-columns:1fr}.sb{display:none}.ct{padding:20px 16px}}
 </style>
 </head>
@@ -93,161 +103,160 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);min-height:
 <div class="sov" id="sov"><div class="sbox"><div class="sp"></div>Pubblicazione in corso...<br><small style="color:var(--mid);margin-top:4px;display:block">Aggiorno il sito</small></div></div>
 
 <div id="login">
-  <div class="lbox">
-    <h1>Admin Panel</h1>
-    <p>Paolo Scotto di Vettimo</p>
-    <div class="fi"><label>Password</label><input type="password" id="pw" placeholder="Password" onkeydown="if(event.key==='Enter')login()"></div>
-    <button class="bfull" onclick="login()">Accedi</button>
-    <div class="lerr" id="le">Password errata</div>
-  </div>
+<div class="lbox">
+<h1>Admin Panel</h1>
+<p>Paolo Scotto di Vettimo</p>
+<div class="fi"><label>Password</label><input type="password" id="pw" placeholder="Password" onkeydown="if(event.key==='Enter')login()"></div>
+<button class="bfull" onclick="login()">Accedi</button>
+<div class="lerr" id="le">Password errata</div>
+</div>
 </div>
 
 <div id="shell">
-  <div class="tb">
-    <span class="tb-logo">Paolo Scotto — Admin</span>
-    <div style="display:flex;align-items:center;gap:14px">
-      <button class="pb" id="pb" onclick="publish()">Pubblica modifiche</button>
-      <button class="ob" onclick="logout()">Esci</button>
-    </div>
-  </div>
-  <div class="bdy">
-    <nav class="sb">
-      <div class="slbl">Contenuti</div>
-      <button class="si on" onclick="sp('editorial',this)">Editorial & Portraits</button>
-      <button class="si" onclick="sp('reportage',this)">Reportage</button>
-      <button class="si" onclick="sp('commercial',this)">Commercial</button>
-      <div class="slbl">Sito</div>
-      <button class="si" onclick="sp('landing',this)">Landing page</button>
-      <button class="si" onclick="sp('about',this)">About & Bio</button>
-      <button class="si" onclick="sp('awards',this)">Premi & Education</button>
-      <button class="si" onclick="sp('contacts',this)">Contatti & Footer</button>
-    </nav>
-    <main class="ct">
+<div class="tb">
+<span class="tb-logo">Paolo Scotto - Admin</span>
+<div class="tb-r">
+<a class="prev-btn" href="https://pscottodv-sudo.github.io/portfolio/" target="_blank">Anteprima sito &#8599;</a>
+<button class="pb" id="pb" onclick="publish()">Pubblica modifiche</button>
+<button class="ob" onclick="logout()">Esci</button>
+</div>
+</div>
+<div class="bdy">
+<nav class="sb">
+<div class="slbl">Contenuti</div>
+<button class="si on" onclick="sp('editorial',this)">Editorial &amp; Portraits</button>
+<button class="si" onclick="sp('reportage',this)">Reportage</button>
+<button class="si" onclick="sp('commercial',this)">Commercial</button>
+<div class="slbl">Sito</div>
+<button class="si" onclick="sp('landing',this)">Landing page</button>
+<button class="si" onclick="sp('about',this)">About &amp; Bio</button>
+<button class="si" onclick="sp('awards',this)">Premi &amp; Education</button>
+<button class="si" onclick="sp('contacts',this)">Contatti &amp; Footer</button>
+</nav>
+<main class="ct">
 
-      <div class="pn on" id="pn-editorial">
-        <div class="pt">Editorial & Portraits</div>
-        <div class="ps">Aggiungi, modifica o elimina i progetti editoriali. Il progetto ⭐ appare in evidenza.</div>
-        <div class="pl" id="ed-l"></div>
-        <button class="ab" onclick="om('editorial')">+ Aggiungi progetto editoriale</button>
-      </div>
-
-      <div class="pn" id="pn-reportage">
-        <div class="pt">Reportage</div>
-        <div class="ps">Aggiungi, modifica o elimina i reportage.</div>
-        <div class="pl" id="re-l"></div>
-        <button class="ab" onclick="om('reportage')">+ Aggiungi reportage</button>
-      </div>
-
-      <div class="pn" id="pn-commercial">
-        <div class="pt">Commercial</div>
-        <div class="ps">Modifica le descrizioni dei quattro servizi.</div>
-        <div class="fg">
-          <div class="f fgf"><label>Brand & Product</label><textarea id="cb" rows="3"></textarea></div>
-          <div class="f fgf"><label>Portrait & Corporate</label><textarea id="cp" rows="3"></textarea></div>
-          <div class="f fgf"><label>Editorial & Fashion</label><textarea id="ce" rows="3"></textarea></div>
-          <div class="f fgf"><label>Event & Reportage</label><textarea id="cv" rows="3"></textarea></div>
-        </div>
-      </div>
-
-      <div class="pn" id="pn-landing">
-        <div class="pt">Landing page</div>
-        <div class="ps">La foto hero e i testi della prima schermata.</div>
-        <div class="hp" id="hp"><span>Nessuna foto hero</span></div>
-        <label class="uz" style="margin-bottom:20px">
-          <input type="file" accept="image/*" onchange="upHero(this)">
-          <p><strong>Clicca per caricare o cambiare la foto hero</strong><br>JPG consigliato · minimo 2000px</p>
-        </label>
-        <div class="fg">
-          <div class="f"><label>Tagline</label><input type="text" id="ltag"></div>
-          <div class="f"><label>Testo CTA (bottone)</label><input type="text" id="lcta"></div>
-        </div>
-      </div>
-
-      <div class="pn" id="pn-about">
-        <div class="pt">About & Bio</div>
-        <div class="ps">La tua presentazione nella sezione About.</div>
-        <div class="fg">
-          <div class="f fgf"><label>Bio — paragrafo 1</label><textarea id="ab1" rows="3"></textarea></div>
-          <div class="f fgf"><label>Bio — paragrafo 2</label><textarea id="ab2" rows="3"></textarea></div>
-          <div class="f fgf"><label>Bio — paragrafo 3</label><textarea id="ab3" rows="3"></textarea></div>
-          <div class="f"><label>Sottotitolo (es. Photographer · Naples · b. 2002)</label><input type="text" id="asub"></div>
-        </div>
-      </div>
-
-      <div class="pn" id="pn-awards">
-        <div class="pt">Premi & Education</div>
-        <div class="ps">Aggiungi, modifica o rimuovi riconoscimenti e percorso formativo.</div>
-        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Riconoscimenti</div>
-        <div id="aw-l" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"></div>
-        <button class="ab" onclick="addAward()" style="margin-bottom:24px">+ Aggiungi riconoscimento</button>
-        <div class="divider"></div>
-        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:12px;margin-top:16px">Education</div>
-        <div id="ed-edu" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"></div>
-        <button class="ab" onclick="addEdu()">+ Aggiungi titolo di studio</button>
-      </div>
-
-      <div class="pn" id="pn-contacts">
-        <div class="pt">Contatti & Footer</div>
-        <div class="ps">Email, social e testi del footer.</div>
-        <div class="fg">
-          <div class="f"><label>Email</label><input type="email" id="aem"></div>
-          <div class="f"><label>Instagram (es. @paoloscottodv)</label><input type="text" id="aig"></div>
-          <div class="f"><label>TikTok (es. @paoloscotto)</label><input type="text" id="att"></div>
-          <div class="f"><label>Sito web (es. paoloscotto.it)</label><input type="text" id="aweb"></div>
-        </div>
-        <div class="divider"></div>
-        <div style="font-size:13px;font-weight:500;margin-bottom:16px">Footer</div>
-        <div class="fg">
-          <div class="f"><label>Copyright (es. © 2026 Paolo Scotto di Vettimo)</label><input type="text" id="fcopy"></div>
-          <div class="f"><label>Dominio nel footer (es. paoloscotto.it)</label><input type="text" id="fdom"></div>
-        </div>
-      </div>
-
-    </main>
-  </div>
+<div class="pn on" id="pn-editorial">
+<div class="pt">Editorial &amp; Portraits</div>
+<div class="ps">Trascina per riordinare. La stella mette in evidenza, l'occhio mostra/nasconde.</div>
+<div class="pl" id="ed-l"></div>
+<button class="ab" onclick="om('editorial')">+ Aggiungi progetto editoriale</button>
 </div>
 
-<!-- MODAL PROGETTO -->
+<div class="pn" id="pn-reportage">
+<div class="pt">Reportage</div>
+<div class="ps">Trascina per riordinare. La stella mette in evidenza, l'occhio mostra/nasconde.</div>
+<div class="pl" id="re-l"></div>
+<button class="ab" onclick="om('reportage')">+ Aggiungi reportage</button>
+</div>
+
+<div class="pn" id="pn-commercial">
+<div class="pt">Commercial</div>
+<div class="ps">Progetti commerciali con gallerie. Trascina per riordinare.</div>
+<div class="f fgf" style="margin-bottom:20px"><label>Testo introduttivo della sezione</label><textarea id="comm-intro" rows="3"></textarea></div>
+<div class="pl" id="co-l"></div>
+<button class="ab" onclick="om('commercial')">+ Aggiungi progetto commerciale</button>
+</div>
+
+<div class="pn" id="pn-landing">
+<div class="pt">Landing page</div>
+<div class="ps">La foto hero e i testi della prima schermata.</div>
+<div class="hp" id="hp"><span>Nessuna foto hero</span></div>
+<label class="uz" style="margin-bottom:20px">
+<input type="file" accept="image/*" onchange="upHero(this)">
+<p><strong>Clicca per caricare o cambiare la foto hero</strong><br>JPG consigliato, minimo 2000px</p>
+</label>
+<div class="fg">
+<div class="f"><label>Tagline</label><input type="text" id="ltag"></div>
+<div class="f"><label>Testo CTA (bottone)</label><input type="text" id="lcta"></div>
+</div>
+</div>
+
+<div class="pn" id="pn-about">
+<div class="pt">About &amp; Bio</div>
+<div class="ps">La tua presentazione e foto ritratto.</div>
+<div class="hp portrait" id="ap"><span>Nessuna foto ritratto</span></div>
+<label class="uz" style="margin-bottom:20px">
+<input type="file" accept="image/*" onchange="upAbout(this)">
+<p><strong>Clicca per caricare la foto ritratto</strong><br>Proporzione verticale 3:4 consigliata</p>
+</label>
+<div class="fg">
+<div class="f fgf"><label>Bio - paragrafo 1</label><textarea id="ab1" rows="3"></textarea></div>
+<div class="f fgf"><label>Bio - paragrafo 2</label><textarea id="ab2" rows="3"></textarea></div>
+<div class="f fgf"><label>Bio - paragrafo 3</label><textarea id="ab3" rows="3"></textarea></div>
+<div class="f"><label>Sottotitolo</label><input type="text" id="asub"></div>
+</div>
+</div>
+
+<div class="pn" id="pn-awards">
+<div class="pt">Premi &amp; Education</div>
+<div class="ps">Riconoscimenti e percorso formativo.</div>
+<div class="slbl" style="padding:0 0 12px">Riconoscimenti</div>
+<div id="aw-l" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"></div>
+<button class="ab" onclick="addAward()" style="margin-bottom:24px">+ Aggiungi riconoscimento</button>
+<div class="divider"></div>
+<div class="slbl" style="padding:0 0 12px;margin-top:16px">Education</div>
+<div id="ed-edu" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"></div>
+<button class="ab" onclick="addEdu()">+ Aggiungi titolo di studio</button>
+</div>
+
+<div class="pn" id="pn-contacts">
+<div class="pt">Contatti &amp; Footer</div>
+<div class="ps">Email, social e footer.</div>
+<div class="fg">
+<div class="f"><label>Email</label><input type="email" id="aem"></div>
+<div class="f"><label>Instagram</label><input type="text" id="aig"></div>
+<div class="f"><label>TikTok</label><input type="text" id="att"></div>
+<div class="f"><label>Sito web</label><input type="text" id="aweb"></div>
+</div>
+<div class="divider"></div>
+<div style="font-size:13px;font-weight:500;margin-bottom:16px">Footer</div>
+<div class="fg">
+<div class="f"><label>Copyright</label><input type="text" id="fcopy"></div>
+<div class="f"><label>Dominio footer</label><input type="text" id="fdom"></div>
+</div>
+</div>
+
+</main>
+</div>
+</div>
+
 <div class="mbg" id="modal">
-  <div class="mo">
-    <div class="mh"><h2 id="mt">Nuovo progetto</h2><button class="mx" onclick="cm()">✕</button></div>
-    <div class="mb">
-      <div class="fg">
-        <div class="f"><label>Titolo</label><input type="text" id="mn"></div>
-        <div class="f"><label>Anno</label><input type="text" id="my" value="2026"></div>
-        <div class="f fgf"><label>Tag / sottotitolo</label><input type="text" id="mtg"></div>
-        <div class="f fgf"><label>Descrizione</label><textarea id="md" rows="3"></textarea></div>
-        <div class="f fgf">
-          <label>In evidenza (featured — appare grande in cima alla sezione)</label>
-          <select id="mfe"><option value="false">No</option><option value="true">Sì — in evidenza</option></select>
-        </div>
-        <div class="f fgf">
-          <label>Foto copertina</label>
-          <label class="uz">
-            <input type="file" accept="image/*" id="mci" onchange="pCov(this)">
-            <p id="mcl"><strong>Clicca per caricare la cover</strong><br>JPG · proporzione 3:2</p>
-          </label>
-          <img id="mcp" style="display:none;width:100%;height:150px;object-fit:cover;border-radius:3px;margin-top:8px">
-        </div>
-        <div class="f fgf">
-          <label>Galleria foto (appaiono quando si apre il progetto)</label>
-          <label class="uz">
-            <input type="file" accept="image/*" multiple id="mgi" onchange="aGal(this)">
-            <p><strong>Carica più foto insieme</strong></p>
-          </label>
-          <div class="gg" id="mgg"></div>
-        </div>
-      </div>
-    </div>
-    <div class="mf">
-      <button class="bs" onclick="cm()">Annulla</button>
-      <button class="bp" onclick="sp2()">Salva progetto</button>
-    </div>
-  </div>
+<div class="mo">
+<div class="mh"><h2 id="mt">Nuovo progetto</h2><button class="mx" onclick="cm()">X</button></div>
+<div class="mb">
+<div class="fg">
+<div class="f"><label>Titolo</label><input type="text" id="mn"></div>
+<div class="f"><label>Anno</label><input type="text" id="my" value="2026"></div>
+<div class="f fgf"><label>Tag / sottotitolo</label><input type="text" id="mtg"></div>
+<div class="f fgf"><label>Descrizione</label><textarea id="md" rows="3"></textarea></div>
+<div class="f fgf">
+<label>In evidenza (featured)</label>
+<select id="mfe"><option value="false">No</option><option value="true">Si - in evidenza</option></select>
+</div>
+<div class="f fgf">
+<label>Foto copertina</label>
+<label class="uz"><input type="file" accept="image/*" id="mci" onchange="pCov(this)"><p id="mcl"><strong>Clicca per caricare la cover</strong><br>JPG, 3:2</p></label>
+<img id="mcp" style="display:none;width:100%;height:150px;object-fit:cover;border-radius:3px;margin-top:8px">
+</div>
+<div class="f fgf">
+<label>Galleria foto</label>
+<label class="uz"><input type="file" accept="image/*" multiple id="mgi" onchange="aGal(this)"><p><strong>Carica piu foto insieme</strong></p></label>
+<div class="gg" id="mgg"></div>
+</div>
+<div class="divider fgf"></div>
+<div class="f fgf"><label>SEO - Titolo pagina (per Google)</label><input type="text" id="mseot" placeholder="Es. Aethereal - Fashion editorial di Paolo Scotto"></div>
+<div class="f fgf"><label>SEO - Descrizione (per Google)</label><textarea id="mseod" rows="2" placeholder="Breve descrizione che appare nei risultati di ricerca"></textarea></div>
+</div>
+</div>
+<div class="mf">
+<button class="bs" onclick="cm()">Annulla</button>
+<button class="bp" onclick="saveProj()">Salva progetto</button>
+</div>
+</div>
 </div>
 
 <script>
-const C = {
+var C = {
   pw: 'Paolo2026!',
   tok: ['ghp_NkANvvMl8cd6','whL5Mkq9QVnKJa6l901h6JnG'].join(''),
   own: 'pscottodv-sudo',
@@ -256,11 +265,12 @@ const C = {
   site: 'https://pscottodv-sudo.github.io/portfolio'
 };
 
-let D = null, cs = 'editorial', ei = -1, cf = null, gf = [];
+var D = null, cs = 'editorial', ei = -1, cf = null, gf = [];
+var dragIdx = -1, dragSec = '';
 
 function login() {
   if (document.getElementById('pw').value === C.pw) {
-    sessionStorage.setItem('ok','1');
+    sessionStorage.setItem('ok', '1');
     document.getElementById('login').style.display = 'none';
     document.getElementById('shell').style.display = 'flex';
     load();
@@ -270,273 +280,414 @@ function login() {
   }
 }
 function logout() { sessionStorage.removeItem('ok'); location.reload(); }
-if (sessionStorage.getItem('ok')==='1') {
-  document.getElementById('login').style.display='none';
-  document.getElementById('shell').style.display='flex';
+if (sessionStorage.getItem('ok') === '1') {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('shell').style.display = 'flex';
   load();
 }
 
-async function load() {
-  try {
-    toast('Caricamento dati da GitHub...','');
-    const r = await fetch('https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/data.json',
-      {headers:{Authorization:'Bearer '+C.tok}});
-    const f = await r.json();
-    D = JSON.parse(atob(f.content.replace(/\n/g,'')));
-    // Assicura strutture nuove
-    if (!D.footer) D.footer = {copy:'© 2026 Paolo Scotto di Vettimo', domain:'paoloscotto.it'};
-    if (!D.about.education) D.about.education = [{title:'Master in Fashion Photography — IED Milan',year:'2026'}];
-    if (!D.about.subtitle) D.about.subtitle = 'Photographer · Naples · b. 2002';
-    renderAll();
-    toast('Dati caricati','ok');
-  } catch(e) { toast('Errore caricamento: '+e.message,'er'); }
+function load() {
+  toast('Caricamento dati...', '');
+  fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json?t=' + Date.now(),
+    { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
+    .then(function(r) { return r.json(); })
+    .then(function(f) {
+      D = JSON.parse(decodeURIComponent(escape(atob(f.content.replace(/\n/g, '')))));
+      // Garantisce strutture
+      if (!Array.isArray(D.commercial)) D.commercial = [];
+      if (!D.commercialIntro) D.commercialIntro = '';
+      if (!D.footer) D.footer = { copy: '\u00a9 2026 Paolo Scotto di Vettimo', domain: 'paoloscotto.it' };
+      if (!D.about.education) D.about.education = [];
+      if (!D.about.subtitle) D.about.subtitle = 'Photographer \u00b7 Naples \u00b7 b. 2002';
+      if (!D.about.photo) D.about.photo = '';
+      ['editorial', 'reportage', 'commercial'].forEach(function(sec) {
+        (D[sec] || []).forEach(function(p) {
+          if (p.hidden === undefined) p.hidden = false;
+          if (p.featured === undefined) p.featured = false;
+          if (p.seoTitle === undefined) p.seoTitle = '';
+          if (p.seoDesc === undefined) p.seoDesc = '';
+          if (!p.imgs) p.imgs = [];
+        });
+      });
+      renderAll();
+      toast('Dati caricati', 'ok');
+    })
+    .catch(function(e) { toast('Errore: ' + e.message, 'er'); });
 }
 
 function renderAll() {
-  renderList('editorial'); renderList('reportage');
-  document.getElementById('cb').value = D.commercial.brand;
-  document.getElementById('cp').value = D.commercial.portrait;
-  document.getElementById('ce').value = D.commercial.editorial;
-  document.getElementById('cv').value = D.commercial.event;
-  document.getElementById('ltag').value = D.landing.tagline;
-  document.getElementById('lcta').value = D.landing.cta;
-  if (D.landing.hero) document.getElementById('hp').innerHTML = '<img src="'+D.landing.hero+'">';
-  document.getElementById('ab1').value = D.about.bio1||'';
-  document.getElementById('ab2').value = D.about.bio2||'';
-  document.getElementById('ab3').value = D.about.bio3||'';
-  document.getElementById('asub').value = D.about.subtitle||'';
-  document.getElementById('aem').value = D.about.email||'';
-  document.getElementById('aig').value = D.about.instagram||'';
-  document.getElementById('att').value = D.about.tiktok||'';
-  document.getElementById('aweb').value = D.about.website||D.footer.domain||'';
-  document.getElementById('fcopy').value = D.footer.copy||'';
-  document.getElementById('fdom').value = D.footer.domain||'';
-  renderAwards(); renderEdu();
+  renderList('editorial', 'ed-l');
+  renderList('reportage', 're-l');
+  renderList('commercial', 'co-l');
+  document.getElementById('comm-intro').value = D.commercialIntro || '';
+  document.getElementById('ltag').value = D.landing.tagline || '';
+  document.getElementById('lcta').value = D.landing.cta || '';
+  if (D.landing.hero) document.getElementById('hp').innerHTML = '<img src="' + D.landing.hero + '">';
+  if (D.about.photo) document.getElementById('ap').innerHTML = '<img src="' + D.about.photo + '">';
+  document.getElementById('ab1').value = D.about.bio1 || '';
+  document.getElementById('ab2').value = D.about.bio2 || '';
+  document.getElementById('ab3').value = D.about.bio3 || '';
+  document.getElementById('asub').value = D.about.subtitle || '';
+  document.getElementById('aem').value = D.about.email || '';
+  document.getElementById('aig').value = D.about.instagram || '';
+  document.getElementById('att').value = D.about.tiktok || '';
+  document.getElementById('aweb').value = D.about.website || '';
+  document.getElementById('fcopy').value = D.footer.copy || '';
+  document.getElementById('fdom').value = D.footer.domain || '';
+  renderAwards();
+  renderEdu();
 }
 
-function renderList(s) {
-  document.getElementById(s==='editorial'?'ed-l':'re-l').innerHTML = D[s].map((p,i) =>
-    '<div class="pi"><div class="pt2">'+(p.cover?'<img src="'+p.cover+'">':'📷')+'</div>'+
-    '<div class="pii"><h3>'+p.name+(p.featured?' ⭐':'')+'</h3><span>'+p.year+' · '+p.tag+'</span></div>'+
-    '<div class="pa"><button class="ib" onclick="om(\''+s+'\','+i+')">✎</button>'+
-    '<button class="ib d" onclick="dp(\''+s+'\','+i+')">✕</button></div></div>'
-  ).join('');
+function renderList(sec, elId) {
+  var cont = document.getElementById(elId);
+  cont.innerHTML = '';
+  D[sec].forEach(function(p, i) {
+    var row = document.createElement('div');
+    row.className = 'pi2' + (p.hidden ? ' hidden-proj' : '');
+    row.draggable = true;
+    row.setAttribute('data-idx', i);
+    row.setAttribute('data-sec', sec);
+
+    var handle = document.createElement('div');
+    handle.className = 'drag-h'; handle.textContent = '\u2630';
+    row.appendChild(handle);
+
+    var thumb = document.createElement('div');
+    thumb.className = 'pt2';
+    thumb.innerHTML = p.cover ? '<img src="' + p.cover + '">' : '\ud83d\udcf7';
+    row.appendChild(thumb);
+
+    var info = document.createElement('div');
+    info.className = 'pii';
+    info.innerHTML = '<h3>' + p.name + (p.featured ? ' \u2b50' : '') + '</h3><span>' + p.year + ' \u00b7 ' + p.tag + '</span>';
+    row.appendChild(info);
+
+    var acts = document.createElement('div');
+    acts.className = 'pa';
+    // Toggle visibilita
+    var visBtn = document.createElement('button');
+    visBtn.className = 'ib' + (p.hidden ? '' : ' on');
+    visBtn.title = p.hidden ? 'Nascosto - clicca per mostrare' : 'Visibile - clicca per nascondere';
+    visBtn.textContent = p.hidden ? '\u2715' : '\u25cf';
+    visBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      D[sec][i].hidden = !D[sec][i].hidden;
+      renderList(sec, elId);
+      toast(D[sec][i].hidden ? 'Progetto nascosto' : 'Progetto visibile', 'ok');
+    });
+    acts.appendChild(visBtn);
+    // Modifica
+    var editBtn = document.createElement('button');
+    editBtn.className = 'ib'; editBtn.textContent = '\u270e';
+    editBtn.addEventListener('click', function(e) { e.stopPropagation(); om(sec, i); });
+    acts.appendChild(editBtn);
+    // Elimina
+    var delBtn = document.createElement('button');
+    delBtn.className = 'ib d'; delBtn.textContent = '\u2715';
+    delBtn.addEventListener('click', function(e) { e.stopPropagation(); dp(sec, i); });
+    acts.appendChild(delBtn);
+
+    row.appendChild(acts);
+
+    // Drag events
+    row.addEventListener('dragstart', function() { dragIdx = i; dragSec = sec; row.classList.add('dragging'); });
+    row.addEventListener('dragend', function() { row.classList.remove('dragging'); });
+    row.addEventListener('dragover', function(e) { e.preventDefault(); });
+    row.addEventListener('drop', function(e) {
+      e.preventDefault();
+      if (dragSec !== sec || dragIdx === i || dragIdx === -1) return;
+      var moved = D[sec].splice(dragIdx, 1)[0];
+      D[sec].splice(i, 0, moved);
+      dragIdx = -1;
+      renderList(sec, elId);
+      toast('Ordine aggiornato - ricorda di pubblicare', 'ok');
+    });
+
+    cont.appendChild(row);
+  });
 }
 
 function renderAwards() {
-  document.getElementById('aw-l').innerHTML = D.about.awards.map((a,i) =>
-    '<div style="display:grid;grid-template-columns:1fr 90px auto;gap:8px;align-items:center">'+
-    '<input value="'+a.title+'" oninput="D.about.awards['+i+'].title=this.value" style="padding:9px 12px;border:0.5px solid var(--border);border-radius:3px;font-size:13px;background:var(--bg);outline:none">'+
-    '<input value="'+a.year+'" oninput="D.about.awards['+i+'].year=this.value" style="padding:9px 12px;border:0.5px solid var(--border);border-radius:3px;font-size:13px;background:var(--bg);outline:none">'+
-    '<button class="ib d" onclick="D.about.awards.splice('+i+',1);renderAwards()">✕</button></div>'
-  ).join('');
+  var c = document.getElementById('aw-l');
+  c.innerHTML = '';
+  D.about.awards.forEach(function(a, i) {
+    var row = document.createElement('div');
+    row.style.cssText = 'display:grid;grid-template-columns:1fr 90px auto;gap:8px;align-items:center';
+    var t = document.createElement('input'); t.value = a.title;
+    t.style.cssText = 'padding:9px 12px;border:.5px solid var(--border);border-radius:3px;font-size:13px;background:var(--bg);outline:none';
+    t.addEventListener('input', function() { D.about.awards[i].title = t.value; });
+    var y = document.createElement('input'); y.value = a.year;
+    y.style.cssText = t.style.cssText;
+    y.addEventListener('input', function() { D.about.awards[i].year = y.value; });
+    var d = document.createElement('button'); d.className = 'ib d'; d.textContent = '\u2715';
+    d.addEventListener('click', function() { D.about.awards.splice(i, 1); renderAwards(); });
+    row.appendChild(t); row.appendChild(y); row.appendChild(d);
+    c.appendChild(row);
+  });
 }
 
 function renderEdu() {
-  document.getElementById('ed-edu').innerHTML = D.about.education.map((e,i) =>
-    '<div style="display:grid;grid-template-columns:1fr 90px auto;gap:8px;align-items:center">'+
-    '<input value="'+e.title+'" oninput="D.about.education['+i+'].title=this.value" style="padding:9px 12px;border:0.5px solid var(--border);border-radius:3px;font-size:13px;background:var(--bg);outline:none">'+
-    '<input value="'+e.year+'" oninput="D.about.education['+i+'].year=this.value" style="padding:9px 12px;border:0.5px solid var(--border);border-radius:3px;font-size:13px;background:var(--bg);outline:none">'+
-    '<button class="ib d" onclick="D.about.education.splice('+i+',1);renderEdu()">✕</button></div>'
-  ).join('');
+  var c = document.getElementById('ed-edu');
+  c.innerHTML = '';
+  D.about.education.forEach(function(e, i) {
+    var row = document.createElement('div');
+    row.style.cssText = 'display:grid;grid-template-columns:1fr 90px auto;gap:8px;align-items:center';
+    var t = document.createElement('input'); t.value = e.title;
+    t.style.cssText = 'padding:9px 12px;border:.5px solid var(--border);border-radius:3px;font-size:13px;background:var(--bg);outline:none';
+    t.addEventListener('input', function() { D.about.education[i].title = t.value; });
+    var y = document.createElement('input'); y.value = e.year;
+    y.style.cssText = t.style.cssText;
+    y.addEventListener('input', function() { D.about.education[i].year = y.value; });
+    var d = document.createElement('button'); d.className = 'ib d'; d.textContent = '\u2715';
+    d.addEventListener('click', function() { D.about.education.splice(i, 1); renderEdu(); });
+    row.appendChild(t); row.appendChild(y); row.appendChild(d);
+    c.appendChild(row);
+  });
 }
 
-function addAward() { D.about.awards.push({title:'',year:'2026'}); renderAwards(); }
-function addEdu()   { D.about.education.push({title:'',year:'2026'}); renderEdu(); }
+function addAward() { D.about.awards.push({ title: '', year: '2026' }); renderAwards(); }
+function addEdu() { D.about.education.push({ title: '', year: '2026' }); renderEdu(); }
 
 function sp(id, btn) {
-  document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.si').forEach(b=>b.classList.remove('on'));
-  document.getElementById('pn-'+id).classList.add('on');
-  btn.classList.add('on'); cs = id;
+  var panels = document.querySelectorAll('.pn');
+  for (var i = 0; i < panels.length; i++) panels[i].classList.remove('on');
+  var items = document.querySelectorAll('.si');
+  for (var j = 0; j < items.length; j++) items[j].classList.remove('on');
+  document.getElementById('pn-' + id).classList.add('on');
+  btn.classList.add('on');
+  cs = id;
 }
 
 function om(sec, idx) {
-  if (idx===undefined) idx=-1;
-  cs=sec; ei=idx; cf=null; gf=[];
-  const p = idx>=0 ? D[sec][idx] : {};
-  document.getElementById('mt').textContent = idx>=0 ? 'Modifica — '+p.name : 'Nuovo progetto';
-  document.getElementById('mn').value = p.name||'';
-  document.getElementById('my').value = p.year||'2026';
-  document.getElementById('mtg').value = p.tag||'';
-  document.getElementById('md').value = p.desc||'';
-  document.getElementById('mfe').value = p.featured?'true':'false';
-  const prev = document.getElementById('mcp');
-  if (p.cover) { prev.src=p.cover; prev.style.display='block'; } else { prev.style.display='none'; }
-  document.getElementById('mcl').innerHTML = p.cover ? '<strong>Cover caricata</strong><br>Clicca per cambiarla' : '<strong>Clicca per caricare la cover</strong><br>JPG · 3:2';
-  const gg = document.getElementById('mgg');
-  gg.innerHTML = (p.imgs||[]).map((src,i) =>
-    '<div class="gi"><img src="'+src+'"><button class="gd" onclick="rg('+i+')">✕</button></div>'
-  ).join('')+'<div class="ga" onclick="document.getElementById(\'mgi\').click()">+</div>';
+  if (idx === undefined) idx = -1;
+  cs = sec; ei = idx; cf = null; gf = [];
+  var p = idx >= 0 ? D[sec][idx] : {};
+  document.getElementById('mt').textContent = idx >= 0 ? 'Modifica - ' + p.name : 'Nuovo progetto';
+  document.getElementById('mn').value = p.name || '';
+  document.getElementById('my').value = p.year || '2026';
+  document.getElementById('mtg').value = p.tag || '';
+  document.getElementById('md').value = p.desc || '';
+  document.getElementById('mfe').value = p.featured ? 'true' : 'false';
+  document.getElementById('mseot').value = p.seoTitle || '';
+  document.getElementById('mseod').value = p.seoDesc || '';
+  var prev = document.getElementById('mcp');
+  if (p.cover) { prev.src = p.cover; prev.style.display = 'block'; } else { prev.style.display = 'none'; }
+  document.getElementById('mcl').innerHTML = p.cover ? '<strong>Cover caricata</strong><br>Clicca per cambiarla' : '<strong>Clicca per caricare la cover</strong><br>JPG, 3:2';
+  var gg = document.getElementById('mgg');
+  gg.innerHTML = '';
+  (p.imgs || []).forEach(function(src, gi) {
+    var item = document.createElement('div'); item.className = 'gi';
+    item.innerHTML = '<img src="' + src + '">';
+    var del = document.createElement('button'); del.className = 'gd'; del.textContent = '\u2715';
+    del.addEventListener('click', function() { D[sec][idx].imgs.splice(gi, 1); om(sec, idx); });
+    item.appendChild(del);
+    gg.appendChild(item);
+  });
+  var add = document.createElement('div'); add.className = 'ga'; add.textContent = '+';
+  add.addEventListener('click', function() { document.getElementById('mgi').click(); });
+  gg.appendChild(add);
   document.getElementById('modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
 
-function cm() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
+function cm() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
 
 function pCov(input) {
   cf = input.files[0]; if (!cf) return;
-  const r = new FileReader();
-  r.onload = e => {
-    const p=document.getElementById('mcp'); p.src=e.target.result; p.style.display='block';
-    document.getElementById('mcl').innerHTML='<strong>'+cf.name+'</strong>';
+  var r = new FileReader();
+  r.onload = function(e) {
+    var p = document.getElementById('mcp'); p.src = e.target.result; p.style.display = 'block';
+    document.getElementById('mcl').innerHTML = '<strong>' + cf.name + '</strong>';
   };
   r.readAsDataURL(cf);
 }
 
 function aGal(input) {
-  Array.from(input.files).forEach(file => {
+  var files = Array.prototype.slice.call(input.files);
+  files.forEach(function(file) {
     gf.push(file);
-    const r=new FileReader();
-    r.onload = e => {
-      const gg=document.getElementById('mgg'), add=gg.querySelector('.ga');
-      const d=document.createElement('div'); d.className='gi';
-      d.innerHTML='<img src="'+e.target.result+'"><button class="gd" onclick="this.parentElement.remove()">✕</button>';
-      gg.insertBefore(d,add);
+    var r = new FileReader();
+    r.onload = function(e) {
+      var gg = document.getElementById('mgg');
+      var add = gg.querySelector('.ga');
+      var d = document.createElement('div'); d.className = 'gi';
+      d.innerHTML = '<img src="' + e.target.result + '">';
+      var del = document.createElement('button'); del.className = 'gd'; del.textContent = '\u2715';
+      del.addEventListener('click', function() { d.remove(); });
+      d.appendChild(del);
+      gg.insertBefore(d, add);
     };
     r.readAsDataURL(file);
   });
 }
 
-function rg(i) { if (ei>=0) { D[cs][ei].imgs.splice(i,1); om(cs,ei); } }
-
-async function sp2() {
-  const name = document.getElementById('mn').value.trim();
-  if (!name) { toast('Inserisci il titolo','er'); return; }
-  
-  const base = ei>=0 ? {...D[cs][ei]} : {imgs:[],sw:'s1'};
-  const proj = {...base, name,
+function saveProj() {
+  var name = document.getElementById('mn').value.trim();
+  if (!name) { toast('Inserisci il titolo', 'er'); return; }
+  var base = ei >= 0 ? Object.assign({}, D[cs][ei]) : { imgs: [], sw: 's1', hidden: false };
+  var proj = Object.assign(base, {
+    name: name,
     year: document.getElementById('my').value,
-    tag:  document.getElementById('mtg').value,
+    tag: document.getElementById('mtg').value,
     desc: document.getElementById('md').value,
-    featured: document.getElementById('mfe').value==='true'
-  };
+    featured: document.getElementById('mfe').value === 'true',
+    seoTitle: document.getElementById('mseot').value,
+    seoDesc: document.getElementById('mseod').value
+  });
+  if (!proj.imgs) proj.imgs = [];
 
-  const total = (cf ? 1 : 0) + gf.length;
-  let done = 0;
+  var total = (cf ? 1 : 0) + gf.length;
+  var done = 0;
 
-  if (total > 0) {
-    toast('Caricamento 0/' + total + '...','');
-  }
-
-  // Carica cover
-  if (cf) {
-    const url = await upf(cf, 'foto/'+cs+'/'+sl(name)+'-cover.jpg');
-    if (url) proj.cover = url;
-    done++;
-    toast('Caricamento '+done+'/'+total+'...','');
-  }
-
-  // Carica galleria UNA FOTO ALLA VOLTA in sequenza
-  for (const file of gf) {
-    // Usa timestamp unico per ogni file
-    const ts = Date.now() + Math.random().toString(36).slice(2,6);
-    const url = await upf(file, 'foto/'+cs+'/'+sl(name)+'-'+ts+'.jpg');
-    if (url) proj.imgs.push(url);
-    done++;
-    if (done <= total) toast('Caricamento '+done+'/'+total+'...','');
-    // Piccola pausa tra upload per evitare conflitti SHA
-    await new Promise(res => setTimeout(res, 600));
-  }
-
-  if (ei>=0) { D[cs][ei]=proj; } else { D[cs].push(proj); }
-  renderList(cs); cm();
-  toast('Salvato — clicca Pubblica per aggiornare il sito','ok');
-}
-
-function dp(s,i) {
-  if (!confirm('Eliminare questo progetto?')) return;
-  D[s].splice(i,1); renderList(s); toast('Eliminato','ok');
-}
-
-async function upHero(input) {
-  const f=input.files[0]; if (!f) return;
-  toast('Caricamento foto hero...','');
-  const url = await upf(f,'foto/hero.jpg');
-  if (url) {
-    D.landing.hero=url;
-    document.getElementById('hp').innerHTML='<img src="'+url+'">';
-    toast('Foto hero caricata — clicca Pubblica','ok');
-  }
-}
-
-// Upload file su GitHub con retry automatico in caso di conflitto SHA
-async function upf(file, path, retries=4) {
-  try {
-    const b64 = await tb64(file);
-    const data = b64.split(',')[1];
-    for (let attempt = 0; attempt < retries; attempt++) {
-      // Legge SHA fresco ad ogni tentativo
-      let sha = '';
-      try {
-        const c = await fetch(
-          'https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+encodeURIComponent(path)+'?t='+Date.now(),
-          {headers:{Authorization:'Bearer '+C.tok,'Cache-Control':'no-cache','Pragma':'no-cache'}}
-        );
-        if (c.ok) { const j = await c.json(); sha = j.sha || ''; }
-      } catch(e) {}
-      const body = {message:'Upload: '+path, content:data, branch:C.br};
-      if (sha) body.sha = sha;
-      const r = await fetch(
-        'https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/'+encodeURIComponent(path),
-        {method:'PUT', headers:{Authorization:'Bearer '+C.tok,'Content-Type':'application/json'}, body:JSON.stringify(body)}
-      );
-      if (r.ok) return C.site + '/' + path;
-      const errText = await r.text();
-      if (r.status === 409 && attempt < retries-1) {
-        // Conflitto SHA — aspetta e riprova
-        await new Promise(res => setTimeout(res, 800 * (attempt+1)));
-        continue;
-      }
-      throw new Error(errText);
+  function finish() {
+    // Se featured, togli featured dagli altri della stessa sezione
+    if (proj.featured) {
+      D[cs].forEach(function(x, idx) { if (idx !== ei) x.featured = false; });
     }
-  } catch(e) { toast('Errore upload: '+e.message,'er'); return null; }
-}
+    if (ei >= 0) { D[cs][ei] = proj; } else { D[cs].push(proj); }
+    renderList(cs, cs === 'editorial' ? 'ed-l' : cs === 'reportage' ? 're-l' : 'co-l');
+    cm();
+    toast('Salvato - clicca Pubblica per aggiornare il sito', 'ok');
+  }
 
-async function publish() {
-  // Raccoglie tutti i dati dai form
-  D.commercial.brand    = document.getElementById('cb').value;
-  D.commercial.portrait = document.getElementById('cp').value;
-  D.commercial.editorial= document.getElementById('ce').value;
-  D.commercial.event    = document.getElementById('cv').value;
-  D.landing.tagline     = document.getElementById('ltag').value;
-  D.landing.cta         = document.getElementById('lcta').value;
-  D.about.bio1          = document.getElementById('ab1').value;
-  D.about.bio2          = document.getElementById('ab2').value;
-  D.about.bio3          = document.getElementById('ab3').value;
-  D.about.subtitle      = document.getElementById('asub').value;
-  D.about.email         = document.getElementById('aem').value;
-  D.about.instagram     = document.getElementById('aig').value;
-  D.about.tiktok        = document.getElementById('att').value;
-  D.about.website       = document.getElementById('aweb').value;
-  D.footer.copy         = document.getElementById('fcopy').value;
-  D.footer.domain       = document.getElementById('fdom').value;
-
-  document.getElementById('pb').disabled=true;
-  document.getElementById('sov').classList.add('show');
-  try {
-    const cr=await fetch('https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/data.json',
-      {headers:{Authorization:'Bearer '+C.tok}});
-    const cur=await cr.json();
-    const b64=btoa(unescape(encodeURIComponent(JSON.stringify(D,null,2))));
-    const r=await fetch('https://api.github.com/repos/'+C.own+'/'+C.rep+'/contents/data.json',{
-      method:'PUT',
-      headers:{Authorization:'Bearer '+C.tok,'Content-Type':'application/json'},
-      body:JSON.stringify({message:'Admin: aggiornamento contenuti',content:b64,sha:cur.sha,branch:C.br})
+  function uploadGallery(i) {
+    if (i >= gf.length) { finish(); return; }
+    var ts = Date.now() + '' + Math.floor(Math.random() * 9999);
+    upf(gf[i], 'foto/' + cs + '/' + sl(name) + '-' + ts + '.jpg', function(url) {
+      if (url) proj.imgs.push(url);
+      done++;
+      toast('Caricamento ' + done + '/' + total + '...', '');
+      setTimeout(function() { uploadGallery(i + 1); }, 600);
     });
-    if (!r.ok) throw new Error(await r.text());
-    toast('Sito aggiornato! Attendi ~1 minuto per vedere le modifiche','ok');
-  } catch(e) { toast('Errore pubblicazione: '+e.message,'er'); }
-  document.getElementById('sov').classList.remove('show');
-  document.getElementById('pb').disabled=false;
+  }
+
+  if (total > 0) toast('Caricamento 0/' + total + '...', '');
+
+  if (cf) {
+    upf(cf, 'foto/' + cs + '/' + sl(name) + '-cover-' + Date.now() + '.jpg', function(url) {
+      if (url) proj.cover = url;
+      done++;
+      toast('Caricamento ' + done + '/' + total + '...', '');
+      setTimeout(function() { uploadGallery(0); }, 600);
+    });
+  } else {
+    uploadGallery(0);
+  }
 }
 
-function tb64(f) {
-  return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f)});
+function dp(sec, i) {
+  if (!confirm('Eliminare questo progetto?')) return;
+  D[sec].splice(i, 1);
+  renderList(sec, sec === 'editorial' ? 'ed-l' : sec === 'reportage' ? 're-l' : 'co-l');
+  toast('Eliminato', 'ok');
 }
-function sl(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
-function toast(m,t){const e=document.getElementById('toast');e.textContent=m;e.className='toast show'+(t?' '+t:'');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),4000)}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')cm()});
+
+function upHero(input) {
+  var f = input.files[0]; if (!f) return;
+  toast('Caricamento foto hero...', '');
+  upf(f, 'foto/hero-' + Date.now() + '.jpg', function(url) {
+    if (url) {
+      D.landing.hero = url;
+      document.getElementById('hp').innerHTML = '<img src="' + url + '">';
+      toast('Foto hero caricata - clicca Pubblica', 'ok');
+    }
+  });
+}
+
+function upAbout(input) {
+  var f = input.files[0]; if (!f) return;
+  toast('Caricamento foto ritratto...', '');
+  upf(f, 'foto/about-' + Date.now() + '.jpg', function(url) {
+    if (url) {
+      D.about.photo = url;
+      document.getElementById('ap').innerHTML = '<img src="' + url + '">';
+      toast('Foto ritratto caricata - clicca Pubblica', 'ok');
+    }
+  });
+}
+
+// Upload con retry, callback-based
+function upf(file, path, cb, attempt) {
+  attempt = attempt || 0;
+  var reader = new FileReader();
+  reader.onload = function() {
+    var data = reader.result.split(',')[1];
+    fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/' + path + '?t=' + Date.now(),
+      { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(existing) {
+        var sha = existing && existing.sha ? existing.sha : '';
+        var body = { message: 'Upload ' + path, content: data, branch: C.br };
+        if (sha) body.sha = sha;
+        return fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/' + path, {
+          method: 'PUT',
+          headers: { Authorization: 'Bearer ' + C.tok, 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+      })
+      .then(function(r) {
+        if (r.ok) { cb(C.site + '/' + path); return; }
+        if (r.status === 409 && attempt < 4) {
+          setTimeout(function() { upf(file, path, cb, attempt + 1); }, 800 * (attempt + 1));
+          return;
+        }
+        return r.text().then(function(t) { toast('Errore upload: ' + t.slice(0, 80), 'er'); cb(null); });
+      })
+      .catch(function(e) { toast('Errore: ' + e.message, 'er'); cb(null); });
+  };
+  reader.readAsDataURL(file);
+}
+
+function publish() {
+  D.commercialIntro = document.getElementById('comm-intro').value;
+  D.landing.tagline = document.getElementById('ltag').value;
+  D.landing.cta = document.getElementById('lcta').value;
+  D.about.bio1 = document.getElementById('ab1').value;
+  D.about.bio2 = document.getElementById('ab2').value;
+  D.about.bio3 = document.getElementById('ab3').value;
+  D.about.subtitle = document.getElementById('asub').value;
+  D.about.email = document.getElementById('aem').value;
+  D.about.instagram = document.getElementById('aig').value;
+  D.about.tiktok = document.getElementById('att').value;
+  D.about.website = document.getElementById('aweb').value;
+  D.footer.copy = document.getElementById('fcopy').value;
+  D.footer.domain = document.getElementById('fdom').value;
+
+  document.getElementById('pb').disabled = true;
+  document.getElementById('sov').classList.add('show');
+
+  fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json?t=' + Date.now(),
+    { headers: { Authorization: 'Bearer ' + C.tok, 'Cache-Control': 'no-cache' } })
+    .then(function(r) { return r.json(); })
+    .then(function(cur) {
+      var json = JSON.stringify(D, null, 2);
+      var b64 = btoa(unescape(encodeURIComponent(json)));
+      return fetch('https://api.github.com/repos/' + C.own + '/' + C.rep + '/contents/data.json', {
+        method: 'PUT',
+        headers: { Authorization: 'Bearer ' + C.tok, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'Admin: aggiornamento contenuti', content: b64, sha: cur.sha, branch: C.br })
+      });
+    })
+    .then(function(r) {
+      if (!r.ok) return r.text().then(function(t) { throw new Error(t.slice(0, 100)); });
+      toast('Sito aggiornato! Attendi ~1 minuto', 'ok');
+    })
+    .catch(function(e) { toast('Errore pubblicazione: ' + e.message, 'er'); })
+    .then(function() {
+      document.getElementById('sov').classList.remove('show');
+      document.getElementById('pb').disabled = false;
+    });
+}
+
+function sl(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function toast(m, t) {
+  var e = document.getElementById('toast');
+  e.textContent = m;
+  e.className = 'toast show' + (t ? ' ' + t : '');
+  clearTimeout(e._t);
+  e._t = setTimeout(function() { e.classList.remove('show'); }, 4000);
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') cm(); });
 </script>
 </body>
 </html>
