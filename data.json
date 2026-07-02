@@ -249,6 +249,19 @@
   ],
   "commercial": [
     {
+      "name": "Private Events",
+      "year": "2025",
+      "tag": "Event / Reportage",
+      "desc": "Documentary coverage of private events, capturing authentic moments with a candid eye.",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/commercial/private-events-cover-1782986758882.jpg",
+      "imgs": [],
+      "sw": "s2",
+      "featured": true,
+      "hidden": false,
+      "seoTitle": "",
+      "seoDesc": ""
+    },
+    {
       "name": "ANGER - Backstage",
       "year": "2026",
       "tag": "Backstage / Commercial",
@@ -256,19 +269,6 @@
       "cover": "",
       "imgs": [],
       "sw": "s1",
-      "featured": true,
-      "hidden": false,
-      "seoTitle": "",
-      "seoDesc": ""
-    },
-    {
-      "name": "Private Events",
-      "year": "2025",
-      "tag": "Event / Reportage",
-      "desc": "Documentary coverage of private events, capturing authentic moments with a candid eye.",
-      "cover": "",
-      "imgs": [],
-      "sw": "s2",
       "featured": false,
       "hidden": false,
       "seoTitle": "",
