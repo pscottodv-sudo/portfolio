@@ -46,7 +46,7 @@
         "https://pscottodv-sudo.github.io/portfolio/foto/editorial/punk-ture-1780513111070mcyy.jpg"
       ],
       "sw": "s2",
-      "featured": true,
+      "featured": false,
       "hidden": false,
       "seoTitle": "",
       "seoDesc": ""
@@ -73,6 +73,19 @@
       "hidden": false,
       "seoTitle": "",
       "seoDesc": ""
+    },
+    {
+      "imgs": [],
+      "sw": "s1",
+      "hidden": false,
+      "name": "Out of Place",
+      "year": "2026",
+      "tag": "Fashion editorial",
+      "desc": "shot in Naples’ Sanità district: explores the tension between a place that stays deeply itself and the changing eyes that now look at it. Fashion here becomes a language for the dialogue between heritage, tourism, and belonging.",
+      "featured": true,
+      "seoTitle": "",
+      "seoDesc": "",
+      "cover": "https://pscottodv-sudo.github.io/portfolio/foto/editorial/out-of-place-cover-1784033163024.jpg"
     }
   ],
   "reportage": [
