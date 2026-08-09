@@ -421,7 +421,7 @@ function initProtection() {
 }
 
 function loadSite() {
-  fetch('/portfolio/data.json?v=' + Date.now())
+  fetch('/data.json?v=' + Date.now())
     .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
     .then(function(D) {
       PROJECTS.editorial = D.editorial || [];
