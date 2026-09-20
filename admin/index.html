@@ -96,6 +96,18 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);min-height:
 .divider{height:.5px;background:var(--border);margin:24px 0}
 .note{font-size:12px;color:var(--mid);background:var(--bg);border:.5px solid var(--border);border-radius:4px;padding:12px 14px;margin-bottom:16px;line-height:1.5}
 @media(max-width:700px){.bdy{grid-template-columns:1fr}.sb{display:none}.ct{padding:20px 16px}}
+.cbg{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:20px}
+.cbg.open{display:flex}
+.cbox{background:var(--white);border-radius:6px;padding:20px;max-width:94vw;display:flex;flex-direction:column;align-items:center;gap:14px}
+.cbox h3{font-family:var(--serif);font-size:18px;font-weight:400;align-self:flex-start}
+.cstage{position:relative;overflow:hidden;background:#000;touch-action:none;border-radius:3px;max-width:100%}
+.cstage canvas{display:block;cursor:grab}
+.cstage canvas:active{cursor:grabbing}
+.czoom{width:100%;display:flex;align-items:center;gap:10px}
+.czoom span{font-size:16px;color:var(--mid)}
+.czoom input[type=range]{flex:1}
+.chint{font-size:11px;color:var(--mid);text-align:center}
+.cbtns{display:flex;gap:8px;align-self:flex-end}
 </style>
 </head>
 <body>
@@ -251,6 +263,19 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);min-height:
 <div class="mf">
 <button class="bs" onclick="cm()">Annulla</button>
 <button class="bp" onclick="saveProj()">Salva progetto</button>
+</div>
+</div>
+</div>
+
+<div class="cbg" id="cropbg">
+<div class="cbox">
+<h3>Regola la foto</h3>
+<div class="cstage" id="cropStage"><canvas id="cropCanvas"></canvas></div>
+<div class="czoom"><span>&#8722;</span><input type="range" id="cropZoom" oninput="cropZoomInput(this.value)"><span>&#43;</span></div>
+<div class="chint">Trascina per spostare &#183; pizzica o usa lo slider per lo zoom</div>
+<div class="cbtns">
+<button class="bs" onclick="closeCropper()">Annulla</button>
+<button class="bp" onclick="applyCrop()">Applica</button>
 </div>
 </div>
 </div>
@@ -500,14 +525,151 @@ function om(sec, idx) {
 
 function cm() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
 
-function pCov(input) {
-  cf = input.files[0]; if (!cf) return;
-  var r = new FileReader();
-  r.onload = function(e) {
-    var p = document.getElementById('mcp'); p.src = e.target.result; p.style.display = 'block';
-    document.getElementById('mcl').innerHTML = '<strong>' + cf.name + '</strong>';
+// --- Cropper: apre un editor (sposta + zoom) prima di ogni upload foto ---
+var CROP = null;
+
+function openCropper(file, aspect, outW, outH, cb) {
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      var frameW = Math.min(480, window.innerWidth - 72);
+      var frameH = frameW / aspect;
+      var minScale = Math.max(frameW / img.width, frameH / img.height);
+      CROP = {
+        img: img, cb: cb, outW: outW, outH: outH,
+        frameW: frameW, frameH: frameH,
+        scale: minScale, minScale: minScale, maxScale: minScale * 4,
+        offX: (frameW - img.width * minScale) / 2,
+        offY: (frameH - img.height * minScale) / 2,
+        pts: {}, dragLast: null, pinchDist: 0, pinchScale: minScale
+      };
+      var stage = document.getElementById('cropStage');
+      stage.style.width = frameW + 'px'; stage.style.height = frameH + 'px';
+      var canvas = document.getElementById('cropCanvas');
+      canvas.width = frameW; canvas.height = frameH;
+      var zoom = document.getElementById('cropZoom');
+      zoom.min = minScale; zoom.max = CROP.maxScale;
+      zoom.step = (CROP.maxScale - minScale) / 200;
+      zoom.value = minScale;
+      drawCrop();
+      document.getElementById('cropbg').classList.add('open');
+    };
+    img.src = e.target.result;
   };
-  r.readAsDataURL(cf);
+  reader.readAsDataURL(file);
+}
+
+function closeCropper() {
+  document.getElementById('cropbg').classList.remove('open');
+  CROP = null;
+}
+
+function clampCropOffset() {
+  var w = CROP.img.width * CROP.scale, h = CROP.img.height * CROP.scale;
+  CROP.offX = Math.min(0, Math.max(CROP.frameW - w, CROP.offX));
+  CROP.offY = Math.min(0, Math.max(CROP.frameH - h, CROP.offY));
+}
+
+function drawCrop() {
+  var canvas = document.getElementById('cropCanvas');
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(CROP.img, CROP.offX, CROP.offY, CROP.img.width * CROP.scale, CROP.img.height * CROP.scale);
+}
+
+function setCropScale(newScale, anchorX, anchorY) {
+  newScale = Math.min(CROP.maxScale, Math.max(CROP.minScale, newScale));
+  var ax = anchorX === undefined ? CROP.frameW / 2 : anchorX;
+  var ay = anchorY === undefined ? CROP.frameH / 2 : anchorY;
+  var ix = (ax - CROP.offX) / CROP.scale;
+  var iy = (ay - CROP.offY) / CROP.scale;
+  CROP.scale = newScale;
+  CROP.offX = ax - ix * CROP.scale;
+  CROP.offY = ay - iy * CROP.scale;
+  clampCropOffset();
+  drawCrop();
+  document.getElementById('cropZoom').value = CROP.scale;
+}
+
+function cropZoomInput(v) { if (CROP) setCropScale(parseFloat(v)); }
+
+function applyCrop() {
+  if (!CROP) return;
+  var out = document.createElement('canvas');
+  out.width = CROP.outW; out.height = CROP.outH;
+  var ratio = CROP.outW / CROP.frameW;
+  var octx = out.getContext('2d');
+  octx.drawImage(CROP.img, CROP.offX * ratio, CROP.offY * ratio,
+    CROP.img.width * CROP.scale * ratio, CROP.img.height * CROP.scale * ratio);
+  var cb = CROP.cb;
+  out.toBlob(function(blob) { closeCropper(); cb(blob); }, 'image/jpeg', 0.92);
+}
+
+(function() {
+  var canvas = document.getElementById('cropCanvas');
+  function dist(pts) {
+    var ids = Object.keys(pts);
+    var a = pts[ids[0]], b = pts[ids[1]];
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  }
+  function mid(pts) {
+    var ids = Object.keys(pts);
+    var a = pts[ids[0]], b = pts[ids[1]];
+    return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  }
+  canvas.addEventListener('pointerdown', function(e) {
+    if (!CROP) return;
+    canvas.setPointerCapture(e.pointerId);
+    var r = canvas.getBoundingClientRect();
+    CROP.pts[e.pointerId] = { x: e.clientX - r.left, y: e.clientY - r.top };
+    var n = Object.keys(CROP.pts).length;
+    if (n === 1) { CROP.dragLast = CROP.pts[e.pointerId]; }
+    else if (n === 2) { CROP.pinchDist = dist(CROP.pts); CROP.pinchScale = CROP.scale; }
+  });
+  canvas.addEventListener('pointermove', function(e) {
+    if (!CROP || !CROP.pts[e.pointerId]) return;
+    var r = canvas.getBoundingClientRect();
+    var p = { x: e.clientX - r.left, y: e.clientY - r.top };
+    CROP.pts[e.pointerId] = p;
+    var n = Object.keys(CROP.pts).length;
+    if (n === 1 && CROP.dragLast) {
+      CROP.offX += p.x - CROP.dragLast.x;
+      CROP.offY += p.y - CROP.dragLast.y;
+      CROP.dragLast = p;
+      clampCropOffset();
+      drawCrop();
+    } else if (n === 2) {
+      var d = dist(CROP.pts);
+      var m = mid(CROP.pts);
+      var newScale = CROP.pinchScale * (d / CROP.pinchDist);
+      setCropScale(newScale, m.x, m.y);
+    }
+  });
+  function endPt(e) {
+    if (!CROP) return;
+    delete CROP.pts[e.pointerId];
+    var ids = Object.keys(CROP.pts);
+    CROP.dragLast = ids.length === 1 ? CROP.pts[ids[0]] : null;
+  }
+  canvas.addEventListener('pointerup', endPt);
+  canvas.addEventListener('pointercancel', endPt);
+  canvas.addEventListener('wheel', function(e) {
+    if (!CROP) return;
+    e.preventDefault();
+    var r = canvas.getBoundingClientRect();
+    setCropScale(CROP.scale * (e.deltaY < 0 ? 1.08 : 0.92), e.clientX - r.left, e.clientY - r.top);
+  }, { passive: false });
+})();
+
+function pCov(input) {
+  var f = input.files[0]; if (!f) return;
+  openCropper(f, 3 / 2, 1500, 1000, function(blob) {
+    cf = blob;
+    var p = document.getElementById('mcp'); p.src = URL.createObjectURL(blob); p.style.display = 'block';
+    document.getElementById('mcl').innerHTML = '<strong>Cover pronta</strong> - clicca per ricaricarne unaltra';
+  });
+  input.value = '';
 }
 
 function aGal(input) {
@@ -592,26 +754,32 @@ function dp(sec, i) {
 
 function upHero(input) {
   var f = input.files[0]; if (!f) return;
-  toast('Caricamento foto hero...', '');
-  upf(f, 'foto/hero-' + Date.now() + '.jpg', function(url) {
-    if (url) {
-      D.landing.hero = url;
-      document.getElementById('hp').innerHTML = '<img src="' + url + '">';
-      toast('Foto hero caricata - clicca Pubblica', 'ok');
-    }
+  openCropper(f, 16 / 9, 2400, 1350, function(blob) {
+    toast('Caricamento foto hero...', '');
+    upf(blob, 'foto/hero-' + Date.now() + '.jpg', function(url) {
+      if (url) {
+        D.landing.hero = url;
+        document.getElementById('hp').innerHTML = '<img src="' + url + '">';
+        toast('Foto hero caricata - clicca Pubblica', 'ok');
+      }
+    });
   });
+  input.value = '';
 }
 
 function upAbout(input) {
   var f = input.files[0]; if (!f) return;
-  toast('Caricamento foto ritratto...', '');
-  upf(f, 'foto/about-' + Date.now() + '.jpg', function(url) {
-    if (url) {
-      D.about.photo = url;
-      document.getElementById('ap').innerHTML = '<img src="' + url + '">';
-      toast('Foto ritratto caricata - clicca Pubblica', 'ok');
-    }
+  openCropper(f, 3 / 4, 1200, 1600, function(blob) {
+    toast('Caricamento foto ritratto...', '');
+    upf(blob, 'foto/about-' + Date.now() + '.jpg', function(url) {
+      if (url) {
+        D.about.photo = url;
+        document.getElementById('ap').innerHTML = '<img src="' + url + '">';
+        toast('Foto ritratto caricata - clicca Pubblica', 'ok');
+      }
+    });
   });
+  input.value = '';
 }
 
 // Upload con retry, callback-based
