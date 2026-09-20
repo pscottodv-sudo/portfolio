@@ -171,12 +171,25 @@ body{font-family:var(--sans);background:var(--bg);color:var(--black);min-height:
 
 <div class="pn" id="pn-landing">
 <div class="pt">Landing page</div>
-<div class="ps">La foto hero e i testi della prima schermata.</div>
-<div class="hp" id="hp"><span>Nessuna foto hero</span></div>
-<label class="uz" style="margin-bottom:20px">
+<div class="ps">La foto hero e i testi della prima schermata. Puoi usare un'inquadratura diversa per desktop e per mobile.</div>
+<div class="fg">
+<div class="f fgf">
+<label>Foto hero &mdash; Desktop (panoramica)</label>
+<div class="hp" id="hp"><span>Nessuna foto hero desktop</span></div>
+<label class="uz" style="margin-bottom:8px">
 <input type="file" accept="image/*" onchange="upHero(this)">
-<p><strong>Clicca per caricare o cambiare la foto hero</strong><br>JPG consigliato, minimo 2000px</p>
+<p><strong>Clicca per caricare o cambiare</strong><br>Formato largo 16:9</p>
 </label>
+</div>
+<div class="f fgf">
+<label>Foto hero &mdash; Mobile (verticale)</label>
+<div class="hp portrait" id="hpm"><span>Nessuna foto hero mobile</span></div>
+<label class="uz" style="margin-bottom:20px">
+<input type="file" accept="image/*" onchange="upHeroMobile(this)">
+<p><strong>Clicca per caricare o cambiare</strong><br>Formato verticale 3:4 &mdash; se non caricata, su mobile viene usata quella desktop</p>
+</label>
+</div>
+</div>
 <div class="fg">
 <div class="f"><label>Tagline</label><input type="text" id="ltag"></div>
 <div class="f"><label>Testo CTA (bottone)</label><input type="text" id="lcta"></div>
@@ -356,6 +369,7 @@ function renderAll() {
   document.getElementById('ltag').value = D.landing.tagline || '';
   document.getElementById('lcta').value = D.landing.cta || '';
   if (D.landing.hero) document.getElementById('hp').innerHTML = '<img src="' + D.landing.hero + '">';
+  if (D.landing.heroMobile) document.getElementById('hpm').innerHTML = '<img src="' + D.landing.heroMobile + '">';
   if (D.about.photo) document.getElementById('ap').innerHTML = '<img src="' + D.about.photo + '">';
   document.getElementById('ab1').value = D.about.bio1 || '';
   document.getElementById('ab2').value = D.about.bio2 || '';
@@ -755,12 +769,27 @@ function dp(sec, i) {
 function upHero(input) {
   var f = input.files[0]; if (!f) return;
   openCropper(f, 16 / 9, 2400, 1350, function(blob) {
-    toast('Caricamento foto hero...', '');
+    toast('Caricamento foto hero desktop...', '');
     upf(blob, 'foto/hero-' + Date.now() + '.jpg', function(url) {
       if (url) {
         D.landing.hero = url;
         document.getElementById('hp').innerHTML = '<img src="' + url + '">';
-        toast('Foto hero caricata - clicca Pubblica', 'ok');
+        toast('Foto hero desktop caricata - clicca Pubblica', 'ok');
+      }
+    });
+  });
+  input.value = '';
+}
+
+function upHeroMobile(input) {
+  var f = input.files[0]; if (!f) return;
+  openCropper(f, 3 / 4, 1200, 1600, function(blob) {
+    toast('Caricamento foto hero mobile...', '');
+    upf(blob, 'foto/hero-mobile-' + Date.now() + '.jpg', function(url) {
+      if (url) {
+        D.landing.heroMobile = url;
+        document.getElementById('hpm').innerHTML = '<img src="' + url + '">';
+        toast('Foto hero mobile caricata - clicca Pubblica', 'ok');
       }
     });
   });

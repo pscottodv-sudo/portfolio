@@ -36,6 +36,7 @@ img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-dra
 .mob a:hover{color:var(--white)}
 #landing{position:relative;width:100%;height:100svh;min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;background:#181512;overflow:hidden}
+.hero-bg picture{display:contents}
 .hero-img{width:100%;height:100%;object-fit:cover;opacity:.68;animation:hZoom 16s ease forwards;will-change:transform}
 @keyframes hZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 .hero-ph{width:100%;height:100%;background:linear-gradient(150deg,#1d1b17,#28241e 50%,#181512);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
@@ -473,10 +474,18 @@ function loadSite() {
       if (D.landing && D.landing.hero) {
         var hbg = document.getElementById('hero-bg');
         hbg.innerHTML = '';
+        var pic = document.createElement('picture');
+        if (D.landing.heroMobile) {
+          var src = document.createElement('source');
+          src.media = '(max-width: 700px)';
+          src.srcset = D.landing.heroMobile;
+          pic.appendChild(src);
+        }
         var himg = document.createElement('img');
         himg.className = 'hero-img'; himg.src = D.landing.hero; himg.alt = 'Paolo Scotto di Vettimo';
         himg.setAttribute('fetchpriority', 'high');
-        hbg.appendChild(himg);
+        pic.appendChild(himg);
+        hbg.appendChild(pic);
       }
       if (D.landing) {
         document.getElementById('hero-tag').textContent = D.landing.tagline || '';
