@@ -252,11 +252,11 @@ body{cursor:auto}.cur{display:none}
 <div class="form-wrap">
 <h3>Scrivimi</h3>
 <p>Raccontami il tuo progetto.</p>
-<form class="cf" name="contact" method="POST">
+<form class="cf" id="contact-form" name="contact" method="POST" action="https://formspree.io/f/xgavaony">
 <div class="ff"><label>Nome</label><input type="text" name="name" required></div>
 <div class="ff"><label>Email</label><input type="email" name="email" required></div>
 <div class="ff ff-full"><label>Messaggio</label><textarea name="message" required></textarea></div>
-<div class="f-row"><span class="f-note" id="form-note"></span><button type="submit" class="f-btn">Invia &#8594;</button></div>
+<div class="f-row"><span class="f-note" id="form-note"></span><button type="submit" class="f-btn" id="form-btn">Invia &#8594;</button></div>
 </form>
 </div>
 </section>
@@ -411,6 +411,48 @@ function initNav() {
   });
 }
 
+function initContactForm() {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var note = document.getElementById('form-note');
+  var btn = document.getElementById('form-btn');
+  var defaultNote = note.textContent;
+  var btnLabel = btn.innerHTML;
+
+  form.addEventListener('submit', function(ev) {
+    ev.preventDefault();
+    btn.disabled = true;
+    btn.style.opacity = '.6';
+    btn.textContent = 'Invio in corso...';
+    note.textContent = '';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      if (res.ok) {
+        form.reset();
+        note.textContent = 'Messaggio inviato, grazie! Ti rispondo al più presto.';
+        note.style.color = '#3a7d3a';
+      } else {
+        return res.json().then(function(data) { throw new Error((data && data.error) || 'Errore invio'); });
+      }
+    }).catch(function() {
+      note.textContent = 'Invio non riuscito. Riprova o scrivimi direttamente via email.';
+      note.style.color = '#b23b3b';
+    }).finally(function() {
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btn.innerHTML = btnLabel;
+      setTimeout(function() {
+        note.style.color = '';
+        note.textContent = defaultNote;
+      }, 6000);
+    });
+  });
+}
+
 function initProtection() {
   document.addEventListener('contextmenu', function(e) {
     if (e.target.tagName === 'IMG' || e.target.className === 'gal-shield') { e.preventDefault(); return false; }
@@ -490,6 +532,7 @@ function loadSite() {
       initCursor();
       initNav();
       initProtection();
+      initContactForm();
     })
     .catch(function(e) { console.error('Errore caricamento:', e); });
 }
