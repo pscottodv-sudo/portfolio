@@ -1,0 +1,1609 @@
+{
+ "version": 2,
+ "updated": "",
+ "projects": [
+  {
+   "id": "shibuya",
+   "group": "Fashion editorial",
+   "name": "Shibuya Osanpo",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Editorial · Tokyo",
+    "it": "Editoriale · Tokyo"
+   },
+   "short": {
+    "en": "A slow walk through the back streets of Shibuya, far from the crossing everyone photographs.",
+    "it": "Una passeggiata lenta nelle strade secondarie di Shibuya, lontano dall'incrocio che fotografano tutti."
+   },
+   "desc": {
+    "en": "A slow walk through the back streets of Shibuya, far from the famous crossing everyone photographs. Rusty staircases, scaffolding and quiet residential corners: the city's everyday architecture becomes the set. Tailoring and vintage pieces move between concrete and chain-link fences, with plaid and polka dots clashing against the street.",
+    "it": "Una passeggiata lenta nelle strade secondarie di Shibuya, lontano dal famoso incrocio che fotografano tutti. Scale arrugginite, impalcature, angoli tranquilli di quartiere: l'architettura di tutti i giorni diventa il set. Sartoria e capi vintage si muovono tra cemento e reti metalliche, con quadri e pois che fanno a pugni con la strada."
+   },
+   "cover": "/img/p/shibuya/11.jpg",
+   "images": [
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/01.jpg",
+     "m": "/img/m/shibuya/01.jpg",
+     "t": "/img/t/shibuya/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/02.jpg",
+     "m": "/img/m/shibuya/02.jpg",
+     "t": "/img/t/shibuya/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/shibuya/03.jpg",
+     "m": "/img/m/shibuya/03.jpg",
+     "t": "/img/t/shibuya/03.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/04.jpg",
+     "m": "/img/m/shibuya/04.jpg",
+     "t": "/img/t/shibuya/04.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/05.jpg",
+     "m": "/img/m/shibuya/05.jpg",
+     "t": "/img/t/shibuya/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/shibuya/06.jpg",
+     "m": "/img/m/shibuya/06.jpg",
+     "t": "/img/t/shibuya/06.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/07.jpg",
+     "m": "/img/m/shibuya/07.jpg",
+     "t": "/img/t/shibuya/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/shibuya/08.jpg",
+     "m": "/img/m/shibuya/08.jpg",
+     "t": "/img/t/shibuya/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/shibuya/09.jpg",
+     "m": "/img/m/shibuya/09.jpg",
+     "t": "/img/t/shibuya/09.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/10.jpg",
+     "m": "/img/m/shibuya/10.jpg",
+     "t": "/img/t/shibuya/10.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/11.jpg",
+     "m": "/img/m/shibuya/11.jpg",
+     "t": "/img/t/shibuya/11.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/shibuya/12.jpg",
+     "m": "/img/m/shibuya/12.jpg",
+     "t": "/img/t/shibuya/12.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/13.jpg",
+     "m": "/img/m/shibuya/13.jpg",
+     "t": "/img/t/shibuya/13.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/shibuya/14.jpg",
+     "m": "/img/m/shibuya/14.jpg",
+     "t": "/img/t/shibuya/14.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/shibuya/15.jpg",
+     "m": "/img/m/shibuya/15.jpg",
+     "t": "/img/t/shibuya/15.jpg"
+    }
+   ]
+  },
+  {
+   "id": "outofplace",
+   "group": "Fashion editorial",
+   "name": "Out of Place",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Editorial · Published in Seline Magazine",
+    "it": "Editoriale · pubblicato su Seline Magazine"
+   },
+   "short": {
+    "en": "Naples' Rione Sanità, between heritage, tourism and belonging.",
+    "it": "Il Rione Sanità tra tradizione, turismo e appartenenza."
+   },
+   "desc": {
+    "en": "Shot in Naples' Rione Sanità. It portrays a neighbourhood that stays true to itself while the people looking at it keep changing. Here, fashion becomes a way to bring heritage, tourism and belonging into conversation.",
+    "it": "Scattato nel Rione Sanità, a Napoli. Racconta un quartiere che resta sé stesso mentre cambia lo sguardo di chi arriva a vederlo. Qui la moda diventa un modo per mettere in dialogo tradizione, turismo e senso di appartenenza."
+   },
+   "cover": "/img/p/outofplace/14.jpg",
+   "images": [
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/outofplace/01.jpg",
+     "m": "/img/m/outofplace/01.jpg",
+     "t": "/img/t/outofplace/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/outofplace/02.jpg",
+     "m": "/img/m/outofplace/02.jpg",
+     "t": "/img/t/outofplace/02.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/outofplace/03.jpg",
+     "m": "/img/m/outofplace/03.jpg",
+     "t": "/img/t/outofplace/03.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/outofplace/04.jpg",
+     "m": "/img/m/outofplace/04.jpg",
+     "t": "/img/t/outofplace/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/outofplace/05.jpg",
+     "m": "/img/m/outofplace/05.jpg",
+     "t": "/img/t/outofplace/05.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/outofplace/06.jpg",
+     "m": "/img/m/outofplace/06.jpg",
+     "t": "/img/t/outofplace/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/outofplace/07.jpg",
+     "m": "/img/m/outofplace/07.jpg",
+     "t": "/img/t/outofplace/07.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/outofplace/08.jpg",
+     "m": "/img/m/outofplace/08.jpg",
+     "t": "/img/t/outofplace/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/outofplace/09.jpg",
+     "m": "/img/m/outofplace/09.jpg",
+     "t": "/img/t/outofplace/09.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/outofplace/10.jpg",
+     "m": "/img/m/outofplace/10.jpg",
+     "t": "/img/t/outofplace/10.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/outofplace/11.jpg",
+     "m": "/img/m/outofplace/11.jpg",
+     "t": "/img/t/outofplace/11.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/outofplace/12.jpg",
+     "m": "/img/m/outofplace/12.jpg",
+     "t": "/img/t/outofplace/12.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/outofplace/13.jpg",
+     "m": "/img/m/outofplace/13.jpg",
+     "t": "/img/t/outofplace/13.jpg"
+    },
+    {
+     "w": 1842,
+     "h": 2400,
+     "src": "/img/p/outofplace/14.jpg",
+     "m": "/img/m/outofplace/14.jpg",
+     "t": "/img/t/outofplace/14.jpg"
+    }
+   ]
+  },
+  {
+   "id": "neon",
+   "group": "Fashion editorial",
+   "name": "Neon Therapy",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Editorial · Portrait",
+    "it": "Editoriale · Ritratto"
+   },
+   "short": {
+    "en": "A small tiled bathroom lit by a single green light.",
+    "it": "Un piccolo bagno piastrellato e una sola luce verde."
+   },
+   "desc": {
+    "en": "A small tiled bathroom lit by a single green light. Tight, uncomfortable framing: a lit match, smoke, running eyeliner, wet hair stuck to the face. As cold as Aethereal is warm.",
+    "it": "Un piccolo bagno piastrellato e una sola luce verde. Inquadrature strette, quasi scomode: un fiammifero acceso, il fumo, l'eyeliner che cola, i capelli bagnati sul viso. Tanto fredda quanto Aethereal è calda."
+   },
+   "cover": "/img/p/neon/01.jpg",
+   "images": [
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/01.jpg",
+     "m": "/img/m/neon/01.jpg",
+     "t": "/img/t/neon/01.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/02.jpg",
+     "m": "/img/m/neon/02.jpg",
+     "t": "/img/t/neon/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/03.jpg",
+     "m": "/img/m/neon/03.jpg",
+     "t": "/img/t/neon/03.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/04.jpg",
+     "m": "/img/m/neon/04.jpg",
+     "t": "/img/t/neon/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/05.jpg",
+     "m": "/img/m/neon/05.jpg",
+     "t": "/img/t/neon/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/06.jpg",
+     "m": "/img/m/neon/06.jpg",
+     "t": "/img/t/neon/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/07.jpg",
+     "m": "/img/m/neon/07.jpg",
+     "t": "/img/t/neon/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/neon/08.jpg",
+     "m": "/img/m/neon/08.jpg",
+     "t": "/img/t/neon/08.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/neon/09.jpg",
+     "m": "/img/m/neon/09.jpg",
+     "t": "/img/t/neon/09.jpg"
+    }
+   ]
+  },
+  {
+   "id": "punkture",
+   "group": "Fashion editorial",
+   "name": "PUNK-TURE",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Editorial · Tailoring · Vanvitelli",
+    "it": "Editoriale · Sartoria · Vanvitelli"
+   },
+   "short": {
+    "en": "An editorial about deconstructed shapes and industrial grit.",
+    "it": "Un editoriale su forme destrutturate e atmosfere industriali."
+   },
+   "desc": {
+    "en": "An editorial about deconstructed shapes and industrial grit. The series brings traditional tailoring and punk culture together through sharp lines, movement and an underground mood. Made with the Fashion Design Department of the University of Campania \"Luigi Vanvitelli\".",
+    "it": "Un editoriale su forme destrutturate e atmosfere industriali. La serie mette insieme sartoria tradizionale e cultura punk: linee nette, movimento, un'aria underground. Realizzato con il Dipartimento di Fashion Design dell'Università della Campania \"Luigi Vanvitelli\"."
+   },
+   "cover": "/img/p/punkture/11.jpg",
+   "images": [
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/punkture/01.jpg",
+     "m": "/img/m/punkture/01.jpg",
+     "t": "/img/t/punkture/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/punkture/02.jpg",
+     "m": "/img/m/punkture/02.jpg",
+     "t": "/img/t/punkture/02.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/punkture/03.jpg",
+     "m": "/img/m/punkture/03.jpg",
+     "t": "/img/t/punkture/03.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/punkture/04.jpg",
+     "m": "/img/m/punkture/04.jpg",
+     "t": "/img/t/punkture/04.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/punkture/05.jpg",
+     "m": "/img/m/punkture/05.jpg",
+     "t": "/img/t/punkture/05.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/punkture/06.jpg",
+     "m": "/img/m/punkture/06.jpg",
+     "t": "/img/t/punkture/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/punkture/07.jpg",
+     "m": "/img/m/punkture/07.jpg",
+     "t": "/img/t/punkture/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/punkture/08.jpg",
+     "m": "/img/m/punkture/08.jpg",
+     "t": "/img/t/punkture/08.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/punkture/09.jpg",
+     "m": "/img/m/punkture/09.jpg",
+     "t": "/img/t/punkture/09.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/punkture/10.jpg",
+     "m": "/img/m/punkture/10.jpg",
+     "t": "/img/t/punkture/10.jpg"
+    },
+    {
+     "w": 1697,
+     "h": 2400,
+     "src": "/img/p/punkture/11.jpg",
+     "m": "/img/m/punkture/11.jpg",
+     "t": "/img/t/punkture/11.jpg"
+    }
+   ]
+  },
+  {
+   "id": "aethereal",
+   "group": "Fashion editorial",
+   "name": "Aethereal",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Editorial · Portrait · Conceptual",
+    "it": "Editoriale · Ritratto · Concettuale"
+   },
+   "short": {
+    "en": "Late-afternoon light, a white lace dress and a bunch of wildflowers picked in an overgrown park.",
+    "it": "Luce del tardo pomeriggio, un abito di pizzo bianco, un mazzo di fiori di campo raccolto in un parco lasciato crescere."
+   },
+   "desc": {
+    "en": "Late-afternoon light, a white lace dress and a bunch of wildflowers picked in an overgrown park. Warm, blown-out sun, soft focus and one frame dissolving into motion blur: closer to a dream than a document.",
+    "it": "Luce del tardo pomeriggio, un abito di pizzo bianco, un mazzo di fiori di campo raccolto in un parco lasciato crescere. Sole caldo e sovraesposto, fuoco morbido, uno scatto che si trasforma in mosso: più un sogno che un documento."
+   },
+   "cover": "/img/p/aethereal/04.jpg",
+   "images": [
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/01.jpg",
+     "m": "/img/m/aethereal/01.jpg",
+     "t": "/img/t/aethereal/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/02.jpg",
+     "m": "/img/m/aethereal/02.jpg",
+     "t": "/img/t/aethereal/02.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/03.jpg",
+     "m": "/img/m/aethereal/03.jpg",
+     "t": "/img/t/aethereal/03.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/04.jpg",
+     "m": "/img/m/aethereal/04.jpg",
+     "t": "/img/t/aethereal/04.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/05.jpg",
+     "m": "/img/m/aethereal/05.jpg",
+     "t": "/img/t/aethereal/05.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/06.jpg",
+     "m": "/img/m/aethereal/06.jpg",
+     "t": "/img/t/aethereal/06.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/07.jpg",
+     "m": "/img/m/aethereal/07.jpg",
+     "t": "/img/t/aethereal/07.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/08.jpg",
+     "m": "/img/m/aethereal/08.jpg",
+     "t": "/img/t/aethereal/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/aethereal/09.jpg",
+     "m": "/img/m/aethereal/09.jpg",
+     "t": "/img/t/aethereal/09.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/aethereal/10.jpg",
+     "m": "/img/m/aethereal/10.jpg",
+     "t": "/img/t/aethereal/10.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/aethereal/11.jpg",
+     "m": "/img/m/aethereal/11.jpg",
+     "t": "/img/t/aethereal/11.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/aethereal/12.jpg",
+     "m": "/img/m/aethereal/12.jpg",
+     "t": "/img/t/aethereal/12.jpg"
+    }
+   ]
+  },
+  {
+   "id": "video",
+   "group": "Video",
+   "name": "DoP & Color",
+   "visible": true,
+   "year": {
+    "en": "Ongoing",
+    "it": "In corso"
+   },
+   "tag": {
+    "en": "Cinematography · Color grading",
+    "it": "Direzione della fotografia · Color grading"
+   },
+   "short": {
+    "en": "Lighting, camera and color grading for fashion films and short films.",
+    "it": "Luci, riprese e color grading per fashion film e cortometraggi."
+   },
+   "desc": {
+    "en": "I work as a director of photography and colorist on fashion films and short films, grading in DaVinci Resolve. This page will soon include notes on lighting and camera, stills from set, before-and-after grades and the reel.",
+    "it": "Lavoro come direttore della fotografia e colorist su fashion film e cortometraggi, con il color grading in DaVinci Resolve. In questa pagina arriveranno appunti su luci e riprese, frame dal set, il prima e dopo del grading e il reel."
+   },
+   "cover": "/img/p/neon/01.jpg",
+   "images": [],
+   "reel": "",
+   "films": [
+    {
+     "role": "DoP · Color",
+     "title": "Neon Therapy",
+     "dir": "",
+     "year": "2026",
+     "link": ""
+    }
+   ],
+   "pairs": [],
+   "clips": []
+  },
+  {
+   "id": "piazza",
+   "group": "Reportage",
+   "name": "I Volti di Piazza Vittorio",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Portrait · Rome · Reflective Photo",
+    "it": "Ritratto · Roma · Reflective Photo"
+   },
+   "short": {
+    "en": "A project made for Reflective Photo magazine, set in one of the densest and most layered neighbourhoods in central Rome.",
+    "it": "Un progetto nato per la rivista Reflective Photo, dentro uno dei quartieri più fitti e stratificati del centro di Roma."
+   },
+   "desc": {
+    "en": "A project made for Reflective Photo magazine, set in one of the densest and most layered neighbourhoods in central Rome. Esquilino, a crossroads of languages, cultures and everyday life, is told through environmental portraits: faces met on the street, direct gazes, presence. An intimate, respectful look at a neighbourhood with many identities, where photography becomes a way of meeting people and remembering them.",
+    "it": "Un progetto nato per la rivista Reflective Photo, dentro uno dei quartieri più fitti e stratificati del centro di Roma. L'Esquilino, incrocio di lingue, culture e vita quotidiana, raccontato con ritratti ambientati: volti incontrati per strada, sguardi diretti, presenze. Un racconto intimo e rispettoso di un quartiere dalle tante identità, dove la fotografia diventa incontro e memoria."
+   },
+   "cover": "/img/p/piazza/07.jpg",
+   "images": [
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/01.jpg",
+     "m": "/img/m/piazza/01.jpg",
+     "t": "/img/t/piazza/01.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/02.jpg",
+     "m": "/img/m/piazza/02.jpg",
+     "t": "/img/t/piazza/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/03.jpg",
+     "m": "/img/m/piazza/03.jpg",
+     "t": "/img/t/piazza/03.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/04.jpg",
+     "m": "/img/m/piazza/04.jpg",
+     "t": "/img/t/piazza/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/05.jpg",
+     "m": "/img/m/piazza/05.jpg",
+     "t": "/img/t/piazza/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/06.jpg",
+     "m": "/img/m/piazza/06.jpg",
+     "t": "/img/t/piazza/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/07.jpg",
+     "m": "/img/m/piazza/07.jpg",
+     "t": "/img/t/piazza/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/08.jpg",
+     "m": "/img/m/piazza/08.jpg",
+     "t": "/img/t/piazza/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/09.jpg",
+     "m": "/img/m/piazza/09.jpg",
+     "t": "/img/t/piazza/09.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/10.jpg",
+     "m": "/img/m/piazza/10.jpg",
+     "t": "/img/t/piazza/10.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/piazza/11.jpg",
+     "m": "/img/m/piazza/11.jpg",
+     "t": "/img/t/piazza/11.jpg"
+    }
+   ]
+  },
+  {
+   "id": "iphone",
+   "group": "Reportage",
+   "name": "iPhone Portraits",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Portrait · Naples",
+    "it": "Ritratto · Napoli"
+   },
+   "short": {
+    "en": "People tend to freeze in front of a camera: it's big and intrusive, and it feels like an invasion of personal space.",
+    "it": "Davanti a una macchina fotografica la gente si irrigidisce: è grande, invadente, sembra entrare nello spazio personale."
+   },
+   "desc": {
+    "en": "People tend to freeze in front of a camera: it's big and intrusive, and it feels like an invasion of personal space. With a phone, that barrier drops. Shot in the narrow streets of Pignasecca and the Quartieri Spagnoli, the project comes in two chapters: the first in black and white, the second in colour.",
+    "it": "Davanti a una macchina fotografica la gente si irrigidisce: è grande, invadente, sembra entrare nello spazio personale. Con il telefono quella barriera si abbassa. Scattato tra i vicoli della Pignasecca e dei Quartieri Spagnoli, il progetto è diviso in due capitoli: il primo in bianco e nero, il secondo a colori."
+   },
+   "cover": "/img/p/iphone/04.jpg",
+   "images": [
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/01.jpg",
+     "m": "/img/m/iphone/01.jpg",
+     "t": "/img/t/iphone/01.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/02.jpg",
+     "m": "/img/m/iphone/02.jpg",
+     "t": "/img/t/iphone/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/03.jpg",
+     "m": "/img/m/iphone/03.jpg",
+     "t": "/img/t/iphone/03.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/04.jpg",
+     "m": "/img/m/iphone/04.jpg",
+     "t": "/img/t/iphone/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/05.jpg",
+     "m": "/img/m/iphone/05.jpg",
+     "t": "/img/t/iphone/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/06.jpg",
+     "m": "/img/m/iphone/06.jpg",
+     "t": "/img/t/iphone/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/07.jpg",
+     "m": "/img/m/iphone/07.jpg",
+     "t": "/img/t/iphone/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/08.jpg",
+     "m": "/img/m/iphone/08.jpg",
+     "t": "/img/t/iphone/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/09.jpg",
+     "m": "/img/m/iphone/09.jpg",
+     "t": "/img/t/iphone/09.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1800,
+     "src": "/img/p/iphone/10.jpg",
+     "m": "/img/m/iphone/10.jpg",
+     "t": "/img/t/iphone/10.jpg"
+    }
+   ]
+  },
+  {
+   "id": "diario",
+   "group": "Reportage",
+   "name": "Diario Metropolitano",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Street · Tokyo · Winner of Microracconti Urbani 2025",
+    "it": "Street · Tokyo · Vincitore di Microracconti Urbani 2025"
+   },
+   "short": {
+    "en": "Suspended moments on Tokyo's subways and elevated trains.",
+    "it": "Attimi sospesi tra metropolitana e treni sopraelevati di Tokyo."
+   },
+   "desc": {
+    "en": "Every day, millions of people cross Tokyo by subway and elevated train, caught in a rhythm that never stops. Yet within that flow there are suspended moments when passengers withdraw into themselves. A metropolitan diary of solitude, thoughts and quiet escapes from the crowd. Winner of Microracconti Urbani 2025.",
+    "it": "Ogni giorno milioni di persone attraversano Tokyo in metropolitana e sui treni sopraelevati, dentro un ritmo che non si ferma mai. Eppure, in mezzo a quel flusso, ci sono attimi sospesi in cui i passeggeri si chiudono in sé stessi. Un diario metropolitano fatto di solitudine, pensieri e piccole fughe silenziose dalla folla. Vincitore di Microracconti Urbani 2025."
+   },
+   "cover": "/img/p/diario/01.jpg",
+   "images": [
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/diario/01.jpg",
+     "m": "/img/m/diario/01.jpg",
+     "t": "/img/t/diario/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/diario/02.jpg",
+     "m": "/img/m/diario/02.jpg",
+     "t": "/img/t/diario/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/diario/03.jpg",
+     "m": "/img/m/diario/03.jpg",
+     "t": "/img/t/diario/03.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/diario/04.jpg",
+     "m": "/img/m/diario/04.jpg",
+     "t": "/img/t/diario/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/diario/05.jpg",
+     "m": "/img/m/diario/05.jpg",
+     "t": "/img/t/diario/05.jpg"
+    }
+   ]
+  },
+  {
+   "id": "pescatori",
+   "group": "Reportage",
+   "name": "Pescatori all'alba",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Documentary",
+    "it": "Documentario"
+   },
+   "short": {
+    "en": "A study of a ritual: the waiting, the gestures and the silence at the edge of the day.",
+    "it": "Uno studio su un rito: l'attesa, i gesti, il silenzio al confine del giorno."
+   },
+   "desc": {
+    "en": "A study of a ritual: the waiting, the gestures and the silence at the edge of the day. Before morning fully arrives, the shoreline becomes a bare stage of slow movements, still water and light that changes by the minute. A suspended fragment of work and presence between night and day.",
+    "it": "Uno studio su un rito: l'attesa, i gesti, il silenzio al confine del giorno. Prima che arrivi il mattino la riva diventa un palcoscenico essenziale, fatto di movimenti lenti, acqua che riflette e una luce che cambia di minuto in minuto. Un frammento di lavoro e di presenza sospeso tra la notte e il giorno."
+   },
+   "cover": "/img/p/pescatori/06.jpg",
+   "images": [
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/pescatori/01.jpg",
+     "m": "/img/m/pescatori/01.jpg",
+     "t": "/img/t/pescatori/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/pescatori/02.jpg",
+     "m": "/img/m/pescatori/02.jpg",
+     "t": "/img/t/pescatori/02.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/pescatori/03.jpg",
+     "m": "/img/m/pescatori/03.jpg",
+     "t": "/img/t/pescatori/03.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/pescatori/04.jpg",
+     "m": "/img/m/pescatori/04.jpg",
+     "t": "/img/t/pescatori/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/pescatori/05.jpg",
+     "m": "/img/m/pescatori/05.jpg",
+     "t": "/img/t/pescatori/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/pescatori/06.jpg",
+     "m": "/img/m/pescatori/06.jpg",
+     "t": "/img/t/pescatori/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/pescatori/07.jpg",
+     "m": "/img/m/pescatori/07.jpg",
+     "t": "/img/t/pescatori/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/pescatori/08.jpg",
+     "m": "/img/m/pescatori/08.jpg",
+     "t": "/img/t/pescatori/08.jpg"
+    }
+   ]
+  },
+  {
+   "id": "napoli",
+   "group": "Reportage",
+   "name": "Napoli",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Street · Naples",
+    "it": "Street · Napoli"
+   },
+   "short": {
+    "en": "An everyday Naples, full of life: streets, faces and atmospheres.",
+    "it": "Una Napoli viva e quotidiana, fatta di strade, volti e atmosfere."
+   },
+   "desc": {
+    "en": "An everyday Naples, full of life: streets, faces and atmospheres. A direct portrait of the city's energy.",
+    "it": "Una Napoli viva e quotidiana, fatta di strade, volti e atmosfere. Un racconto diretto dell'energia della città."
+   },
+   "cover": "/img/p/napoli/06.jpg",
+   "images": [
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/napoli/01.jpg",
+     "m": "/img/m/napoli/01.jpg",
+     "t": "/img/t/napoli/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/napoli/02.jpg",
+     "m": "/img/m/napoli/02.jpg",
+     "t": "/img/t/napoli/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/03.jpg",
+     "m": "/img/m/napoli/03.jpg",
+     "t": "/img/t/napoli/03.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/04.jpg",
+     "m": "/img/m/napoli/04.jpg",
+     "t": "/img/t/napoli/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/05.jpg",
+     "m": "/img/m/napoli/05.jpg",
+     "t": "/img/t/napoli/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/06.jpg",
+     "m": "/img/m/napoli/06.jpg",
+     "t": "/img/t/napoli/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/07.jpg",
+     "m": "/img/m/napoli/07.jpg",
+     "t": "/img/t/napoli/07.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/napoli/08.jpg",
+     "m": "/img/m/napoli/08.jpg",
+     "t": "/img/t/napoli/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/09.jpg",
+     "m": "/img/m/napoli/09.jpg",
+     "t": "/img/t/napoli/09.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/10.jpg",
+     "m": "/img/m/napoli/10.jpg",
+     "t": "/img/t/napoli/10.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/napoli/11.jpg",
+     "m": "/img/m/napoli/11.jpg",
+     "t": "/img/t/napoli/11.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/12.jpg",
+     "m": "/img/m/napoli/12.jpg",
+     "t": "/img/t/napoli/12.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napoli/13.jpg",
+     "m": "/img/m/napoli/13.jpg",
+     "t": "/img/t/napoli/13.jpg"
+    }
+   ]
+  },
+  {
+   "id": "scudetto",
+   "group": "Reportage",
+   "name": "Scudetto",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Sport · Naples",
+    "it": "Sport · Napoli"
+   },
+   "short": {
+    "en": "The city celebrates Napoli's Serie A title.",
+    "it": "La festa del Napoli campione d'Italia."
+   },
+   "desc": {
+    "en": "The city celebrates Napoli's Serie A title.",
+    "it": "La festa del Napoli campione d'Italia."
+   },
+   "cover": "/img/p/scudetto/04.jpg",
+   "images": [
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/scudetto/01.jpg",
+     "m": "/img/m/scudetto/01.jpg",
+     "t": "/img/t/scudetto/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/scudetto/02.jpg",
+     "m": "/img/m/scudetto/02.jpg",
+     "t": "/img/t/scudetto/02.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/scudetto/03.jpg",
+     "m": "/img/m/scudetto/03.jpg",
+     "t": "/img/t/scudetto/03.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/scudetto/04.jpg",
+     "m": "/img/m/scudetto/04.jpg",
+     "t": "/img/t/scudetto/04.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/scudetto/05.jpg",
+     "m": "/img/m/scudetto/05.jpg",
+     "t": "/img/t/scudetto/05.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/scudetto/06.jpg",
+     "m": "/img/m/scudetto/06.jpg",
+     "t": "/img/t/scudetto/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/scudetto/07.jpg",
+     "m": "/img/m/scudetto/07.jpg",
+     "t": "/img/t/scudetto/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/scudetto/08.jpg",
+     "m": "/img/m/scudetto/08.jpg",
+     "t": "/img/t/scudetto/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/scudetto/09.jpg",
+     "m": "/img/m/scudetto/09.jpg",
+     "t": "/img/t/scudetto/09.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/scudetto/10.jpg",
+     "m": "/img/m/scudetto/10.jpg",
+     "t": "/img/t/scudetto/10.jpg"
+    }
+   ]
+  },
+  {
+   "id": "napolibw",
+   "group": "Reportage",
+   "name": "Napoli B&W",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Street · Naples · Black and white",
+    "it": "Street · Napoli · Bianco e nero"
+   },
+   "short": {
+    "en": "A quiet, intimate look at Naples: shadows, gestures and figures that reveal the city's true face.",
+    "it": "Uno sguardo intimo e silenzioso su Napoli: ombre, gesti e presenze che ne mostrano il volto più vero."
+   },
+   "desc": {
+    "en": "A quiet, intimate look at Naples: shadows, gestures and figures that reveal the city's true face.",
+    "it": "Uno sguardo intimo e silenzioso su Napoli: ombre, gesti e presenze che ne mostrano il volto più vero."
+   },
+   "cover": "/img/p/napolibw/01.jpg",
+   "images": [
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napolibw/01.jpg",
+     "m": "/img/m/napolibw/01.jpg",
+     "t": "/img/t/napolibw/01.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/napolibw/02.jpg",
+     "m": "/img/m/napolibw/02.jpg",
+     "t": "/img/t/napolibw/02.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/napolibw/03.jpg",
+     "m": "/img/m/napolibw/03.jpg",
+     "t": "/img/t/napolibw/03.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/napolibw/04.jpg",
+     "m": "/img/m/napolibw/04.jpg",
+     "t": "/img/t/napolibw/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1597,
+     "src": "/img/p/napolibw/05.jpg",
+     "m": "/img/m/napolibw/05.jpg",
+     "t": "/img/t/napolibw/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1597,
+     "src": "/img/p/napolibw/06.jpg",
+     "m": "/img/m/napolibw/06.jpg",
+     "t": "/img/t/napolibw/06.jpg"
+    },
+    {
+     "w": 1597,
+     "h": 2400,
+     "src": "/img/p/napolibw/07.jpg",
+     "m": "/img/m/napolibw/07.jpg",
+     "t": "/img/t/napolibw/07.jpg"
+    },
+    {
+     "w": 1597,
+     "h": 2400,
+     "src": "/img/p/napolibw/08.jpg",
+     "m": "/img/m/napolibw/08.jpg",
+     "t": "/img/t/napolibw/08.jpg"
+    }
+   ]
+  },
+  {
+   "id": "asia",
+   "group": "Reportage",
+   "name": "Asia Stories",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Travel · Vietnam · Japan · China",
+    "it": "Viaggio · Vietnam · Giappone · Cina"
+   },
+   "short": {
+    "en": "A story in three chapters, across Vietnam, Japan and China, about everyday life in Asian cities.",
+    "it": "Una storia in tre capitoli, tra Vietnam, Giappone e Cina, dentro la vita di tutti i giorni delle città asiatiche."
+   },
+   "desc": {
+    "en": "A story in three chapters, across Vietnam, Japan and China, about everyday life in Asian cities. Amid the movement and noise, people's expressions reveal a hidden calm, a moment to breathe in the middle of the traffic. Each photograph is a discreet encounter, a moment of stillness found in the chaos.",
+    "it": "Una storia in tre capitoli, tra Vietnam, Giappone e Cina, dentro la vita di tutti i giorni delle città asiatiche. In mezzo al movimento e al rumore, gli sguardi rivelano una calma nascosta, un attimo di respiro nel cuore del traffico. Ogni foto è un incontro discreto, un momento di quiete trovato nel caos."
+   },
+   "cover": "/img/p/asia/02.jpg",
+   "images": [
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/01.jpg",
+     "m": "/img/m/asia/01.jpg",
+     "t": "/img/t/asia/01.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/02.jpg",
+     "m": "/img/m/asia/02.jpg",
+     "t": "/img/t/asia/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/03.jpg",
+     "m": "/img/m/asia/03.jpg",
+     "t": "/img/t/asia/03.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/04.jpg",
+     "m": "/img/m/asia/04.jpg",
+     "t": "/img/t/asia/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/05.jpg",
+     "m": "/img/m/asia/05.jpg",
+     "t": "/img/t/asia/05.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/asia/06.jpg",
+     "m": "/img/m/asia/06.jpg",
+     "t": "/img/t/asia/06.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/asia/07.jpg",
+     "m": "/img/m/asia/07.jpg",
+     "t": "/img/t/asia/07.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/asia/08.jpg",
+     "m": "/img/m/asia/08.jpg",
+     "t": "/img/t/asia/08.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/09.jpg",
+     "m": "/img/m/asia/09.jpg",
+     "t": "/img/t/asia/09.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/10.jpg",
+     "m": "/img/m/asia/10.jpg",
+     "t": "/img/t/asia/10.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/11.jpg",
+     "m": "/img/m/asia/11.jpg",
+     "t": "/img/t/asia/11.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/asia/12.jpg",
+     "m": "/img/m/asia/12.jpg",
+     "t": "/img/t/asia/12.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/asia/13.jpg",
+     "m": "/img/m/asia/13.jpg",
+     "t": "/img/t/asia/13.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/14.jpg",
+     "m": "/img/m/asia/14.jpg",
+     "t": "/img/t/asia/14.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/asia/15.jpg",
+     "m": "/img/m/asia/15.jpg",
+     "t": "/img/t/asia/15.jpg"
+    }
+   ]
+  },
+  {
+   "id": "events",
+   "group": "Reportage",
+   "name": "Private Events",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Commercial · Private events",
+    "it": "Commerciale · Eventi privati"
+   },
+   "short": {
+    "en": "Photography for private events with a documentary approach, capturing genuine moments with a natural eye.",
+    "it": "Servizi fotografici per eventi privati con un taglio documentaristico, per raccontare momenti autentici con uno sguardo naturale."
+   },
+   "desc": {
+    "en": "Photography for private events with a documentary approach, capturing genuine moments with a natural eye.",
+    "it": "Servizi fotografici per eventi privati con un taglio documentaristico, per raccontare momenti autentici con uno sguardo naturale."
+   },
+   "cover": "/img/p/events/05.jpg",
+   "images": [
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/events/01.jpg",
+     "m": "/img/m/events/01.jpg",
+     "t": "/img/t/events/01.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/events/02.jpg",
+     "m": "/img/m/events/02.jpg",
+     "t": "/img/t/events/02.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/03.jpg",
+     "m": "/img/m/events/03.jpg",
+     "t": "/img/t/events/03.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/events/04.jpg",
+     "m": "/img/m/events/04.jpg",
+     "t": "/img/t/events/04.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/05.jpg",
+     "m": "/img/m/events/05.jpg",
+     "t": "/img/t/events/05.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/06.jpg",
+     "m": "/img/m/events/06.jpg",
+     "t": "/img/t/events/06.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/07.jpg",
+     "m": "/img/m/events/07.jpg",
+     "t": "/img/t/events/07.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/08.jpg",
+     "m": "/img/m/events/08.jpg",
+     "t": "/img/t/events/08.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/events/09.jpg",
+     "m": "/img/m/events/09.jpg",
+     "t": "/img/t/events/09.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/10.jpg",
+     "m": "/img/m/events/10.jpg",
+     "t": "/img/t/events/10.jpg"
+    },
+    {
+     "w": 1600,
+     "h": 2400,
+     "src": "/img/p/events/11.jpg",
+     "m": "/img/m/events/11.jpg",
+     "t": "/img/t/events/11.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/12.jpg",
+     "m": "/img/m/events/12.jpg",
+     "t": "/img/t/events/12.jpg"
+    },
+    {
+     "w": 2400,
+     "h": 1600,
+     "src": "/img/p/events/13.jpg",
+     "m": "/img/m/events/13.jpg",
+     "t": "/img/t/events/13.jpg"
+    }
+   ]
+  }
+ ],
+ "sphere": {
+  "featured": [
+   "outofplace",
+   "shibuya",
+   "video",
+   "diario"
+  ],
+  "tiles": [],
+  "motion": {
+   "life": 1,
+   "rgb": 1,
+   "breathe": 1,
+   "spin": 0,
+   "size": 1,
+   "scroll": 1.45,
+   "density": "media"
+  }
+ },
+ "site": {
+  "hero": "/img/site/hero.jpg",
+  "heroMobile": "/img/site/hero-mobile.jpg",
+  "about": "/img/site/about.jpg",
+  "role": {
+   "en": "Photographer · DoP · Colorist",
+   "it": "Fotografo · DoP · Colorist"
+  },
+  "place": {
+   "en": "Naples / Milan",
+   "it": "Napoli / Milano"
+  },
+  "intro": {
+   "en": "Paolo Scotto di Vettimo · Photographer, director of photography and colorist",
+   "it": "Paolo Scotto di Vettimo · Fotografo, direttore della fotografia e colorist"
+  },
+  "statement": {
+   "en": "I'm Paolo, a 24-year-old photographer based between Naples and Milan. I shoot fashion with a documentary approach, and I work as a director of photography and colorist on fashion films and short films.",
+   "it": "Mi chiamo Paolo, ho 24 anni e vivo tra Napoli e Milano. Faccio fotografia di moda con un approccio documentaristico e lavoro come direttore della fotografia e colorist su fashion film e cortometraggi."
+  },
+  "p1": {
+   "en": "I started out photographing the streets of my hometown, and I've worked across documentary and fashion ever since, without ever picking one over the other.",
+   "it": "Ho iniziato fotografando le strade della mia città e da lì mi sono diviso tra documentario e moda, senza mai sceglierne uno."
+  },
+  "p2": {
+   "en": "Alongside photography, I shoot and color grade video. I'm currently studying for a Master's in Fashion Photography at IED Milan.",
+   "it": "Oltre alla fotografia lavoro sul video, tra riprese e color grading, e sto frequentando il Master in Fashion Photography allo IED di Milano."
+  },
+  "facts": [
+   {
+    "k": {
+     "en": "Based",
+     "it": "Base"
+    },
+    "v": {
+     "en": "Naples · Milan",
+     "it": "Napoli · Milano"
+    }
+   },
+   {
+    "k": {
+     "en": "Born",
+     "it": "Classe"
+    },
+    "v": {
+     "en": "2002",
+     "it": "2002"
+    }
+   },
+   {
+    "k": {
+     "en": "Photography",
+     "it": "Fotografia"
+    },
+    "v": {
+     "en": "Fashion · Reportage",
+     "it": "Moda · Reportage"
+    }
+   },
+   {
+    "k": {
+     "en": "Video",
+     "it": "Video"
+    },
+    "v": {
+     "en": "DoP · Color grading",
+     "it": "DoP · Color grading"
+    }
+   }
+  ],
+  "credits": [
+   {
+    "name": "Seline Magazine",
+    "what": {
+     "en": "Published in print",
+     "it": "Pubblicato su carta"
+    },
+    "proj": "outofplace",
+    "year": "2026"
+   },
+   {
+    "name": "Reflective Photo",
+    "what": {
+     "en": "Commissioned project",
+     "it": "Servizio commissionato"
+    },
+    "proj": "piazza",
+    "year": "2026"
+   },
+   {
+    "name": "Università Vanvitelli",
+    "what": {
+     "en": "Fashion Design Department",
+     "it": "Dip. di Fashion Design"
+    },
+    "proj": "punkture",
+    "year": "2026"
+   },
+   {
+    "name": "Microracconti Urbani",
+    "what": {
+     "en": "Winner",
+     "it": "Vincitore"
+    },
+    "proj": "diario",
+    "year": "2025"
+   }
+  ],
+  "marquee": {
+   "en": "Let's work together",
+   "it": "Lavoriamo insieme"
+  },
+  "contactTitle": {
+   "en": "Contact · available in Italy and abroad",
+   "it": "Contatti · in Italia e all'estero"
+  },
+  "email": "info@paoloscotto.it",
+  "instagram": "paoloscottodv",
+  "formspree": "https://formspree.io/f/xgavaony",
+  "copyright": "© 2026 Paolo Scotto di Vettimo"
+ }
+}
