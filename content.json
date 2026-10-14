@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "",
+ "updated": "2026-10-14T15:10:07.059Z",
  "projects": [
   {
    "id": "shibuya",
@@ -1474,7 +1474,21 @@
    "video",
    "diario"
   ],
-  "tiles": [],
+  "tiles": [
+   "/img/t/neon/01.jpg",
+   "/img/t/punkture/11.jpg",
+   "/img/t/aethereal/04.jpg",
+   "/img/t/piazza/07.jpg",
+   "/img/t/iphone/04.jpg",
+   "/img/t/scudetto/04.jpg",
+   "/img/t/napolibw/01.jpg",
+   "/img/t/asia/02.jpg",
+   "/img/t/shibuya/12.jpg",
+   "/img/t/outofplace/08.jpg",
+   "/img/t/punkture/07.jpg",
+   "/img/t/diario/03.jpg",
+   "/img/t/shibuya/07.jpg"
+  ],
   "motion": {
    "life": 1,
    "rgb": 1,
