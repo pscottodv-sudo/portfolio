@@ -167,12 +167,14 @@ html.no-gl .work-list{display:block}
 .grade{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;margin:0}
 .grade-frame{position:absolute;inset:0;overflow:hidden;background:var(--void)}
 .grade-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.grade-log{position:absolute;inset:0;clip-path:inset(0% 50% 0% 0%)}
+.grade-top{position:absolute;inset:0;clip-path:inset(0% 50% 0% 0%)}
 .grade-line{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--on-photo);pointer-events:none}
 .grade-label{position:absolute;top:12px;color:var(--on-photo);text-shadow:0 1px 8px rgba(0,0,0,.45)}
 .grade-label.l{left:14px}.grade-label.r{right:14px}
-.grade-ctl{display:grid;gap:8px;color:var(--muted)}
-.grade-ctl input{width:100%;accent-color:var(--ink);min-height:44px}
+.grade-frame input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3;touch-action:pan-y}
+.grade-line::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--on-photo);background:rgba(10,10,10,.45);color:var(--on-photo);font-size:13px;letter-spacing:2px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.grade-frame:has(input:focus-visible) .grade-line::after{outline:2px solid var(--on-photo);outline-offset:3px}
+.grade-ctl{display:block;margin-top:12px;color:var(--muted)}
 
 /* ---------- collaborations ---------- */
 .collab{padding-block:clamp(110px,18vh,200px) clamp(28px,4vh,48px)}
@@ -466,7 +468,11 @@ body{margin:0}
   function build(C){
     var all = C.projects || [], S = C.site || {}, SP = C.sphere || {};
     var IMG = {};
-    all.forEach(function(p){ (p.images || []).forEach(function(i){ IMG[i.src] = i; }); });
+    all.forEach(function(p){
+      (p.images || []).forEach(function(i){ IMG[i.src] = i; });
+      (p.pairs || []).forEach(function(q){ if (q.grade && q.grade.src) IMG[q.grade.src] = q.grade; });
+      if (p.coverImg && p.coverImg.src) IMG[p.coverImg.src] = p.coverImg;
+    });
     var DATA = all.filter(function(p){ return p.visible !== false; }).map(function(p){
       var c = IMG[p.cover] || (p.images && p.images[0]) || {src: p.cover, m: p.cover, t: p.cover, w: 1600, h: 1067};
       var o = function(f){ return (p[f] && p[f].en) || ''; }, oi = function(f){ return (p[f] && (p[f].it || p[f].en)) || ''; };
@@ -666,8 +672,9 @@ body{margin:0}
       var pairs = (p.pairs || []).filter(function(q){ return q.log && q.grade; });
       if (pairs.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('grading') + '</p><div class="grades">' + pairs.map(function(q, j){
         var g = q.grade.m || q.grade.src || q.grade, l = q.log.m || q.log.src || q.log;
-        return '<div><figure class="grade"><div class="grade-frame"><img src="' + esc(g) + '" alt="' + esc(T('gradeAlt2')) + '" loading="lazy"><div class="grade-log"><img src="' + esc(l) + '" alt="" loading="lazy"></div><div class="grade-line"></div><span class="grade-label l mono" aria-hidden="true">Log</span><span class="grade-label r mono" aria-hidden="true">Graded</span></div></figure>' +
-          '<label class="mono grade-ctl">' + (q.label ? esc(q.label) + ' · ' : '') + T('drag') + '<input type="range" min="0" max="100" value="50"></label></div>';
+        return '<div><figure class="grade"><div class="grade-frame"><img src="' + esc(l) + '" alt="' + esc(T('gradeAlt2')) + '" loading="lazy"><div class="grade-top"><img src="' + esc(g) + '" alt="" loading="lazy"></div><div class="grade-line"></div><span class="grade-label l mono" aria-hidden="true">Graded</span><span class="grade-label r mono" aria-hidden="true">Log</span>' +
+          '<input type="range" min="0" max="100" value="50" aria-label="' + esc(T('drag')) + (q.label ? ' · ' + esc(q.label) : '') + '"></div></figure>' +
+          '<p class="mono grade-ctl">' + (q.label ? esc(q.label) + ' · ' : '') + T('drag') + '</p></div>';
       }).join('') + '</div></section>');
       var films = (p.films || []).filter(function(f){ return f.title; });
       if (films.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('films') + '</p><ul class="films">' + films.map(function(f){
@@ -680,10 +687,10 @@ body{margin:0}
         return '<img src="' + esc(g.m) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async">'; }).join('') + '</div></section>');
       if (!secs.length) secs.push('<div class="vp-slot reel"><span class="mono">' + T('soon') + '</span></div>');
       $('#projGallery').innerHTML = '<div class="vp-wrap">' + secs.join('') + '</div>';
-      $$('#projGallery .grade-ctl input').forEach(function(r){
+      $$('#projGallery .grade-frame input').forEach(function(r){
         r.addEventListener('input', function(){
-          var fig = r.closest('div').querySelector('.grade-frame');
-          fig.querySelector('.grade-log').style.clipPath = 'inset(0% ' + (100 - r.value) + '% 0% 0%)';
+          var fig = r.closest('.grade-frame');
+          fig.querySelector('.grade-top').style.clipPath = 'inset(0% ' + (100 - r.value) + '% 0% 0%)';
           fig.querySelector('.grade-line').style.left = r.value + '%';
         });
       });

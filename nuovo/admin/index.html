@@ -431,7 +431,15 @@ function P(id){ for (var i = 0; i < S.projects.length; i++) if (S.projects[i].id
 function PO(id){ for (var i = 0; i < ORIG.projects.length; i++) if (ORIG.projects[i].id === id) return ORIG.projects[i]; }
 function get(o, path){ return path.split('.').reduce(function(a, k){ return a == null ? a : a[k]; }, o); }
 function set(o, path, v){ var ks = path.split('.'), last = ks.pop(); var t = ks.reduce(function(a, k){ if (a[k] == null) a[k] = {}; return a[k]; }, o); t[last] = v; }
-function imgOf(srcPath){ for (var i = 0; i < S.projects.length; i++){ var im = (S.projects[i].images || []).filter(function(x){ return x.src === srcPath; })[0]; if (im) return im; } return null; }
+function imgOf(srcPath){
+  for (var i = 0; i < S.projects.length; i++){
+    var p = S.projects[i];
+    if (p.coverImg && p.coverImg.src === srcPath) return p.coverImg;
+    var im = (p.images || []).concat((p.pairs || []).map(function(q){ return q.grade; })).filter(function(x){ return x && x.src === srcPath; })[0];
+    if (im) return im;
+  }
+  return null;
+}
 function thumb(u){ var im = imgOf(u); return src(im ? (im.t || im.m || im.src) : u); }
 function normalize(c){
   c.projects = c.projects || []; c.site = c.site || {}; c.sphere = c.sphere || {};
@@ -611,6 +619,9 @@ function renderEditor(){
      bilF('Descrizione', 'desc', {area: 1, rows: 6, hint: 'Il testo completo nella pagina del progetto.'}) + '</div>' +
    (isV ?
    '<div class="sec"><div class="sec-h"><h3>Video</h3></div>' +
+     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Copertina</span><span class="hint">La still che esce dalla sfera e compare nell\'archivio. Puoi caricarne una o usare il gradato di una coppia (★).</span></div>' +
+       '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="ph" style="width:220px;aspect-ratio:16/10;cursor:default">' + (p.cover ? '<img src="' + esc(src((imgOf(p.cover) || {}).m || p.cover)) + '" alt="" id="vCover">' : '<div class="ba-empty">Nessuna copertina</div>') + '</div>' +
+       '<button class="btn small" type="button" id="vCoverUp">Carica una still</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in log e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Film</span><span class="hint">I lavori come DoP / colorist, con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi film</button></div></div>' +
      '<div class="f"><label class="mono" for="pReel">Reel principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
@@ -639,6 +650,9 @@ function renderEditor(){
   if (isV){
     renderFilms(p); renderPairs(p); renderClips(p);
     $('#addV').addEventListener('click', function(){ p.films.push({role: 'DoP · Color', title: '', dir: '', year: '', link: ''}); renderFilms(p); dirty(); });
+    $('#vCoverUp').addEventListener('click', function(){ pick('image/*', false, function(files){
+      addImages([files[0]], p.id + '/cover', function(o){ p.coverImg = o; p.cover = o.src; }).then(function(n){ if (n){ renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); } });
+    }); });
     $('#addPair').addEventListener('click', function(){ p.pairs.push({label: '', log: null, grade: null}); renderPairs(p); dirty(); });
   }
   renderGal(p); pv();
@@ -664,9 +678,9 @@ function renderPairs(p){
   box.innerHTML = p.pairs.map(function(q, i){
     var both = q.log && q.grade;
     return '<div class="pair" data-i="' + i + '"><div class="ba">' +
-      (both ? '<img src="' + esc(src(q.grade.m)) + '" alt=""><img class="top" src="' + esc(src(q.log.m)) + '" alt=""><span class="line"></span><span class="lb l">Log</span><span class="lb r">Grading</span><input type="range" min="0" max="100" value="50" aria-label="Sposta lo slider">'
+      (both ? '<img src="' + esc(src(q.log.m)) + '" alt=""><img class="top" src="' + esc(src(q.grade.m)) + '" alt=""><span class="line"></span><span class="lb l">Grading</span><span class="lb r">Log</span><input type="range" min="0" max="100" value="50" aria-label="Sposta lo slider">'
         : '<div class="ba-empty">Carica il frame in log e quello gradato:<br>qui vedrai lo slider</div>') + '</div>' +
-      '<div class="pslots">' + slot(q, 'log', 'Log') + slot(q, 'grade', 'Grading') + '<button class="ic" type="button" data-rm aria-label="Rimuovi coppia">✕</button></div>' +
+      '<div class="pslots" style="grid-template-columns:1fr 1fr 32px 32px">' + slot(q, 'grade', 'Grading') + slot(q, 'log', 'Log') + '<button class="ic" type="button" data-pcov aria-label="Usa il gradato come copertina" title="Usa il gradato come copertina"' + (q.grade ? '' : ' disabled') + '>★</button><button class="ic" type="button" data-rm aria-label="Rimuovi coppia">✕</button></div>' +
       '<input class="inp" data-k="label" placeholder="Didascalia, es. Neon Therapy · scena 3" aria-label="Didascalia"></div>';
   }).join('');
   $$('.pair', box).forEach(function(el){
@@ -680,6 +694,7 @@ function renderPairs(p){
       b.addEventListener('drop', function(e){ e.preventDefault(); e.stopPropagation(); b.classList.remove('drop'); if (e.dataTransfer.files.length) setF(e.dataTransfer.files); });
     });
     el.querySelector('[data-rm]').addEventListener('click', function(){ p.pairs.splice(+el.dataset.i, 1); renderPairs(p); dirty(); });
+    el.querySelector('[data-pcov]').addEventListener('click', function(){ if (!q.grade) return; p.coverImg = q.grade; p.cover = q.grade.src; renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); });
   });
   sortable(box, '.pair', function(a, b){ move(p.pairs, a, b); renderPairs(p); dirty(); });
 }
@@ -703,7 +718,7 @@ function renderGal(p){
     '<label class="add" id="addPh" tabindex="0" for="fileIn"><b>+</b><span>Aggiungi foto</span><span class="hint">JPG o PNG, anche più di una</span></label>';
   $$('.ph', g).forEach(function(el){
     var i = +el.dataset.i;
-    el.querySelector('[data-cov]').addEventListener('click', function(){ p.cover = p.images[i].src; renderGal(p); pv(); renderList(); dirty(); toast('Copertina aggiornata'); });
+    el.querySelector('[data-cov]').addEventListener('click', function(){ p.cover = p.images[i].src; if (p.group === 'Video') p.coverImg = p.images[i]; if (p.group === 'Video') renderEditor(); else { renderGal(p); pv(); } renderList(); dirty(); toast('Copertina aggiornata'); });
     el.querySelector('[data-up]').addEventListener('click', function(){ if (i > 0){ move(p.images, i, i - 1); renderGal(p); dirty(); } });
     el.querySelector('[data-rm]').addEventListener('click', function(){
       var im = p.images.splice(i, 1)[0];
