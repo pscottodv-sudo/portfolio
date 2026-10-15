@@ -278,11 +278,14 @@ html,body{overflow:hidden}
 .prog{height:4px;background:var(--raise);border-radius:999px;overflow:hidden}
 .prog i{display:block;height:100%;width:0;background:var(--ink);transition:width .2s}
 .hist li button{color:var(--ink)}
-.crow.film{grid-template-columns:20px minmax(0,.9fr) minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.3fr) 70px 32px}
+.crow.film{grid-template-columns:20px minmax(0,1.3fr) minmax(0,1fr) minmax(0,.9fr) minmax(0,.9fr) minmax(0,1.2fr) 64px 32px}
 .crow.fact{grid-template-columns:20px repeat(4,minmax(0,1fr)) 32px}
 @media (max-width:640px){
   .crow.film,.crow.fact{grid-template-columns:20px minmax(0,1fr) 32px}
   .crow.fact>*:nth-child(6){grid-area:x}
+  .crow.film>*{grid-area:auto;grid-column:2}
+  .crow.film>.grip{grid-column:1;grid-row:1}
+  .crow.film>[data-rm]{grid-column:3;grid-row:1}
   .bar h1{display:none}
   .bar .pending{margin-right:auto}
   .bar{gap:8px}
@@ -386,6 +389,7 @@ html,body{overflow:hidden}
 <div class="scrim" id="scrim" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" id="modal"></div></div>
 <div class="toast" id="toast" role="status"></div>
 <input type="file" id="fileIn" accept="image/*" multiple hidden>
+<datalist id="vtypes"><option value="Fashion film"><option value="Cortometraggio"><option value="Videoclip"><option value="Spot"><option value="Contenuto social"><option value="Documentario"><option value="Backstage"></datalist>
 
 <script>
 (function(){
@@ -470,7 +474,7 @@ function changes(){
     var add = ps.filter(function(g){ return os.indexOf(g) < 0; }).length, rem = os.filter(function(g){ return ps.indexOf(g) < 0; }).length;
     if (add) f.push('+' + add + ' foto'); if (rem) f.push('−' + rem + ' foto');
     if (!add && !rem && J(ps) !== J(os)) f.push('ordine foto');
-    if (J(p.films) !== J(o.films)) f.push('film');
+    if (J(p.films) !== J(o.films)) f.push('lavori video');
     if (J(p.pairs) !== J(o.pairs)) f.push('prima e dopo');
     if (J(p.clips) !== J(o.clips)) f.push('clip');
     if (f.length) out.push([p.name, f.join(', ')]);
@@ -636,7 +640,7 @@ function renderEditor(){
        '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="ph" style="width:220px;aspect-ratio:16/10;cursor:default">' + (p.cover ? '<img src="' + esc(src((imgOf(p.cover) || {}).g || (imgOf(p.cover) || {}).m || p.cover)) + '" alt="" id="vCover">' : '<div class="ba-empty">Nessuna copertina</div>') + '</div>' +
        '<button class="btn small" type="button" id="vCoverUp">Carica una still</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in log e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
-     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Film</span><span class="hint">I lavori come DoP / colorist, con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi film</button></div></div>' +
+     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Lavori video</span><span class="hint">Fashion film, cortometraggi, videoclip, spot, contenuti… con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi lavoro</button></div></div>' +
      '<div class="f"><label class="mono" for="pReel">Reel principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Clip brevi in loop</span><span class="hint">MP4 senza audio, pochi secondi, massimo 20 MB.</span></div><div class="clips" id="clips"></div></div></div>'
    : '') +
@@ -662,7 +666,7 @@ function renderEditor(){
   $$('[data-pl]').forEach(function(b){ b.addEventListener('click', function(){ pvLang = b.dataset.pl; $$('[data-pl]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); }); pv(); }); });
   if (isV){
     renderFilms(p); renderPairs(p); renderClips(p);
-    $('#addV').addEventListener('click', function(){ p.films.push({role: 'DoP · Color', title: '', dir: '', year: '', link: ''}); renderFilms(p); dirty(); });
+    $('#addV').addEventListener('click', function(){ p.films.push({title: '', type: '', role: 'DoP · Color', dir: '', link: '', year: ''}); renderFilms(p); dirty(); });
     $('#vCoverUp').addEventListener('click', function(){ pick('image/*', false, function(files){
       addImages([files[0]], p.id + '/cover', function(o){ p.coverImg = o; p.cover = o.src; }).then(function(n){ if (n){ renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); } });
     }); });
@@ -680,7 +684,7 @@ function pv(){
 function renderFilms(p){
   var box = $('#vcred');
   box.innerHTML = p.films.map(function(c, i){ return '<div class="crow film" data-i="' + i + '"><span class="grip">⋮⋮</span>' +
-    '<input class="inp" aria-label="Ruolo" placeholder="Ruolo" data-k="role"><input class="inp" aria-label="Titolo" placeholder="Titolo del film" data-k="title"><input class="inp" aria-label="Regia o brand" placeholder="Regia / brand" data-k="dir"><input class="inp" aria-label="Link al video" placeholder="Link Vimeo / YouTube" data-k="link"><input class="inp" aria-label="Anno" placeholder="Anno" data-k="year">' +
+    '<input class="inp" aria-label="Titolo" placeholder="Titolo" data-k="title"><input class="inp" aria-label="Tipo" placeholder="Tipo (es. Fashion film)" data-k="type" list="vtypes"><input class="inp" aria-label="Ruolo" placeholder="Ruolo" data-k="role"><input class="inp" aria-label="Regia o brand" placeholder="Regia / brand" data-k="dir"><input class="inp" aria-label="Link al video" placeholder="Link Vimeo / YouTube" data-k="link"><input class="inp" aria-label="Anno" placeholder="Anno" data-k="year">' +
     '<button class="ic" type="button" aria-label="Rimuovi" data-rm>✕</button></div>'; }).join('');
   $$('.crow', box).forEach(function(r){ var c = p.films[+r.dataset.i]; bind(r, c); r.querySelector('[data-rm]').addEventListener('click', function(){ p.films.splice(+r.dataset.i, 1); renderFilms(p); dirty(); }); });
   sortable(box, '.crow', function(a, b){ move(p.films, a, b); renderFilms(p); dirty(); });

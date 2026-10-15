@@ -583,7 +583,7 @@ body{margin:0}
   TX.en.formNote = 'Thank you, I will get back to you soon.'; TX.it.formNote = 'Grazie, ti rispondo al più presto.';
   TX.en.formErr = 'Something went wrong. Please write to the email above.'; TX.it.formErr = 'Qualcosa non ha funzionato. Scrivimi all\'email qui sopra.';
   TX.en.formSending = 'Sending…'; TX.it.formSending = 'Invio in corso…';
-  TX.en.films = 'Films'; TX.it.films = 'Film'; TX.en.watch = 'Watch ↗'; TX.it.watch = 'Guarda ↗';
+  TX.en.films = 'Work'; TX.it.films = 'Lavori'; TX.en.watch = 'Watch ↗'; TX.it.watch = 'Guarda ↗';
   TX.en.clips = 'Motion'; TX.it.clips = 'Clip'; TX.en.frames = 'Frames from set'; TX.it.frames = 'Frame dal set';
   TX.en.soon = 'More coming soon'; TX.it.soon = 'Presto altri lavori';
   TX.en.gradeAlt2 = 'Before and after color grading'; TX.it.gradeAlt2 = 'Prima e dopo il color grading';
@@ -678,7 +678,7 @@ body{margin:0}
       }).join('') + '</div></section>');
       var films = (p.films || []).filter(function(f){ return f.title; });
       if (films.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('films') + '</p><ul class="films">' + films.map(function(f){
-        return '<li class="film"><span class="film-t">' + esc(f.title) + '</span><span class="mono">' + esc(f.role || '') + '</span><span class="mono f-dir">' + esc(f.dir || '') + '</span><span class="mono f-year">' + esc(f.year || '') + '</span>' +
+        return '<li class="film"><span class="film-t">' + esc(f.title) + '</span><span class="mono">' + esc([f.type, f.role].filter(Boolean).join(' · ')) + '</span><span class="mono f-dir">' + esc(f.dir || '') + '</span><span class="mono f-year">' + esc(f.year || '') + '</span>' +
           (f.link ? '<a class="btn-view" href="' + esc(f.link) + '" target="_blank" rel="noopener">' + T('watch') + '</a>' : '<span></span>') + '</li>';
       }).join('') + '</ul></section>');
       if ((p.clips || []).length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('clips') + '</p><div class="clips">' + p.clips.map(function(c){
