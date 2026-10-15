@@ -1,7 +1,63 @@
 {
  "version": 2,
- "updated": "2026-10-15T13:40:24.162Z",
+ "updated": "2026-10-15T14:09:54.573Z",
  "projects": [
+  {
+   "id": "pmv9lunsjf4y4",
+   "group": "Video",
+   "name": "Dionysus Syndrome",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Color grading & DoP",
+    "it": "Color grading & DoP"
+   },
+   "short": {
+    "en": "",
+    "it": ""
+   },
+   "desc": {
+    "en": "",
+    "it": ""
+   },
+   "cover": "/foto/pmv9lunsjf4y4/cover/mv9lvkj9kh01.jpg",
+   "images": [],
+   "films": [],
+   "pairs": [
+    {
+     "label": "",
+     "log": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmv9lunsjf4y4/grade/mv9lvspjiyyi.jpg",
+      "m": "/foto/pmv9lunsjf4y4/grade/mv9lvspjiyyi.jpg",
+      "g": "/img/g/pmv9lunsjf4y4/grade/mv9lvspjiyyi.jpg",
+      "t": "/img/t/pmv9lunsjf4y4/grade/mv9lvspjiyyi.jpg"
+     },
+     "grade": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmv9lunsjf4y4/grade/mv9lvp9z735o.jpg",
+      "m": "/foto/pmv9lunsjf4y4/grade/mv9lvp9z735o.jpg",
+      "g": "/img/g/pmv9lunsjf4y4/grade/mv9lvp9z735o.jpg",
+      "t": "/img/t/pmv9lunsjf4y4/grade/mv9lvp9z735o.jpg"
+     }
+    }
+   ],
+   "clips": [],
+   "reel": "",
+   "coverImg": {
+    "w": 3840,
+    "h": 2160,
+    "src": "/foto/pmv9lunsjf4y4/cover/mv9lvkj9kh01.jpg",
+    "m": "/foto/pmv9lunsjf4y4/cover/mv9lvkj9kh01.jpg",
+    "g": "/img/g/pmv9lunsjf4y4/cover/mv9lvkj9kh01.jpg",
+    "t": "/img/t/pmv9lunsjf4y4/cover/mv9lvkj9kh01.jpg"
+   }
+  },
   {
    "id": "shibuya",
    "group": "Fashion editorial",
@@ -1650,7 +1706,7 @@
   "featured": [
    "outofplace",
    "shibuya",
-   "video",
+   "pmv9lunsjf4y4",
    "diario"
   ],
   "tiles": [
@@ -1666,7 +1722,9 @@
    "/img/t/outofplace/08.jpg",
    "/img/t/punkture/07.jpg",
    "/img/t/diario/03.jpg",
-   "/img/t/shibuya/07.jpg"
+   "/img/t/shibuya/07.jpg",
+   "/img/t/piazza/04.jpg",
+   "/img/t/asia/05.jpg"
   ],
   "motion": {
    "life": 1,
