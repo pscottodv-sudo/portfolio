@@ -236,7 +236,9 @@ textarea.inp{min-height:84px;line-height:1.5}
 
 [hidden]{display:none!important}
 body{margin:0}
-.app{overflow:hidden}
+.app{overflow:hidden;grid-template-rows:minmax(0,1fr)}
+.main{min-height:0}
+@media (max-width:980px){.app{grid-template-rows:auto minmax(0,1fr)}}
 html,body{overflow:hidden}
 .login{overflow:auto;height:100%}
 /* login */
