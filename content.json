@@ -23,112 +23,127 @@
     "en": "A slow walk through the back streets of Shibuya, far from the famous crossing everyone photographs. Rusty staircases, scaffolding and quiet residential corners: the city's everyday architecture becomes the set. Tailoring and vintage pieces move between concrete and chain-link fences, with plaid and polka dots clashing against the street.",
     "it": "Una passeggiata lenta nelle strade secondarie di Shibuya, lontano dal famoso incrocio che fotografano tutti. Scale arrugginite, impalcature, angoli tranquilli di quartiere: l'architettura di tutti i giorni diventa il set. Sartoria e capi vintage si muovono tra cemento e reti metalliche, con quadri e pois che fanno a pugni con la strada."
    },
-   "cover": "/img/p/shibuya/11.jpg",
+   "cover": "/foto/editorial/shibuya-osanpo-17899305346403649.jpg",
    "images": [
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/01.jpg",
-     "m": "/img/m/shibuya/01.jpg",
-     "t": "/img/t/shibuya/01.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/shibuya-osanpo-1789930496503518.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-1789930496503518.jpg",
+     "t": "/img/t/shibuya/01.jpg",
+     "g": "/img/m/shibuya/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/02.jpg",
-     "m": "/img/m/shibuya/02.jpg",
-     "t": "/img/t/shibuya/02.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/shibuya-osanpo-17899305002837359.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305002837359.jpg",
+     "t": "/img/t/shibuya/02.jpg",
+     "g": "/img/m/shibuya/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/shibuya/03.jpg",
-     "m": "/img/m/shibuya/03.jpg",
-     "t": "/img/t/shibuya/03.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/shibuya-osanpo-17899305046742995.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305046742995.jpg",
+     "t": "/img/t/shibuya/03.jpg",
+     "g": "/img/m/shibuya/03.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/04.jpg",
-     "m": "/img/m/shibuya/04.jpg",
-     "t": "/img/t/shibuya/04.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/shibuya-osanpo-17899305086732827.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305086732827.jpg",
+     "t": "/img/t/shibuya/04.jpg",
+     "g": "/img/m/shibuya/04.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/05.jpg",
-     "m": "/img/m/shibuya/05.jpg",
-     "t": "/img/t/shibuya/05.jpg"
+     "w": 4073,
+     "h": 6110,
+     "src": "/foto/editorial/shibuya-osanpo-17899305116747715.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305116747715.jpg",
+     "t": "/img/t/shibuya/05.jpg",
+     "g": "/img/m/shibuya/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/shibuya/06.jpg",
-     "m": "/img/m/shibuya/06.jpg",
-     "t": "/img/t/shibuya/06.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/shibuya-osanpo-17899305156735627.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305156735627.jpg",
+     "t": "/img/t/shibuya/06.jpg",
+     "g": "/img/m/shibuya/06.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/07.jpg",
-     "m": "/img/m/shibuya/07.jpg",
-     "t": "/img/t/shibuya/07.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/shibuya-osanpo-17899305196749077.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305196749077.jpg",
+     "t": "/img/t/shibuya/07.jpg",
+     "g": "/img/m/shibuya/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/shibuya/08.jpg",
-     "m": "/img/m/shibuya/08.jpg",
-     "t": "/img/t/shibuya/08.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/shibuya-osanpo-17899305236744676.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305236744676.jpg",
+     "t": "/img/t/shibuya/08.jpg",
+     "g": "/img/m/shibuya/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/shibuya/09.jpg",
-     "m": "/img/m/shibuya/09.jpg",
-     "t": "/img/t/shibuya/09.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/shibuya-osanpo-17899305276749895.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305276749895.jpg",
+     "t": "/img/t/shibuya/09.jpg",
+     "g": "/img/m/shibuya/09.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/10.jpg",
-     "m": "/img/m/shibuya/10.jpg",
-     "t": "/img/t/shibuya/10.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/shibuya-osanpo-17899305316747491.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305316747491.jpg",
+     "t": "/img/t/shibuya/10.jpg",
+     "g": "/img/m/shibuya/10.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/11.jpg",
-     "m": "/img/m/shibuya/11.jpg",
-     "t": "/img/t/shibuya/11.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/shibuya-osanpo-17899305346403649.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305346403649.jpg",
+     "t": "/img/t/shibuya/11.jpg",
+     "g": "/img/m/shibuya/11.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/shibuya/12.jpg",
-     "m": "/img/m/shibuya/12.jpg",
-     "t": "/img/t/shibuya/12.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/shibuya-osanpo-1789930537789877.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-1789930537789877.jpg",
+     "t": "/img/t/shibuya/12.jpg",
+     "g": "/img/m/shibuya/12.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/13.jpg",
-     "m": "/img/m/shibuya/13.jpg",
-     "t": "/img/t/shibuya/13.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/shibuya-osanpo-17899305413531788.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305413531788.jpg",
+     "t": "/img/t/shibuya/13.jpg",
+     "g": "/img/m/shibuya/13.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/shibuya/14.jpg",
-     "m": "/img/m/shibuya/14.jpg",
-     "t": "/img/t/shibuya/14.jpg"
+     "w": 4102,
+     "h": 6153,
+     "src": "/foto/editorial/shibuya-osanpo-17899305447943390.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305447943390.jpg",
+     "t": "/img/t/shibuya/14.jpg",
+     "g": "/img/m/shibuya/14.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/shibuya/15.jpg",
-     "m": "/img/m/shibuya/15.jpg",
-     "t": "/img/t/shibuya/15.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/shibuya-osanpo-17899305480946704.jpg",
+     "m": "/foto/editorial/shibuya-osanpo-17899305480946704.jpg",
+     "t": "/img/t/shibuya/15.jpg",
+     "g": "/img/m/shibuya/15.jpg"
     }
    ]
   },
@@ -153,105 +168,119 @@
     "en": "Shot in Naples' Rione Sanità. It portrays a neighbourhood that stays true to itself while the people looking at it keep changing. Here, fashion becomes a way to bring heritage, tourism and belonging into conversation.",
     "it": "Scattato nel Rione Sanità, a Napoli. Racconta un quartiere che resta sé stesso mentre cambia lo sguardo di chi arriva a vederlo. Qui la moda diventa un modo per mettere in dialogo tradizione, turismo e senso di appartenenza."
    },
-   "cover": "/img/p/outofplace/14.jpg",
+   "cover": "/foto/editorial/out-of-place-17899261130621369.jpg",
    "images": [
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/outofplace/01.jpg",
-     "m": "/img/m/outofplace/01.jpg",
-     "t": "/img/t/outofplace/01.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332143737156.jpg",
+     "m": "/foto/editorial/out-of-place-17840332143737156.jpg",
+     "t": "/img/t/outofplace/01.jpg",
+     "g": "/img/m/outofplace/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/outofplace/02.jpg",
-     "m": "/img/m/outofplace/02.jpg",
-     "t": "/img/t/outofplace/02.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332182564093.jpg",
+     "m": "/foto/editorial/out-of-place-17840332182564093.jpg",
+     "t": "/img/t/outofplace/02.jpg",
+     "g": "/img/m/outofplace/02.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/outofplace/03.jpg",
-     "m": "/img/m/outofplace/03.jpg",
-     "t": "/img/t/outofplace/03.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-1784033224318844.jpg",
+     "m": "/foto/editorial/out-of-place-1784033224318844.jpg",
+     "t": "/img/t/outofplace/03.jpg",
+     "g": "/img/m/outofplace/03.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/outofplace/04.jpg",
-     "m": "/img/m/outofplace/04.jpg",
-     "t": "/img/t/outofplace/04.jpg"
+     "w": 3991,
+     "h": 5986,
+     "src": "/foto/editorial/out-of-place-17840332292699439.jpg",
+     "m": "/foto/editorial/out-of-place-17840332292699439.jpg",
+     "t": "/img/t/outofplace/04.jpg",
+     "g": "/img/m/outofplace/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/outofplace/05.jpg",
-     "m": "/img/m/outofplace/05.jpg",
-     "t": "/img/t/outofplace/05.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-1784033233152100.jpg",
+     "m": "/foto/editorial/out-of-place-1784033233152100.jpg",
+     "t": "/img/t/outofplace/05.jpg",
+     "g": "/img/m/outofplace/05.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/outofplace/06.jpg",
-     "m": "/img/m/outofplace/06.jpg",
-     "t": "/img/t/outofplace/06.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332431303317.jpg",
+     "m": "/foto/editorial/out-of-place-17840332431303317.jpg",
+     "t": "/img/t/outofplace/06.jpg",
+     "g": "/img/m/outofplace/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/outofplace/07.jpg",
-     "m": "/img/m/outofplace/07.jpg",
-     "t": "/img/t/outofplace/07.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332451836771.jpg",
+     "m": "/foto/editorial/out-of-place-17840332451836771.jpg",
+     "t": "/img/t/outofplace/07.jpg",
+     "g": "/img/m/outofplace/07.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/outofplace/08.jpg",
-     "m": "/img/m/outofplace/08.jpg",
-     "t": "/img/t/outofplace/08.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332519336043.jpg",
+     "m": "/foto/editorial/out-of-place-17840332519336043.jpg",
+     "t": "/img/t/outofplace/08.jpg",
+     "g": "/img/m/outofplace/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/outofplace/09.jpg",
-     "m": "/img/m/outofplace/09.jpg",
-     "t": "/img/t/outofplace/09.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332536545253.jpg",
+     "m": "/foto/editorial/out-of-place-17840332536545253.jpg",
+     "t": "/img/t/outofplace/09.jpg",
+     "g": "/img/m/outofplace/09.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/outofplace/10.jpg",
-     "m": "/img/m/outofplace/10.jpg",
-     "t": "/img/t/outofplace/10.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332672343057.jpg",
+     "m": "/foto/editorial/out-of-place-17840332672343057.jpg",
+     "t": "/img/t/outofplace/10.jpg",
+     "g": "/img/m/outofplace/10.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/outofplace/11.jpg",
-     "m": "/img/m/outofplace/11.jpg",
-     "t": "/img/t/outofplace/11.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-1784033269525604.jpg",
+     "m": "/foto/editorial/out-of-place-1784033269525604.jpg",
+     "t": "/img/t/outofplace/11.jpg",
+     "g": "/img/m/outofplace/11.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/outofplace/12.jpg",
-     "m": "/img/m/outofplace/12.jpg",
-     "t": "/img/t/outofplace/12.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332751223790.jpg",
+     "m": "/foto/editorial/out-of-place-17840332751223790.jpg",
+     "t": "/img/t/outofplace/12.jpg",
+     "g": "/img/m/outofplace/12.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/outofplace/13.jpg",
-     "m": "/img/m/outofplace/13.jpg",
-     "t": "/img/t/outofplace/13.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332707395593.jpg",
+     "m": "/foto/editorial/out-of-place-17840332707395593.jpg",
+     "t": "/img/t/outofplace/13.jpg",
+     "g": "/img/m/outofplace/13.jpg"
     },
     {
-     "w": 1842,
-     "h": 2400,
-     "src": "/img/p/outofplace/14.jpg",
-     "m": "/img/m/outofplace/14.jpg",
-     "t": "/img/t/outofplace/14.jpg"
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/editorial/out-of-place-17899261130621369.jpg",
+     "m": "/foto/editorial/out-of-place-17899261130621369.jpg",
+     "t": "/img/t/outofplace/14.jpg",
+     "g": "/img/m/outofplace/14.jpg"
     }
    ]
   },
@@ -276,70 +305,79 @@
     "en": "A small tiled bathroom lit by a single green light. Tight, uncomfortable framing: a lit match, smoke, running eyeliner, wet hair stuck to the face. As cold as Aethereal is warm.",
     "it": "Un piccolo bagno piastrellato e una sola luce verde. Inquadrature strette, quasi scomode: un fiammifero acceso, il fumo, l'eyeliner che cola, i capelli bagnati sul viso. Tanto fredda quanto Aethereal è calda."
    },
-   "cover": "/img/p/neon/01.jpg",
+   "cover": "/foto/editorial/neon-therapy-17805172142622kbp.jpg",
    "images": [
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/01.jpg",
-     "m": "/img/m/neon/01.jpg",
-     "t": "/img/t/neon/01.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/neon-therapy-17805172142622kbp.jpg",
+     "m": "/foto/editorial/neon-therapy-17805172142622kbp.jpg",
+     "t": "/img/t/neon/01.jpg",
+     "g": "/img/m/neon/01.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/02.jpg",
-     "m": "/img/m/neon/02.jpg",
-     "t": "/img/t/neon/02.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/neon-therapy-1780517218470efqf.jpg",
+     "m": "/foto/editorial/neon-therapy-1780517218470efqf.jpg",
+     "t": "/img/t/neon/02.jpg",
+     "g": "/img/m/neon/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/03.jpg",
-     "m": "/img/m/neon/03.jpg",
-     "t": "/img/t/neon/03.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/neon-therapy-1780517221901ok3q.jpg",
+     "m": "/foto/editorial/neon-therapy-1780517221901ok3q.jpg",
+     "t": "/img/t/neon/03.jpg",
+     "g": "/img/m/neon/03.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/04.jpg",
-     "m": "/img/m/neon/04.jpg",
-     "t": "/img/t/neon/04.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/neon-therapy-1780517224959v2dd.jpg",
+     "m": "/foto/editorial/neon-therapy-1780517224959v2dd.jpg",
+     "t": "/img/t/neon/04.jpg",
+     "g": "/img/m/neon/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/05.jpg",
-     "m": "/img/m/neon/05.jpg",
-     "t": "/img/t/neon/05.jpg"
+     "w": 6046,
+     "h": 4031,
+     "src": "/foto/editorial/neon-therapy-178051722873468i2.jpg",
+     "m": "/foto/editorial/neon-therapy-178051722873468i2.jpg",
+     "t": "/img/t/neon/05.jpg",
+     "g": "/img/m/neon/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/06.jpg",
-     "m": "/img/m/neon/06.jpg",
-     "t": "/img/t/neon/06.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/neon-therapy-1780517232490jgbr.jpg",
+     "m": "/foto/editorial/neon-therapy-1780517232490jgbr.jpg",
+     "t": "/img/t/neon/06.jpg",
+     "g": "/img/m/neon/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/07.jpg",
-     "m": "/img/m/neon/07.jpg",
-     "t": "/img/t/neon/07.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/neon-therapy-1780517235495i6u9.jpg",
+     "m": "/foto/editorial/neon-therapy-1780517235495i6u9.jpg",
+     "t": "/img/t/neon/07.jpg",
+     "g": "/img/m/neon/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/neon/08.jpg",
-     "m": "/img/m/neon/08.jpg",
-     "t": "/img/t/neon/08.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/neon-therapy-1780517238311r9fb.jpg",
+     "m": "/foto/editorial/neon-therapy-1780517238311r9fb.jpg",
+     "t": "/img/t/neon/08.jpg",
+     "g": "/img/m/neon/08.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/neon/09.jpg",
-     "m": "/img/m/neon/09.jpg",
-     "t": "/img/t/neon/09.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/neon-therapy-17805172410464f3n.jpg",
+     "m": "/foto/editorial/neon-therapy-17805172410464f3n.jpg",
+     "t": "/img/t/neon/09.jpg",
+     "g": "/img/m/neon/09.jpg"
     }
    ]
   },
@@ -364,84 +402,95 @@
     "en": "An editorial about deconstructed shapes and industrial grit. The series brings traditional tailoring and punk culture together through sharp lines, movement and an underground mood. Made with the Fashion Design Department of the University of Campania \"Luigi Vanvitelli\".",
     "it": "Un editoriale su forme destrutturate e atmosfere industriali. La serie mette insieme sartoria tradizionale e cultura punk: linee nette, movimento, un'aria underground. Realizzato con il Dipartimento di Fashion Design dell'Università della Campania \"Luigi Vanvitelli\"."
    },
-   "cover": "/img/p/punkture/11.jpg",
+   "cover": "/foto/editorial/punk-ture-1780513111070mcyy.jpg",
    "images": [
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/punkture/01.jpg",
-     "m": "/img/m/punkture/01.jpg",
-     "t": "/img/t/punkture/01.jpg"
+     "w": 5823,
+     "h": 3882,
+     "src": "/foto/editorial/punk-ture-1780513080312cu81.jpg",
+     "m": "/foto/editorial/punk-ture-1780513080312cu81.jpg",
+     "t": "/img/t/punkture/01.jpg",
+     "g": "/img/m/punkture/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/punkture/02.jpg",
-     "m": "/img/m/punkture/02.jpg",
-     "t": "/img/t/punkture/02.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/punk-ture-1780513083877jbmc.jpg",
+     "m": "/foto/editorial/punk-ture-1780513083877jbmc.jpg",
+     "t": "/img/t/punkture/02.jpg",
+     "g": "/img/m/punkture/02.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/punkture/03.jpg",
-     "m": "/img/m/punkture/03.jpg",
-     "t": "/img/t/punkture/03.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/punk-ture-1780513086681n8at.jpg",
+     "m": "/foto/editorial/punk-ture-1780513086681n8at.jpg",
+     "t": "/img/t/punkture/03.jpg",
+     "g": "/img/m/punkture/03.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/punkture/04.jpg",
-     "m": "/img/m/punkture/04.jpg",
-     "t": "/img/t/punkture/04.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/punk-ture-1780513089426phxx.jpg",
+     "m": "/foto/editorial/punk-ture-1780513089426phxx.jpg",
+     "t": "/img/t/punkture/04.jpg",
+     "g": "/img/m/punkture/04.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/punkture/05.jpg",
-     "m": "/img/m/punkture/05.jpg",
-     "t": "/img/t/punkture/05.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/punk-ture-1780513092724xcqr.jpg",
+     "m": "/foto/editorial/punk-ture-1780513092724xcqr.jpg",
+     "t": "/img/t/punkture/05.jpg",
+     "g": "/img/m/punkture/05.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/punkture/06.jpg",
-     "m": "/img/m/punkture/06.jpg",
-     "t": "/img/t/punkture/06.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/punk-ture-178051309517536ds.jpg",
+     "m": "/foto/editorial/punk-ture-178051309517536ds.jpg",
+     "t": "/img/t/punkture/06.jpg",
+     "g": "/img/m/punkture/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/punkture/07.jpg",
-     "m": "/img/m/punkture/07.jpg",
-     "t": "/img/t/punkture/07.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/punk-ture-17805130989971cl9.jpg",
+     "m": "/foto/editorial/punk-ture-17805130989971cl9.jpg",
+     "t": "/img/t/punkture/07.jpg",
+     "g": "/img/m/punkture/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/punkture/08.jpg",
-     "m": "/img/m/punkture/08.jpg",
-     "t": "/img/t/punkture/08.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/punk-ture-1780513101397w6er.jpg",
+     "m": "/foto/editorial/punk-ture-1780513101397w6er.jpg",
+     "t": "/img/t/punkture/08.jpg",
+     "g": "/img/m/punkture/08.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/punkture/09.jpg",
-     "m": "/img/m/punkture/09.jpg",
-     "t": "/img/t/punkture/09.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/punk-ture-1780513104402fx97.jpg",
+     "m": "/foto/editorial/punk-ture-1780513104402fx97.jpg",
+     "t": "/img/t/punkture/09.jpg",
+     "g": "/img/m/punkture/09.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/punkture/10.jpg",
-     "m": "/img/m/punkture/10.jpg",
-     "t": "/img/t/punkture/10.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/punk-ture-17805131073786ii8.jpg",
+     "m": "/foto/editorial/punk-ture-17805131073786ii8.jpg",
+     "t": "/img/t/punkture/10.jpg",
+     "g": "/img/m/punkture/10.jpg"
     },
     {
-     "w": 1697,
-     "h": 2400,
-     "src": "/img/p/punkture/11.jpg",
-     "m": "/img/m/punkture/11.jpg",
-     "t": "/img/t/punkture/11.jpg"
+     "w": 1754,
+     "h": 2481,
+     "src": "/foto/editorial/punk-ture-1780513111070mcyy.jpg",
+     "m": "/foto/editorial/punk-ture-1780513111070mcyy.jpg",
+     "t": "/img/t/punkture/11.jpg",
+     "g": "/img/m/punkture/11.jpg"
     }
    ]
   },
@@ -466,91 +515,103 @@
     "en": "Late-afternoon light, a white lace dress and a bunch of wildflowers picked in an overgrown park. Warm, blown-out sun, soft focus and one frame dissolving into motion blur: closer to a dream than a document.",
     "it": "Luce del tardo pomeriggio, un abito di pizzo bianco, un mazzo di fiori di campo raccolto in un parco lasciato crescere. Sole caldo e sovraesposto, fuoco morbido, uno scatto che si trasforma in mosso: più un sogno che un documento."
    },
-   "cover": "/img/p/aethereal/04.jpg",
+   "cover": "/foto/editorial/aethereal-1780512567270.jpg",
    "images": [
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/01.jpg",
-     "m": "/img/m/aethereal/01.jpg",
-     "t": "/img/t/aethereal/01.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512560338.jpg",
+     "m": "/foto/editorial/aethereal-1780512560338.jpg",
+     "t": "/img/t/aethereal/01.jpg",
+     "g": "/img/m/aethereal/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/02.jpg",
-     "m": "/img/m/aethereal/02.jpg",
-     "t": "/img/t/aethereal/02.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512562996.jpg",
+     "m": "/foto/editorial/aethereal-1780512562996.jpg",
+     "t": "/img/t/aethereal/02.jpg",
+     "g": "/img/m/aethereal/02.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/03.jpg",
-     "m": "/img/m/aethereal/03.jpg",
-     "t": "/img/t/aethereal/03.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512565195.jpg",
+     "m": "/foto/editorial/aethereal-1780512565195.jpg",
+     "t": "/img/t/aethereal/03.jpg",
+     "g": "/img/m/aethereal/03.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/04.jpg",
-     "m": "/img/m/aethereal/04.jpg",
-     "t": "/img/t/aethereal/04.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512567270.jpg",
+     "m": "/foto/editorial/aethereal-1780512567270.jpg",
+     "t": "/img/t/aethereal/04.jpg",
+     "g": "/img/m/aethereal/04.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/05.jpg",
-     "m": "/img/m/aethereal/05.jpg",
-     "t": "/img/t/aethereal/05.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512571351.jpg",
+     "m": "/foto/editorial/aethereal-1780512571351.jpg",
+     "t": "/img/t/aethereal/05.jpg",
+     "g": "/img/m/aethereal/05.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/06.jpg",
-     "m": "/img/m/aethereal/06.jpg",
-     "t": "/img/t/aethereal/06.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512574058.jpg",
+     "m": "/foto/editorial/aethereal-1780512574058.jpg",
+     "t": "/img/t/aethereal/06.jpg",
+     "g": "/img/m/aethereal/06.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/07.jpg",
-     "m": "/img/m/aethereal/07.jpg",
-     "t": "/img/t/aethereal/07.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512578111.jpg",
+     "m": "/foto/editorial/aethereal-1780512578111.jpg",
+     "t": "/img/t/aethereal/07.jpg",
+     "g": "/img/m/aethereal/07.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/08.jpg",
-     "m": "/img/m/aethereal/08.jpg",
-     "t": "/img/t/aethereal/08.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512578882.jpg",
+     "m": "/foto/editorial/aethereal-1780512578882.jpg",
+     "t": "/img/t/aethereal/08.jpg",
+     "g": "/img/m/aethereal/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/aethereal/09.jpg",
-     "m": "/img/m/aethereal/09.jpg",
-     "t": "/img/t/aethereal/09.jpg"
+     "w": 3000,
+     "h": 2000,
+     "src": "/foto/editorial/aethereal-1780512581427.jpg",
+     "m": "/foto/editorial/aethereal-1780512581427.jpg",
+     "t": "/img/t/aethereal/09.jpg",
+     "g": "/img/m/aethereal/09.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/aethereal/10.jpg",
-     "m": "/img/m/aethereal/10.jpg",
-     "t": "/img/t/aethereal/10.jpg"
+     "w": 3000,
+     "h": 2000,
+     "src": "/foto/editorial/aethereal-1780512583085.jpg",
+     "m": "/foto/editorial/aethereal-1780512583085.jpg",
+     "t": "/img/t/aethereal/10.jpg",
+     "g": "/img/m/aethereal/10.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/aethereal/11.jpg",
-     "m": "/img/m/aethereal/11.jpg",
-     "t": "/img/t/aethereal/11.jpg"
+     "w": 2000,
+     "h": 3000,
+     "src": "/foto/editorial/aethereal-1780512584142.jpg",
+     "m": "/foto/editorial/aethereal-1780512584142.jpg",
+     "t": "/img/t/aethereal/11.jpg",
+     "g": "/img/m/aethereal/11.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/aethereal/12.jpg",
-     "m": "/img/m/aethereal/12.jpg",
-     "t": "/img/t/aethereal/12.jpg"
+     "w": 3000,
+     "h": 2000,
+     "src": "/foto/editorial/aethereal-1780512585226.jpg",
+     "m": "/foto/editorial/aethereal-1780512585226.jpg",
+     "t": "/img/t/aethereal/12.jpg",
+     "g": "/img/m/aethereal/12.jpg"
     }
    ]
   },
@@ -636,84 +697,95 @@
     "en": "A project made for Reflective Photo magazine, set in one of the densest and most layered neighbourhoods in central Rome. Esquilino, a crossroads of languages, cultures and everyday life, is told through environmental portraits: faces met on the street, direct gazes, presence. An intimate, respectful look at a neighbourhood with many identities, where photography becomes a way of meeting people and remembering them.",
     "it": "Un progetto nato per la rivista Reflective Photo, dentro uno dei quartieri più fitti e stratificati del centro di Roma. L'Esquilino, incrocio di lingue, culture e vita quotidiana, raccontato con ritratti ambientati: volti incontrati per strada, sguardi diretti, presenze. Un racconto intimo e rispettoso di un quartiere dalle tante identità, dove la fotografia diventa incontro e memoria."
    },
-   "cover": "/img/p/piazza/07.jpg",
+   "cover": "/foto/reportage/i-volti-di-piazza-vittorio-17805991643776876.jpg",
    "images": [
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/01.jpg",
-     "m": "/img/m/piazza/01.jpg",
-     "t": "/img/t/piazza/01.jpg"
+     "w": 6171,
+     "h": 4114,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991420523648.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991420523648.jpg",
+     "t": "/img/t/piazza/01.jpg",
+     "g": "/img/m/piazza/01.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/02.jpg",
-     "m": "/img/m/piazza/02.jpg",
-     "t": "/img/t/piazza/02.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991465694697.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991465694697.jpg",
+     "t": "/img/t/piazza/02.jpg",
+     "g": "/img/m/piazza/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/03.jpg",
-     "m": "/img/m/piazza/03.jpg",
-     "t": "/img/t/piazza/03.jpg"
+     "w": 6158,
+     "h": 4105,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991498403724.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991498403724.jpg",
+     "t": "/img/t/piazza/03.jpg",
+     "g": "/img/m/piazza/03.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/04.jpg",
-     "m": "/img/m/piazza/04.jpg",
-     "t": "/img/t/piazza/04.jpg"
+     "w": 6165,
+     "h": 4110,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991535729729.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991535729729.jpg",
+     "t": "/img/t/piazza/04.jpg",
+     "g": "/img/m/piazza/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/05.jpg",
-     "m": "/img/m/piazza/05.jpg",
-     "t": "/img/t/piazza/05.jpg"
+     "w": 6076,
+     "h": 4051,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991571368746.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991571368746.jpg",
+     "t": "/img/t/piazza/05.jpg",
+     "g": "/img/m/piazza/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/06.jpg",
-     "m": "/img/m/piazza/06.jpg",
-     "t": "/img/t/piazza/06.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991611362416.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991611362416.jpg",
+     "t": "/img/t/piazza/06.jpg",
+     "g": "/img/m/piazza/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/07.jpg",
-     "m": "/img/m/piazza/07.jpg",
-     "t": "/img/t/piazza/07.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991643776876.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991643776876.jpg",
+     "t": "/img/t/piazza/07.jpg",
+     "g": "/img/m/piazza/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/08.jpg",
-     "m": "/img/m/piazza/08.jpg",
-     "t": "/img/t/piazza/08.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991684406365.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991684406365.jpg",
+     "t": "/img/t/piazza/08.jpg",
+     "g": "/img/m/piazza/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/09.jpg",
-     "m": "/img/m/piazza/09.jpg",
-     "t": "/img/t/piazza/09.jpg"
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991721295775.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991721295775.jpg",
+     "t": "/img/t/piazza/09.jpg",
+     "g": "/img/m/piazza/09.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/10.jpg",
-     "m": "/img/m/piazza/10.jpg",
-     "t": "/img/t/piazza/10.jpg"
+     "w": 6017,
+     "h": 4011,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991756882002.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991756882002.jpg",
+     "t": "/img/t/piazza/10.jpg",
+     "g": "/img/m/piazza/10.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/piazza/11.jpg",
-     "m": "/img/m/piazza/11.jpg",
-     "t": "/img/t/piazza/11.jpg"
+     "w": 5987,
+     "h": 3991,
+     "src": "/foto/reportage/i-volti-di-piazza-vittorio-17805991789261864.jpg",
+     "m": "/foto/reportage/i-volti-di-piazza-vittorio-17805991789261864.jpg",
+     "t": "/img/t/piazza/11.jpg",
+     "g": "/img/m/piazza/11.jpg"
     }
    ]
   },
@@ -738,77 +810,87 @@
     "en": "People tend to freeze in front of a camera: it's big and intrusive, and it feels like an invasion of personal space. With a phone, that barrier drops. Shot in the narrow streets of Pignasecca and the Quartieri Spagnoli, the project comes in two chapters: the first in black and white, the second in colour.",
     "it": "Davanti a una macchina fotografica la gente si irrigidisce: è grande, invadente, sembra entrare nello spazio personale. Con il telefono quella barriera si abbassa. Scattato tra i vicoli della Pignasecca e dei Quartieri Spagnoli, il progetto è diviso in due capitoli: il primo in bianco e nero, il secondo a colori."
    },
-   "cover": "/img/p/iphone/04.jpg",
+   "cover": "/foto/reportage/iphone-portraits-17840348776385263.jpg",
    "images": [
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/01.jpg",
-     "m": "/img/m/iphone/01.jpg",
-     "t": "/img/t/iphone/01.jpg"
+     "w": 7992,
+     "h": 5994,
+     "src": "/foto/reportage/iphone-portraits-17840348387011087.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348387011087.jpg",
+     "t": "/img/t/iphone/01.jpg",
+     "g": "/img/m/iphone/01.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/02.jpg",
-     "m": "/img/m/iphone/02.jpg",
-     "t": "/img/t/iphone/02.jpg"
+     "w": 7972,
+     "h": 5979,
+     "src": "/foto/reportage/iphone-portraits-17840348569906867.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348569906867.jpg",
+     "t": "/img/t/iphone/02.jpg",
+     "g": "/img/m/iphone/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/03.jpg",
-     "m": "/img/m/iphone/03.jpg",
-     "t": "/img/t/iphone/03.jpg"
+     "w": 8064,
+     "h": 6048,
+     "src": "/foto/reportage/iphone-portraits-17840348732111434.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348732111434.jpg",
+     "t": "/img/t/iphone/03.jpg",
+     "g": "/img/m/iphone/03.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/04.jpg",
-     "m": "/img/m/iphone/04.jpg",
-     "t": "/img/t/iphone/04.jpg"
+     "w": 7901,
+     "h": 5926,
+     "src": "/foto/reportage/iphone-portraits-17840348776385263.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348776385263.jpg",
+     "t": "/img/t/iphone/04.jpg",
+     "g": "/img/m/iphone/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/05.jpg",
-     "m": "/img/m/iphone/05.jpg",
-     "t": "/img/t/iphone/05.jpg"
+     "w": 8064,
+     "h": 6048,
+     "src": "/foto/reportage/iphone-portraits-17840348813267497.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348813267497.jpg",
+     "t": "/img/t/iphone/05.jpg",
+     "g": "/img/m/iphone/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/06.jpg",
-     "m": "/img/m/iphone/06.jpg",
-     "t": "/img/t/iphone/06.jpg"
+     "w": 7869,
+     "h": 5902,
+     "src": "/foto/reportage/iphone-portraits-17840348895612678.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348895612678.jpg",
+     "t": "/img/t/iphone/06.jpg",
+     "g": "/img/m/iphone/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/07.jpg",
-     "m": "/img/m/iphone/07.jpg",
-     "t": "/img/t/iphone/07.jpg"
+     "w": 8064,
+     "h": 6048,
+     "src": "/foto/reportage/iphone-portraits-17840348933663158.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348933663158.jpg",
+     "t": "/img/t/iphone/07.jpg",
+     "g": "/img/m/iphone/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/08.jpg",
-     "m": "/img/m/iphone/08.jpg",
-     "t": "/img/t/iphone/08.jpg"
+     "w": 7946,
+     "h": 5959,
+     "src": "/foto/reportage/iphone-portraits-17840348981579064.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840348981579064.jpg",
+     "t": "/img/t/iphone/08.jpg",
+     "g": "/img/m/iphone/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/09.jpg",
-     "m": "/img/m/iphone/09.jpg",
-     "t": "/img/t/iphone/09.jpg"
+     "w": 8064,
+     "h": 6048,
+     "src": "/foto/reportage/iphone-portraits-17840349052844953.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840349052844953.jpg",
+     "t": "/img/t/iphone/09.jpg",
+     "g": "/img/m/iphone/09.jpg"
     },
     {
-     "w": 2400,
-     "h": 1800,
-     "src": "/img/p/iphone/10.jpg",
-     "m": "/img/m/iphone/10.jpg",
-     "t": "/img/t/iphone/10.jpg"
+     "w": 8064,
+     "h": 6048,
+     "src": "/foto/reportage/iphone-portraits-17840349169179347.jpg",
+     "m": "/foto/reportage/iphone-portraits-17840349169179347.jpg",
+     "t": "/img/t/iphone/10.jpg",
+     "g": "/img/m/iphone/10.jpg"
     }
    ]
   },
@@ -833,42 +915,47 @@
     "en": "Every day, millions of people cross Tokyo by subway and elevated train, caught in a rhythm that never stops. Yet within that flow there are suspended moments when passengers withdraw into themselves. A metropolitan diary of solitude, thoughts and quiet escapes from the crowd. Winner of Microracconti Urbani 2025.",
     "it": "Ogni giorno milioni di persone attraversano Tokyo in metropolitana e sui treni sopraelevati, dentro un ritmo che non si ferma mai. Eppure, in mezzo a quel flusso, ci sono attimi sospesi in cui i passeggeri si chiudono in sé stessi. Un diario metropolitano fatto di solitudine, pensieri e piccole fughe silenziose dalla folla. Vincitore di Microracconti Urbani 2025."
    },
-   "cover": "/img/p/diario/01.jpg",
+   "cover": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
    "images": [
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/diario/01.jpg",
-     "m": "/img/m/diario/01.jpg",
-     "t": "/img/t/diario/01.jpg"
+     "w": 3941,
+     "h": 5912,
+     "src": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
+     "t": "/img/t/diario/01.jpg",
+     "g": "/img/m/diario/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/diario/02.jpg",
-     "m": "/img/m/diario/02.jpg",
-     "t": "/img/t/diario/02.jpg"
+     "w": 4000,
+     "h": 6000,
+     "src": "/foto/reportage/diario-metropolitano-1780517987159a0e8.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517987159a0e8.jpg",
+     "t": "/img/t/diario/02.jpg",
+     "g": "/img/m/diario/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/diario/03.jpg",
-     "m": "/img/m/diario/03.jpg",
-     "t": "/img/t/diario/03.jpg"
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/diario-metropolitano-1780517991922a168.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517991922a168.jpg",
+     "t": "/img/t/diario/03.jpg",
+     "g": "/img/m/diario/03.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/diario/04.jpg",
-     "m": "/img/m/diario/04.jpg",
-     "t": "/img/t/diario/04.jpg"
+     "w": 4000,
+     "h": 6000,
+     "src": "/foto/reportage/diario-metropolitano-17805179948030guj.jpg",
+     "m": "/foto/reportage/diario-metropolitano-17805179948030guj.jpg",
+     "t": "/img/t/diario/04.jpg",
+     "g": "/img/m/diario/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/diario/05.jpg",
-     "m": "/img/m/diario/05.jpg",
-     "t": "/img/t/diario/05.jpg"
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/diario-metropolitano-1780517999036jdrt.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517999036jdrt.jpg",
+     "t": "/img/t/diario/05.jpg",
+     "g": "/img/m/diario/05.jpg"
     }
    ]
   },
@@ -893,63 +980,71 @@
     "en": "A study of a ritual: the waiting, the gestures and the silence at the edge of the day. Before morning fully arrives, the shoreline becomes a bare stage of slow movements, still water and light that changes by the minute. A suspended fragment of work and presence between night and day.",
     "it": "Uno studio su un rito: l'attesa, i gesti, il silenzio al confine del giorno. Prima che arrivi il mattino la riva diventa un palcoscenico essenziale, fatto di movimenti lenti, acqua che riflette e una luce che cambia di minuto in minuto. Un frammento di lavoro e di presenza sospeso tra la notte e il giorno."
    },
-   "cover": "/img/p/pescatori/06.jpg",
+   "cover": "/foto/reportage/pescatori-all-alba-17805993043849265.jpg",
    "images": [
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/pescatori/01.jpg",
-     "m": "/img/m/pescatori/01.jpg",
-     "t": "/img/t/pescatori/01.jpg"
+     "w": 4087,
+     "h": 6131,
+     "src": "/foto/reportage/pescatori-all-alba-17805992890139292.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805992890139292.jpg",
+     "t": "/img/t/pescatori/01.jpg",
+     "g": "/img/m/pescatori/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/pescatori/02.jpg",
-     "m": "/img/m/pescatori/02.jpg",
-     "t": "/img/t/pescatori/02.jpg"
+     "w": 3878,
+     "h": 5817,
+     "src": "/foto/reportage/pescatori-all-alba-17805992919375432.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805992919375432.jpg",
+     "t": "/img/t/pescatori/02.jpg",
+     "g": "/img/m/pescatori/02.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/pescatori/03.jpg",
-     "m": "/img/m/pescatori/03.jpg",
-     "t": "/img/t/pescatori/03.jpg"
+     "w": 4014,
+     "h": 6021,
+     "src": "/foto/reportage/pescatori-all-alba-17805992952519057.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805992952519057.jpg",
+     "t": "/img/t/pescatori/03.jpg",
+     "g": "/img/m/pescatori/03.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/pescatori/04.jpg",
-     "m": "/img/m/pescatori/04.jpg",
-     "t": "/img/t/pescatori/04.jpg"
+     "w": 6111,
+     "h": 4074,
+     "src": "/foto/reportage/pescatori-all-alba-17805992981211005.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805992981211005.jpg",
+     "t": "/img/t/pescatori/04.jpg",
+     "g": "/img/m/pescatori/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/pescatori/05.jpg",
-     "m": "/img/m/pescatori/05.jpg",
-     "t": "/img/t/pescatori/05.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/pescatori-all-alba-17805993014038194.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805993014038194.jpg",
+     "t": "/img/t/pescatori/05.jpg",
+     "g": "/img/m/pescatori/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/pescatori/06.jpg",
-     "m": "/img/m/pescatori/06.jpg",
-     "t": "/img/t/pescatori/06.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/pescatori-all-alba-17805993043849265.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805993043849265.jpg",
+     "t": "/img/t/pescatori/06.jpg",
+     "g": "/img/m/pescatori/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/pescatori/07.jpg",
-     "m": "/img/m/pescatori/07.jpg",
-     "t": "/img/t/pescatori/07.jpg"
+     "w": 6141,
+     "h": 4094,
+     "src": "/foto/reportage/pescatori-all-alba-17805993075443194.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805993075443194.jpg",
+     "t": "/img/t/pescatori/07.jpg",
+     "g": "/img/m/pescatori/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/pescatori/08.jpg",
-     "m": "/img/m/pescatori/08.jpg",
-     "t": "/img/t/pescatori/08.jpg"
+     "w": 6176,
+     "h": 4117,
+     "src": "/foto/reportage/pescatori-all-alba-17805993119639981.jpg",
+     "m": "/foto/reportage/pescatori-all-alba-17805993119639981.jpg",
+     "t": "/img/t/pescatori/08.jpg",
+     "g": "/img/m/pescatori/08.jpg"
     }
    ]
   },
@@ -974,98 +1069,111 @@
     "en": "An everyday Naples, full of life: streets, faces and atmospheres. A direct portrait of the city's energy.",
     "it": "Una Napoli viva e quotidiana, fatta di strade, volti e atmosfere. Un racconto diretto dell'energia della città."
    },
-   "cover": "/img/p/napoli/06.jpg",
+   "cover": "/foto/reportage/napoli-1780599394419201.jpg",
    "images": [
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/napoli/01.jpg",
-     "m": "/img/m/napoli/01.jpg",
-     "t": "/img/t/napoli/01.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/reportage/napoli-178059937528463.jpg",
+     "m": "/foto/reportage/napoli-178059937528463.jpg",
+     "t": "/img/t/napoli/01.jpg",
+     "g": "/img/m/napoli/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/napoli/02.jpg",
-     "m": "/img/m/napoli/02.jpg",
-     "t": "/img/t/napoli/02.jpg"
+     "w": 4109,
+     "h": 6163,
+     "src": "/foto/reportage/napoli-17805993798507280.jpg",
+     "m": "/foto/reportage/napoli-17805993798507280.jpg",
+     "t": "/img/t/napoli/02.jpg",
+     "g": "/img/m/napoli/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/03.jpg",
-     "m": "/img/m/napoli/03.jpg",
-     "t": "/img/t/napoli/03.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/napoli-17805993833556651.jpg",
+     "m": "/foto/reportage/napoli-17805993833556651.jpg",
+     "t": "/img/t/napoli/03.jpg",
+     "g": "/img/m/napoli/03.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/04.jpg",
-     "m": "/img/m/napoli/04.jpg",
-     "t": "/img/t/napoli/04.jpg"
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/napoli-17805993869742068.jpg",
+     "m": "/foto/reportage/napoli-17805993869742068.jpg",
+     "t": "/img/t/napoli/04.jpg",
+     "g": "/img/m/napoli/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/05.jpg",
-     "m": "/img/m/napoli/05.jpg",
-     "t": "/img/t/napoli/05.jpg"
+     "w": 5861,
+     "h": 3907,
+     "src": "/foto/reportage/napoli-17805993914759036.jpg",
+     "m": "/foto/reportage/napoli-17805993914759036.jpg",
+     "t": "/img/t/napoli/05.jpg",
+     "g": "/img/m/napoli/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/06.jpg",
-     "m": "/img/m/napoli/06.jpg",
-     "t": "/img/t/napoli/06.jpg"
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/napoli-1780599394419201.jpg",
+     "m": "/foto/reportage/napoli-1780599394419201.jpg",
+     "t": "/img/t/napoli/06.jpg",
+     "g": "/img/m/napoli/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/07.jpg",
-     "m": "/img/m/napoli/07.jpg",
-     "t": "/img/t/napoli/07.jpg"
+     "w": 5964,
+     "h": 3976,
+     "src": "/foto/reportage/napoli-17805993978608121.jpg",
+     "m": "/foto/reportage/napoli-17805993978608121.jpg",
+     "t": "/img/t/napoli/07.jpg",
+     "g": "/img/m/napoli/07.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/napoli/08.jpg",
-     "m": "/img/m/napoli/08.jpg",
-     "t": "/img/t/napoli/08.jpg"
+     "w": 3883,
+     "h": 5824,
+     "src": "/foto/reportage/napoli-17805994020383949.jpg",
+     "m": "/foto/reportage/napoli-17805994020383949.jpg",
+     "t": "/img/t/napoli/08.jpg",
+     "g": "/img/m/napoli/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/09.jpg",
-     "m": "/img/m/napoli/09.jpg",
-     "t": "/img/t/napoli/09.jpg"
+     "w": 5952,
+     "h": 3968,
+     "src": "/foto/reportage/napoli-17805994054776361.jpg",
+     "m": "/foto/reportage/napoli-17805994054776361.jpg",
+     "t": "/img/t/napoli/09.jpg",
+     "g": "/img/m/napoli/09.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/10.jpg",
-     "m": "/img/m/napoli/10.jpg",
-     "t": "/img/t/napoli/10.jpg"
+     "w": 5995,
+     "h": 3997,
+     "src": "/foto/reportage/napoli-17805994087944999.jpg",
+     "m": "/foto/reportage/napoli-17805994087944999.jpg",
+     "t": "/img/t/napoli/10.jpg",
+     "g": "/img/m/napoli/10.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/napoli/11.jpg",
-     "m": "/img/m/napoli/11.jpg",
-     "t": "/img/t/napoli/11.jpg"
+     "w": 4000,
+     "h": 6000,
+     "src": "/foto/reportage/napoli-17805994128218472.jpg",
+     "m": "/foto/reportage/napoli-17805994128218472.jpg",
+     "t": "/img/t/napoli/11.jpg",
+     "g": "/img/m/napoli/11.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/12.jpg",
-     "m": "/img/m/napoli/12.jpg",
-     "t": "/img/t/napoli/12.jpg"
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/napoli-17805994165348289.jpg",
+     "m": "/foto/reportage/napoli-17805994165348289.jpg",
+     "t": "/img/t/napoli/12.jpg",
+     "g": "/img/m/napoli/12.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napoli/13.jpg",
-     "m": "/img/m/napoli/13.jpg",
-     "t": "/img/t/napoli/13.jpg"
+     "w": 5889,
+     "h": 3926,
+     "src": "/foto/reportage/napoli-17805994199778155.jpg",
+     "m": "/foto/reportage/napoli-17805994199778155.jpg",
+     "t": "/img/t/napoli/13.jpg",
+     "g": "/img/m/napoli/13.jpg"
     }
    ]
   },
@@ -1090,77 +1198,87 @@
     "en": "The city celebrates Napoli's Serie A title.",
     "it": "La festa del Napoli campione d'Italia."
    },
-   "cover": "/img/p/scudetto/04.jpg",
+   "cover": "/foto/reportage/scudetto-1782986978255967.jpg",
    "images": [
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/scudetto/01.jpg",
-     "m": "/img/m/scudetto/01.jpg",
-     "t": "/img/t/scudetto/01.jpg"
+     "w": 4098,
+     "h": 6147,
+     "src": "/foto/reportage/scudetto-17829869691663670.jpg",
+     "m": "/foto/reportage/scudetto-17829869691663670.jpg",
+     "t": "/img/t/scudetto/01.jpg",
+     "g": "/img/m/scudetto/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/scudetto/02.jpg",
-     "m": "/img/m/scudetto/02.jpg",
-     "t": "/img/t/scudetto/02.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/reportage/scudetto-17829869729723980.jpg",
+     "m": "/foto/reportage/scudetto-17829869729723980.jpg",
+     "t": "/img/t/scudetto/02.jpg",
+     "g": "/img/m/scudetto/02.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/scudetto/03.jpg",
-     "m": "/img/m/scudetto/03.jpg",
-     "t": "/img/t/scudetto/03.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/reportage/scudetto-17829869754269584.jpg",
+     "m": "/foto/reportage/scudetto-17829869754269584.jpg",
+     "t": "/img/t/scudetto/03.jpg",
+     "g": "/img/m/scudetto/03.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/scudetto/04.jpg",
-     "m": "/img/m/scudetto/04.jpg",
-     "t": "/img/t/scudetto/04.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/scudetto-1782986978255967.jpg",
+     "m": "/foto/reportage/scudetto-1782986978255967.jpg",
+     "t": "/img/t/scudetto/04.jpg",
+     "g": "/img/m/scudetto/04.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/scudetto/05.jpg",
-     "m": "/img/m/scudetto/05.jpg",
-     "t": "/img/t/scudetto/05.jpg"
+     "w": 4099,
+     "h": 6149,
+     "src": "/foto/reportage/scudetto-17829869809574813.jpg",
+     "m": "/foto/reportage/scudetto-17829869809574813.jpg",
+     "t": "/img/t/scudetto/05.jpg",
+     "g": "/img/m/scudetto/05.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/scudetto/06.jpg",
-     "m": "/img/m/scudetto/06.jpg",
-     "t": "/img/t/scudetto/06.jpg"
+     "w": 4124,
+     "h": 6186,
+     "src": "/foto/reportage/scudetto-17829869841524059.jpg",
+     "m": "/foto/reportage/scudetto-17829869841524059.jpg",
+     "t": "/img/t/scudetto/06.jpg",
+     "g": "/img/m/scudetto/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/scudetto/07.jpg",
-     "m": "/img/m/scudetto/07.jpg",
-     "t": "/img/t/scudetto/07.jpg"
+     "w": 6038,
+     "h": 4025,
+     "src": "/foto/reportage/scudetto-17829869869854634.jpg",
+     "m": "/foto/reportage/scudetto-17829869869854634.jpg",
+     "t": "/img/t/scudetto/07.jpg",
+     "g": "/img/m/scudetto/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/scudetto/08.jpg",
-     "m": "/img/m/scudetto/08.jpg",
-     "t": "/img/t/scudetto/08.jpg"
+     "w": 6042,
+     "h": 4028,
+     "src": "/foto/reportage/scudetto-17829869901776165.jpg",
+     "m": "/foto/reportage/scudetto-17829869901776165.jpg",
+     "t": "/img/t/scudetto/08.jpg",
+     "g": "/img/m/scudetto/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/scudetto/09.jpg",
-     "m": "/img/m/scudetto/09.jpg",
-     "t": "/img/t/scudetto/09.jpg"
+     "w": 6157,
+     "h": 4105,
+     "src": "/foto/reportage/scudetto-17829869931223823.jpg",
+     "m": "/foto/reportage/scudetto-17829869931223823.jpg",
+     "t": "/img/t/scudetto/09.jpg",
+     "g": "/img/m/scudetto/09.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/scudetto/10.jpg",
-     "m": "/img/m/scudetto/10.jpg",
-     "t": "/img/t/scudetto/10.jpg"
+     "w": 4109,
+     "h": 6163,
+     "src": "/foto/reportage/scudetto-17829869961977771.jpg",
+     "m": "/foto/reportage/scudetto-17829869961977771.jpg",
+     "t": "/img/t/scudetto/10.jpg",
+     "g": "/img/m/scudetto/10.jpg"
     }
    ]
   },
@@ -1185,63 +1303,71 @@
     "en": "A quiet, intimate look at Naples: shadows, gestures and figures that reveal the city's true face.",
     "it": "Uno sguardo intimo e silenzioso su Napoli: ombre, gesti e presenze che ne mostrano il volto più vero."
    },
-   "cover": "/img/p/napolibw/01.jpg",
+   "cover": "/foto/reportage/napoli-b-w-17805997293792949.jpg",
    "images": [
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napolibw/01.jpg",
-     "m": "/img/m/napolibw/01.jpg",
-     "t": "/img/t/napolibw/01.jpg"
+     "w": 5605,
+     "h": 3737,
+     "src": "/foto/reportage/napoli-b-w-17805997293792949.jpg",
+     "m": "/foto/reportage/napoli-b-w-17805997293792949.jpg",
+     "t": "/img/t/napolibw/01.jpg",
+     "g": "/img/m/napolibw/01.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/napolibw/02.jpg",
-     "m": "/img/m/napolibw/02.jpg",
-     "t": "/img/t/napolibw/02.jpg"
+     "w": 5894,
+     "h": 3929,
+     "src": "/foto/reportage/napoli-b-w-17805997324621388.jpg",
+     "m": "/foto/reportage/napoli-b-w-17805997324621388.jpg",
+     "t": "/img/t/napolibw/02.jpg",
+     "g": "/img/m/napolibw/02.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/napolibw/03.jpg",
-     "m": "/img/m/napolibw/03.jpg",
-     "t": "/img/t/napolibw/03.jpg"
+     "w": 3721,
+     "h": 5582,
+     "src": "/foto/reportage/napoli-b-w-17805997361434586.jpg",
+     "m": "/foto/reportage/napoli-b-w-17805997361434586.jpg",
+     "t": "/img/t/napolibw/03.jpg",
+     "g": "/img/m/napolibw/03.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/napolibw/04.jpg",
-     "m": "/img/m/napolibw/04.jpg",
-     "t": "/img/t/napolibw/04.jpg"
+     "w": 4000,
+     "h": 6000,
+     "src": "/foto/reportage/napoli-b-w-17805997398273644.jpg",
+     "m": "/foto/reportage/napoli-b-w-17805997398273644.jpg",
+     "t": "/img/t/napolibw/04.jpg",
+     "g": "/img/m/napolibw/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1597,
-     "src": "/img/p/napolibw/05.jpg",
-     "m": "/img/m/napolibw/05.jpg",
-     "t": "/img/t/napolibw/05.jpg"
+     "w": 9488,
+     "h": 6315,
+     "src": "/foto/reportage/napoli-b-w-17805997430675504.jpg",
+     "m": "/foto/reportage/napoli-b-w-17805997430675504.jpg",
+     "t": "/img/t/napolibw/05.jpg",
+     "g": "/img/m/napolibw/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1597,
-     "src": "/img/p/napolibw/06.jpg",
-     "m": "/img/m/napolibw/06.jpg",
-     "t": "/img/t/napolibw/06.jpg"
+     "w": 9199,
+     "h": 6122,
+     "src": "/foto/reportage/napoli-b-w-17805997474455583.jpg",
+     "m": "/foto/reportage/napoli-b-w-17805997474455583.jpg",
+     "t": "/img/t/napolibw/06.jpg",
+     "g": "/img/m/napolibw/06.jpg"
     },
     {
-     "w": 1597,
-     "h": 2400,
-     "src": "/img/p/napolibw/07.jpg",
-     "m": "/img/m/napolibw/07.jpg",
-     "t": "/img/t/napolibw/07.jpg"
+     "w": 6247,
+     "h": 9387,
+     "src": "/foto/reportage/napoli-b-w-1780599751252514.jpg",
+     "m": "/foto/reportage/napoli-b-w-1780599751252514.jpg",
+     "t": "/img/t/napolibw/07.jpg",
+     "g": "/img/m/napolibw/07.jpg"
     },
     {
-     "w": 1597,
-     "h": 2400,
-     "src": "/img/p/napolibw/08.jpg",
-     "m": "/img/m/napolibw/08.jpg",
-     "t": "/img/t/napolibw/08.jpg"
+     "w": 6318,
+     "h": 9493,
+     "src": "/foto/reportage/napoli-b-w-17805997566649529.jpg",
+     "m": "/foto/reportage/napoli-b-w-17805997566649529.jpg",
+     "t": "/img/t/napolibw/08.jpg",
+     "g": "/img/m/napolibw/08.jpg"
     }
    ]
   },
@@ -1266,112 +1392,127 @@
     "en": "A story in three chapters, across Vietnam, Japan and China, about everyday life in Asian cities. Amid the movement and noise, people's expressions reveal a hidden calm, a moment to breathe in the middle of the traffic. Each photograph is a discreet encounter, a moment of stillness found in the chaos.",
     "it": "Una storia in tre capitoli, tra Vietnam, Giappone e Cina, dentro la vita di tutti i giorni delle città asiatiche. In mezzo al movimento e al rumore, gli sguardi rivelano una calma nascosta, un attimo di respiro nel cuore del traffico. Ogni foto è un incontro discreto, un momento di quiete trovato nel caos."
    },
-   "cover": "/img/p/asia/02.jpg",
+   "cover": "/foto/reportage/asia-stories-17805998617473166.jpg",
    "images": [
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/01.jpg",
-     "m": "/img/m/asia/01.jpg",
-     "t": "/img/t/asia/01.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805998585322555.jpg",
+     "m": "/foto/reportage/asia-stories-17805998585322555.jpg",
+     "t": "/img/t/asia/01.jpg",
+     "g": "/img/m/asia/01.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/02.jpg",
-     "m": "/img/m/asia/02.jpg",
-     "t": "/img/t/asia/02.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805998617473166.jpg",
+     "m": "/foto/reportage/asia-stories-17805998617473166.jpg",
+     "t": "/img/t/asia/02.jpg",
+     "g": "/img/m/asia/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/03.jpg",
-     "m": "/img/m/asia/03.jpg",
-     "t": "/img/t/asia/03.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805998652462043.jpg",
+     "m": "/foto/reportage/asia-stories-17805998652462043.jpg",
+     "t": "/img/t/asia/03.jpg",
+     "g": "/img/m/asia/03.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/04.jpg",
-     "m": "/img/m/asia/04.jpg",
-     "t": "/img/t/asia/04.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-1780599869585824.jpg",
+     "m": "/foto/reportage/asia-stories-1780599869585824.jpg",
+     "t": "/img/t/asia/04.jpg",
+     "g": "/img/m/asia/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/05.jpg",
-     "m": "/img/m/asia/05.jpg",
-     "t": "/img/t/asia/05.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805998730265579.jpg",
+     "m": "/foto/reportage/asia-stories-17805998730265579.jpg",
+     "t": "/img/t/asia/05.jpg",
+     "g": "/img/m/asia/05.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/asia/06.jpg",
-     "m": "/img/m/asia/06.jpg",
-     "t": "/img/t/asia/06.jpg"
+     "w": 3976,
+     "h": 5964,
+     "src": "/foto/reportage/asia-stories-17805998766287202.jpg",
+     "m": "/foto/reportage/asia-stories-17805998766287202.jpg",
+     "t": "/img/t/asia/06.jpg",
+     "g": "/img/m/asia/06.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/asia/07.jpg",
-     "m": "/img/m/asia/07.jpg",
-     "t": "/img/t/asia/07.jpg"
+     "w": 3878,
+     "h": 5817,
+     "src": "/foto/reportage/asia-stories-17805998811354596.jpg",
+     "m": "/foto/reportage/asia-stories-17805998811354596.jpg",
+     "t": "/img/t/asia/07.jpg",
+     "g": "/img/m/asia/07.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/asia/08.jpg",
-     "m": "/img/m/asia/08.jpg",
-     "t": "/img/t/asia/08.jpg"
+     "w": 4000,
+     "h": 6000,
+     "src": "/foto/reportage/asia-stories-1780599885315145.jpg",
+     "m": "/foto/reportage/asia-stories-1780599885315145.jpg",
+     "t": "/img/t/asia/08.jpg",
+     "g": "/img/m/asia/08.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/09.jpg",
-     "m": "/img/m/asia/09.jpg",
-     "t": "/img/t/asia/09.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805998887017364.jpg",
+     "m": "/foto/reportage/asia-stories-17805998887017364.jpg",
+     "t": "/img/t/asia/09.jpg",
+     "g": "/img/m/asia/09.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/10.jpg",
-     "m": "/img/m/asia/10.jpg",
-     "t": "/img/t/asia/10.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805998923204814.jpg",
+     "m": "/foto/reportage/asia-stories-17805998923204814.jpg",
+     "t": "/img/t/asia/10.jpg",
+     "g": "/img/m/asia/10.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/11.jpg",
-     "m": "/img/m/asia/11.jpg",
-     "t": "/img/t/asia/11.jpg"
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/asia-stories-17805998957621679.jpg",
+     "m": "/foto/reportage/asia-stories-17805998957621679.jpg",
+     "t": "/img/t/asia/11.jpg",
+     "g": "/img/m/asia/11.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/asia/12.jpg",
-     "m": "/img/m/asia/12.jpg",
-     "t": "/img/t/asia/12.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/reportage/asia-stories-17805999000607386.jpg",
+     "m": "/foto/reportage/asia-stories-17805999000607386.jpg",
+     "t": "/img/t/asia/12.jpg",
+     "g": "/img/m/asia/12.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/asia/13.jpg",
-     "m": "/img/m/asia/13.jpg",
-     "t": "/img/t/asia/13.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/reportage/asia-stories-17805999035066399.jpg",
+     "m": "/foto/reportage/asia-stories-17805999035066399.jpg",
+     "t": "/img/t/asia/13.jpg",
+     "g": "/img/m/asia/13.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/14.jpg",
-     "m": "/img/m/asia/14.jpg",
-     "t": "/img/t/asia/14.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805999070644723.jpg",
+     "m": "/foto/reportage/asia-stories-17805999070644723.jpg",
+     "t": "/img/t/asia/14.jpg",
+     "g": "/img/m/asia/14.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/asia/15.jpg",
-     "m": "/img/m/asia/15.jpg",
-     "t": "/img/t/asia/15.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/reportage/asia-stories-17805999107527852.jpg",
+     "m": "/foto/reportage/asia-stories-17805999107527852.jpg",
+     "t": "/img/t/asia/15.jpg",
+     "g": "/img/m/asia/15.jpg"
     }
    ]
   },
@@ -1396,98 +1537,111 @@
     "en": "Photography for private events with a documentary approach, capturing genuine moments with a natural eye.",
     "it": "Servizi fotografici per eventi privati con un taglio documentaristico, per raccontare momenti autentici con uno sguardo naturale."
    },
-   "cover": "/img/p/events/05.jpg",
+   "cover": "/foto/commercial/private-events-17840343381832527.jpg",
    "images": [
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/events/01.jpg",
-     "m": "/img/m/events/01.jpg",
-     "t": "/img/t/events/01.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/commercial/private-events-17840343156279055.jpg",
+     "m": "/foto/commercial/private-events-17840343156279055.jpg",
+     "t": "/img/t/events/01.jpg",
+     "g": "/img/m/events/01.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/events/02.jpg",
-     "m": "/img/m/events/02.jpg",
-     "t": "/img/t/events/02.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/commercial/private-events-17840343234378316.jpg",
+     "m": "/foto/commercial/private-events-17840343234378316.jpg",
+     "t": "/img/t/events/02.jpg",
+     "g": "/img/m/events/02.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/03.jpg",
-     "m": "/img/m/events/03.jpg",
-     "t": "/img/t/events/03.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/commercial/private-events-17840343281532577.jpg",
+     "m": "/foto/commercial/private-events-17840343281532577.jpg",
+     "t": "/img/t/events/03.jpg",
+     "g": "/img/m/events/03.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/events/04.jpg",
-     "m": "/img/m/events/04.jpg",
-     "t": "/img/t/events/04.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/commercial/private-events-17840343335155991.jpg",
+     "m": "/foto/commercial/private-events-17840343335155991.jpg",
+     "t": "/img/t/events/04.jpg",
+     "g": "/img/m/events/04.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/05.jpg",
-     "m": "/img/m/events/05.jpg",
-     "t": "/img/t/events/05.jpg"
+     "w": 6176,
+     "h": 4117,
+     "src": "/foto/commercial/private-events-17840343381832527.jpg",
+     "m": "/foto/commercial/private-events-17840343381832527.jpg",
+     "t": "/img/t/events/05.jpg",
+     "g": "/img/m/events/05.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/06.jpg",
-     "m": "/img/m/events/06.jpg",
-     "t": "/img/t/events/06.jpg"
+     "w": 5899,
+     "h": 3933,
+     "src": "/foto/commercial/private-events-17840343434683440.jpg",
+     "m": "/foto/commercial/private-events-17840343434683440.jpg",
+     "t": "/img/t/events/06.jpg",
+     "g": "/img/m/events/06.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/07.jpg",
-     "m": "/img/m/events/07.jpg",
-     "t": "/img/t/events/07.jpg"
+     "w": 5739,
+     "h": 3826,
+     "src": "/foto/commercial/private-events-17840343502244717.jpg",
+     "m": "/foto/commercial/private-events-17840343502244717.jpg",
+     "t": "/img/t/events/07.jpg",
+     "g": "/img/m/events/07.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/08.jpg",
-     "m": "/img/m/events/08.jpg",
-     "t": "/img/t/events/08.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/commercial/private-events-17840343566151963.jpg",
+     "m": "/foto/commercial/private-events-17840343566151963.jpg",
+     "t": "/img/t/events/08.jpg",
+     "g": "/img/m/events/08.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/events/09.jpg",
-     "m": "/img/m/events/09.jpg",
-     "t": "/img/t/events/09.jpg"
+     "w": 3944,
+     "h": 5916,
+     "src": "/foto/commercial/private-events-17840343663227348.jpg",
+     "m": "/foto/commercial/private-events-17840343663227348.jpg",
+     "t": "/img/t/events/09.jpg",
+     "g": "/img/m/events/09.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/10.jpg",
-     "m": "/img/m/events/10.jpg",
-     "t": "/img/t/events/10.jpg"
+     "w": 6100,
+     "h": 4067,
+     "src": "/foto/commercial/private-events-17840343782442623.jpg",
+     "m": "/foto/commercial/private-events-17840343782442623.jpg",
+     "t": "/img/t/events/10.jpg",
+     "g": "/img/m/events/10.jpg"
     },
     {
-     "w": 1600,
-     "h": 2400,
-     "src": "/img/p/events/11.jpg",
-     "m": "/img/m/events/11.jpg",
-     "t": "/img/t/events/11.jpg"
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/commercial/private-events-17840343869723278.jpg",
+     "m": "/foto/commercial/private-events-17840343869723278.jpg",
+     "t": "/img/t/events/11.jpg",
+     "g": "/img/m/events/11.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/12.jpg",
-     "m": "/img/m/events/12.jpg",
-     "t": "/img/t/events/12.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/commercial/private-events-17840343966762952.jpg",
+     "m": "/foto/commercial/private-events-17840343966762952.jpg",
+     "t": "/img/t/events/12.jpg",
+     "g": "/img/m/events/12.jpg"
     },
     {
-     "w": 2400,
-     "h": 1600,
-     "src": "/img/p/events/13.jpg",
-     "m": "/img/m/events/13.jpg",
-     "t": "/img/t/events/13.jpg"
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/commercial/private-events-17840344071198979.jpg",
+     "m": "/foto/commercial/private-events-17840344071198979.jpg",
+     "t": "/img/t/events/13.jpg",
+     "g": "/img/m/events/13.jpg"
     }
    ]
   }
@@ -1525,9 +1679,9 @@
   }
  },
  "site": {
-  "hero": "/img/site/hero.jpg",
-  "heroMobile": "/img/site/hero-mobile.jpg",
-  "about": "/img/site/about.jpg",
+  "hero": "/foto/hero-1789932519574.jpg",
+  "heroMobile": "/foto/hero-mobile-1789932548258.jpg",
+  "about": "/foto/about-1780600104289.jpg",
   "role": {
    "en": "Photographer · DoP · Colorist",
    "it": "Fotografo · DoP · Colorist"

@@ -479,7 +479,7 @@ body{margin:0}
       return {kind: p.group === 'Video' ? 'video' : 'photo', slug: p.id, name: p.name || '', group: p.group,
         year: o('year'), tag: o('tag'), short: o('short'), desc: o('desc'),
         it: {year: oi('year'), tag: oi('tag'), short: oi('short'), desc: oi('desc')},
-        cover: c.m || c.src, coverT: c.t || c.m || c.src, cw: c.w || 1600, ch: c.h || 1067,
+        cover: c.src || c.m, coverG: c.g || c.m || c.src, coverT: c.t || c.g || c.m || c.src, cw: c.w || 1600, ch: c.h || 1067,
         gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, w: i.w, h: i.h}; }),
         reel: p.reel || '', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
     });
@@ -517,7 +517,7 @@ body{margin:0}
       var c = ids.length, cnt = {en: String(c).padStart(2, '0') + ' ' + (c === 1 ? 'project' : 'projects'), it: String(c).padStart(2, '0') + ' ' + (c === 1 ? 'progetto' : 'progetti')};
       secs += '<section class="arch-sec" id="' + g[0] + '" aria-labelledby="' + g[0] + '-h"><div class="arch-sec-head"><h3 class="display" id="' + g[0] + '-h"' + A({en: g[2], it: g[3]}) + '>' + g[2] + '</h3><span class="mono"' + A(cnt) + '>' + cnt.en + '</span></div><div class="arch-grid">' +
         ids.map(function(i){ var d = DATA[i];
-          return '<button class="a-card" type="button" data-open="' + i + '" data-cursor="view"><span class="a-img"><img src="' + esc0(d.coverT) + '" alt="" loading="lazy" decoding="async"></span><span class="a-name display">' + esc0(d.name) + '</span><span class="a-tag mono"' + A({en: d.year + ' · ' + d.tag, it: d.it.year + ' · ' + d.it.tag}) + '>' + esc0(d.year + ' · ' + d.tag) + '</span></button>'; }).join('') +
+          return '<button class="a-card" type="button" data-open="' + i + '" data-cursor="view"><span class="a-img"><img src="' + esc0(d.cover) + '" alt="" loading="lazy" decoding="async"></span><span class="a-name display">' + esc0(d.name) + '</span><span class="a-tag mono"' + A({en: d.year + ' · ' + d.tag, it: d.it.year + ' · ' + d.it.tag}) + '>' + esc0(d.year + ' · ' + d.tag) + '</span></button>'; }).join('') +
         '</div></section>';
     });
     $('#archTabs').innerHTML = tabs; $('#archSecs').innerHTML = secs;
@@ -671,7 +671,7 @@ body{margin:0}
       if (em) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('reel') + '</p><div class="vp-embed"><iframe src="' + esc(em) + '" title="Reel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></section>');
       var pairs = (p.pairs || []).filter(function(q){ return q.log && q.grade; });
       if (pairs.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('grading') + '</p><div class="grades">' + pairs.map(function(q, j){
-        var g = q.grade.m || q.grade.src || q.grade, l = q.log.m || q.log.src || q.log;
+        var g = q.grade.src || q.grade.m || q.grade, l = q.log.src || q.log.m || q.log;
         return '<div><figure class="grade"><div class="grade-frame"><img src="' + esc(l) + '" alt="' + esc(T('gradeAlt2')) + '" loading="lazy"><div class="grade-top"><img src="' + esc(g) + '" alt="" loading="lazy"></div><div class="grade-line"></div><span class="grade-label l mono" aria-hidden="true">Graded</span><span class="grade-label r mono" aria-hidden="true">Log</span>' +
           '<input type="range" min="0" max="100" value="50" aria-label="' + esc(T('drag')) + (q.label ? ' · ' + esc(q.label) : '') + '"></div></figure>' +
           '<p class="mono grade-ctl">' + (q.label ? esc(q.label) + ' · ' : '') + T('drag') + '</p></div>';
@@ -684,7 +684,7 @@ body{margin:0}
       if ((p.clips || []).length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('clips') + '</p><div class="clips">' + p.clips.map(function(c){
         return '<video src="' + esc(c.src) + '" muted loop autoplay playsinline preload="metadata"></video>'; }).join('') + '</div></section>');
       if (p.gallery.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('frames') + '</p><div class="vp-frames">' + p.gallery.map(function(g, i){
-        return '<img src="' + esc(g.m) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async">'; }).join('') + '</div></section>');
+        return '<img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async">'; }).join('') + '</div></section>');
       if (!secs.length) secs.push('<div class="vp-slot reel"><span class="mono">' + T('soon') + '</span></div>');
       $('#projGallery').innerHTML = '<div class="vp-wrap">' + secs.join('') + '</div>';
       $$('#projGallery .grade-frame input').forEach(function(r){
@@ -696,7 +696,7 @@ body{margin:0}
       });
     } else {
       $('#projGallery').innerHTML = p.gallery.map(function(g, i){
-        return '<figure class="g p' + (i % 6) + '"><img src="' + esc(g.m) + '" srcset="' + esc(g.m) + ' 1400w, ' + esc(g.src) + ' 2400w" sizes="(min-width: 768px) 60vw, 100vw" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async"></figure>';
+        return '<figure class="g p' + (i % 6) + '"><img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async"></figure>';
       }).join('');
     }
     $('#projNextName').textContent = DATA[(k + 1) % N].name;
@@ -1015,7 +1015,7 @@ body{margin:0}
     var DENS = {bassa: [3, 52, 30], media: [4, 44, 28], alta: [6, 34, 24]}[M.density] || [3, 52, 30];
     for (var slot = 0; slot < E; slot++){
       var lon = slot * SLOT;
-      if (slot % 2 === 0 && slot / 2 < SN) heroes[slot / 2] = makeTile(SD[slot / 2].cover, lon, 0, SLOT * 0.73, 44);
+      if (slot % 2 === 0 && slot / 2 < SN) heroes[slot / 2] = makeTile(SD[slot / 2].coverG, lon, 0, SLOT * 0.73, 44);
       else makeTile(nextThumb(), lon, 0, SLOT * 0.62, 34);
     }
     [[45, 0], [-45, 360 / DENS[0] / 2]].forEach(function(b){

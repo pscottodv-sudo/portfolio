@@ -534,7 +534,9 @@ function sortable(container, sel, onDrop){
 function move(arr, from, to){ var x = arr.splice(from, 1)[0]; arr.splice(to, 0, x); }
 
 /* ---------- images: resized in the browser before upload ---------- */
-var SIZES = [['src', 'p', 2400, 0.84], ['m', 'm', 1400, 0.82], ['t', 't', 720, 0.8]];
+/* the original file is kept untouched (full quality, like the old site); only the sphere and the
+   panel use the two light copies */
+var LIGHT = [['g', 'g', 1400, 0.9], ['t', 't', 720, 0.86]];
 function stamp(){ return Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 function loadImg(file){
   return new Promise(function(res, rej){
@@ -544,27 +546,38 @@ function loadImg(file){
   });
 }
 function toBlob(cv, q){ return new Promise(function(res){ cv.toBlob(res, 'image/jpeg', q); }); }
+function drawTo(srcEl, W, H, L){
+  var k = Math.min(1, L / Math.max(W, H)), w = Math.round(W * k), h = Math.round(H * k);
+  var cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+  var cx = cv.getContext('2d'); cx.imageSmoothingQuality = 'high'; cx.drawImage(srcEl, 0, 0, w, h);
+  return cv;
+}
 function processImage(file, folder){
   return loadImg(file).then(function(r){
-    var W = r.im.naturalWidth, H = r.im.naturalHeight, base = stamp(), out = {}, srcEl = r.im, chain = Promise.resolve();
-    SIZES.forEach(function(s){
-      chain = chain.then(function(){
-        var k = Math.min(1, s[2] / Math.max(W, H)), w = Math.round(W * k), h = Math.round(H * k);
-        var cv = document.createElement('canvas'); cv.width = w; cv.height = h;
-        var cx = cv.getContext('2d'); cx.imageSmoothingQuality = 'high'; cx.drawImage(srcEl, 0, 0, w, h);
-        srcEl = cv;
-        if (s[0] === 'src'){ out.w = w; out.h = h; }
-        return toBlob(cv, s[3]).then(function(b){
-          var path = '/img/' + s[1] + '/' + folder + '/' + base + '.jpg';
-          PEND[path] = b; URLS[path] = URL.createObjectURL(b); out[s[0]] = path;
+    var W = r.im.naturalWidth, H = r.im.naturalHeight, base = stamp(), out = {w: W, h: H};
+    var EXT = {'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp'}[file.type];
+    var orig = EXT ? Promise.resolve({blob: file, ext: EXT}) : toBlob(drawTo(r.im, W, H, 8000), 0.95).then(function(b){ return {blob: b, ext: '.jpg'}; });
+    return orig.then(function(o){
+      var path = '/foto/' + folder + '/' + base + o.ext;
+      PEND[path] = o.blob; URLS[path] = URL.createObjectURL(o.blob); out.src = path; out.m = path;
+      var chain = Promise.resolve(), srcEl = r.im, sw = W, sh = H;
+      LIGHT.forEach(function(s){
+        chain = chain.then(function(){
+          var cv = drawTo(srcEl, sw, sh, s[2]); srcEl = cv; sw = cv.width; sh = cv.height;
+          return toBlob(cv, s[3]).then(function(b){
+            var lp = '/img/' + s[1] + '/' + folder + '/' + base + '.jpg';
+            PEND[lp] = b; URLS[lp] = URL.createObjectURL(b); out[s[0]] = lp;
+          });
         });
       });
-    });
-    return chain.then(function(){ URL.revokeObjectURL(r.u); return out; });
+      return chain;
+    }).then(function(){ URL.revokeObjectURL(r.u); return out; });
   });
 }
 function addImages(files, folder, each){
-  var list = Array.prototype.filter.call(files || [], function(f){ return /^image\//.test(f.type) || /\.(jpe?g|png|webp|heic|tiff?)$/i.test(f.name); });
+  var big = Array.prototype.filter.call(files || [], function(f){ return f.size > 60 * 1048576; }).length;
+  if (big) toast('Le foto sopra i 60 MB non si possono caricare: esportale più leggere');
+  var list = Array.prototype.filter.call(files || [], function(f){ return f.size <= 60 * 1048576 && (/^image\//.test(f.type) || /\.(jpe?g|png|webp|heic|tiff?)$/i.test(f.name)); });
   if (!list.length) return Promise.resolve(0);
   toast('Preparo ' + list.length + (list.length === 1 ? ' foto…' : ' foto…'));
   var done = 0, bad = 0, chain = Promise.resolve();
@@ -620,7 +633,7 @@ function renderEditor(){
    (isV ?
    '<div class="sec"><div class="sec-h"><h3>Video</h3></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Copertina</span><span class="hint">La still che esce dalla sfera e compare nell\'archivio. Puoi caricarne una o usare il gradato di una coppia (★).</span></div>' +
-       '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="ph" style="width:220px;aspect-ratio:16/10;cursor:default">' + (p.cover ? '<img src="' + esc(src((imgOf(p.cover) || {}).m || p.cover)) + '" alt="" id="vCover">' : '<div class="ba-empty">Nessuna copertina</div>') + '</div>' +
+       '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="ph" style="width:220px;aspect-ratio:16/10;cursor:default">' + (p.cover ? '<img src="' + esc(src((imgOf(p.cover) || {}).g || (imgOf(p.cover) || {}).m || p.cover)) + '" alt="" id="vCover">' : '<div class="ba-empty">Nessuna copertina</div>') + '</div>' +
        '<button class="btn small" type="button" id="vCoverUp">Carica una still</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in log e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Film</span><span class="hint">I lavori come DoP / colorist, con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi film</button></div></div>' +
@@ -659,7 +672,7 @@ function renderEditor(){
 }
 function pv(){
   var p = P(cur); if (!p) return;
-  $('#pvImg').src = p.cover ? src((imgOf(p.cover) || {}).m || p.cover) : '';
+  var ci = imgOf(p.cover) || {}; $('#pvImg').src = p.cover ? src(ci.g || ci.m || p.cover) : '';
   $('#pvTag').textContent = (p.year[pvLang] || p.year.en) + ' · ' + (p.tag[pvLang] || p.tag.en);
   $('#pvName').textContent = p.name; $('#pvShort').textContent = p.short[pvLang] || p.short.en;
   $('#pvBtn').textContent = p.group === 'Video' ? (pvLang === 'it' ? 'Scopri il progetto →' : 'Explore the project →') : (pvLang === 'it' ? 'Guarda la serie →' : 'View project →');
@@ -678,7 +691,7 @@ function renderPairs(p){
   box.innerHTML = p.pairs.map(function(q, i){
     var both = q.log && q.grade;
     return '<div class="pair" data-i="' + i + '"><div class="ba">' +
-      (both ? '<img src="' + esc(src(q.log.m)) + '" alt=""><img class="top" src="' + esc(src(q.grade.m)) + '" alt=""><span class="line"></span><span class="lb l">Grading</span><span class="lb r">Log</span><input type="range" min="0" max="100" value="50" aria-label="Sposta lo slider">'
+      (both ? '<img src="' + esc(src(q.log.g || q.log.m)) + '" alt=""><img class="top" src="' + esc(src(q.grade.g || q.grade.m)) + '" alt=""><span class="line"></span><span class="lb l">Grading</span><span class="lb r">Log</span><input type="range" min="0" max="100" value="50" aria-label="Sposta lo slider">'
         : '<div class="ba-empty">Carica il frame in log e quello gradato:<br>qui vedrai lo slider</div>') + '</div>' +
       '<div class="pslots" style="grid-template-columns:1fr 1fr 32px 32px">' + slot(q, 'grade', 'Grading') + slot(q, 'log', 'Log') + '<button class="ic" type="button" data-pcov aria-label="Usa il gradato come copertina" title="Usa il gradato come copertina"' + (q.grade ? '' : ' disabled') + '>★</button><button class="ic" type="button" data-rm aria-label="Rimuovi coppia">✕</button></div>' +
       '<input class="inp" data-k="label" placeholder="Didascalia, es. Neon Therapy · scena 3" aria-label="Didascalia"></div>';
@@ -803,10 +816,10 @@ function renderTexts(){
   var s = S.site;
   $('#textsPad').innerHTML = '<div style="display:flex;flex-direction:column;gap:10px"><h2 class="h2">Testi e chi sono</h2><p class="lead">I testi fissi del sito, in italiano e in inglese uno accanto all\'altro, e le foto di apertura.</p></div>' +
    '<div class="sec" style="border-top:0;padding-top:0"><div class="sec-h"><h3>Apertura</h3></div>' +
-     '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,220px))">' + imgSlot('Foto grande (computer)', 'hero', 'src') + imgSlot('Foto grande (telefono)', 'heroMobile', 'm') + '</div>' +
+     '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,220px))">' + imgSlot('Foto grande (computer)', 'hero', 'src') + imgSlot('Foto grande (telefono)', 'heroMobile', 'src') + '</div>' +
      bilF('Ruolo, sotto il nome', 'role') + bilF('Città', 'place') + bilF('Riga del caricamento iniziale', 'intro') + '</div>' +
    '<div class="sec"><div class="sec-h"><h3>Chi sono</h3></div>' +
-     '<div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:18px;align-items:start" class="aboutg">' + imgSlot('Foto', 'about', 'm') +
+     '<div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:18px;align-items:start" class="aboutg">' + imgSlot('Foto', 'about', 'src') +
      '<div style="display:flex;flex-direction:column;gap:14px">' + bilF('Frase grande', 'statement', {area: 1, rows: 4}) + bilF('Paragrafo 1', 'p1', {area: 1, rows: 3}) + bilF('Paragrafo 2', 'p2', {area: 1, rows: 3}) + '</div></div></div>' +
    '<div class="sec"><div class="sec-h"><h3>Dati in breve</h3><button class="btn small" type="button" id="addFact">+ Aggiungi</button></div><div class="rows" id="facts"></div></div>' +
    '<div class="sec"><div class="sec-h"><h3>Scritta che scorre nei contatti</h3></div>' + bilF('Frase', 'marquee') + '</div>';
