@@ -55,7 +55,9 @@ html.is-intro,html.is-intro body{overflow:hidden}
 
 /* ---------- nav ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;
-  padding-top:calc(16px + env(safe-area-inset-top, 0px));padding-bottom:16px;color:var(--on-photo);mix-blend-mode:difference;pointer-events:none}
+  padding-top:calc(16px + env(safe-area-inset-top, 0px));padding-bottom:16px;color:var(--on-photo);pointer-events:none}
+.nav-name{mix-blend-mode:difference}
+.nav-links{background:var(--ink);color:var(--ground);padding:8px 16px;border-radius:999px;align-items:center}
 .nav a,.nav button{pointer-events:auto}
 .nav-name{white-space:nowrap;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.01em;text-transform:uppercase;text-decoration:none}
 .nav-links{display:flex;gap:clamp(14px,2.4vw,32px)}
@@ -78,7 +80,8 @@ html.proj-open .nav,html.arch-open .nav{visibility:hidden}
 .hero-title.ink{color:var(--ink);z-index:0}
 .hero-title.light{color:var(--on-photo)}
 .hero-title .hl{display:block}
-.hero-meta{position:absolute;right:0;bottom:calc(26px + env(safe-area-inset-bottom, 0px));z-index:3;color:var(--on-photo);text-align:right;display:none;margin:0}
+.hero-meta{position:absolute;right:0;bottom:calc(26px + env(safe-area-inset-bottom, 0px));z-index:3;color:var(--ground);text-align:right;display:none;margin:0;line-height:2.1}
+.hero-meta span{background:var(--ink);padding:4px 10px;border-radius:4px}
 @media (min-width:900px){.hero-meta{display:block}}
 html.js-motion .hero-title,html.js-motion .hero-meta{visibility:hidden}
 html.js-motion .hero-media{clip-path:inset(50% 50% 50% 50%)}
@@ -208,7 +211,8 @@ html.no-gl .work-list{display:block}
 .c-val a:hover{border-color:var(--ink)}
 .copy-btn{min-height:44px;padding:0 14px;border:1px solid var(--hair);border-radius:999px;background:transparent;cursor:pointer;font-family:var(--mono);font-weight:300;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .copy-btn:hover{border-color:var(--ink)}
-.form{display:grid;gap:18px}
+.form{display:grid;gap:18px;align-content:start;padding-left:clamp(32px,4vw,64px);border-left:1px solid var(--hair)}
+.form-title{margin:0 0 6px;font-size:clamp(26px,2.8vw,42px);line-height:1;letter-spacing:-.02em}
 .field{display:grid;gap:6px}
 .field label{color:var(--muted)}
 .field input,.field textarea{font:inherit;font-size:17px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--hair);padding:10px 0;border-radius:0;resize:vertical}
@@ -217,7 +221,7 @@ html.no-gl .work-list{display:block}
 .form-note{color:var(--muted);min-height:1.4em}
 .footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px calc(28px + env(safe-area-inset-bottom, 0px));border-top:1px solid var(--hair);margin-top:clamp(60px,10vh,120px);color:var(--muted)}
 .footer a{text-decoration:none}
-@media (max-width:767px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:767px){.contact-grid{grid-template-columns:1fr}.form{padding-left:0;border-left:0;padding-top:clamp(28px,6vw,40px);border-top:1px solid var(--hair)}}
 
 /* ---------- project view ---------- */
 .proj{position:fixed;inset:0;z-index:60;background:var(--ground);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
@@ -253,7 +257,7 @@ html.has-js:not(.lang-set),html.has-js:not(.lang-set) body{overflow:hidden}
 .lang-line{display:block}
 .lang-alt{color:var(--muted)}
 .lang-btns{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:14px;justify-content:center;width:100%}
-.lang-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:104px;padding:18px 20px;margin:0;
+.lang-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:88px;padding:18px 20px;margin:0;
   border:1px solid var(--hair);border-radius:18px;background:transparent;color:var(--ink);cursor:pointer;text-align:center;line-height:1;
   transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
 .lang-btn .lang-name{display:block;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.01em;line-height:1}
@@ -334,8 +338,8 @@ body{margin:0}
   <p class="mono lang-eyebrow">Paolo Scotto di Vettimo</p>
   <h2 class="lang-title display" id="langTitle"><span class="lang-line">Choose your language</span><span class="lang-line lang-alt">Scegli la lingua</span></h2>
   <div class="lang-btns">
-    <button class="lang-btn" type="button" data-lang="it"><span class="lang-name">Italiano</span><span class="lang-code mono">IT</span></button>
-    <button class="lang-btn" type="button" data-lang="en"><span class="lang-name">English</span><span class="lang-code mono">EN</span></button>
+    <button class="lang-btn" type="button" data-lang="it"><span class="lang-name">Italiano</span></button>
+    <button class="lang-btn" type="button" data-lang="en"><span class="lang-name">English</span></button>
   </div>
 </div>
 
@@ -373,8 +377,6 @@ body{margin:0}
     </div>
     <div class="intro" aria-hidden="true">
       <div class="intro-stack" id="introStack"></div>
-      <p class="intro-name mono" id="introName"></p>
-      <p class="intro-count display gut" id="count">000</p>
     </div>
   </section>
 
@@ -418,6 +420,7 @@ body{margin:0}
         <div class="c-line"><span class="mono" data-en="Based" data-it="Base">Based</span><div class="c-val js-place2"></div></div>
       </div>
       <form class="form" id="contactForm" novalidate method="POST">
+        <h3 class="form-title display" data-en="Or write to me using the form" data-it="Oppure scrivimi usando il modulo">Or write to me using the form</h3>
         <div class="field"><label class="mono" for="f-name" data-en="Name" data-it="Nome">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="field"><label class="mono" for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label class="mono" for="f-msg" data-en="Tell me about your project" data-it="Raccontami il progetto">Tell me about your project</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
@@ -501,7 +504,7 @@ body{margin:0}
     setT($('#heroRole'), S.role);
     document.querySelectorAll('.js-place, .js-place2').forEach(function(el){ setT(el, S.place); });
     $('#introStack').innerHTML = DATA.slice(0, 5).map(function(d){ return '<img src="' + esc0(d.cover) + '" alt="">'; }).join('');
-    setT($('#introName'), S.intro); setT($('#statement'), S.statement); setT($('#p1'), S.p1); setT($('#p2'), S.p2);
+    setT($('#statement'), S.statement); setT($('#p1'), S.p1); setT($('#p2'), S.p2);
     $('#facts').innerHTML = (S.facts || []).map(function(f){ return '<div><dt' + A(f.k) + '>' + esc0(f.k.en) + '</dt><dd' + A(f.v) + '>' + esc0(f.v.en) + '</dd></div>'; }).join('');
     var n = DATA.length, k = FEAT.length;
     setT($('#fourOf'), {en: cap1(word('en', k)) + ' of ' + word('en', n), it: cap1(word('it', k)) + ' su ' + word('it', n)});
@@ -1216,14 +1219,13 @@ body{margin:0}
     var bw = Math.min(W * (desk ? 0.17 : 0.44), H * 0.3), bh = bw * 1.3;
     var stack = $('.intro-stack');
     stack.style.width = bw + 'px'; stack.style.height = bh + 'px';
-    $('.intro-name').style.top = (H / 2 + bh / 2 + 18) + 'px';
     var iy = (H - bh) / 2, ix = (W - bw) / 2;
     var media = $('.hero-media'), img = $('.hero-media img'), imgs = $$('.intro-stack img');
     gsap.set(media, {clipPath: 'inset(' + iy + 'px ' + ix + 'px ' + iy + 'px ' + ix + 'px)'});
     gsap.set(img, {scale: 1.4});
     gsap.set(heroChars, {yPercent: 115});
     gsap.set('.hero-title', {visibility: 'visible'});
-    var counter = {v: 0}, cEl = $('#count');
+    gsap.set('.hero-meta', {autoAlpha: 0});
     gsap.timeline({defaults: {ease: 'power3.out'}, onComplete: function(){
         root.classList.remove('is-intro');
         gsap.set(media, {clipPath: 'none'});
@@ -1232,11 +1234,9 @@ body{margin:0}
         ScrollTrigger.refresh();
         if (PREVIEW && window.__preview && window.__preview.scroll) setTimeout(function(){ window.__goto(window.__preview.scroll); }, 80);
       }})
-      .to(counter, {v: 100, duration: 2.2, ease: 'power2.inOut', onUpdate: function(){ cEl.textContent = String(Math.round(counter.v)).padStart(3, '0'); }}, 0)
-      .to(imgs, {clipPath: 'inset(0% 0% 0% 0%)', duration: 0.6, stagger: 0.32, ease: 'expo.out'}, 0.15)
-      .to(imgs, {clipPath: 'inset(0% 0% 100% 0%)', duration: 0.55, stagger: {each: 0.05, from: 'end'}, ease: 'expo.inOut'}, '>-0.05')
-      .to(['.intro-name', '#count'], {autoAlpha: 0, duration: 0.4}, '<')
-      .to(media, {clipPath: 'inset(0px 0px 0px 0px)', duration: 1.25, ease: 'expo.inOut'}, '>-0.2')
+      .to(imgs, {clipPath: 'inset(0% 0% 0% 0%)', duration: 0.42, stagger: 0.14, ease: 'expo.out'}, 0.05)
+      .to(imgs, {clipPath: 'inset(0% 0% 100% 0%)', duration: 0.4, stagger: {each: 0.04, from: 'end'}, ease: 'expo.inOut'}, '>-0.05')
+      .to(media, {clipPath: 'inset(0px 0px 0px 0px)', duration: 1.05, ease: 'expo.inOut'}, '>-0.2')
       .to(img, {scale: 1, duration: 1.8, ease: 'expo.out'}, '<')
       .to(heroChars, {yPercent: 0, duration: 1.1, stagger: 0.028, ease: 'expo.out'}, '<0.6')
       .to('.nav, .hero-meta', {autoAlpha: 1, duration: 0.8}, '<0.25');
