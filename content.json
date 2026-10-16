@@ -1,7 +1,120 @@
 {
  "version": 2,
- "updated": "2026-10-15T14:21:14.429Z",
+ "updated": "2026-10-16T09:47:23.940Z",
  "projects": [
+  {
+   "id": "pmvaruntyuzry",
+   "group": "Fashion editorial",
+   "name": ".MgC Backstage",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Backstage at MILAN FASHION WEEK",
+    "it": "Backstage alla MILANO FASHION WEEK"
+   },
+   "short": {
+    "en": "Backstage at the .MgC show, a fashion design collective, during Milan Fashion Week 2026",
+    "it": "Backstage della sfilata di .MgC, collettivo di fashion designer, alla Milano Fashion Week 2026"
+   },
+   "desc": {
+    "en": "Backstage of the .MgC show, a fashion design collective, at Milan Fashion Week 2026. I followed the models behind the scenes before they walked out, shooting with flash in an almost documentary way, trying to bring whoever looks at the photos inside that messy, chaotic space",
+    "it": "Backstage della sfilata di .MgC, collettivo di fashion designer, alla Milano Fashion Week 2026. Ho seguito modelle e modelli dietro le quinte prima dell’uscita, scattando con il flash in modo quasi documentaristico, cercando di portare chi guarda le foto dentro quell’ambiente caotico e confusionario"
+   },
+   "cover": "/foto/pmvaruntyuzry/mvarwoq1bvh4.jpg",
+   "images": [
+    {
+     "w": 2221,
+     "h": 1481,
+     "src": "/foto/pmvaruntyuzry/mvarwoq1bvh4.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwoq1bvh4.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwoq1bvh4.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwoq1bvh4.jpg"
+    },
+    {
+     "w": 7008,
+     "h": 4672,
+     "src": "/foto/pmvaruntyuzry/mvarwomp3lxx.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwomp3lxx.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwomp3lxx.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwomp3lxx.jpg"
+    },
+    {
+     "w": 7008,
+     "h": 4672,
+     "src": "/foto/pmvaruntyuzry/mvarwoolcymk.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwoolcymk.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwoolcymk.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwoolcymk.jpg"
+    },
+    {
+     "w": 5996,
+     "h": 3997,
+     "src": "/foto/pmvaruntyuzry/mvarwoqkpxr7.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwoqkpxr7.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwoqkpxr7.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwoqkpxr7.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/pmvaruntyuzry/mvarwos19vbl.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwos19vbl.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwos19vbl.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwos19vbl.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/pmvaruntyuzry/mvarwot6c5em.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwot6c5em.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwot6c5em.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwot6c5em.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/pmvaruntyuzry/mvarwoufmskx.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwoufmskx.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwoufmskx.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwoufmskx.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/pmvaruntyuzry/mvarwovktonu.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwovktonu.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwovktonu.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwovktonu.jpg"
+    },
+    {
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/pmvaruntyuzry/mvarwowrw3bi.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwowrw3bi.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwowrw3bi.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwowrw3bi.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/pmvaruntyuzry/mvarwoxwo99w.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwoxwo99w.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwoxwo99w.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwoxwo99w.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/pmvaruntyuzry/mvarwoz31p4x.jpg",
+     "m": "/foto/pmvaruntyuzry/mvarwoz31p4x.jpg",
+     "g": "/img/g/pmvaruntyuzry/mvarwoz31p4x.jpg",
+     "t": "/img/t/pmvaruntyuzry/mvarwoz31p4x.jpg"
+    }
+   ]
+  },
   {
    "id": "pmv9lunsjf4y4",
    "group": "Video",
@@ -1705,8 +1818,9 @@
  "sphere": {
   "featured": [
    "outofplace",
-   "shibuya",
+   "pmvaruntyuzry",
    "pmv9lunsjf4y4",
+   "shibuya",
    "diario"
   ],
   "tiles": [
