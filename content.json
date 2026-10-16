@@ -1,7 +1,144 @@
 {
  "version": 2,
- "updated": "2026-10-16T11:32:38.933Z",
+ "updated": "2026-10-16T11:36:21.190Z",
  "projects": [
+  {
+   "id": "outofplace",
+   "group": "Fashion editorial",
+   "name": "Out of Place",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Editorial · Published in Seline Magazine",
+    "it": "Editoriale · pubblicato su Seline Magazine"
+   },
+   "short": {
+    "en": "Naples' Rione Sanità, between heritage, tourism and belonging.",
+    "it": "Il Rione Sanità tra tradizione, turismo e appartenenza."
+   },
+   "desc": {
+    "en": "Shot in Naples' Rione Sanità. It portrays a neighbourhood that stays true to itself while the people looking at it keep changing. Here, fashion becomes a way to bring heritage, tourism and belonging into conversation.",
+    "it": "Scattato nel Rione Sanità, a Napoli. Racconta un quartiere che resta sé stesso mentre cambia lo sguardo di chi arriva a vederlo. Qui la moda diventa un modo per mettere in dialogo tradizione, turismo e senso di appartenenza."
+   },
+   "cover": "/foto/editorial/out-of-place-17899261130621369.jpg",
+   "images": [
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332143737156.jpg",
+     "m": "/foto/editorial/out-of-place-17840332143737156.jpg",
+     "t": "/img/t/outofplace/01.jpg",
+     "g": "/img/m/outofplace/01.jpg"
+    },
+    {
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332182564093.jpg",
+     "m": "/foto/editorial/out-of-place-17840332182564093.jpg",
+     "t": "/img/t/outofplace/02.jpg",
+     "g": "/img/m/outofplace/02.jpg"
+    },
+    {
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-1784033224318844.jpg",
+     "m": "/foto/editorial/out-of-place-1784033224318844.jpg",
+     "t": "/img/t/outofplace/03.jpg",
+     "g": "/img/m/outofplace/03.jpg"
+    },
+    {
+     "w": 3991,
+     "h": 5986,
+     "src": "/foto/editorial/out-of-place-17840332292699439.jpg",
+     "m": "/foto/editorial/out-of-place-17840332292699439.jpg",
+     "t": "/img/t/outofplace/04.jpg",
+     "g": "/img/m/outofplace/04.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-1784033233152100.jpg",
+     "m": "/foto/editorial/out-of-place-1784033233152100.jpg",
+     "t": "/img/t/outofplace/05.jpg",
+     "g": "/img/m/outofplace/05.jpg"
+    },
+    {
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332431303317.jpg",
+     "m": "/foto/editorial/out-of-place-17840332431303317.jpg",
+     "t": "/img/t/outofplace/06.jpg",
+     "g": "/img/m/outofplace/06.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332451836771.jpg",
+     "m": "/foto/editorial/out-of-place-17840332451836771.jpg",
+     "t": "/img/t/outofplace/07.jpg",
+     "g": "/img/m/outofplace/07.jpg"
+    },
+    {
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332519336043.jpg",
+     "m": "/foto/editorial/out-of-place-17840332519336043.jpg",
+     "t": "/img/t/outofplace/08.jpg",
+     "g": "/img/m/outofplace/08.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332536545253.jpg",
+     "m": "/foto/editorial/out-of-place-17840332536545253.jpg",
+     "t": "/img/t/outofplace/09.jpg",
+     "g": "/img/m/outofplace/09.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332672343057.jpg",
+     "m": "/foto/editorial/out-of-place-17840332672343057.jpg",
+     "t": "/img/t/outofplace/10.jpg",
+     "g": "/img/m/outofplace/10.jpg"
+    },
+    {
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-1784033269525604.jpg",
+     "m": "/foto/editorial/out-of-place-1784033269525604.jpg",
+     "t": "/img/t/outofplace/11.jpg",
+     "g": "/img/m/outofplace/11.jpg"
+    },
+    {
+     "w": 4128,
+     "h": 6192,
+     "src": "/foto/editorial/out-of-place-17840332751223790.jpg",
+     "m": "/foto/editorial/out-of-place-17840332751223790.jpg",
+     "t": "/img/t/outofplace/12.jpg",
+     "g": "/img/m/outofplace/12.jpg"
+    },
+    {
+     "w": 6192,
+     "h": 4128,
+     "src": "/foto/editorial/out-of-place-17840332707395593.jpg",
+     "m": "/foto/editorial/out-of-place-17840332707395593.jpg",
+     "t": "/img/t/outofplace/13.jpg",
+     "g": "/img/m/outofplace/13.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/editorial/out-of-place-17899261130621369.jpg",
+     "m": "/foto/editorial/out-of-place-17899261130621369.jpg",
+     "t": "/img/t/outofplace/14.jpg",
+     "g": "/img/m/outofplace/14.jpg"
+    }
+   ]
+  },
   {
    "id": "pmvaruntyuzry",
    "group": "Fashion editorial",
@@ -313,143 +450,6 @@
      "m": "/foto/editorial/shibuya-osanpo-17899305480946704.jpg",
      "t": "/img/t/shibuya/15.jpg",
      "g": "/img/m/shibuya/15.jpg"
-    }
-   ]
-  },
-  {
-   "id": "outofplace",
-   "group": "Fashion editorial",
-   "name": "Out of Place",
-   "visible": true,
-   "year": {
-    "en": "2026",
-    "it": "2026"
-   },
-   "tag": {
-    "en": "Editorial · Published in Seline Magazine",
-    "it": "Editoriale · pubblicato su Seline Magazine"
-   },
-   "short": {
-    "en": "Naples' Rione Sanità, between heritage, tourism and belonging.",
-    "it": "Il Rione Sanità tra tradizione, turismo e appartenenza."
-   },
-   "desc": {
-    "en": "Shot in Naples' Rione Sanità. It portrays a neighbourhood that stays true to itself while the people looking at it keep changing. Here, fashion becomes a way to bring heritage, tourism and belonging into conversation.",
-    "it": "Scattato nel Rione Sanità, a Napoli. Racconta un quartiere che resta sé stesso mentre cambia lo sguardo di chi arriva a vederlo. Qui la moda diventa un modo per mettere in dialogo tradizione, turismo e senso di appartenenza."
-   },
-   "cover": "/foto/editorial/out-of-place-17899261130621369.jpg",
-   "images": [
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-17840332143737156.jpg",
-     "m": "/foto/editorial/out-of-place-17840332143737156.jpg",
-     "t": "/img/t/outofplace/01.jpg",
-     "g": "/img/m/outofplace/01.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
-     "src": "/foto/editorial/out-of-place-17840332182564093.jpg",
-     "m": "/foto/editorial/out-of-place-17840332182564093.jpg",
-     "t": "/img/t/outofplace/02.jpg",
-     "g": "/img/m/outofplace/02.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
-     "src": "/foto/editorial/out-of-place-1784033224318844.jpg",
-     "m": "/foto/editorial/out-of-place-1784033224318844.jpg",
-     "t": "/img/t/outofplace/03.jpg",
-     "g": "/img/m/outofplace/03.jpg"
-    },
-    {
-     "w": 3991,
-     "h": 5986,
-     "src": "/foto/editorial/out-of-place-17840332292699439.jpg",
-     "m": "/foto/editorial/out-of-place-17840332292699439.jpg",
-     "t": "/img/t/outofplace/04.jpg",
-     "g": "/img/m/outofplace/04.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-1784033233152100.jpg",
-     "m": "/foto/editorial/out-of-place-1784033233152100.jpg",
-     "t": "/img/t/outofplace/05.jpg",
-     "g": "/img/m/outofplace/05.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
-     "src": "/foto/editorial/out-of-place-17840332431303317.jpg",
-     "m": "/foto/editorial/out-of-place-17840332431303317.jpg",
-     "t": "/img/t/outofplace/06.jpg",
-     "g": "/img/m/outofplace/06.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-17840332451836771.jpg",
-     "m": "/foto/editorial/out-of-place-17840332451836771.jpg",
-     "t": "/img/t/outofplace/07.jpg",
-     "g": "/img/m/outofplace/07.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
-     "src": "/foto/editorial/out-of-place-17840332519336043.jpg",
-     "m": "/foto/editorial/out-of-place-17840332519336043.jpg",
-     "t": "/img/t/outofplace/08.jpg",
-     "g": "/img/m/outofplace/08.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-17840332536545253.jpg",
-     "m": "/foto/editorial/out-of-place-17840332536545253.jpg",
-     "t": "/img/t/outofplace/09.jpg",
-     "g": "/img/m/outofplace/09.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-17840332672343057.jpg",
-     "m": "/foto/editorial/out-of-place-17840332672343057.jpg",
-     "t": "/img/t/outofplace/10.jpg",
-     "g": "/img/m/outofplace/10.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
-     "src": "/foto/editorial/out-of-place-1784033269525604.jpg",
-     "m": "/foto/editorial/out-of-place-1784033269525604.jpg",
-     "t": "/img/t/outofplace/11.jpg",
-     "g": "/img/m/outofplace/11.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
-     "src": "/foto/editorial/out-of-place-17840332751223790.jpg",
-     "m": "/foto/editorial/out-of-place-17840332751223790.jpg",
-     "t": "/img/t/outofplace/12.jpg",
-     "g": "/img/m/outofplace/12.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-17840332707395593.jpg",
-     "m": "/foto/editorial/out-of-place-17840332707395593.jpg",
-     "t": "/img/t/outofplace/13.jpg",
-     "g": "/img/m/outofplace/13.jpg"
-    },
-    {
-     "w": 2475,
-     "h": 3225,
-     "src": "/foto/editorial/out-of-place-17899261130621369.jpg",
-     "m": "/foto/editorial/out-of-place-17899261130621369.jpg",
-     "t": "/img/t/outofplace/14.jpg",
-     "g": "/img/m/outofplace/14.jpg"
     }
    ]
   },
@@ -959,6 +959,71 @@
    ]
   },
   {
+   "id": "diario",
+   "group": "Reportage",
+   "name": "Diario Metropolitano",
+   "visible": true,
+   "year": {
+    "en": "2025",
+    "it": "2025"
+   },
+   "tag": {
+    "en": "Street · Tokyo · Winner of Microracconti Urbani 2025",
+    "it": "Street · Tokyo · Vincitore di Microracconti Urbani 2025"
+   },
+   "short": {
+    "en": "Suspended moments on Tokyo's subways and elevated trains.",
+    "it": "Attimi sospesi tra metropolitana e treni sopraelevati di Tokyo."
+   },
+   "desc": {
+    "en": "Every day, millions of people cross Tokyo by subway and elevated train, caught in a rhythm that never stops. Yet within that flow there are suspended moments when passengers withdraw into themselves. A metropolitan diary of solitude, thoughts and quiet escapes from the crowd. Winner of Microracconti Urbani 2025.",
+    "it": "Ogni giorno milioni di persone attraversano Tokyo in metropolitana e sui treni sopraelevati, dentro un ritmo che non si ferma mai. Eppure, in mezzo a quel flusso, ci sono attimi sospesi in cui i passeggeri si chiudono in sé stessi. Un diario metropolitano fatto di solitudine, pensieri e piccole fughe silenziose dalla folla. Vincitore di Microracconti Urbani 2025."
+   },
+   "cover": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
+   "images": [
+    {
+     "w": 3941,
+     "h": 5912,
+     "src": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
+     "t": "/img/t/diario/01.jpg",
+     "g": "/img/m/diario/01.jpg"
+    },
+    {
+     "w": 4000,
+     "h": 6000,
+     "src": "/foto/reportage/diario-metropolitano-1780517987159a0e8.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517987159a0e8.jpg",
+     "t": "/img/t/diario/02.jpg",
+     "g": "/img/m/diario/02.jpg"
+    },
+    {
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/diario-metropolitano-1780517991922a168.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517991922a168.jpg",
+     "t": "/img/t/diario/03.jpg",
+     "g": "/img/m/diario/03.jpg"
+    },
+    {
+     "w": 4000,
+     "h": 6000,
+     "src": "/foto/reportage/diario-metropolitano-17805179948030guj.jpg",
+     "m": "/foto/reportage/diario-metropolitano-17805179948030guj.jpg",
+     "t": "/img/t/diario/04.jpg",
+     "g": "/img/m/diario/04.jpg"
+    },
+    {
+     "w": 6000,
+     "h": 4000,
+     "src": "/foto/reportage/diario-metropolitano-1780517999036jdrt.jpg",
+     "m": "/foto/reportage/diario-metropolitano-1780517999036jdrt.jpg",
+     "t": "/img/t/diario/05.jpg",
+     "g": "/img/m/diario/05.jpg"
+    }
+   ]
+  },
+  {
    "id": "iphone",
    "group": "Reportage",
    "name": "iPhone Portraits",
@@ -1060,71 +1125,6 @@
      "m": "/foto/reportage/iphone-portraits-17840349169179347.jpg",
      "t": "/img/t/iphone/10.jpg",
      "g": "/img/m/iphone/10.jpg"
-    }
-   ]
-  },
-  {
-   "id": "diario",
-   "group": "Reportage",
-   "name": "Diario Metropolitano",
-   "visible": true,
-   "year": {
-    "en": "2025",
-    "it": "2025"
-   },
-   "tag": {
-    "en": "Street · Tokyo · Winner of Microracconti Urbani 2025",
-    "it": "Street · Tokyo · Vincitore di Microracconti Urbani 2025"
-   },
-   "short": {
-    "en": "Suspended moments on Tokyo's subways and elevated trains.",
-    "it": "Attimi sospesi tra metropolitana e treni sopraelevati di Tokyo."
-   },
-   "desc": {
-    "en": "Every day, millions of people cross Tokyo by subway and elevated train, caught in a rhythm that never stops. Yet within that flow there are suspended moments when passengers withdraw into themselves. A metropolitan diary of solitude, thoughts and quiet escapes from the crowd. Winner of Microracconti Urbani 2025.",
-    "it": "Ogni giorno milioni di persone attraversano Tokyo in metropolitana e sui treni sopraelevati, dentro un ritmo che non si ferma mai. Eppure, in mezzo a quel flusso, ci sono attimi sospesi in cui i passeggeri si chiudono in sé stessi. Un diario metropolitano fatto di solitudine, pensieri e piccole fughe silenziose dalla folla. Vincitore di Microracconti Urbani 2025."
-   },
-   "cover": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
-   "images": [
-    {
-     "w": 3941,
-     "h": 5912,
-     "src": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
-     "m": "/foto/reportage/diario-metropolitano-1780517983884916c.jpg",
-     "t": "/img/t/diario/01.jpg",
-     "g": "/img/m/diario/01.jpg"
-    },
-    {
-     "w": 4000,
-     "h": 6000,
-     "src": "/foto/reportage/diario-metropolitano-1780517987159a0e8.jpg",
-     "m": "/foto/reportage/diario-metropolitano-1780517987159a0e8.jpg",
-     "t": "/img/t/diario/02.jpg",
-     "g": "/img/m/diario/02.jpg"
-    },
-    {
-     "w": 6000,
-     "h": 4000,
-     "src": "/foto/reportage/diario-metropolitano-1780517991922a168.jpg",
-     "m": "/foto/reportage/diario-metropolitano-1780517991922a168.jpg",
-     "t": "/img/t/diario/03.jpg",
-     "g": "/img/m/diario/03.jpg"
-    },
-    {
-     "w": 4000,
-     "h": 6000,
-     "src": "/foto/reportage/diario-metropolitano-17805179948030guj.jpg",
-     "m": "/foto/reportage/diario-metropolitano-17805179948030guj.jpg",
-     "t": "/img/t/diario/04.jpg",
-     "g": "/img/m/diario/04.jpg"
-    },
-    {
-     "w": 6000,
-     "h": 4000,
-     "src": "/foto/reportage/diario-metropolitano-1780517999036jdrt.jpg",
-     "m": "/foto/reportage/diario-metropolitano-1780517999036jdrt.jpg",
-     "t": "/img/t/diario/05.jpg",
-     "g": "/img/m/diario/05.jpg"
     }
    ]
   },
