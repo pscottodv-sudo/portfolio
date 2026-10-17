@@ -1,7 +1,64 @@
 {
  "version": 2,
- "updated": "2026-10-17T15:22:41.128Z",
+ "updated": "2026-10-17T16:26:43.272Z",
  "projects": [
+  {
+   "id": "pmvclg20qdizo",
+   "group": "Video",
+   "name": ".Mgc Video Backstage",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Backstage · Color grading",
+    "it": "Backstage · Color grading"
+   },
+   "short": {
+    "en": "Behind the scenes of the .MgC show at Milan Fashion Week 2026, color graded by me",
+    "it": "Il video di backstage della sfilata di .MgC alla Milano Fashion Week 2026, con il mio color grading"
+   },
+   "desc": {
+    "en": "The behind-the-scenes video of the .MgC show, a fashion design collective, filmed backstage during Milan Fashion Week 2026. I did the color grading in DaVinci Resolve",
+    "it": "Il video di backstage della sfilata di .MgC, collettivo di fashion designer, girato dietro le quinte durante la Milano Fashion Week 2026. Ho curato il color grading in DaVinci Resolve."
+   },
+   "cover": "/foto/pmvclg20qdizo/cover/mvclxtxu2zmo.jpg",
+   "images": [],
+   "films": [],
+   "pairs": [
+    {
+     "label": "",
+     "log": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmvclg20qdizo/grade/mvcly6v7nq4z.jpg",
+      "m": "/foto/pmvclg20qdizo/grade/mvcly6v7nq4z.jpg",
+      "g": "/img/g/pmvclg20qdizo/grade/mvcly6v7nq4z.jpg",
+      "t": "/img/t/pmvclg20qdizo/grade/mvcly6v7nq4z.jpg"
+     },
+     "grade": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmvclg20qdizo/grade/mvcly29t728z.jpg",
+      "m": "/foto/pmvclg20qdizo/grade/mvcly29t728z.jpg",
+      "g": "/img/g/pmvclg20qdizo/grade/mvcly29t728z.jpg",
+      "t": "/img/t/pmvclg20qdizo/grade/mvcly29t728z.jpg"
+     }
+    }
+   ],
+   "clips": [],
+   "reel": "https://youtu.be/xijDk7g0v-s",
+   "reelPos": "afterGrade",
+   "coverImg": {
+    "w": 3840,
+    "h": 2160,
+    "src": "/foto/pmvclg20qdizo/cover/mvclxtxu2zmo.jpg",
+    "m": "/foto/pmvclg20qdizo/cover/mvclxtxu2zmo.jpg",
+    "g": "/img/g/pmvclg20qdizo/cover/mvclxtxu2zmo.jpg",
+    "t": "/img/t/pmvclg20qdizo/cover/mvclxtxu2zmo.jpg"
+   }
+  },
   {
    "id": "pmvcj5wtdliis",
    "group": "Video",
@@ -56,7 +113,8 @@
     "m": "/foto/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg",
     "g": "/img/g/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg",
     "t": "/img/t/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg"
-   }
+   },
+   "reelPos": "top"
   },
   {
    "id": "outofplace",
@@ -362,7 +420,8 @@
     "m": "/foto/pmv9lunsjf4y4/cover/mv9mme33zu5b.jpg",
     "g": "/img/g/pmv9lunsjf4y4/cover/mv9mme33zu5b.jpg",
     "t": "/img/t/pmv9lunsjf4y4/cover/mv9mme33zu5b.jpg"
-   }
+   },
+   "reelPos": "top"
   },
   {
    "id": "shibuya",
@@ -899,7 +958,8 @@
     "src": "/img/p/video/cover/mv9l4jf9ft36.jpg",
     "m": "/img/m/video/cover/mv9l4jf9ft36.jpg",
     "t": "/img/t/video/cover/mv9l4jf9ft36.jpg"
-   }
+   },
+   "reelPos": "top"
   },
   {
    "id": "piazza",
