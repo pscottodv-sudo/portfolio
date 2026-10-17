@@ -1,7 +1,63 @@
 {
  "version": 2,
- "updated": "2026-10-16T11:36:21.190Z",
+ "updated": "2026-10-17T15:19:41.953Z",
  "projects": [
+  {
+   "id": "pmvcj5wtdliis",
+   "group": "Video",
+   "name": " Backstage Out of Place",
+   "visible": false,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Backstage · Color grading",
+    "it": "Backstage · Color grading"
+   },
+   "short": {
+    "en": "Behind the scenes of the Out of Place shoot in Naples’ Rione Sanità, color graded by me",
+    "it": "Il backstage dello shooting di Out of Place nel Rione Sanità, a Napoli, con il mio color grading"
+   },
+   "desc": {
+    "en": "The behind-the-scenes video of the Out of Place editorial, filmed during the shoot in Naples’ Rione Sanità. I did the color grading in DaVinci Resolve. The editorial was published in Seline Magazine print issue",
+    "it": "Il video di backstage dell’editoriale Out of Place, girato durante lo shooting nel Rione Sanità a Napoli. Ho curato il color grading in DaVinci Resolve. L’editoriale è stato pubblicato su Seline Magazine"
+   },
+   "cover": "/foto/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg",
+   "images": [],
+   "films": [],
+   "pairs": [
+    {
+     "label": "",
+     "log": {
+      "w": 1620,
+      "h": 1080,
+      "src": "/foto/pmvcj5wtdliis/grade/mvcj8uxh6uzs.jpg",
+      "m": "/foto/pmvcj5wtdliis/grade/mvcj8uxh6uzs.jpg",
+      "g": "/img/g/pmvcj5wtdliis/grade/mvcj8uxh6uzs.jpg",
+      "t": "/img/t/pmvcj5wtdliis/grade/mvcj8uxh6uzs.jpg"
+     },
+     "grade": {
+      "w": 1620,
+      "h": 1080,
+      "src": "/foto/pmvcj5wtdliis/grade/mvcj8r4rzggj.jpg",
+      "m": "/foto/pmvcj5wtdliis/grade/mvcj8r4rzggj.jpg",
+      "g": "/img/g/pmvcj5wtdliis/grade/mvcj8r4rzggj.jpg",
+      "t": "/img/t/pmvcj5wtdliis/grade/mvcj8r4rzggj.jpg"
+     }
+    }
+   ],
+   "clips": [],
+   "reel": "https://vimeo.com/1236838140?share=copy&fl=sv&fe=ci",
+   "coverImg": {
+    "w": 1620,
+    "h": 1080,
+    "src": "/foto/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg",
+    "m": "/foto/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg",
+    "g": "/img/g/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg",
+    "t": "/img/t/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg"
+   }
+  },
   {
    "id": "outofplace",
    "group": "Fashion editorial",
