@@ -1,12 +1,12 @@
 {
  "version": 2,
- "updated": "2026-10-17T15:19:41.953Z",
+ "updated": "2026-10-17T15:22:41.128Z",
  "projects": [
   {
    "id": "pmvcj5wtdliis",
    "group": "Video",
    "name": " Backstage Out of Place",
-   "visible": false,
+   "visible": true,
    "year": {
     "en": "2026",
     "it": "2026"
