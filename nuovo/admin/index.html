@@ -469,6 +469,7 @@ function changes(){
     if (!o){ out.push([p.name || 'Nuovo progetto', 'nuovo progetto']); return; }
     var f = [];
     ['name','group','visible','cover','reel'].forEach(function(k){ if (J(p[k]) !== J(o[k])) f.push(FL[k]); });
+    if ((p.reelPos || 'top') !== (o.reelPos || 'top')) f.push('posizione del video');
     ['year','tag','short','desc'].forEach(function(k){ ['it','en'].forEach(function(l){ if ((p[k] || {})[l] !== (o[k] || {})[l]) f.push(FL[k] + ' ' + l.toUpperCase()); }); });
     var ps = p.images.map(function(i){ return i.src; }), os = (o.images || []).map(function(i){ return i.src; });
     var add = ps.filter(function(g){ return os.indexOf(g) < 0; }).length, rem = os.filter(function(g){ return ps.indexOf(g) < 0; }).length;
@@ -620,7 +621,7 @@ function renderEditor(){
   var p = P(cur), ed = $('#editor');
   if (!p){ ed.innerHTML = '<div class="empty"><b style="color:var(--ink)">Scegli un progetto</b><span>Oppure creane uno nuovo con "+ Nuovo".</span></div>'; return; }
   var isV = p.group === 'Video', fi = S.sphere.featured.indexOf(p.id);
-  if (isV){ p.films = p.films || []; p.pairs = p.pairs || []; p.clips = p.clips || []; if (p.reel == null) p.reel = ''; }
+  if (isV){ p.films = p.films || []; p.pairs = p.pairs || []; p.clips = p.clips || []; if (p.reel == null) p.reel = ''; if (!p.reelPos) p.reelPos = 'top'; }
   ed.innerHTML = '<div class="ed">' +
    '<div class="ed-head"><button class="btn small back" type="button" id="back">← Progetti</button><h2 id="edTitle">' + esc(p.name || 'Nuovo progetto') + '</h2><button class="btn small danger" type="button" id="delP">Elimina</button></div>' +
    '<div class="sec" style="border-top:0;padding-top:0"><div class="sec-h"><h3>Come appare sulla sfera</h3><div class="seg" role="group" aria-label="Lingua anteprima"><button type="button" data-pl="it" aria-pressed="' + (pvLang === 'it') + '">IT</button><button type="button" data-pl="en" aria-pressed="' + (pvLang === 'en') + '">EN</button></div></div>' +
@@ -641,7 +642,8 @@ function renderEditor(){
        '<button class="btn small" type="button" id="vCoverUp">Carica una still</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in log e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Lavori video</span><span class="hint">Fashion film, cortometraggi, videoclip, spot, contenuti… con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi lavoro</button></div></div>' +
-     '<div class="f"><label class="mono" for="pReel">Reel principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
+     '<div class="grid"><div class="f"><label class="mono" for="pReel">Video principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
+     '<div class="f"><label class="mono" for="pReelPos">Dove mostrarlo nella pagina</label><select class="inp" id="pReelPos" data-k="reelPos"><option value="top">In cima</option><option value="afterGrade">Dopo il color grading</option><option value="bottom">In fondo</option></select></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Clip brevi in loop</span><span class="hint">MP4 senza audio, pochi secondi, massimo 20 MB.</span></div><div class="clips" id="clips"></div></div></div>'
    : '') +
    '<div class="sec"><div class="sec-h"><h3>' + (isV ? 'Frame dal set' : 'Foto') + ' <span class="muted" style="font-weight:400" id="gCount"></span></h3><span class="hint">Trascina per riordinare · ★ copertina · trascina qui i file dal computer</span></div><div class="gal" id="gal"></div></div>' +

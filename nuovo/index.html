@@ -160,7 +160,7 @@ html.no-gl .work-list{display:block}
 @media (max-width:640px){.wl-grid{grid-template-columns:1fr}}
 
 /* ---------- video project page ---------- */
-.vp-wrap{grid-column:1 / -1;display:grid;gap:clamp(56px,8vw,110px);width:100%;max-width:1000px;justify-self:center}
+.vp-wrap{flex:1 1 100%;display:grid;gap:clamp(56px,8vw,110px);width:100%;max-width:1400px;margin-inline:auto}
 .vp{display:grid;gap:18px}
 .vp-n{color:var(--muted);margin:0;padding-top:16px;border-top:1px solid var(--hair)}
 .vp-slot{display:grid;place-items:center;gap:10px;text-align:center;min-height:clamp(200px,32vw,420px);border:1px dashed var(--hair);padding:24px}
@@ -232,18 +232,12 @@ html.no-gl .work-list{display:block}
 .proj-title{font-size:clamp(56px,11.5vw,200px);margin:0}
 .proj-desc{margin:clamp(24px,3vw,40px) 0 0 auto;max-width:56ch;font-size:clamp(16px,1.3vw,19px);line-height:1.6}
 @media (min-width:768px){.proj-desc{margin-right:8vw}}
-.proj-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,2vw,28px);margin-top:clamp(56px,9vw,120px);align-items:start}
-.g{margin:0;overflow:hidden;max-width:100%}
-.g img{width:auto;height:auto;max-width:100%;max-height:80vh;display:block}
-.g.p1 img,.g.p4 img{margin-left:auto}
-.g.p2 img,.g.p5 img{margin-inline:auto}
-.g.p0{grid-column:1 / 8}
-.g.p1{grid-column:8 / 13;margin-top:22vh}
-.g.p2{grid-column:3 / 11}
-.g.p3{grid-column:1 / 6}
-.g.p4{grid-column:6 / 13;margin-top:12vh}
-.g.p5{grid-column:4 / 10}
-@media (max-width:767px){.g{grid-column:1 / -1 !important;margin-top:0 !important}}
+.proj-gallery{display:flex;flex-wrap:wrap;gap:clamp(12px,1.4vw,22px);margin-top:clamp(56px,9vw,120px);align-items:flex-start}
+.proj-gallery::after{content:"";flex:999 1 0}
+.g{margin:0;overflow:hidden;max-width:100%;aspect-ratio:var(--ar,1.5);flex:calc(var(--ar,1.5) * 100) 1 calc(var(--ar,1.5) * 24vw)}
+.g img{width:100%;height:100%;object-fit:cover;display:block}
+@media (min-width:768px){.proj-gallery{padding-inline:clamp(0px,4vw,80px)}}
+@media (max-width:767px){.g{flex:1 1 100%}}
 .proj-next{all:unset;cursor:pointer;display:grid;gap:8px;margin-top:clamp(80px,12vw,160px);padding-top:24px;border-top:1px solid var(--hair);width:100%}
 .proj-next .mono{color:var(--muted)}
 .proj-next .display{font-size:clamp(44px,8vw,130px)}
@@ -309,7 +303,7 @@ html.has-js:not(.lang-set),html.has-js:not(.lang-set) body{overflow:hidden}
 /* ---------- live-content additions ---------- */
 [hidden]{display:none!important}
 body{margin:0}
-.vp-embed{position:relative;aspect-ratio:16/9;width:min(100%, calc(62vh * 16 / 9));max-width:100%;background:var(--void)}
+.vp-embed{position:relative;aspect-ratio:16/9;width:min(100%, calc(80vh * 16 / 9));max-width:100%;background:var(--void)}
 .vp-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .films{list-style:none;margin:0;padding:0}
 .film{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,3fr) 64px auto;gap:16px;align-items:baseline;padding-block:18px;border-top:1px solid var(--hair)}
@@ -324,7 +318,7 @@ body{margin:0}
 @media (min-width:900px){.grades{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .grade-cap{margin:0;color:var(--muted)}
 .vp-frames{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
-.vp-frames img{width:100%;height:auto;max-height:60vh;object-fit:contain}
+.vp-frames img{width:100%;height:auto;max-height:80vh;object-fit:contain}
 @media (max-width:640px){.vp-frames{grid-template-columns:1fr}}
 .boot-err{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
 </style>
@@ -487,7 +481,7 @@ body{margin:0}
         it: {year: oi('year'), tag: oi('tag'), short: oi('short'), desc: oi('desc')},
         cover: c.src || c.m, coverG: c.g || c.m || c.src, coverT: c.t || c.g || c.m || c.src, cw: c.w || 1600, ch: c.h || 1067,
         gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, w: i.w, h: i.h}; }),
-        reel: p.reel || '', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
+        reel: p.reel || '', reelPos: p.reelPos || 'top', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
     });
     var at = {}; DATA.forEach(function(d, i){ at[d.slug] = i; });
     var FEAT = (SP.featured || []).map(function(id){ return at[id]; }).filter(function(i){ return i != null; });
@@ -576,13 +570,13 @@ body{margin:0}
       formNote: 'Preview only: the form will work on the live site.', frame: 'frame', allWorks: 'All works', mq: "Let's work together",
       dop: 'Cinematography', dopSlot: 'Lighting setups, camera and lens choices, stills from set.', toAdd: 'Coming soon',
       grading: 'Color grading', drag: 'Drag to compare', gradeNote: 'Example on a still from Neon Therapy, to be replaced with a real before and after from DaVinci Resolve.',
-      reel: 'Reel', reelSoon: 'Reel coming soon', gradeAlt: 'Still from Neon Therapy, graded on the left and flat on the right',
+      reel: 'Video', reelSoon: 'Reel coming soon', gradeAlt: 'Still from Neon Therapy, graded on the left and flat on the right',
       toggle: 'IT', toggleAria: "Passa all'italiano"},
     it: {viewSeries: 'Guarda la serie', explore: 'Scopri il progetto', copy: 'Copia', copied: 'Copiato', selected: 'Selezionato',
       formNote: 'Anteprima: il modulo funzionerà sul sito definitivo.', frame: 'foto', allWorks: 'Tutti i lavori', mq: 'Lavoriamo insieme',
       dop: 'Direzione della fotografia', dopSlot: 'Schemi luce, camera e ottiche, frame dal set.', toAdd: 'Da aggiungere',
       grading: 'Color grading', drag: 'Trascina per confrontare', gradeNote: 'Esempio su un frame di Neon Therapy: da sostituire con un prima/dopo reale da DaVinci Resolve.',
-      reel: 'Reel', reelSoon: 'Reel in lavorazione', gradeAlt: 'Frame di Neon Therapy: a sinistra con il grading, a destra in log',
+      reel: 'Video', reelSoon: 'Reel in lavorazione', gradeAlt: 'Frame di Neon Therapy: a sinistra con il grading, a destra in log',
       toggle: 'EN', toggleAria: 'Switch to English'}
   };
   TX.en.mq = (B.S.marquee || {}).en || TX.en.mq; TX.it.mq = (B.S.marquee || {}).it || (B.S.marquee || {}).en || TX.it.mq;
@@ -674,23 +668,30 @@ body{margin:0}
     if (p.kind === 'video'){
       var secs = [], no = 0, nn = function(){ no++; return pad(no) + ' · '; };
       var em = embedUrl(p.reel);
-      if (em) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('reel') + '</p><div class="vp-embed"><iframe src="' + esc(em) + '" title="Reel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></section>');
+      var reelSec = em ? ('<section class="vp"><p class="mono vp-n">' + '§§' + T('reel') + '</p><div class="vp-embed"><iframe src="' + esc(em) + '" title="Reel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></section>') : '';
       var pairs = (p.pairs || []).filter(function(q){ return q.log && q.grade; });
-      if (pairs.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('grading') + '</p><div class="grades">' + pairs.map(function(q, j){
+      if (pairs.length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('grading') + '</p><div class="grades">' + pairs.map(function(q, j){
         var g = q.grade.src || q.grade.m || q.grade, l = q.log.src || q.log.m || q.log;
         return '<div><figure class="grade"><div class="grade-frame"><img src="' + esc(l) + '" alt="' + esc(T('gradeAlt2')) + '" loading="lazy"><div class="grade-top"><img src="' + esc(g) + '" alt="" loading="lazy"></div><div class="grade-line"></div><span class="grade-label l mono" aria-hidden="true">Graded</span><span class="grade-label r mono" aria-hidden="true">Log</span>' +
           '<input type="range" min="0" max="100" value="50" aria-label="' + esc(T('drag')) + (q.label ? ' · ' + esc(q.label) : '') + '"></div></figure>' +
           '<p class="mono grade-ctl">' + (q.label ? esc(q.label) + ' · ' : '') + T('drag') + '</p></div>';
       }).join('') + '</div></section>');
       var films = (p.films || []).filter(function(f){ return f.title; });
-      if (films.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('films') + '</p><ul class="films">' + films.map(function(f){
+      if (films.length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('films') + '</p><ul class="films">' + films.map(function(f){
         return '<li class="film"><span class="film-t">' + esc(f.title) + '</span><span class="mono">' + esc([f.type, f.role].filter(Boolean).join(' · ')) + '</span><span class="mono f-dir">' + esc(f.dir || '') + '</span><span class="mono f-year">' + esc(f.year || '') + '</span>' +
           (f.link ? '<a class="btn-view" href="' + esc(f.link) + '" target="_blank" rel="noopener">' + T('watch') + '</a>' : '<span></span>') + '</li>';
       }).join('') + '</ul></section>');
-      if ((p.clips || []).length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('clips') + '</p><div class="clips">' + p.clips.map(function(c){
+      if ((p.clips || []).length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('clips') + '</p><div class="clips">' + p.clips.map(function(c){
         return '<video src="' + esc(c.src) + '" muted loop autoplay playsinline preload="metadata"></video>'; }).join('') + '</div></section>');
-      if (p.gallery.length) secs.push('<section class="vp"><p class="mono vp-n">' + nn() + T('frames') + '</p><div class="vp-frames">' + p.gallery.map(function(g, i){
+      if (p.gallery.length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('frames') + '</p><div class="vp-frames">' + p.gallery.map(function(g, i){
         return '<img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async">'; }).join('') + '</div></section>');
+      if (reelSec){
+        var pos = p.reelPos || 'top', gi = pairs.length ? 1 : 0;
+        if (pos === 'bottom') secs.push(reelSec);
+        else if (pos === 'afterGrade') secs.splice(gi, 0, reelSec);
+        else secs.unshift(reelSec);
+      }
+      secs = secs.map(function(s, i){ return s.replace('§§', pad(i + 1) + ' · '); });
       if (!secs.length) secs.push('<div class="vp-slot reel"><span class="mono">' + T('soon') + '</span></div>');
       $('#projGallery').innerHTML = '<div class="vp-wrap">' + secs.join('') + '</div>';
       $$('#projGallery .grade-frame input').forEach(function(r){
@@ -702,7 +703,7 @@ body{margin:0}
       });
     } else {
       $('#projGallery').innerHTML = p.gallery.map(function(g, i){
-        return '<figure class="g p' + (i % 6) + '"><img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async"></figure>';
+        return '<figure class="g" style="--ar:' + ((g.w && g.h) ? (g.w / g.h).toFixed(4) : 1.5) + '"><img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async"></figure>';
       }).join('');
     }
     $('#projNextName').textContent = DATA[(k + 1) % N].name;
