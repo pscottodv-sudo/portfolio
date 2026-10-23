@@ -671,7 +671,7 @@ body{margin:0}
       var pairs = (p.pairs || []).filter(function(q){ return q.log && q.grade; });
       if (pairs.length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('grading') + '</p><div class="grades">' + pairs.map(function(q, j){
         var g = q.grade.src || q.grade.m || q.grade, l = q.log.src || q.log.m || q.log;
-        return '<div><figure class="grade"><div class="grade-frame"><img src="' + esc(l) + '" alt="' + esc(T('gradeAlt2')) + '" loading="lazy"><div class="grade-top"><img src="' + esc(g) + '" alt="" loading="lazy"></div><div class="grade-line"></div><span class="grade-label l mono" aria-hidden="true">Graded</span><span class="grade-label r mono" aria-hidden="true">Log</span>' +
+        return '<div><figure class="grade"><div class="grade-frame"><img src="' + esc(l) + '" alt="' + esc(T('gradeAlt2')) + '" loading="lazy"><div class="grade-top"><img src="' + esc(g) + '" alt="" loading="lazy"></div><div class="grade-line"></div><span class="grade-label l mono" aria-hidden="true">Graded</span><span class="grade-label r mono" aria-hidden="true">Rec709</span>' +
           '<input type="range" min="0" max="100" value="50" aria-label="' + esc(T('drag')) + (q.label ? ' · ' + esc(q.label) : '') + '"></div></figure>' +
           '<p class="mono grade-ctl">' + (q.label ? esc(q.label) + ' · ' : '') + T('drag') + '</p></div>';
       }).join('') + '</div></section>');

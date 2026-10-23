@@ -640,7 +640,7 @@ function renderEditor(){
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Copertina</span><span class="hint">La still che esce dalla sfera e compare nell\'archivio. Puoi caricarne una o usare il gradato di una coppia (★).</span></div>' +
        '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="ph" style="width:220px;aspect-ratio:16/10;cursor:default">' + (p.cover ? '<img src="' + esc(src((imgOf(p.cover) || {}).g || (imgOf(p.cover) || {}).m || p.cover)) + '" alt="" id="vCover">' : '<div class="ba-empty">Nessuna copertina</div>') + '</div>' +
        '<button class="btn small" type="button" id="vCoverUp">Carica una still</button></div></div>' +
-     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in log e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
+     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in Rec709 (senza grading) e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Lavori video</span><span class="hint">Fashion film, cortometraggi, videoclip, spot, contenuti… con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi lavoro</button></div></div>' +
      '<div class="grid"><div class="f"><label class="mono" for="pReel">Video principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
      '<div class="f"><label class="mono" for="pReelPos">Dove mostrarlo nella pagina</label><select class="inp" id="pReelPos" data-k="reelPos"><option value="top">In cima</option><option value="afterGrade">Dopo il color grading</option><option value="bottom">In fondo</option></select></div></div>' +
@@ -697,9 +697,9 @@ function renderPairs(p){
   box.innerHTML = p.pairs.map(function(q, i){
     var both = q.log && q.grade;
     return '<div class="pair" data-i="' + i + '"><div class="ba">' +
-      (both ? '<img src="' + esc(src(q.log.g || q.log.m)) + '" alt=""><img class="top" src="' + esc(src(q.grade.g || q.grade.m)) + '" alt=""><span class="line"></span><span class="lb l">Grading</span><span class="lb r">Log</span><input type="range" min="0" max="100" value="50" aria-label="Sposta lo slider">'
-        : '<div class="ba-empty">Carica il frame in log e quello gradato:<br>qui vedrai lo slider</div>') + '</div>' +
-      '<div class="pslots" style="grid-template-columns:1fr 1fr 32px 32px">' + slot(q, 'grade', 'Grading') + slot(q, 'log', 'Log') + '<button class="ic" type="button" data-pcov aria-label="Usa il gradato come copertina" title="Usa il gradato come copertina"' + (q.grade ? '' : ' disabled') + '>★</button><button class="ic" type="button" data-rm aria-label="Rimuovi coppia">✕</button></div>' +
+      (both ? '<img src="' + esc(src(q.log.g || q.log.m)) + '" alt=""><img class="top" src="' + esc(src(q.grade.g || q.grade.m)) + '" alt=""><span class="line"></span><span class="lb l">Grading</span><span class="lb r">Rec709</span><input type="range" min="0" max="100" value="50" aria-label="Sposta lo slider">'
+        : '<div class="ba-empty">Carica il frame in Rec709 e quello gradato:<br>qui vedrai lo slider</div>') + '</div>' +
+      '<div class="pslots" style="grid-template-columns:1fr 1fr 32px 32px">' + slot(q, 'grade', 'Grading') + slot(q, 'log', 'Rec709') + '<button class="ic" type="button" data-pcov aria-label="Usa il gradato come copertina" title="Usa il gradato come copertina"' + (q.grade ? '' : ' disabled') + '>★</button><button class="ic" type="button" data-rm aria-label="Rimuovi coppia">✕</button></div>' +
       '<input class="inp" data-k="label" placeholder="Didascalia, es. Neon Therapy · scena 3" aria-label="Didascalia"></div>';
   }).join('');
   $$('.pair', box).forEach(function(el){
