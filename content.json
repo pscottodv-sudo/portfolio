@@ -1,7 +1,104 @@
 {
  "version": 2,
- "updated": "2026-10-17T16:35:44.259Z",
+ "updated": "2026-10-23T15:38:41.333Z",
  "projects": [
+  {
+   "id": "pmvl4oktq9011",
+   "group": "Fashion editorial",
+   "name": "Urban Flow",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "Editorial · Milan",
+    "it": "Editoriale · Milano"
+   },
+   "short": {
+    "en": "Cover story for the Autumn 2026 print issue of Enzomnia Magazine",
+    "it": "Copertina del numero cartaceo autunno 2026 di Enzomnia Magazine"
+   },
+   "desc": {
+    "en": "An editorial shot in Milan and chosen as the cover of Enzomnia Magazine’s Autumn 2026 print issue",
+    "it": "Editoriale scattato a Milano e scelto come copertina del numero cartaceo autunno 2026 di Enzomnia Magazine"
+   },
+   "cover": "/foto/pmvl4oktq9011/mvl4u37pvwgl.jpg",
+   "images": [
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u2kc2jgm.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u2kc2jgm.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u2kc2jgm.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u2kc2jgm.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u32vfpz8.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u32vfpz8.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u32vfpz8.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u32vfpz8.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u2n9hv4v.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u2n9hv4v.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u2n9hv4v.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u2n9hv4v.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u37pvwgl.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u37pvwgl.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u37pvwgl.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u37pvwgl.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u39h7r1x.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u39h7r1x.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u39h7r1x.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u39h7r1x.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u352ahee.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u352ahee.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u352ahee.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u352ahee.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u30597nq.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u30597nq.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u30597nq.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u30597nq.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u2q1ngls.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u2q1ngls.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u2q1ngls.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u2q1ngls.jpg"
+    },
+    {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/pmvl4oktq9011/mvl4u3nx2cy3.jpg",
+     "m": "/foto/pmvl4oktq9011/mvl4u3nx2cy3.jpg",
+     "g": "/img/g/pmvl4oktq9011/mvl4u3nx2cy3.jpg",
+     "t": "/img/t/pmvl4oktq9011/mvl4u3nx2cy3.jpg"
+    }
+   ]
+  },
   {
    "id": "pmvclg20qdizo",
    "group": "Video",
