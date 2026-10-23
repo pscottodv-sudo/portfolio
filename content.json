@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-10-23T15:59:32.834Z",
+ "updated": "2026-10-23T16:03:52.595Z",
  "projects": [
   {
    "id": "pmvl4oktq9011",
@@ -997,68 +997,6 @@
    ]
   },
   {
-   "id": "video",
-   "group": "Video",
-   "name": "Milan Backstage",
-   "visible": true,
-   "year": {
-    "en": "2026",
-    "it": "2026"
-   },
-   "tag": {
-    "en": "Color grading",
-    "it": "Color grading"
-   },
-   "short": {
-    "en": "Lighting, camera and color grading for fashion films and short films.",
-    "it": "Luci, riprese e color grading per fashion film e cortometraggi."
-   },
-   "desc": {
-    "en": "I work as a director of photography and colorist on fashion films and short films, grading in DaVinci Resolve. This page will soon include notes on lighting and camera, stills from set, before-and-after grades and the reel.",
-    "it": "Lavoro come direttore della fotografia e colorist su fashion film e cortometraggi, con il color grading in DaVinci Resolve. In questa pagina arriveranno appunti su luci e riprese, frame dal set, il prima e dopo del grading e il reel."
-   },
-   "cover": "/img/p/video/cover/mv9l4jf9ft36.jpg",
-   "images": [],
-   "reel": "",
-   "films": [
-    {
-     "role": "DoP · Color",
-     "title": "Neon Therapy",
-     "dir": "",
-     "year": "2026",
-     "link": ""
-    }
-   ],
-   "pairs": [
-    {
-     "label": "",
-     "log": {
-      "w": 2400,
-      "h": 1350,
-      "src": "/img/p/video/grade/mv9l4pgfghwr.jpg",
-      "m": "/img/m/video/grade/mv9l4pgfghwr.jpg",
-      "t": "/img/t/video/grade/mv9l4pgfghwr.jpg"
-     },
-     "grade": {
-      "w": 2400,
-      "h": 1350,
-      "src": "/img/p/video/grade/mv9l4n85nezo.jpg",
-      "m": "/img/m/video/grade/mv9l4n85nezo.jpg",
-      "t": "/img/t/video/grade/mv9l4n85nezo.jpg"
-     }
-    }
-   ],
-   "clips": [],
-   "coverImg": {
-    "w": 2400,
-    "h": 1350,
-    "src": "/img/p/video/cover/mv9l4jf9ft36.jpg",
-    "m": "/img/m/video/cover/mv9l4jf9ft36.jpg",
-    "t": "/img/t/video/cover/mv9l4jf9ft36.jpg"
-   },
-   "reelPos": "top"
-  },
-  {
    "id": "piazza",
    "group": "Reportage",
    "name": "I Volti di Piazza Vittorio",
@@ -2033,8 +1971,7 @@
    "outofplace",
    "pmvl4oktq9011",
    "pmv9lunsjf4y4",
-   "shibuya",
-   "pmvaruntyuzry"
+   "shibuya"
   ],
   "tiles": [
    "/img/t/neon/01.jpg",
