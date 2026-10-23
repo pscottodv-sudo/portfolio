@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-10-23T16:03:52.595Z",
+ "updated": "2026-10-23T16:10:30.422Z",
  "projects": [
   {
    "id": "pmvl4oktq9011",
@@ -237,6 +237,14 @@
    "cover": "/foto/editorial/out-of-place-17899261130621369.jpg",
    "images": [
     {
+     "w": 2475,
+     "h": 3225,
+     "src": "/foto/editorial/out-of-place-17899261130621369.jpg",
+     "m": "/foto/editorial/out-of-place-17899261130621369.jpg",
+     "t": "/img/t/outofplace/14.jpg",
+     "g": "/img/m/outofplace/14.jpg"
+    },
+    {
      "w": 6192,
      "h": 4128,
      "src": "/foto/editorial/out-of-place-17840332143737156.jpg",
@@ -339,14 +347,6 @@
      "m": "/foto/editorial/out-of-place-17840332707395593.jpg",
      "t": "/img/t/outofplace/13.jpg",
      "g": "/img/m/outofplace/13.jpg"
-    },
-    {
-     "w": 2475,
-     "h": 3225,
-     "src": "/foto/editorial/out-of-place-17899261130621369.jpg",
-     "m": "/foto/editorial/out-of-place-17899261130621369.jpg",
-     "t": "/img/t/outofplace/14.jpg",
-     "g": "/img/m/outofplace/14.jpg"
     }
    ]
   },
