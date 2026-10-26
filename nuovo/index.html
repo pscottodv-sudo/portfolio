@@ -122,6 +122,8 @@ html.js-motion .work-list{display:none}
 .work-head{position:absolute;left:0;right:0;top:calc(68px + env(safe-area-inset-top, 0px));display:flex;justify-content:space-between;align-items:baseline;z-index:5;color:var(--muted)}
 .work-count{font-variant-numeric:tabular-nums;color:var(--ink)}
 #gl{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
+.gl-shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(10,10,10,.72) 0%,rgba(10,10,10,.35) 38%,rgba(10,10,10,0) 62%),linear-gradient(0deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,0) 30%)}
+@media (max-width:767px){.gl-shade{background:linear-gradient(0deg,rgba(10,10,10,.8) 0%,rgba(10,10,10,.4) 40%,rgba(10,10,10,0) 65%)}}
 .work-intro{position:absolute;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom, 0px));text-align:center;color:var(--muted);z-index:4;margin:0}
 html.no-gl .work-pin{display:none}
 html.no-gl .work-list{display:block}
@@ -963,12 +965,12 @@ body{margin:0}
       '}'
     ].join('\n');
     var FS = [
-      'uniform sampler2D uTex; uniform float uTime, uDim, uFin, uReady, uRgb; uniform vec2 uCropS; uniform vec3 uGround;',
+      'uniform sampler2D uTex; uniform float uTime, uDim, uFin, uReady, uRgb; uniform vec2 uCropS, uCropF; uniform vec3 uGround;',
       'varying vec2 vUv; varying float vFace; varying float vLife; varying float vM;',
       'void main(){',
       '  vec2 uv = vUv;',
       '  if (!gl_FrontFacing) uv.x = 1.0 - uv.x;',
-      '  vec2 crop = mix(uCropS, vec2(1.0), vM);',
+      '  vec2 crop = mix(uCropS, uCropF, vM);',
       '  uv = (uv - 0.5) * crop + 0.5;',
       '  uv += vLife * 0.035 * vec2(sin(vUv.y * 12.0 + uTime * 5.0), cos(vUv.x * 10.0 + uTime * 4.0));',
       '  uv += (1.0 - vM) * 0.004 * vec2(sin(vUv.y * 8.0 + uTime * 1.5), cos(vUv.x * 7.0 + uTime * 1.3));',
@@ -986,7 +988,7 @@ body{margin:0}
     ].join('\n');
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, innerWidth < 768 ? 1.25 : 1.5));
-    var FOCUS = M.focus === 'out' ? 'out' : 'stay';
+    var FOCUS = M.focus === 'out' || M.focus === 'stay' ? M.focus : 'full';
     var ANISO = renderer.capabilities.getMaxAnisotropy ? Math.min(4, renderer.capabilities.getMaxAnisotropy()) : 1;
     renderer.setClearColor(0x000000, 0);
     var scene = new THREE.Scene();
@@ -1008,6 +1010,7 @@ body{margin:0}
       var ia = t.img.width / t.img.height;
       var ta = (t.dLon * Math.cos(t.lat * D2R)) / t.dLat;
       t.u.uCropS.value.set(ia > ta ? ta / ia : 1, ia > ta ? 1 : ia / ta);
+      if (FOCUS === 'full' && G.W){ var va = G.W / G.H; t.u.uCropF.value.set(ia > va ? va / ia : 1, ia > va ? 1 : ia / va); }
     }
     function setTex(u, t, tex){
       var gl2 = renderer.capabilities.isWebGL2;
@@ -1021,7 +1024,7 @@ body{margin:0}
         uLifeAmt: shared.uLifeAmt, uBreathe: shared.uBreathe, uRgb: shared.uRgb,
         uTex: {value: null}, uReady: {value: 0},
         uLon: {value: lon * D2R}, uLat: {value: lat * D2R}, uDLon: {value: dLon * D2R}, uDLat: {value: dLat * D2R},
-        uMorph: {value: 0}, uLift: {value: 0}, uDim: {value: 0}, uCropS: {value: new THREE.Vector2(1, 1)},
+        uMorph: {value: 0}, uLift: {value: 0}, uDim: {value: 0}, uCropS: {value: new THREE.Vector2(1, 1)}, uCropF: {value: new THREE.Vector2(1, 1)},
         uFlatC: {value: new THREE.Vector2(0, 0)}, uFlatS: {value: new THREE.Vector2(1, 1)}, uFlatZ: {value: FLATZ}
       };
       var mesh = new THREE.Mesh(big ? geo : geoS, new THREE.ShaderMaterial({uniforms: u, vertexShader: VS, fragmentShader: FS, side: THREE.DoubleSide}));
@@ -1064,6 +1067,7 @@ body{margin:0}
     });
 
     var G = {};
+    var shade = document.createElement('div'); shade.className = 'gl-shade'; shade.style.opacity = 0; canvas.parentNode.insertBefore(shade, canvas.nextSibling);
     var vids = function(){ return heroes.filter(function(h){ return h.video; }); };
     function layout(){
       var W = innerWidth, H = innerHeight;
@@ -1078,6 +1082,10 @@ body{margin:0}
       var cx = G.desk ? W * 0.17 : 0, cy = G.desk ? 0 : -H * 0.1;
       var mw = G.desk ? W * 0.5 : W * 0.86, mh = G.desk ? H * 0.7 : H * 0.5;
       heroes.forEach(function(h, k){
+        if (FOCUS === 'full'){
+          h.u.uFlatC.value.set(0, 0); h.u.uFlatS.value.set(W * s * 1.02, H * s * 1.02);
+          h.rect = {x: 0, y: 0, w: W, h: H}; cropFor(h); return;
+        }
         var ar = SD[k].cw / SD[k].ch, w = Math.min(mw, mh * ar), hh = w / ar;
         h.u.uFlatC.value.set(cx * s, -cy * s);
         h.u.uFlatS.value.set(w * s, hh * s);
@@ -1177,6 +1185,7 @@ body{margin:0}
       group.updateMatrixWorld(true);
       shared.uFin.value = state.fin;
       tiles.forEach(function(t){ t.u.uDim.value = state.dim; });
+      if (FOCUS === 'full') shade.style.opacity = state.dim.toFixed(3);
       heroes.forEach(function(h, k){
         var m = state.morph[k];
         if (FOCUS === 'stay'){ h.u.uMorph.value = 0; h.u.uLift.value = m; }
@@ -1194,7 +1203,7 @@ body{margin:0}
     canvas.addEventListener('click', function(e){
       var k = state.active;
       if (k < 0) return;
-      if (FOCUS === 'stay'){ openProject(FEAT[k], e); return; }
+      if (FOCUS !== 'out'){ openProject(FEAT[k], e); return; }
       var r = heroes[k].rect;
       if (e.clientX >= r.x && e.clientX <= r.x + r.w && e.clientY >= r.y && e.clientY <= r.y + r.h) openProject(FEAT[k], e);
     });
