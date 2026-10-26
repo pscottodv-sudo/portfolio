@@ -229,6 +229,8 @@ html.no-gl .work-list{display:block}
   min-height:44px;padding:0 18px;border:0;border-radius:999px;background:var(--ink);color:var(--ground);cursor:pointer;font-family:var(--mono);font-weight:300;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .proj-inner{max-width:1760px;margin-inline:auto;padding-block:calc(84px + env(safe-area-inset-top, 0px)) calc(80px + env(safe-area-inset-bottom, 0px))}
 .proj-meta{color:var(--muted);margin-bottom:18px}
+.proj-hero{margin:0 auto clamp(36px,5vw,72px);width:100%;display:flex;justify-content:center}
+.proj-hero video{display:block;max-width:100%;max-height:82vh;width:auto;height:auto;background:var(--void)}
 .proj-title{font-size:clamp(56px,11.5vw,200px);margin:0}
 .proj-desc{margin:clamp(24px,3vw,40px) 0 0 auto;max-width:56ch;font-size:clamp(16px,1.3vw,19px);line-height:1.6}
 @media (min-width:768px){.proj-desc{margin-right:8vw}}
@@ -440,6 +442,7 @@ body{margin:0}
 <div class="proj" id="proj" hidden role="dialog" aria-modal="true" aria-labelledby="projTitle" data-lenis-prevent>
   <button class="proj-close" id="projClose" type="button" data-en="Close" data-it="Chiudi">Close</button>
   <div class="proj-inner gut">
+    <div class="proj-hero" id="projHero" hidden></div>
     <p class="proj-meta mono" id="projMeta"></p>
     <h2 class="proj-title display" id="projTitle"></h2>
     <p class="proj-desc" id="projDesc"></p>
@@ -480,7 +483,7 @@ body{margin:0}
         it: {year: oi('year'), tag: oi('tag'), short: oi('short'), desc: oi('desc')},
         cover: c.src || c.m, coverG: c.g || c.m || c.src, coverT: c.t || c.g || c.m || c.src, cw: c.w || 1600, ch: c.h || 1067,
         gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, w: i.w, h: i.h}; }),
-        reel: p.reel || '', reelPos: p.reelPos || 'top', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
+        heroVideo: p.heroVideo || null, reel: p.reel || '', reelPos: p.reelPos || 'top', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
     });
     var at = {}; DATA.forEach(function(d, i){ at[d.slug] = i; });
     var FEAT = (SP.featured || []).map(function(id){ return at[id]; }).filter(function(i){ return i != null; });
@@ -649,6 +652,11 @@ body{margin:0}
   });
 
   /* ---------- project view (works in every mode) ---------- */
+  function heroVideoSrc(p){
+    var hv = p.heroVideo || {}, mob = matchMedia('(max-width: 767px), (orientation: portrait)').matches;
+    var a = hv.v && hv.v.src, b = hv.h && hv.h.src;
+    return (mob ? (a || b) : (b || a)) || '';
+  }
   function embedUrl(u){
     if (!u) return '';
     var m = u.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/([0-9a-f]+))?/i);
@@ -664,6 +672,10 @@ body{margin:0}
     $('#projMeta').textContent = pad(k + 1) + ' / ' + pad(N) + ' · ' + L(p, 'group') + ' · ' + L(p, 'year') + ' · ' + L(p, 'tag');
     var t = $('#projTitle'); t.textContent = p.name; t.setAttribute('aria-label', p.name); t.innerHTML = charsMarkup(p.name);
     $('#projDesc').textContent = L(p, 'desc');
+    var ph = $('#projHero'), hvs = p.kind === 'video' ? heroVideoSrc(p) : '';
+    ph.hidden = !hvs;
+    ph.innerHTML = hvs ? '<video src="' + esc(hvs) + '" muted loop autoplay playsinline preload="auto"' + (p.cover ? ' poster="' + esc(p.cover) + '"' : '') + '></video>' : '';
+    if (hvs){ var hvEl = ph.querySelector('video'); hvEl.muted = true; var pp = hvEl.play(); if (pp && pp.catch) pp.catch(function(){}); }
     if (p.kind === 'video'){
       var secs = [], no = 0, nn = function(){ no++; return pad(no) + ' · '; };
       var em = embedUrl(p.reel);
@@ -924,25 +936,26 @@ body{margin:0}
     root.classList.add('no-gl');
   } else {
     var VS = [
-      'uniform mat4 uSphere; uniform float uTime, uR, uLon, uLat, uDLon, uDLat, uMorph, uFlatZ, uLifeAmt, uBreathe;',
+      'uniform mat4 uSphere; uniform float uTime, uR, uLon, uLat, uDLon, uDLat, uMorph, uFlatZ, uLifeAmt, uBreathe, uLift;',
       'uniform vec2 uFlatC, uFlatS;',
       'varying vec2 vUv; varying float vFace; varying float vLife; varying float vM;',
       'void main(){',
       '  vUv = uv;',
-      '  float lon = uLon + (uv.x - 0.5) * uDLon;',
-      '  float lat = uLat + (uv.y - 0.5) * uDLat;',
+      '  float grow = 1.0 + 0.5 * uLift;',
+      '  float lon = uLon + (uv.x - 0.5) * uDLon * grow;',
+      '  float lat = uLat + (uv.y - 0.5) * uDLat * grow;',
       '  float breathe = 1.0 + 0.02 * uBreathe * sin(lat * 5.0 + lon * 3.0 + uTime * 1.2);',
-      '  vec3 s = uR * breathe * vec3(cos(lat) * sin(lon), sin(lat), cos(lat) * cos(lon));',
+      '  vec3 s = uR * breathe * (1.0 + 0.14 * uLift) * vec3(cos(lat) * sin(lon), sin(lat), cos(lat) * cos(lon));',
       '  vec4 sw = uSphere * vec4(s, 1.0);',
       '  vec3 c = (uSphere * vec4(0.0, 0.0, 0.0, 1.0)).xyz;',
       '  float m = uMorph;',
       '  vec3 f = vec3(uFlatC + (uv - 0.5) * uFlatS, uFlatZ);',
       '  vec3 p = mix(sw.xyz, f, m);',
-      '  float life = sin(3.14159265 * m) * uLifeAmt;',
+      '  float life = max(sin(3.14159265 * m), 0.5 * sin(3.14159265 * uLift)) * uLifeAmt;',
       '  float b = sin(uv.x * 3.14159265) * sin(uv.y * 3.14159265);',
-      '  p.z += life * (0.78 * b + 0.2 * sin(uv.y * 9.0 + uTime * 4.0) * sin(uv.x * 3.14159265));',
-      '  p.x += life * 0.12 * sin(uv.y * 6.0 + uTime * 3.0) * uFlatS.x;',
-      '  p.y += life * 0.08 * sin(uv.x * 7.0 + uTime * 2.4) * uFlatS.y;',
+      '  p.z += life * mix(0.25, 1.0, m) * (0.78 * b + 0.2 * sin(uv.y * 9.0 + uTime * 4.0) * sin(uv.x * 3.14159265));',
+      '  p.x += life * 0.12 * sin(uv.y * 6.0 + uTime * 3.0) * mix(0.3, uFlatS.x, m);',
+      '  p.y += life * 0.08 * sin(uv.x * 7.0 + uTime * 2.4) * mix(0.3, uFlatS.y, m);',
       '  p.z += m * 0.06 * sin(uv.x * 5.0 + uTime * 1.6) * sin(uv.y * 4.0 + uTime * 1.1);',
       '  vLife = life; vM = m;',
       '  vFace = mix(normalize(sw.xyz - c).z, 1.0, m);',
@@ -972,7 +985,9 @@ body{margin:0}
       '}'
     ].join('\n');
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, innerWidth < 768 ? 1.25 : 1.5));
+    var FOCUS = M.focus === 'out' ? 'out' : 'stay';
+    var ANISO = renderer.capabilities.getMaxAnisotropy ? Math.min(4, renderer.capabilities.getMaxAnisotropy()) : 1;
     renderer.setClearColor(0x000000, 0);
     var scene = new THREE.Scene();
     var FOV = 35, CAMZ = 10, FLATZ = 5, R = 2.6, D2R = Math.PI / 180;
@@ -985,7 +1000,7 @@ body{margin:0}
       uGround: {value: new THREE.Vector3(0.039, 0.039, 0.039)}, uFin: {value: 0},
       uLifeAmt: {value: num(M.life, 1)}, uBreathe: {value: num(M.breathe, 1)}, uRgb: {value: num(M.rgb, 1)}
     };
-    var geo = new THREE.PlaneGeometry(1, 1, 18, 18);
+    var geo = new THREE.PlaneGeometry(1, 1, 22, 22), geoS = new THREE.PlaneGeometry(1, 1, 10, 10);
     var loader = new THREE.TextureLoader();
     var tiles = [], heroes = [];
     function cropFor(t){
@@ -994,23 +1009,36 @@ body{margin:0}
       var ta = (t.dLon * Math.cos(t.lat * D2R)) / t.dLat;
       t.u.uCropS.value.set(ia > ta ? ta / ia : 1, ia > ta ? 1 : ia / ta);
     }
-    function makeTile(src, lon, lat, dLon, dLat){
+    function setTex(u, t, tex){
+      var gl2 = renderer.capabilities.isWebGL2;
+      tex.generateMipmaps = !!gl2; tex.minFilter = gl2 ? THREE.LinearMipmapLinearFilter : THREE.LinearFilter; tex.anisotropy = ANISO;
+      if (renderer.initTexture) renderer.initTexture(tex);
+      u.uTex.value = tex; u.uReady.value = 1; cropFor(t);
+    }
+    function makeTile(src, lon, lat, dLon, dLat, big, vid){
       var u = {
         uSphere: shared.uSphere, uTime: shared.uTime, uR: shared.uR, uGround: shared.uGround, uFin: shared.uFin,
         uLifeAmt: shared.uLifeAmt, uBreathe: shared.uBreathe, uRgb: shared.uRgb,
         uTex: {value: null}, uReady: {value: 0},
         uLon: {value: lon * D2R}, uLat: {value: lat * D2R}, uDLon: {value: dLon * D2R}, uDLat: {value: dLat * D2R},
-        uMorph: {value: 0}, uDim: {value: 0}, uCropS: {value: new THREE.Vector2(1, 1)},
+        uMorph: {value: 0}, uLift: {value: 0}, uDim: {value: 0}, uCropS: {value: new THREE.Vector2(1, 1)},
         uFlatC: {value: new THREE.Vector2(0, 0)}, uFlatS: {value: new THREE.Vector2(1, 1)}, uFlatZ: {value: FLATZ}
       };
-      var mesh = new THREE.Mesh(geo, new THREE.ShaderMaterial({uniforms: u, vertexShader: VS, fragmentShader: FS, side: THREE.DoubleSide}));
+      var mesh = new THREE.Mesh(big ? geo : geoS, new THREE.ShaderMaterial({uniforms: u, vertexShader: VS, fragmentShader: FS, side: THREE.DoubleSide}));
       mesh.frustumCulled = false;
       scene.add(mesh);
       var t = {mesh: mesh, u: u, lat: lat, dLon: dLon, dLat: dLat, img: null};
-      loader.load(src, function(tex){
-        tex.minFilter = THREE.LinearFilter; tex.generateMipmaps = false;
-        u.uTex.value = tex; t.img = tex.image; u.uReady.value = 1; cropFor(t);
-      });
+      loader.load(src, function(tex){ if (t.video) return; t.img = tex.image; setTex(u, t, tex); });
+      if (vid){
+        var v = document.createElement('video');
+        v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('muted', ''); v.preload = 'auto'; v.crossOrigin = 'anonymous'; v.src = vid;
+        v.addEventListener('loadeddata', function(){
+          var vt = new THREE.VideoTexture(v); vt.minFilter = THREE.LinearFilter; vt.generateMipmaps = false;
+          t.video = v; t.img = {width: v.videoWidth, height: v.videoHeight}; u.uTex.value = vt; u.uReady.value = 1; t.vt = vt; cropFor(t);
+          if (t.onVideo) t.onVideo();
+        }, {once: true});
+        v.load();
+      }
       tiles.push(t);
       return t;
     }
@@ -1021,7 +1049,11 @@ body{margin:0}
     var DENS = {bassa: [3, 52, 30], media: [4, 44, 28], alta: [6, 34, 24]}[M.density] || [3, 52, 30];
     for (var slot = 0; slot < E; slot++){
       var lon = slot * SLOT;
-      if (slot % 2 === 0 && slot / 2 < SN) heroes[slot / 2] = makeTile(SD[slot / 2].coverG, lon, 0, SLOT * 0.73, 44);
+      if (slot % 2 === 0 && slot / 2 < SN){
+        var hp = SD[slot / 2], hv = heroVideoSrc(hp);
+        var ht = heroes[slot / 2] = makeTile(hp.coverG, lon, 0, SLOT * 0.73, 44, true, hv);
+        (function(hp, ht){ ht.onVideo = function(){ hp.cw = ht.img.width; hp.ch = ht.img.height; layout(); }; })(hp, ht);
+      }
       else makeTile(nextThumb(), lon, 0, SLOT * 0.62, 34);
     }
     [[45, 0], [-45, 360 / DENS[0] / 2]].forEach(function(b){
@@ -1032,6 +1064,7 @@ body{margin:0}
     });
 
     var G = {};
+    var vids = function(){ return heroes.filter(function(h){ return h.video; }); };
     function layout(){
       var W = innerWidth, H = innerHeight;
       G.W = W; G.H = H; G.desk = W >= 768;
@@ -1040,6 +1073,7 @@ body{margin:0}
       var visH10 = 2 * CAMZ * Math.tan(FOV * D2R / 2);
       var target = (G.desk ? Math.min(W, H) * 0.64 : W * 0.84) * Math.max(0.5, Math.min(1.5, num(M.size, 1)));
       G.scale = target * visH10 / (2 * R * H);
+      G.px = visH10 / H;
       var s = 2 * (CAMZ - FLATZ) * Math.tan(FOV * D2R / 2) / H;
       var cx = G.desk ? W * 0.17 : 0, cy = G.desk ? 0 : -H * 0.1;
       var mw = G.desk ? W * 0.5 : W * 0.86, mh = G.desk ? H * 0.7 : H * 0.5;
@@ -1067,7 +1101,7 @@ body{margin:0}
     var tl = gsap.timeline({
       defaults: {ease: 'power3.inOut'},
       scrollTrigger: {
-        trigger: '.work-pin', start: 'top top', pin: true, scrub: 1, anticipatePin: 1,
+        trigger: '.work-pin', start: 'top top', pin: true, scrub: 0.6, anticipatePin: 1,
         end: function(){ return '+=' + Math.round(SN * Math.max(0.6, Math.min(3, num(M.scroll, 1.45))) * innerHeight); },
         onUpdate: function(self){
           var i = Math.min(SN - 1, Math.floor(self.progress * SN));
@@ -1116,25 +1150,40 @@ body{margin:0}
     }
 
     var glOn = false, wasActive = -2;
-    ScrollTrigger.create({trigger: '#work', start: 'top bottom', end: 'bottom top', onToggle: function(self){ glOn = self.isActive; }});
+    ScrollTrigger.create({trigger: '#work', start: 'top bottom', end: 'bottom top', onToggle: function(self){ glOn = self.isActive; if (!glOn) vids().forEach(function(h){ h.video.pause(); }); }});
     var t0 = performance.now(), spinAcc = 0, lastNow = 0;
     gsap.ticker.add(function(){
       if (!glOn || archOpen || !proj.hidden) return;
       var now = (performance.now() - t0) / 1000;
       shared.uTime.value = now;
-      readPlayhead(tl.time());
+      var dt = Math.min(0.1, now - (G.last || now)); G.last = now;
+      G.ph = G.ph == null ? tl.time() : G.ph + (tl.time() - G.ph) * (1 - Math.exp(-dt * 9));
+      readPlayhead(G.ph);
+      if (vids().length) heroes.forEach(function(h){ if (!h.video) return; if (h.video.paused) { var pr = h.video.play(); if (pr && pr.catch) pr.catch(function(){}); } });
       tilt.x += (tilt.tx - tilt.x) * 0.06; tilt.y += (tilt.ty - tilt.y) * 0.06;
       var a = io2(arrive.v);
       if (state.dim > 0.01) spinAcc += (Math.round(spinAcc / (2 * Math.PI)) * 2 * Math.PI - spinAcc) * 0.08 * state.dim;
       spinAcc += SPIN * D2R * (1 - state.dim) * Math.min(0.05, now - lastNow); lastNow = now;
       group.rotation.y = state.rot * D2R + spinAcc + (1 - a) * 2.4 + tilt.y * (1 - state.dim) + Math.sin(now * 0.35) * 0.05 * (1 - state.dim);
       group.rotation.x = 0.16 + tilt.x * (1 - state.dim) + (1 - a) * -0.5;
-      var sc = G.scale * (0.5 + 0.5 * a) * (1 - 0.12 * state.dim) * (1 - 0.35 * state.fin);
+      var stay = FOCUS === 'stay';
+      var sc = G.scale * (0.5 + 0.5 * a) * (stay ? (1 + 0.06 * state.dim) : (1 - 0.12 * state.dim)) * (1 - 0.35 * state.fin);
       group.scale.setScalar(sc);
+      if (stay){
+        var e2 = io2(state.dim);
+        group.position.x = (G.desk ? G.W * 0.16 : 0) * G.px * e2;
+        group.position.y = (G.desk ? 0 : G.H * 0.12) * G.px * e2;
+      } else group.position.set(0, 0, 0);
       group.updateMatrixWorld(true);
       shared.uFin.value = state.fin;
       tiles.forEach(function(t){ t.u.uDim.value = state.dim; });
-      heroes.forEach(function(h, k){ h.u.uMorph.value = state.morph[k]; h.u.uDim.value = state.dim * (1 - state.morph[k]); });
+      heroes.forEach(function(h, k){
+        var m = state.morph[k];
+        if (FOCUS === 'stay'){ h.u.uMorph.value = 0; h.u.uLift.value = m; }
+        else { h.u.uMorph.value = m; h.u.uLift.value = 0; }
+        h.u.uDim.value = state.dim * (1 - m);
+        h.mesh.renderOrder = m > 0.01 ? 2 : 0;
+      });
       if (state.active !== wasActive){
         wasActive = state.active;
         canvas.style.cursor = state.active >= 0 ? 'pointer' : 'default';
@@ -1145,6 +1194,7 @@ body{margin:0}
     canvas.addEventListener('click', function(e){
       var k = state.active;
       if (k < 0) return;
+      if (FOCUS === 'stay'){ openProject(FEAT[k], e); return; }
       var r = heroes[k].rect;
       if (e.clientX >= r.x && e.clientX <= r.x + r.w && e.clientY >= r.y && e.clientY <= r.y + r.h) openProject(FEAT[k], e);
     });

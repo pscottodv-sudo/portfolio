@@ -398,7 +398,7 @@ var OWNER = 'pscottodv-sudo', REPO = 'portfolio', BRANCH = 'main';
 var API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
 var SITE_ROOT = location.pathname.replace(/admin\/?(index\.html)?$/, '') || '/';
 var GROUPS = [['Fashion editorial','Moda'],['Video','Video'],['Reportage','Reportage']];
-var MOTION0 = {life: 1, rgb: 1, breathe: 1, spin: 0, size: 1, scroll: 1.45, density: 'media'};
+var MOTION0 = {life: 1, rgb: 1, breathe: 1, spin: 0, size: 1, scroll: 1.45, density: 'media', focus: 'stay'};
 var $ = function(s, r){ return (r || document).querySelector(s); }, $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 function clone(o){ return JSON.parse(JSON.stringify(o)); }
@@ -478,6 +478,7 @@ function changes(){
     if (J(p.films) !== J(o.films)) f.push('lavori video');
     if (J(p.pairs) !== J(o.pairs)) f.push('prima e dopo');
     if (J(p.clips) !== J(o.clips)) f.push('clip');
+    if (J(p.heroVideo || null) !== J(o.heroVideo || null)) f.push('montaggio hero');
     if (f.length) out.push([p.name, f.join(', ')]);
   });
   ORIG.projects.forEach(function(o){ if (!P(o.id)) out.push([o.name, 'eliminato']); });
@@ -640,6 +641,7 @@ function renderEditor(){
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Copertina</span><span class="hint">La still che esce dalla sfera e compare nell\'archivio. Puoi caricarne una o usare il gradato di una coppia (★).</span></div>' +
        '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="ph" style="width:220px;aspect-ratio:16/10;cursor:default">' + (p.cover ? '<img src="' + esc(src((imgOf(p.cover) || {}).g || (imgOf(p.cover) || {}).m || p.cover)) + '" alt="" id="vCover">' : '<div class="ba-empty">Nessuna copertina</div>') + '</div>' +
        '<button class="btn small" type="button" id="vCoverUp">Carica una still</button></div></div>' +
+     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Montaggio hero</span><span class="hint">MP4 senza audio, che parte da solo in cima alla pagina e sulla sfera. Una versione orizzontale per il computer e una verticale per il telefono (massimo 50 MB l\'una).</span></div><div class="clips" id="heroVid"></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in Rec709 (senza grading) e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Lavori video</span><span class="hint">Fashion film, cortometraggi, videoclip, spot, contenuti… con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi lavoro</button></div></div>' +
      '<div class="grid"><div class="f"><label class="mono" for="pReel">Video principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
@@ -667,7 +669,7 @@ function renderEditor(){
   });
   $$('[data-pl]').forEach(function(b){ b.addEventListener('click', function(){ pvLang = b.dataset.pl; $$('[data-pl]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); }); pv(); }); });
   if (isV){
-    renderFilms(p); renderPairs(p); renderClips(p);
+    renderFilms(p); renderPairs(p); renderClips(p); renderHeroVid(p);
     $('#addV').addEventListener('click', function(){ p.films.push({title: '', type: '', role: 'DoP · Color', dir: '', link: '', year: ''}); renderFilms(p); dirty(); });
     $('#vCoverUp').addEventListener('click', function(){ pick('image/*', false, function(files){
       addImages([files[0]], p.id + '/cover', function(o){ p.coverImg = o; p.cover = o.src; }).then(function(n){ if (n){ renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); } });
@@ -716,6 +718,23 @@ function renderPairs(p){
     el.querySelector('[data-pcov]').addEventListener('click', function(){ if (!q.grade) return; p.coverImg = q.grade; p.cover = q.grade.src; renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); });
   });
   sortable(box, '.pair', function(a, b){ move(p.pairs, a, b); renderPairs(p); dirty(); });
+}
+function renderHeroVid(p){
+  var box = $('#heroVid'), hv = p.heroVideo || {};
+  var slot = function(k, lab, ar){ var c = hv[k];
+    return '<div style="display:flex;flex-direction:column;gap:6px"><span class="mono lab muted">' + lab + '</span>' +
+      (c ? '<div class="clip" style="aspect-ratio:' + ar + '"><video src="' + esc(src(c.src)) + '" muted loop autoplay playsinline></video><span class="n">' + esc(c.name || '') + (c.mb ? ' · ' + c.mb + ' MB' : '') + '</span><span class="acts"><button class="ic" type="button" data-hrm="' + k + '" aria-label="Rimuovi">✕</button></span></div>'
+         : '<button type="button" class="add" data-hadd="' + k + '" style="aspect-ratio:' + ar + '"><b>+</b><span>Carica MP4 ' + lab.toLowerCase() + '</span></button>') + '</div>'; };
+  box.style.gridTemplateColumns = 'minmax(0,2fr) minmax(0,1fr)'; box.style.alignItems = 'start';
+  box.innerHTML = slot('h', 'Orizzontale · computer', '16/9') + slot('v', 'Verticale · telefono', '9/16');
+  $$('[data-hrm]', box).forEach(function(b){ b.addEventListener('click', function(){ delete hv[b.dataset.hrm]; p.heroVideo = (hv.h || hv.v) ? hv : null; renderHeroVid(p); dirty(); }); });
+  $$('[data-hadd]', box).forEach(function(b){ b.addEventListener('click', function(){ pick('video/mp4,video/quicktime,video/webm', false, function(files){
+    var f = files[0], mb = Math.round(f.size / 1048576 * 10) / 10;
+    if (mb > 50){ toast('Questo montaggio pesa ' + mb + ' MB: esportalo sotto i 50 MB (1080p H.264, senza audio)'); return; }
+    var ext = (f.name.match(/\.(mp4|mov|webm|m4v)$/i) || ['', 'mp4'])[1].toLowerCase(), path = '/img/v/' + p.id + '/hero-' + b.dataset.hadd + '-' + stamp() + '.' + ext;
+    PEND[path] = f; URLS[path] = URL.createObjectURL(f);
+    hv[b.dataset.hadd] = {src: path, name: f.name, mb: mb}; p.heroVideo = hv; renderHeroVid(p); dirty(); toast('Montaggio aggiunto');
+  }); }); });
 }
 function renderClips(p){
   var box = $('#clips');
@@ -789,7 +808,8 @@ function renderSphere(){
      (F.length < 6 ? '<button type="button" class="add" id="addFeat" style="aspect-ratio:auto;min-height:200px"><b>+</b><span>Aggiungi progetto</span></button>' : '') + '</div></div>' +
    '<div class="sec"><div class="sec-h"><h3>Movimento</h3><button class="btn small ghost" type="button" id="motReset">Valori originali</button></div><div class="sliders">' +
      MOT.map(function(d){ return '<div class="sl"><div class="sl-h"><b>' + d[1] + '</b><output id="o_' + d[0] + '"></output></div><input type="range" min="' + d[2] + '" max="' + d[3] + '" step="' + d[4] + '" data-k="' + d[0] + '" aria-label="' + d[1] + '"><small>' + d[5] + '</small></div>'; }).join('') +
-     '<div class="sl"><div class="sl-h"><b>Quante foto sulla sfera</b></div><select class="inp" data-k="density"><option value="bassa">Poche</option><option value="media">Medie</option><option value="alta">Tante</option></select><small>Quante caselle ci sono sopra e sotto l\'equatore.</small></div></div></div>' +
+     '<div class="sl"><div class="sl-h"><b>Quante foto sulla sfera</b></div><select class="inp" data-k="density"><option value="bassa">Poche</option><option value="media">Medie</option><option value="alta">Tante</option></select><small>Quante caselle ci sono sopra e sotto l\'equatore.</small></div>' +
+     '<div class="sl"><div class="sl-h"><b>Progetto in primo piano</b></div><select class="inp" data-k="focus"><option value="stay">Resta sulla sfera e si ingrandisce</option><option value="out">Esce dalla sfera e si appiattisce</option></select><small>Cosa succede alla copertina quando arriva il suo turno.</small></div></div></div>' +
    '<div class="sec"><div class="sec-h"><h3>Foto sopra la sfera</h3><div class="seg" role="group" aria-label="Modo"><button type="button" data-tm="auto" aria-pressed="' + !manual + '">Automatiche</button><button type="button" data-tm="man" aria-pressed="' + manual + '">Le scelgo io</button></div></div>' +
      (manual ? '<p class="hint" style="margin:0">Selezionate: ' + S.sphere.tiles.length + '. Ne bastano 10–20: si ripetono se le caselle sono di più.</p><div class="tiles">' +
        vis.map(function(p){ return '<div><div class="tg-h mono"><span>' + esc(p.name) + '</span></div><div class="tgrid">' + p.images.map(function(im){ return '<button type="button" class="tile" data-t="' + esc(im.t) + '" aria-pressed="' + (S.sphere.tiles.indexOf(im.t) >= 0) + '"><img src="' + esc(src(im.t)) + '" alt="" loading="lazy"></button>'; }).join('') + '</div></div>'; }).join('') + '</div>'
