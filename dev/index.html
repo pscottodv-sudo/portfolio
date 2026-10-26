@@ -1300,7 +1300,7 @@ body{margin:0}
       group.rotation.x = 0.16 + tilt.x * still + (1 - a) * -0.5;
       group.scale.setScalar(G.scale * (0.5 + 0.5 * a) * (1 + 0.12 * U));
       group.updateMatrixWorld(true);
-      var bgDim = 0.62 * ease(clamp01((p - 0.28) / 0.5));
+      var bgDim = ease(clamp01((p - 0.3) / 0.45));
       tiles.forEach(function(t){
         if (t.hero != null) return;
         t.u.uT.value = ease(clamp01((U - t.delay) / 0.68));
