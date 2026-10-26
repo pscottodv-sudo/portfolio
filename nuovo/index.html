@@ -958,7 +958,6 @@ body{margin:0}
       '  p.z += life * mix(0.25, 1.0, m) * (0.78 * b + 0.2 * sin(uv.y * 9.0 + uTime * 4.0) * sin(uv.x * 3.14159265));',
       '  p.x += life * 0.12 * sin(uv.y * 6.0 + uTime * 3.0) * mix(0.3, uFlatS.x, m);',
       '  p.y += life * 0.08 * sin(uv.x * 7.0 + uTime * 2.4) * mix(0.3, uFlatS.y, m);',
-      '  p.z += m * 0.06 * sin(uv.x * 5.0 + uTime * 1.6) * sin(uv.y * 4.0 + uTime * 1.1);',
       '  vLife = life; vM = m;',
       '  vFace = mix(normalize(sw.xyz - c).z, 1.0, m);',
       '  gl_Position = projectionMatrix * viewMatrix * vec4(p, 1.0);',
@@ -988,7 +987,7 @@ body{margin:0}
     ].join('\n');
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, innerWidth < 768 ? 1.25 : 1.5));
-    var FOCUS = M.focus === 'out' || M.focus === 'stay' ? M.focus : 'full';
+    var FOCUS = M.focus === 'full' || M.focus === 'stay' ? M.focus : 'out';
     var ANISO = renderer.capabilities.getMaxAnisotropy ? Math.min(4, renderer.capabilities.getMaxAnisotropy()) : 1;
     renderer.setClearColor(0x000000, 0);
     var scene = new THREE.Scene();
@@ -1000,7 +999,7 @@ body{margin:0}
     var shared = {
       uSphere: {value: group.matrixWorld}, uTime: {value: 0}, uR: {value: R},
       uGround: {value: new THREE.Vector3(0.039, 0.039, 0.039)}, uFin: {value: 0},
-      uLifeAmt: {value: num(M.life, 1)}, uBreathe: {value: num(M.breathe, 1)}, uRgb: {value: num(M.rgb, 1)}
+      uLifeAmt: {value: (M.focus === 'full' || M.focus === 'stay') ? num(M.life, 1) : 0}, uBreathe: {value: num(M.breathe, 1)}, uRgb: {value: num(M.rgb, 1)}
     };
     var geo = new THREE.PlaneGeometry(1, 1, 22, 22), geoS = new THREE.PlaneGeometry(1, 1, 10, 10);
     var loader = new THREE.TextureLoader();
@@ -1079,8 +1078,8 @@ body{margin:0}
       G.scale = target * visH10 / (2 * R * H);
       G.px = visH10 / H;
       var s = 2 * (CAMZ - FLATZ) * Math.tan(FOV * D2R / 2) / H;
-      var cx = G.desk ? W * 0.17 : 0, cy = G.desk ? 0 : -H * 0.1;
-      var mw = G.desk ? W * 0.5 : W * 0.86, mh = G.desk ? H * 0.7 : H * 0.5;
+      var cx = G.desk ? W * 0.2 : 0, cy = G.desk ? 0 : -H * 0.09;
+      var mw = G.desk ? W * 0.55 : W * 0.92, mh = G.desk ? H * 0.8 : H * 0.58;
       heroes.forEach(function(h, k){
         if (FOCUS === 'full'){
           h.u.uFlatC.value.set(0, 0); h.u.uFlatS.value.set(W * s * 1.02, H * s * 1.02);

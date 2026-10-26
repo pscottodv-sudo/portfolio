@@ -398,7 +398,7 @@ var OWNER = 'pscottodv-sudo', REPO = 'portfolio', BRANCH = 'main';
 var API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
 var SITE_ROOT = location.pathname.replace(/admin\/?(index\.html)?$/, '') || '/';
 var GROUPS = [['Fashion editorial','Moda'],['Video','Video'],['Reportage','Reportage']];
-var MOTION0 = {life: 1, rgb: 1, breathe: 1, spin: 0, size: 1, scroll: 1.45, density: 'media', focus: 'full'};
+var MOTION0 = {life: 1, rgb: 1, breathe: 1, spin: 0, size: 1, scroll: 1.45, density: 'media', focus: 'out'};
 var $ = function(s, r){ return (r || document).querySelector(s); }, $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 function clone(o){ return JSON.parse(JSON.stringify(o)); }
@@ -786,7 +786,7 @@ $('#newProj').addEventListener('click', function(){
 
 /* ---------- SPHERE ---------- */
 var MOT = [
-  ['life', 'Vita delle foto', 0, 2, 0.1, 'Quanto si piegano e ondeggiano le foto mentre escono dalla sfera.'],
+  ['life', 'Vita delle foto', 0, 2, 0.1, 'Quanto si piegano e ondeggiano le foto mentre escono. Vale solo per "tutto schermo" e "resta sulla sfera": con "resta dritta" non ondeggiano mai.'],
   ['rgb', 'Sdoppiamento colori', 0, 2, 0.1, 'L\'effetto RGB sui bordi durante l\'uscita. A zero è spento.'],
   ['breathe', 'Respiro della sfera', 0, 3, 0.1, 'Quanto la superficie della sfera pulsa a riposo.'],
   ['spin', 'Rotazione automatica', 0, 12, 0.5, 'Gradi al secondo con cui la sfera gira da sola, anche senza scrollare.'],
@@ -809,7 +809,7 @@ function renderSphere(){
    '<div class="sec"><div class="sec-h"><h3>Movimento</h3><button class="btn small ghost" type="button" id="motReset">Valori originali</button></div><div class="sliders">' +
      MOT.map(function(d){ return '<div class="sl"><div class="sl-h"><b>' + d[1] + '</b><output id="o_' + d[0] + '"></output></div><input type="range" min="' + d[2] + '" max="' + d[3] + '" step="' + d[4] + '" data-k="' + d[0] + '" aria-label="' + d[1] + '"><small>' + d[5] + '</small></div>'; }).join('') +
      '<div class="sl"><div class="sl-h"><b>Quante foto sulla sfera</b></div><select class="inp" data-k="density"><option value="bassa">Poche</option><option value="media">Medie</option><option value="alta">Tante</option></select><small>Quante caselle ci sono sopra e sotto l\'equatore.</small></div>' +
-     '<div class="sl"><div class="sl-h"><b>Progetto in primo piano</b></div><select class="inp" data-k="focus"><option value="full">Si apre a tutto schermo</option><option value="stay">Resta sulla sfera e si ingrandisce</option><option value="out">Esce dalla sfera e si appiattisce</option></select><small>Cosa succede alla copertina quando arriva il suo turno.</small></div></div></div>' +
+     '<div class="sl"><div class="sl-h"><b>Progetto in primo piano</b></div><select class="inp" data-k="focus"><option value="out">Esce dalla sfera e resta dritta</option><option value="full">Si apre a tutto schermo</option><option value="stay">Resta sulla sfera e si ingrandisce</option></select><small>Cosa succede alla copertina quando arriva il suo turno.</small></div></div></div>' +
    '<div class="sec"><div class="sec-h"><h3>Foto sopra la sfera</h3><div class="seg" role="group" aria-label="Modo"><button type="button" data-tm="auto" aria-pressed="' + !manual + '">Automatiche</button><button type="button" data-tm="man" aria-pressed="' + manual + '">Le scelgo io</button></div></div>' +
      (manual ? '<p class="hint" style="margin:0">Selezionate: ' + S.sphere.tiles.length + '. Ne bastano 10–20: si ripetono se le caselle sono di più.</p><div class="tiles">' +
        vis.map(function(p){ return '<div><div class="tg-h mono"><span>' + esc(p.name) + '</span></div><div class="tgrid">' + p.images.map(function(im){ return '<button type="button" class="tile" data-t="' + esc(im.t) + '" aria-pressed="' + (S.sphere.tiles.indexOf(im.t) >= 0) + '"><img src="' + esc(src(im.t)) + '" alt="" loading="lazy"></button>'; }).join('') + '</div></div>'; }).join('') + '</div>'
