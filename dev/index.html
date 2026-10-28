@@ -545,7 +545,7 @@ body{margin:0}
         year: o('year'), tag: o('tag'), short: o('short'), desc: o('desc'),
         it: {year: oi('year'), tag: oi('tag'), short: oi('short'), desc: oi('desc')},
         cover: c.src || c.m, coverG: c.g || c.m || c.src, coverT: c.t || c.g || c.m || c.src, cw: c.w || 1600, ch: c.h || 1067,
-        gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, w: i.w, h: i.h}; }),
+        gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, t: i.t, w: i.w, h: i.h}; }),
         heroVideo: p.heroVideo || null, reel: p.reel || '', reelPos: p.reelPos || 'top', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
     });
     var at = {}; DATA.forEach(function(d, i){ at[d.slug] = i; });
@@ -1065,11 +1065,11 @@ body{margin:0}
       'mat3 rz(float a){ float c = cos(a), s = sin(a); return mat3(c, s, 0.0, -s, c, 0.0, 0.0, 0.0, 1.0); }',
       'void main(){',
       '  vUv = uv;',
+      '  float lon = uLon + (uv.x - 0.5) * uDLon;',
+      '  float lat = uLat + (uv.y - 0.5) * uDLat;',
+      '  float br = 1.0 + 0.02 * uBreathe * sin(uLat * 5.0 + uLon * 3.0 + uTime * 1.2) * (1.0 - uT);',
       '  vec3 n = vec3(cos(uLat) * sin(uLon), sin(uLat), cos(uLat) * cos(uLon));',
-      '  vec3 e = vec3(cos(uLon), 0.0, -sin(uLon));',
-      '  vec3 up = vec3(-sin(uLat) * sin(uLon), cos(uLat), -sin(uLat) * cos(uLon));',
-      '  float br = 1.0 + 0.025 * uBreathe * sin(uLat * 5.0 + uLon * 3.0 + uTime * 1.2) * (1.0 - uT);',
-      '  vec3 s = uR * br * n + (uv.x - 0.5) * uR * uDLon * cos(uLat) * e + (uv.y - 0.5) * uR * uDLat * up;',
+      '  vec3 s = uR * br * vec3(cos(lat) * sin(lon), sin(lat), cos(lat) * cos(lon));',
       '  vec4 sw = uSphere * vec4(s, 1.0);',
       '  vec3 c0 = (uSphere * vec4(0.0, 0.0, 0.0, 1.0)).xyz;',
       '  vec3 l = vec3((uv - 0.5) * uS * (1.0 + 0.04 * uHover), 0.0);',
@@ -1163,14 +1163,26 @@ body{margin:0}
     }
 
     /* the globe: three category photographs on the equator, the rest around them */
-    var fill = THUMBS.slice(), fi = 0;
+    /* enough different photographs for a full globe: the chosen ones first, then the rest of the portfolio */
+    var fill = THUMBS.slice(), seen = {};
+    fill.forEach(function(s){ seen[s] = 1; });
+    var extra = [];
+    DATA.forEach(function(d){ (d.gallery || []).forEach(function(g){ if (g.t && !seen[g.t]){ seen[g.t] = 1; extra.push(g.t); } }); });
+    extra.sort(function(a, b){ return rnd(a.length, 21) - rnd(b.length, 21) || (a < b ? -1 : 1); });
+    for (var xi = 0; xi < extra.length; xi += 3) fill.push(extra[xi]);
+    var fi = 0;
     var nextThumb = function(){ var s = fill[fi % fill.length]; fi++; return s; };
-    var E = 9, SLOT = 360 / E;
-    var DENS = {bassa: [3, 52, 30], media: [4, 44, 28], alta: [6, 34, 24]}[M.density] || [4, 44, 28];
+    var LAYOUT = {
+      bassa: {E: 9, rows: [[38, 7, 26], [-38, 7, 26], [68, 4, 20], [-68, 4, 20]]},
+      media: {E: 12, rows: [[29, 11, 24], [-29, 11, 24], [55, 8, 22], [-55, 8, 22], [76, 4, 15], [-76, 4, 15]]},
+      alta: {E: 15, rows: [[24, 14, 21], [-24, 14, 21], [46, 11, 19], [-46, 11, 19], [66, 7, 17], [-66, 7, 17], [82, 3, 11], [-82, 3, 11]]}
+    }[M.density] || null;
+    if (!LAYOUT) LAYOUT = {E: 12, rows: [[29, 11, 24], [-29, 11, 24], [55, 8, 22], [-55, 8, 22], [76, 4, 15], [-76, 4, 15]]};
+    var E = LAYOUT.E, SLOT = 360 / E, HS = [0, Math.round(E / 3), Math.round(2 * E / 3)];
     for (var slot = 0; slot < E; slot++){
-      var lon = slot * SLOT, hk = slot % 3 === 0 ? slot / 3 : -1;
+      var lon = slot * SLOT, hk = HS.indexOf(slot);
       if (hk >= 0 && hk < CN){
-        var c = CATS[hk], ht = makeTile(c.img.g || c.img.src, lon, 0, SLOT * 0.78, 44, true);
+        var c = CATS[hk], ht = makeTile(c.img.g || c.img.src, lon, 0, SLOT * 0.9, 34, true);
         ht.fx = c.fx; ht.fy = c.fy; ht.hero = hk; heroes[hk] = ht;
         var hv = heroVid(c);
         if (hv) (function(ht, hv){
@@ -1182,13 +1194,11 @@ body{margin:0}
           }, {once: true});
           ht.vidEl = v;
         })(ht, hv);
-      } else makeTile(nextThumb(), lon, 0, SLOT * 0.66, 34);
+      } else makeTile(nextThumb(), lon, 0, SLOT * 0.88, 30);
     }
-    [[45, 0], [-45, 360 / DENS[0] / 2]].forEach(function(b){
-      for (var i = 0; i < DENS[0]; i++) makeTile(nextThumb(), b[1] + i * 360 / DENS[0], b[0], Math.min(DENS[1], 360 / DENS[0] * 0.8), DENS[2]);
-    });
-    if (M.density === 'alta') [[72, 3, 20], [-72, 3, 20]].forEach(function(b){
-      for (var i = 0; i < b[1]; i++) makeTile(nextThumb(), 30 + i * 120, b[0], 60, b[2]);
+    LAYOUT.rows.forEach(function(r, ri){
+      var step = 360 / r[1], off = (ri % 2) * step / 2;
+      for (var i = 0; i < r[1]; i++) makeTile(nextThumb(), off + i * step, r[0], step * 0.88, r[2]);
     });
 
     /* where everything rests once the globe has opened (pixel rects, converted to world space at their depth) */
