@@ -138,7 +138,59 @@ html.no-gl .work-list{display:block}
 .work-end{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;visibility:hidden;z-index:5;display:grid;gap:16px;justify-items:center;width:max-content;max-width:calc(100% - 32px)}
 .work-end .btn-view{justify-self:center}
 .work-end .display{font-size:clamp(44px,8vw,120px)}
-.work-hint{position:absolute;left:0;right:0;bottom:calc(20px + env(safe-area-inset-bottom, 0px));text-align:center;color:var(--muted);z-index:5}
+.work-hint{position:absolute;left:0;right:0;bottom:calc(20px + env(safe-area-inset-bottom, 0px));text-align:center;color:var(--muted);z-index:5;opacity:0}
+/* ---------- unfolding sphere: category labels ---------- */
+.cats{position:absolute;inset:0;z-index:4;pointer-events:none}
+.cat-l{position:absolute;left:0;top:0;display:grid;gap:10px;opacity:0;visibility:hidden;max-width:300px;will-change:transform,opacity}
+.cat-l.on{pointer-events:auto}
+.cat-l.side-l{justify-items:end;text-align:right}
+.cat-n{margin:0;color:var(--muted)}
+.cat-name{margin:0;font-size:clamp(28px,2.7vw,46px)}
+.cat-btn{justify-self:start;white-space:nowrap}
+.cb-n{white-space:pre}
+.cat-l.side-l .cat-btn{justify-self:end}
+.cat-l.is-hover .cat-btn,.cat-btn:focus-visible{background:var(--ink);color:var(--ground)}
+@media (max-width:767px){.cat-name{font-size:26px}.cat-l .btn-view{min-height:38px;padding:0 13px;font-size:12px}.cat-l{gap:7px}.cb-n{display:none}}
+.cat-l.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:10px;row-gap:0}
+.cat-l.row .cat-name{font-size:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat-l.row .cat-btn{justify-self:end}
+@media (max-width:520px){.nav{gap:10px}.nav-name{font-size:11px;letter-spacing:0}.nav-links{padding:7px 12px;gap:12px}.nav-links a,.nav-links .nav-btn{font-size:12px;letter-spacing:.05em}}
+@media (max-width:350px){.nav-name{white-space:normal;max-width:96px;line-height:1.15}}
+/* ---------- category section ---------- */
+.catsec{padding-block:clamp(96px,14vh,170px) clamp(40px,8vh,90px);scroll-margin-top:0}
+.cs-head{display:grid;gap:12px;margin-bottom:clamp(56px,9vw,130px)}
+.cs-head:focus{outline:none}
+.cs-idx,.cs-count{color:var(--muted);margin:0}
+.cs-title{font-size:clamp(56px,11vw,190px);margin:0}
+.cs-list{display:grid;gap:clamp(80px,12vw,170px)}
+.cp{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,4vw,64px);align-items:end}
+.cp.rev{grid-template-columns:minmax(0,4fr) minmax(0,7fr)}
+.cp.rev .cp-media{order:2}
+.cp-media{all:unset;cursor:pointer;display:block;overflow:hidden;width:fit-content;max-width:100%;justify-self:start}
+.cp.rev .cp-media{justify-self:end}
+.cp-media img,.cp-media video{display:block;width:auto;height:auto;max-width:100%;max-height:82vh;object-fit:contain;transition:transform 1.4s var(--ease)}
+.cp-media:hover img,.cp-media:hover video{transform:scale(1.03)}
+.cp-media:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.cp-text{display:grid;gap:14px;align-content:end}
+.cp-meta{color:var(--muted);margin:0}
+.cp-name{font-size:clamp(34px,4.6vw,76px);margin:0}
+.cp-short{margin:0;max-width:40ch;line-height:1.55}
+.cs-more{margin-top:clamp(110px,16vw,220px);padding-top:clamp(28px,4vw,48px);border-top:1px solid var(--hair);display:grid;gap:clamp(28px,3vw,44px)}
+.cs-more>p{margin:0;color:var(--muted)}
+.cs-minis,.cat-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:clamp(18px,3vw,44px);align-items:start;list-style:none;margin:0;padding:0}
+.cat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cs-minis .mini:nth-child(2){margin-top:clamp(40px,8vw,120px)}
+.mini{all:unset;cursor:pointer;display:grid;gap:12px;width:100%}
+.mini:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.mini-img{display:block;aspect-ratio:3/2;overflow:hidden;background:var(--void)}
+.cs-minis .mini:nth-child(2) .mini-img,.cat-grid li:nth-child(odd) .mini-img{aspect-ratio:4/5}
+.mini-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.mini:hover .mini-img img{transform:scale(1.035)}
+.mini-n{color:var(--muted)}
+.mini-name{font-size:clamp(30px,4vw,64px)}
+.mini .btn-view{justify-self:start}
+.mini:hover .btn-view{background:var(--ink);color:var(--ground)}
+@media (max-width:767px){.cp,.cp.rev{grid-template-columns:1fr}.cp.rev .cp-media{order:0}.cs-minis,.cat-grid{grid-template-columns:1fr}.cs-minis .mini:nth-child(2){margin-top:0}}
 @media (max-width:767px){
   .cap{left:max(16px, env(safe-area-inset-left, 0px));right:max(16px, env(safe-area-inset-right, 0px));top:auto;bottom:calc(30px + env(safe-area-inset-bottom, 0px));transform:none;width:auto;gap:8px}
   .cap-title{font-size:clamp(32px,10vw,46px)}
@@ -393,17 +445,18 @@ body{margin:0}
   <section class="work" id="work" aria-labelledby="workTitle">
     <div class="work-pin">
       <div class="work-head gut mono"><span id="workTitle" data-en="Fashion · Video · Reportage" data-it="Moda · Video · Reportage">Fashion · Video · Reportage</span><span class="work-count" id="workCount"></span></div>
-      <canvas id="gl" aria-label="A turning globe of photographs; each project comes to the front in turn" data-aria-en="A turning globe of photographs; each project comes to the front in turn" data-aria-it="Una sfera di fotografie che gira; ogni progetto viene in primo piano a turno"></canvas>
-      <p class="work-intro mono" data-en="Scroll to turn the globe" data-it="Scorri per far girare la sfera">Scroll to turn the globe</p>
-      <div id="stage"></div>
-      <div class="work-end"><p class="mono" style="margin:0;color:var(--muted)" id="fourOf"></p><p class="display" style="margin:0" data-en="All works" data-it="Tutti i lavori">All works</p><button class="btn-view" type="button" data-archive><span data-en="Open the archive" data-it="Apri l&#x27;archivio">Open the archive</span> <span aria-hidden="true">→</span></button><p class="mono" style="margin:0;color:var(--muted)" data-en="Fashion · Video · Reportage" data-it="Moda · Video · Reportage">Fashion · Video · Reportage</p></div>
-      <p class="work-hint mono" data-en="Keep scrolling · one project at a time" data-it="Continua a scorrere · un progetto alla volta">Keep scrolling · one project at a time</p>
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <div class="cats" id="cats"></div>
+      <p class="work-intro mono" data-en="Scroll to open the globe" data-it="Scorri per aprire la sfera">Scroll to open the globe</p>
+      <p class="work-hint mono" data-en="Choose a category · or keep scrolling" data-it="Scegli una categoria · oppure continua a scorrere">Choose a category · or keep scrolling</p>
     </div>
     <div class="work-list gut">
       <div class="wl-head"><h2 class="display" data-en="Selected work" data-it="Selezione">Selected work</h2><button class="btn-view" type="button" data-archive><span data-en="All works" data-it="Tutti i lavori">All works</span> <span aria-hidden="true">→</span></button></div>
-      <ul class="wl-grid" id="workList"></ul>
+      <ul class="cat-grid" id="workList"></ul>
     </div>
   </section>
+
+  <section class="catsec" id="catsec" hidden aria-labelledby="csTitle"></section>
 
   <section class="collab gut" aria-labelledby="collabTitle">
     <div class="collab-head"><h2 class="display" id="collabTitle" data-split data-en="Published &amp; awarded" data-it="Pubblicazioni e premi">Published &amp; awarded</h2><span class="mono" data-en="Credits" data-it="Riconoscimenti">Credits</span></div>
@@ -469,6 +522,15 @@ body{margin:0}
   var cap1 = function(s){ return s.charAt(0).toUpperCase() + s.slice(1); };
   var GROUPS = [['arch-fashion', 'Fashion editorial', 'Fashion editorial', 'Editoriali di moda'], ['arch-video', 'Video', 'Video', 'Video'], ['arch-reportage', 'Reportage', 'Reportage', 'Reportage']];
 
+  var CATDEF = [['Fashion editorial', 'fashion', {en: 'Fashion', it: 'Moda'}, {en: 'Fashion editorial', it: 'Editoriali di moda'}],
+    ['Video', 'video', {en: 'Video', it: 'Video'}, {en: 'Video', it: 'Video'}],
+    ['Reportage', 'reportage', {en: 'Reportage', it: 'Reportage'}, {en: 'Reportage', it: 'Reportage'}]];
+  function pos0(c){ return Math.round(c.fx * 100) + '% ' + Math.round(c.fy * 100) + '%'; }
+  function miniHTML(c, n, tag){
+    return '<' + tag + ' class="mini" type="button" data-cat="' + esc0(c.key) + '"><span class="mini-img"><img src="' + esc0(c.img.g || c.img.src) + '" alt="" loading="lazy" decoding="async" style="object-position:' + pos0(c) + '"></span>' +
+      '<span class="mono mini-n">' + String(n).padStart(2, '0') + '</span><span class="display mini-name"' + A(c.label) + '>' + esc0(c.label.en) + '</span>' +
+      '<span class="btn-view"><span' + A(c.btn) + '>' + esc0(c.btn.en) + '</span> <span aria-hidden="true">→</span></span></' + tag + '>';
+  }
   function build(C){
     var all = C.projects || [], S = C.site || {}, SP = C.sphere || {};
     var IMG = {};
@@ -484,7 +546,7 @@ body{margin:0}
         year: o('year'), tag: o('tag'), short: o('short'), desc: o('desc'),
         it: {year: oi('year'), tag: oi('tag'), short: oi('short'), desc: oi('desc')},
         cover: c.src || c.m, coverG: c.g || c.m || c.src, coverT: c.t || c.g || c.m || c.src, cw: c.w || 1600, ch: c.h || 1067,
-        gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, w: i.w, h: i.h}; }),
+        gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, t: i.t, w: i.w, h: i.h}; }),
         heroVideo: p.heroVideo || null, reel: p.reel || '', reelPos: p.reelPos || 'top', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
     });
     var at = {}; DATA.forEach(function(d, i){ at[d.slug] = i; });
@@ -493,7 +555,17 @@ body{margin:0}
     var THUMBS = (SP.tiles || []).slice();
     if (!THUMBS.length) THUMBS = DATA.filter(function(d, i){ return FEAT.indexOf(i) < 0; }).map(function(d){ return d.coverT; });
     if (!THUMBS.length) THUMBS = FEAT.map(function(i){ return DATA[i].coverT; });
-    return {DATA: DATA, FEAT: FEAT, THUMBS: THUMBS, S: S, M: SP.motion || {}, all: all};
+    var CC = SP.categories || {};
+    var CATS = CATDEF.map(function(d){
+      var ids = []; DATA.forEach(function(x, i){ if (x.group === d[0]) ids.push(i); });
+      if (!ids.length) return null;
+      var conf = CC[d[0]] || {}, img = conf.img;
+      if (!img || !img.src){ var p0 = DATA[ids[0]]; img = {src: p0.cover, g: p0.coverG, t: p0.coverT, w: p0.cw, h: p0.ch}; }
+      var fx = conf.fx == null ? 0.5 : +conf.fx, fy = conf.fy == null ? 0.5 : +conf.fy;
+      return {key: d[0], slug: d[1], label: d[2], title: d[3], btn: {en: 'Explore ' + d[2].en, it: 'Esplora ' + d[2].it},
+        img: img, fx: fx, fy: fy, video: (conf.video && (conf.video.h || conf.video.v)) ? conf.video : null, ids: ids};
+    }).filter(Boolean);
+    return {DATA: DATA, FEAT: FEAT, THUMBS: THUMBS, S: S, M: SP.motion || {}, all: all, CATS: CATS};
   }
 
   function render(B){
@@ -511,8 +583,8 @@ body{margin:0}
     setT($('#fourOf'), {en: cap1(word('en', k)) + ' of ' + word('en', n), it: cap1(word('it', k)) + ' su ' + word('it', n)});
     $('#workCount').textContent = '01 / ' + String(k).padStart(2, '0');
     setT($('#archMeta'), {en: 'Archive · ' + n + ' projects', it: 'Archivio · ' + n + ' progetti'});
-    $('#workList').innerHTML = FEAT.map(function(i){ var d = DATA[i];
-      return '<li><button class="wl-item" type="button" data-open="' + i + '" data-cursor="view"><span class="wl-img"><img src="' + esc0(d.cover) + '" alt="" loading="lazy" decoding="async"></span><span class="wl-name display">' + esc0(d.name) + '</span><span class="wl-tag mono"' + A({en: d.tag, it: d.it.tag}) + '>' + esc0(d.tag) + '</span></button></li>'; }).join('');
+    $('#workList').innerHTML = B.CATS.map(function(c, i){ return '<li>' + miniHTML(c, i + 1, 'button') + '</li>'; }).join('');
+    $('#workCount').textContent = '';
     var tabs = '', secs = '';
     GROUPS.forEach(function(g){
       var ids = []; DATA.forEach(function(d, i){ if (d.group === g[1]) ids.push(i); });
@@ -787,6 +859,62 @@ body{margin:0}
   });
   $$('[data-open]').forEach(function(b){ b.addEventListener('click', function(e){ openProject(+b.getAttribute('data-open'), e); }); });
 
+  /* ---------- categories: projects of one category, then the other two ---------- */
+  var CATS = B.CATS, catsec = $('#catsec'), curCat = null, csTw = [], csIO = null;
+  function catOf(key){ for (var i = 0; i < CATS.length; i++) if (CATS[i].key === key) return CATS[i]; return null; }
+  function langFill(rootEl){ $$('[data-it]', rootEl).forEach(function(el){ el.textContent = el.getAttribute('data-' + LANG); }); }
+  function renderCat(key){
+    var c = catOf(key); if (!c) return null;
+    curCat = key;
+    csTw.forEach(function(tw){ if (tw.scrollTrigger) tw.scrollTrigger.kill(); tw.kill(); }); csTw = [];
+    if (csIO) csIO.disconnect();
+    var ci = CATS.indexOf(c), n = c.ids.length;
+    var cnt = {en: String(n).padStart(2, '0') + ' ' + (n === 1 ? 'project' : 'projects'), it: String(n).padStart(2, '0') + ' ' + (n === 1 ? 'progetto' : 'progetti')};
+    var html = '<div class="cs-head gut" tabindex="-1"><p class="mono cs-idx">' + pad(ci + 1) + ' — <span' + A(c.label) + '>' + esc(c.label.en) + '</span></p>' +
+      '<h2 class="display cs-title" id="csTitle"' + A(c.title) + '>' + esc(c.title.en) + '</h2><p class="mono cs-count"' + A(cnt) + '>' + cnt.en + '</p></div><div class="cs-list gut">';
+    c.ids.forEach(function(i, j){
+      var p = DATA[i], hv = p.kind === 'video' ? heroVideoSrc(p) : '';
+      var media = hv ? '<video src="' + esc(hv) + '" muted loop playsinline preload="none" poster="' + esc(p.coverG || p.cover) + '"></video>'
+        : '<img src="' + esc(p.cover) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async"' + (p.cw && p.ch ? ' width="' + p.cw + '" height="' + p.ch + '"' : '') + '>';
+      var view = p.kind === 'video' ? {en: 'Explore the project', it: 'Scopri il progetto'} : {en: 'View project', it: 'Guarda la serie'};
+      html += '<article class="cp' + (j % 2 ? ' rev' : '') + '"><button class="cp-media" type="button" data-open="' + i + '" data-cursor="view" aria-label="' + esc(p.name) + '">' + media + '</button>' +
+        '<div class="cp-text"><p class="mono cp-meta"' + A({en: pad(j + 1) + ' / ' + pad(n) + ' · ' + p.year + ' · ' + p.tag, it: pad(j + 1) + ' / ' + pad(n) + ' · ' + p.it.year + ' · ' + p.it.tag}) + '></p>' +
+        '<h3 class="display cp-name">' + esc(p.name) + '</h3><p class="cp-short"' + A({en: p.short, it: p.it.short}) + '></p>' +
+        '<button class="btn-view" type="button" data-open="' + i + '"><span' + A(view) + '></span> <span aria-hidden="true">→</span></button></div></article>';
+    });
+    html += '</div>';
+    var others = CATS.filter(function(x){ return x !== c; });
+    if (others.length) html += '<div class="cs-more gut"><p class="mono"' + A({en: 'Keep exploring', it: 'Continua a esplorare'}) + '></p><div class="cs-minis">' +
+      others.map(function(o){ return miniHTML(o, CATS.indexOf(o) + 1, 'button'); }).join('') + '</div></div>';
+    catsec.innerHTML = html; catsec.hidden = false;
+    langFill(catsec);
+    $$('[data-open]', catsec).forEach(function(b){ b.addEventListener('click', function(e){ openProject(+b.getAttribute('data-open'), e); }); });
+    $$('[data-cat]', catsec).forEach(function(b){ b.addEventListener('click', function(){ goCat(b.getAttribute('data-cat')); }); });
+    var vs = $$('video', catsec);
+    if (vs.length && 'IntersectionObserver' in window){
+      csIO = new IntersectionObserver(function(es){ es.forEach(function(e){ var v = e.target; if (e.isIntersecting){ v.muted = true; var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); } else v.pause(); }); }, {threshold: 0.25});
+      vs.forEach(function(v){ csIO.observe(v); });
+    }
+    return c;
+  }
+  function goCat(key){
+    var c = renderCat(key); if (!c) return;
+    if (motion && window.ScrollTrigger){
+      ScrollTrigger.refresh();
+      csTw.push(gsap.from($$('.cs-head > *', catsec), {y: 40, autoAlpha: 0, stagger: 0.08, duration: 1.1, ease: 'expo.out', delay: 0.5}));
+      $$('.cp, .cs-more', catsec).forEach(function(el){
+        csTw.push(gsap.from(el, {y: 70, autoAlpha: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: {trigger: el, start: 'top 88%'}}));
+      });
+    }
+    var target = catsec;
+    requestAnimationFrame(function(){
+      if (lenis) lenis.scrollTo(target, {duration: 1.6}); else target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+      var h = $('.cs-head', catsec); if (h) h.focus({preventScroll: true});
+    });
+  }
+  $$('#workList [data-cat]').forEach(function(b){ b.addEventListener('click', function(){ goCat(b.getAttribute('data-cat')); }); });
+  var hooksLangPrev = null;
+
   /* ---------- contact bits ---------- */
   $('#copyEmail').addEventListener('click', function(){
     var btn = this, txt = $('#email').textContent;
@@ -902,32 +1030,24 @@ body{margin:0}
   gsap.from('.about-body p, .facts div', {autoAlpha: 0, y: 26, stagger: 0.08, duration: 1, ease: 'expo.out',
     scrollTrigger: {trigger: '.about-body', start: 'top 85%'}});
 
-  /* ---------- the sphere: every photo on a slowly turning globe ---------- */
-  var SD = FEAT.map(function(i){ return DATA[i]; }), SN = SD.length;
-  var stage = $('#stage'), canvas = $('#gl');
-  var caps = [];
-  SD.forEach(function(p, k){
-    var cap = document.createElement('div');
-    cap.className = 'cap';
-    var label = p.kind === 'video' ? T('explore') : T('viewSeries');
-    cap.innerHTML =
-      '<p class="mono cap-idx" style="margin:0">' + pad(k + 1) + ' / ' + pad(SN) + ' · ' + esc(L(p, 'group')) + '</p>' +
-      '<h3 class="cap-title display" aria-label="' + esc(p.name) + '">' + charsMarkup(p.name) + '</h3>' +
-      '<div class="cap-rest"><p class="mono cap-tag" style="margin:0">' + esc(L(p, 'tag')) + '</p>' +
-      '<p class="cap-desc">' + esc(L(p, 'short')) + '</p>' +
-      '<button class="btn-view" type="button" data-cursor="view"><span class="btn-label">' + label + '</span> <span aria-hidden="true">→</span></button></div>';
-    $('.btn-view', cap).addEventListener('click', function(e){ openProject(FEAT[k], e); });
-    stage.appendChild(cap); caps.push(cap);
+  /* ---------- the unfolding sphere ----------
+     One scroll-driven progress value (0 → 1) decides everything, so stopping or scrolling back
+     never leaves the scene in a half state. Each photograph has its own seeded path: a short
+     delay, a gentle arc, a resting place in depth and a small tilt. Three of them become the
+     category heroes; the rest stay suspended behind, dimmed. */
+  var canvas = $('#gl'), catsEl = $('#cats'), CN = Math.min(3, CATS.length);
+  var labels = CATS.slice(0, CN).map(function(c, k){
+    var el = document.createElement('div');
+    el.className = 'cat-l';
+    el.innerHTML = '<p class="mono cat-n">' + pad(k + 1) + '</p><h3 class="display cat-name"' + A(c.label) + '>' + esc(c.label.en) + '</h3>' +
+      '<button class="btn-view cat-btn" type="button" tabindex="-1" aria-label="' + esc(c.btn.en) + '" data-aria-en="' + esc(c.btn.en) + '" data-aria-it="' + esc(c.btn.it) + '"><span class="cb-v"' + A({en: 'Explore', it: 'Esplora'}) + '>Explore</span><span class="cb-n"' + A({en: ' ' + c.label.en, it: ' ' + c.label.it}) + '> ' + esc(c.label.en) + '</span> <span aria-hidden="true">→</span></button>';
+    $('.cat-btn', el).addEventListener('click', function(){ goCat(c.key); });
+    el.addEventListener('pointerenter', function(){ hoverK = k; });
+    el.addEventListener('pointerleave', function(){ if (hoverK === k) hoverK = -1; });
+    catsEl.appendChild(el);
+    return el;
   });
-  hooks.caps = function(){
-    SD.forEach(function(p, k){
-      var c = caps[k];
-      $('.cap-idx', c).textContent = pad(k + 1) + ' / ' + pad(SN) + ' · ' + L(p, 'group');
-      $('.cap-tag', c).textContent = L(p, 'tag');
-      $('.cap-desc', c).textContent = L(p, 'short');
-      $('.btn-label', c).textContent = p.kind === 'video' ? T('explore') : T('viewSeries');
-    });
-  };
+  var hoverK = -1;
 
   var renderer = null;
   try {
@@ -938,273 +1058,304 @@ body{margin:0}
     root.classList.add('no-gl');
   } else {
     var VS = [
-      'uniform mat4 uSphere; uniform float uTime, uR, uLon, uLat, uDLon, uDLat, uMorph, uFlatZ, uLifeAmt, uBreathe, uLift;',
-      'uniform vec2 uFlatC, uFlatS;',
-      'varying vec2 vUv; varying float vFace; varying float vLife; varying float vM;',
+      'uniform mat4 uSphere; uniform float uTime, uR, uLon, uLat, uDLon, uDLat, uT, uBreathe, uDrift, uSeed, uHover;',
+      'uniform vec3 uC, uRot, uArc; uniform vec2 uS;',
+      'varying vec2 vUv; varying float vFace; varying float vT;',
+      'mat3 rx(float a){ float c = cos(a), s = sin(a); return mat3(1.0, 0.0, 0.0, 0.0, c, s, 0.0, -s, c); }',
+      'mat3 ry(float a){ float c = cos(a), s = sin(a); return mat3(c, 0.0, -s, 0.0, 1.0, 0.0, s, 0.0, c); }',
+      'mat3 rz(float a){ float c = cos(a), s = sin(a); return mat3(c, s, 0.0, -s, c, 0.0, 0.0, 0.0, 1.0); }',
       'void main(){',
       '  vUv = uv;',
-      '  float grow = 1.0 + 0.5 * uLift;',
-      '  float lon = uLon + (uv.x - 0.5) * uDLon * grow;',
-      '  float lat = uLat + (uv.y - 0.5) * uDLat * grow;',
-      '  float breathe = 1.0 + 0.02 * uBreathe * sin(lat * 5.0 + lon * 3.0 + uTime * 1.2);',
-      '  vec3 s = uR * breathe * (1.0 + 0.14 * uLift) * vec3(cos(lat) * sin(lon), sin(lat), cos(lat) * cos(lon));',
+      '  float lon = uLon + (uv.x - 0.5) * uDLon;',
+      '  float lat = uLat + (uv.y - 0.5) * uDLat;',
+      '  float br = 1.0 + 0.02 * uBreathe * sin(uLat * 5.0 + uLon * 3.0 + uTime * 1.2) * (1.0 - uT);',
+      '  vec3 n = vec3(cos(uLat) * sin(uLon), sin(uLat), cos(uLat) * cos(uLon));',
+      '  vec3 s = uR * br * vec3(cos(lat) * sin(lon), sin(lat), cos(lat) * cos(lon));',
       '  vec4 sw = uSphere * vec4(s, 1.0);',
-      '  vec3 c = (uSphere * vec4(0.0, 0.0, 0.0, 1.0)).xyz;',
-      '  float m = uMorph;',
-      '  vec3 f = vec3(uFlatC + (uv - 0.5) * uFlatS, uFlatZ);',
-      '  vec3 p = mix(sw.xyz, f, m);',
-      '  float life = max(sin(3.14159265 * m), 0.5 * sin(3.14159265 * uLift)) * uLifeAmt;',
-      '  float b = sin(uv.x * 3.14159265) * sin(uv.y * 3.14159265);',
-      '  p.z += life * mix(0.25, 1.0, m) * (0.78 * b + 0.2 * sin(uv.y * 9.0 + uTime * 4.0) * sin(uv.x * 3.14159265));',
-      '  p.x += life * 0.12 * sin(uv.y * 6.0 + uTime * 3.0) * mix(0.3, uFlatS.x, m);',
-      '  p.y += life * 0.08 * sin(uv.x * 7.0 + uTime * 2.4) * mix(0.3, uFlatS.y, m);',
-      '  vLife = life; vM = m;',
-      '  vFace = mix(normalize(sw.xyz - c).z, 1.0, m);',
+      '  vec3 c0 = (uSphere * vec4(0.0, 0.0, 0.0, 1.0)).xyz;',
+      '  vec3 l = vec3((uv - 0.5) * uS * (1.0 + 0.04 * uHover), 0.0);',
+      '  l = rz(uRot.z * uT) * ry(uRot.y * uT) * rx(uRot.x * uT) * l;',
+      '  vec3 drift = uDrift * vec3(sin(uTime * 0.37 + uSeed * 6.1), sin(uTime * 0.29 + uSeed * 3.7), 0.6 * sin(uTime * 0.23 + uSeed * 1.3));',
+      '  vec3 p = mix(sw.xyz, uC + drift * uT + l, uT) + uArc * sin(3.14159265 * uT);',
+      '  vFace = mix(normalize(mat3(uSphere) * n).z, 1.0, uT);',
+      '  vT = uT;',
       '  gl_Position = projectionMatrix * viewMatrix * vec4(p, 1.0);',
       '}'
     ].join('\n');
     var FS = [
-      'uniform sampler2D uTex; uniform float uTime, uDim, uFin, uReady, uRgb; uniform vec2 uCropS, uCropF; uniform vec3 uGround;',
-      'varying vec2 vUv; varying float vFace; varying float vLife; varying float vM;',
+      'uniform sampler2D uTex; uniform float uDim, uReady; uniform vec2 uCropS, uCropF, uFocal; uniform vec3 uGround;',
+      'varying vec2 vUv; varying float vFace; varying float vT;',
       'void main(){',
       '  vec2 uv = vUv;',
       '  if (!gl_FrontFacing) uv.x = 1.0 - uv.x;',
-      '  vec2 crop = mix(uCropS, uCropF, vM);',
-      '  uv = (uv - 0.5) * crop + 0.5;',
-      '  uv += vLife * 0.035 * vec2(sin(vUv.y * 12.0 + uTime * 5.0), cos(vUv.x * 10.0 + uTime * 4.0));',
-      '  uv += (1.0 - vM) * 0.004 * vec2(sin(vUv.y * 8.0 + uTime * 1.5), cos(vUv.x * 7.0 + uTime * 1.3));',
+      '  vec2 crop = mix(uCropS, uCropF, vT);',
+      '  vec2 ctr = mix(vec2(0.5), uFocal, vT);',
+      '  uv = (uv - 0.5) * crop + ctr;',
       '  vec3 col = texture2D(uTex, uv).rgb;',
-      '  if (vLife > 0.002 && uRgb > 0.0){ float o = vLife * 0.012 * uRgb; col.r = texture2D(uTex, uv + vec2(o, 0.0)).r; col.b = texture2D(uTex, uv - vec2(o, 0.0)).b; }',
       '  col = mix(vec3(0.12), col, uReady);',
       '  float face = clamp(vFace * 0.5 + 0.5, 0.0, 1.0);',
       '  float light = mix(0.4, 1.0, smoothstep(0.0, 1.0, face));',
       '  if (!gl_FrontFacing) light *= 0.7;',
       '  col *= light;',
-      '  col = mix(col, uGround, uDim * 0.8);',
-      '  col = mix(col, uGround, uFin);',
+      '  col = mix(col, uGround, uDim);',
       '  gl_FragColor = vec4(col, 1.0);',
       '}'
     ].join('\n');
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, innerWidth < 768 ? 1.25 : 1.5));
-    var FOCUS = M.focus === 'full' || M.focus === 'stay' ? M.focus : 'out';
-    var ANISO = renderer.capabilities.getMaxAnisotropy ? Math.min(4, renderer.capabilities.getMaxAnisotropy()) : 1;
+    var lowPower = (navigator.hardwareConcurrency || 8) <= 4 || innerWidth < 768;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lowPower ? 1.25 : 1.5));
     renderer.setClearColor(0x000000, 0);
+    var ANISO = renderer.capabilities.getMaxAnisotropy ? Math.min(4, renderer.capabilities.getMaxAnisotropy()) : 1;
     var scene = new THREE.Scene();
-    var FOV = 35, CAMZ = 10, FLATZ = 5, R = 2.6, D2R = Math.PI / 180;
+    var FOV = 35, CAMZ = 10, R = 2.6, D2R = Math.PI / 180, TANH = Math.tan(FOV * D2R / 2);
     var camera = new THREE.PerspectiveCamera(FOV, 1, 0.1, 100);
     camera.position.set(0, 0, CAMZ);
     var group = new THREE.Object3D();
     scene.add(group);
     var shared = {
       uSphere: {value: group.matrixWorld}, uTime: {value: 0}, uR: {value: R},
-      uGround: {value: new THREE.Vector3(0.039, 0.039, 0.039)}, uFin: {value: 0},
-      uLifeAmt: {value: (M.focus === 'full' || M.focus === 'stay') ? num(M.life, 1) : 0}, uBreathe: {value: num(M.breathe, 1)}, uRgb: {value: num(M.rgb, 1)}
+      uGround: {value: new THREE.Vector3(0.039, 0.039, 0.039)}, uBreathe: {value: num(M.breathe, 1)}
     };
-    var geo = new THREE.PlaneGeometry(1, 1, 22, 22), geoS = new THREE.PlaneGeometry(1, 1, 10, 10);
+    var geoBig = new THREE.PlaneGeometry(1, 1, 22, 22), geoS = new THREE.PlaneGeometry(1, 1, 10, 10);
     var loader = new THREE.TextureLoader();
     var tiles = [], heroes = [];
-    function cropFor(t){
+    var rnd = function(i, k){ var x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+
+    function crops(t){
       if (!t.img) return;
       var ia = t.img.width / t.img.height;
       var ta = (t.dLon * Math.cos(t.lat * D2R)) / t.dLat;
       t.u.uCropS.value.set(ia > ta ? ta / ia : 1, ia > ta ? 1 : ia / ta);
-      if (FOCUS === 'full' && G.W){ var va = G.W / G.H; t.u.uCropF.value.set(ia > va ? va / ia : 1, ia > va ? 1 : ia / va); }
+      if (t.hero == null) t.u.uS.value.y = t.u.uS.value.x / ia;
+      var fa = t.fa || ia, cx = ia > fa ? fa / ia : 1, cy = ia > fa ? 1 : ia / fa;
+      t.u.uCropF.value.set(cx, cy);
+      var fx = t.fx == null ? 0.5 : t.fx, fy = t.fy == null ? 0.5 : 1 - t.fy;
+      t.u.uFocal.value.set(Math.min(1 - cx / 2, Math.max(cx / 2, fx)), Math.min(1 - cy / 2, Math.max(cy / 2, fy)));
     }
-    function setTex(u, t, tex){
+    function setTex(t, tex){
       var gl2 = renderer.capabilities.isWebGL2;
       tex.generateMipmaps = !!gl2; tex.minFilter = gl2 ? THREE.LinearMipmapLinearFilter : THREE.LinearFilter; tex.anisotropy = ANISO;
       if (renderer.initTexture) renderer.initTexture(tex);
-      u.uTex.value = tex; u.uReady.value = 1; cropFor(t);
+      t.u.uTex.value = tex; t.u.uReady.value = 1; crops(t);
     }
-    function makeTile(src, lon, lat, dLon, dLat, big, vid){
+    function makeTile(src, lon, lat, dLon, dLat, big){
+      var i = tiles.length;
       var u = {
-        uSphere: shared.uSphere, uTime: shared.uTime, uR: shared.uR, uGround: shared.uGround, uFin: shared.uFin,
-        uLifeAmt: shared.uLifeAmt, uBreathe: shared.uBreathe, uRgb: shared.uRgb,
-        uTex: {value: null}, uReady: {value: 0},
+        uSphere: shared.uSphere, uTime: shared.uTime, uR: shared.uR, uGround: shared.uGround, uBreathe: shared.uBreathe,
+        uTex: {value: null}, uReady: {value: 0}, uDim: {value: 0}, uHover: {value: 0},
         uLon: {value: lon * D2R}, uLat: {value: lat * D2R}, uDLon: {value: dLon * D2R}, uDLat: {value: dLat * D2R},
-        uMorph: {value: 0}, uLift: {value: 0}, uDim: {value: 0}, uCropS: {value: new THREE.Vector2(1, 1)}, uCropF: {value: new THREE.Vector2(1, 1)},
-        uFlatC: {value: new THREE.Vector2(0, 0)}, uFlatS: {value: new THREE.Vector2(1, 1)}, uFlatZ: {value: FLATZ}
+        uT: {value: 0}, uSeed: {value: rnd(i, 1)}, uDrift: {value: 0.05},
+        uC: {value: new THREE.Vector3()}, uRot: {value: new THREE.Vector3()}, uArc: {value: new THREE.Vector3()}, uS: {value: new THREE.Vector2(1, 1)},
+        uCropS: {value: new THREE.Vector2(1, 1)}, uCropF: {value: new THREE.Vector2(1, 1)}, uFocal: {value: new THREE.Vector2(0.5, 0.5)}
       };
-      var mesh = new THREE.Mesh(big ? geo : geoS, new THREE.ShaderMaterial({uniforms: u, vertexShader: VS, fragmentShader: FS, side: THREE.DoubleSide}));
+      var mesh = new THREE.Mesh(big ? geoBig : geoS, new THREE.ShaderMaterial({uniforms: u, vertexShader: VS, fragmentShader: FS, side: THREE.DoubleSide}));
       mesh.frustumCulled = false;
       scene.add(mesh);
-      var t = {mesh: mesh, u: u, lat: lat, dLon: dLon, dLat: dLat, img: null};
-      loader.load(src, function(tex){ if (t.video) return; t.img = tex.image; setTex(u, t, tex); });
-      if (vid){
-        var v = document.createElement('video');
-        v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('muted', ''); v.preload = 'auto'; v.crossOrigin = 'anonymous'; v.src = vid;
-        v.addEventListener('loadeddata', function(){
-          var vt = new THREE.VideoTexture(v); vt.minFilter = THREE.LinearFilter; vt.generateMipmaps = false;
-          t.video = v; t.img = {width: v.videoWidth, height: v.videoHeight}; u.uTex.value = vt; u.uReady.value = 1; t.vt = vt; cropFor(t);
-          if (t.onVideo) t.onVideo();
-        }, {once: true});
-        v.load();
-      }
+      var t = {i: i, mesh: mesh, u: u, lat: lat, dLon: dLon, dLat: dLat, img: null, delay: rnd(i, 2) * 0.32};
+      loader.load(src, function(tex){ if (t.video) return; t.img = tex.image; setTex(t, tex); });
       tiles.push(t);
       return t;
     }
-    /* the four featured covers sit on the equator, a quarter-turn apart; the other covers fill the gaps and two rings above and below */
-    var fill = THUMBS.slice(), fi = 0;
-    var nextThumb = function(){ var src = fill[fi % fill.length]; fi++; return src; };
-    var E = Math.max(8, SN * 2), SLOT = 360 / E;
-    var DENS = {bassa: [3, 52, 30], media: [4, 44, 28], alta: [6, 34, 24]}[M.density] || [3, 52, 30];
-    for (var slot = 0; slot < E; slot++){
-      var lon = slot * SLOT;
-      if (slot % 2 === 0 && slot / 2 < SN){
-        var hp = SD[slot / 2], hv = heroVideoSrc(hp);
-        var ht = heroes[slot / 2] = makeTile(hp.coverG, lon, 0, SLOT * 0.73, 44, true, hv);
-        (function(hp, ht){ ht.onVideo = function(){ hp.cw = ht.img.width; hp.ch = ht.img.height; layout(); }; })(hp, ht);
-      }
-      else makeTile(nextThumb(), lon, 0, SLOT * 0.62, 34);
+    function heroVid(c){
+      if (!c.video) return '';
+      var mob = matchMedia('(max-width: 767px), (orientation: portrait)').matches;
+      var a = c.video.v && c.video.v.src, b = c.video.h && c.video.h.src;
+      return (mob ? (a || b) : (b || a)) || '';
     }
-    [[45, 0], [-45, 360 / DENS[0] / 2]].forEach(function(b){
-      for (var i = 0; i < DENS[0]; i++) makeTile(nextThumb(), b[1] + i * 360 / DENS[0], b[0], Math.min(DENS[1], 360 / DENS[0] * 0.8), DENS[2]);
-    });
-    if (M.density === 'alta') [[72, 3, 20], [-72, 3, 20]].forEach(function(b){
-      for (var i = 0; i < b[1]; i++) makeTile(nextThumb(), 30 + i * 120, b[0], 60, b[2]);
+
+    /* the globe: three category photographs on the equator, the rest around them */
+    /* enough different photographs for a full globe: the chosen ones first, then the rest of the portfolio */
+    var fill = THUMBS.slice(), seen = {};
+    fill.forEach(function(s){ seen[s] = 1; });
+    var extra = [];
+    DATA.forEach(function(d){ (d.gallery || []).forEach(function(g){ if (g.t && !seen[g.t]){ seen[g.t] = 1; extra.push(g.t); } }); });
+    extra.sort(function(a, b){ return rnd(a.length, 21) - rnd(b.length, 21) || (a < b ? -1 : 1); });
+    for (var xi = 0; xi < extra.length; xi += 3) fill.push(extra[xi]);
+    var fi = 0;
+    var nextThumb = function(){ var s = fill[fi % fill.length]; fi++; return s; };
+    var LAYOUT = {
+      bassa: {E: 9, rows: [[38, 7, 26], [-38, 7, 26], [68, 4, 20], [-68, 4, 20]]},
+      media: {E: 12, rows: [[29, 11, 24], [-29, 11, 24], [55, 8, 22], [-55, 8, 22], [76, 4, 15], [-76, 4, 15]]},
+      alta: {E: 15, rows: [[24, 14, 21], [-24, 14, 21], [46, 11, 19], [-46, 11, 19], [66, 7, 17], [-66, 7, 17], [82, 3, 11], [-82, 3, 11]]}
+    }[M.density] || null;
+    if (!LAYOUT) LAYOUT = {E: 12, rows: [[29, 11, 24], [-29, 11, 24], [55, 8, 22], [-55, 8, 22], [76, 4, 15], [-76, 4, 15]]};
+    var E = LAYOUT.E, SLOT = 360 / E, HS = [0, Math.round(E / 3), Math.round(2 * E / 3)];
+    for (var slot = 0; slot < E; slot++){
+      var lon = slot * SLOT, hk = HS.indexOf(slot);
+      if (hk >= 0 && hk < CN){
+        var c = CATS[hk], ht = makeTile(c.img.g || c.img.src, lon, 0, SLOT * 0.9, 34, true);
+        ht.fx = c.fx; ht.fy = c.fy; ht.hero = hk; heroes[hk] = ht;
+        var hv = heroVid(c);
+        if (hv) (function(ht, hv){
+          var v = document.createElement('video');
+          v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('muted', ''); v.preload = 'metadata'; v.src = hv;
+          v.addEventListener('loadeddata', function(){
+            var vt = new THREE.VideoTexture(v); vt.minFilter = THREE.LinearFilter; vt.generateMipmaps = false;
+            ht.video = v; ht.img = {width: v.videoWidth, height: v.videoHeight}; ht.u.uTex.value = vt; ht.u.uReady.value = 1; crops(ht);
+          }, {once: true});
+          ht.vidEl = v;
+        })(ht, hv);
+      } else makeTile(nextThumb(), lon, 0, SLOT * 0.88, 30);
+    }
+    LAYOUT.rows.forEach(function(r, ri){
+      var step = 360 / r[1], off = (ri % 2) * step / 2;
+      for (var i = 0; i < r[1]; i++) makeTile(nextThumb(), off + i * step, r[0], step * 0.88, r[2]);
     });
 
+    /* where everything rests once the globe has opened (pixel rects, converted to world space at their depth) */
+    var COMP = {
+      desk: [
+        {cx: 0.255, cy: 0.47, w: function(W, H){ return Math.min(0.25 * W, 0.6 * H * 0.8); }, ar: 4 / 5, z: 1.7, rz: -2.2, ry: 6, side: 'below'},
+        {cx: 0.555, cy: 0.6, w: function(W, H){ return Math.min(0.33 * W, 0.42 * H * 16 / 9); }, ar: 16 / 9, z: 2.3, rz: 1.3, ry: -4, side: 'below'},
+        {cx: 0.835, cy: 0.38, w: function(W, H){ return Math.min(0.16 * W, 0.48 * H * 0.75); }, ar: 3 / 4, z: 1.3, rz: 2.6, ry: -7, side: 'below'}
+      ],
+      mob: [
+        {cx: 0.33, cy: 0.27, w: function(W){ return 0.52 * W; }, ar: 4 / 5, z: 1.6, rz: -2, ry: 0, side: 'right'},
+        {cx: 0.64, cy: 0.535, w: function(W){ return 0.6 * W; }, ar: 16 / 9, z: 2.1, rz: 1.5, ry: 0, side: 'left'},
+        {cx: 0.3, cy: 0.785, w: function(W){ return 0.44 * W; }, ar: 3 / 4, z: 1.4, rz: 2, ry: 0, side: 'right'}
+      ]
+    };
     var G = {};
-    var shade = document.createElement('div'); shade.className = 'gl-shade'; shade.style.opacity = 0; canvas.parentNode.insertBefore(shade, canvas.nextSibling);
-    var vids = function(){ return heroes.filter(function(h){ return h.video; }); };
+    function pxw(z){ return 2 * (CAMZ - z) * TANH / G.H; }
     function layout(){
       var W = innerWidth, H = innerHeight;
       G.W = W; G.H = H; G.desk = W >= 768;
       renderer.setSize(W, H, false);
       camera.aspect = W / H; camera.updateProjectionMatrix();
-      var visH10 = 2 * CAMZ * Math.tan(FOV * D2R / 2);
+      var visH10 = 2 * CAMZ * TANH;
       var target = (G.desk ? Math.min(W, H) * 0.64 : W * 0.84) * Math.max(0.5, Math.min(1.5, num(M.size, 1)));
       G.scale = target * visH10 / (2 * R * H);
-      G.px = visH10 / H;
-      var s = 2 * (CAMZ - FLATZ) * Math.tan(FOV * D2R / 2) / H;
-      var cx = G.desk ? W * 0.2 : 0, cy = G.desk ? 0 : -H * 0.09;
-      var mw = G.desk ? W * 0.55 : W * 0.92, mh = G.desk ? H * 0.8 : H * 0.58;
+      var comp = G.desk ? COMP.desk : COMP.mob;
+      G.rects = [];
       heroes.forEach(function(h, k){
-        if (FOCUS === 'full'){
-          h.u.uFlatC.value.set(0, 0); h.u.uFlatS.value.set(W * s * 1.02, H * s * 1.02);
-          h.rect = {x: 0, y: 0, w: W, h: H}; cropFor(h); return;
+        var c = comp[k], w, hh;
+        if (G.desk){ w = c.w(W, H); hh = w / c.ar; }
+        else {
+          var top = 92, bot = H - 36, LH = 52, GAP = 16, AR = 1.6;
+          var ih = (bot - top - 3 * LH - 2 * GAP) / 3; w = Math.min(0.86 * W, ih * AR); hh = w / AR;
+          var slack = (bot - top) - 3 * (hh + LH) - 2 * GAP;
+          var y0 = top + Math.max(0, slack / 2) + k * (hh + LH + GAP);
+          var x0 = k === 1 ? W - 16 - w : 16;
+          c = {cx: (x0 + w / 2) / W, cy: (y0 + hh / 2) / H, ar: AR, z: 1.6, rz: [-1.1, 0.9, -0.7][k], ry: 0, side: 'row'};
         }
-        var ar = SD[k].cw / SD[k].ch, w = Math.min(mw, mh * ar), hh = w / ar;
-        h.u.uFlatC.value.set(cx * s, -cy * s);
-        h.u.uFlatS.value.set(w * s, hh * s);
-        h.rect = {x: W / 2 + cx - w / 2, y: H / 2 + cy - hh / 2, w: w, h: hh};
+        var s = pxw(c.z);
+        h.u.uC.value.set((c.cx * W - W / 2) * s, (H / 2 - c.cy * H) * s, c.z);
+        h.u.uS.value.set(w * s, hh * s);
+        h.u.uRot.value.set(0, c.ry * D2R, c.rz * D2R);
+        h.u.uArc.value.set((c.cx - 0.5) * 0.6, 0.25, 0.8);
+        h.u.uDrift.value = 0.012;
+        h.fa = c.ar; crops(h);
+        G.rects[k] = {x: c.cx * W - w / 2, y: c.cy * H - hh / 2, w: w, h: hh, side: c.side};
+      });
+      tiles.forEach(function(t){
+        if (t.hero != null) return;
+        var i = t.i, z = -1.2 - rnd(i, 3) * 5.5, s = pxw(z);
+        var visW = G.W * s, visH = G.H * s;
+        var ar = t.img ? t.img.width / t.img.height : 1.4;
+        var wpx = (G.desk ? 0.09 : 0.2) * W * (0.75 + rnd(i, 4) * 0.7);
+        var ang = rnd(i, 5) * Math.PI * 2, rad = 0.28 + rnd(i, 6) * 0.42;
+        t.u.uC.value.set(Math.cos(ang) * rad * visW, Math.sin(ang) * rad * visH * 0.9, z);
+        t.u.uS.value.set(wpx * s, wpx / ar * s);
+        t.u.uRot.value.set((rnd(i, 7) - 0.5) * 0.7, (rnd(i, 8) - 0.5) * 1.0, (rnd(i, 9) - 0.5) * 0.5);
+        t.u.uArc.value.set((rnd(i, 10) - 0.5) * 1.6, (rnd(i, 11) - 0.5) * 1.2, 0.4 + rnd(i, 12) * 0.9);
+        t.u.uDrift.value = 0.06 + rnd(i, 13) * 0.06;
+        t.fa = null;
+      });
+      placeLabels();
+    }
+    function placeLabels(){
+      labels.forEach(function(el, k){
+        var r = G.rects[k]; if (!r) return;
+        el.classList.toggle('side-l', r.side === 'left');
+        el.style.width = '';
+        var x, y, tr;
+        el.classList.toggle('row', r.side === 'row');
+        if (r.side === 'row'){ x = r.x; y = r.y + r.h + 10; tr = ''; el.style.width = r.w + 'px'; el.style.maxWidth = r.w + 'px'; }
+        else if (r.side === 'below'){ x = r.x; y = r.y + r.h + 18; tr = ''; el.style.maxWidth = Math.max(220, r.w) + 'px'; }
+        else if (r.side === 'right'){ x = r.x + r.w + 14; y = r.y + r.h; tr = ' translateY(-100%)'; el.style.maxWidth = Math.max(90, G.W - x - 14) + 'px'; }
+        else { el.style.maxWidth = Math.max(90, r.x - 28) + 'px'; x = 14; y = r.y + r.h; tr = ' translateY(-100%)'; el.style.width = (r.x - 28) + 'px'; }
+        el._x = x; el._y = y; el._tr = tr;
       });
     }
     layout();
     ScrollTrigger.addEventListener('refreshInit', layout);
 
-    /* the globe arrives: grows and unspins as the section scrolls in */
+    /* scroll → progress (pinned), smoothed in the render loop so it glides at any frame rate */
     var arrive = {v: 0};
-    gsap.fromTo(arrive, {v: 0}, {v: 1, ease: 'none', scrollTrigger: {trigger: '#work', start: 'top bottom', end: 'top top', scrub: 1}});
+    gsap.fromTo(arrive, {v: 0}, {v: 1, ease: 'none', scrollTrigger: {trigger: '#work', start: 'top bottom', end: 'top top', scrub: true}});
+    var goal = 0, ph = 0, interactive = false;
+    ScrollTrigger.create({
+      trigger: '.work-pin', start: 'top top', pin: true, anticipatePin: 1,
+      end: function(){ return '+=' + Math.round(Math.max(1.2, Math.min(3.2, num(M.scroll, 1.45) * 1.35)) * innerHeight); },
+      onUpdate: function(self){ goal = self.progress; }
+    });
 
     var clamp01 = function(x){ return x < 0 ? 0 : x > 1 ? 1 : x; };
-    var io2 = function(x){ return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; };
-    var io3 = function(x){ return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
-    var STEP = 2 * SLOT, MORPH_IN = 1.0, MORPH_OUT = 0.85, SPIN = num(M.spin, 0);
+    var ease = function(x){ return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+    var easeO = function(x){ return 1 - Math.pow(1 - x, 3); };
+    var introEl = $('.work-intro'), hint = $('.work-hint');
 
-    /* scrolling only drives captions and labels; the globe reads the playhead each frame */
-    var countEl = $('#workCount'), lastIdx = -1;
-    var tl = gsap.timeline({
-      defaults: {ease: 'power3.inOut'},
-      scrollTrigger: {
-        trigger: '.work-pin', start: 'top top', pin: true, scrub: 0.6, anticipatePin: 1,
-        end: function(){ return '+=' + Math.round(SN * Math.max(0.6, Math.min(3, num(M.scroll, 1.45))) * innerHeight); },
-        onUpdate: function(self){
-          var i = Math.min(SN - 1, Math.floor(self.progress * SN));
-          if (i !== lastIdx){ lastIdx = i; countEl.textContent = pad(i + 1) + ' / ' + pad(SN); }
-        }
-      }
-    });
-    tl.to('.work-intro', {autoAlpha: 0, y: -20, duration: 0.35}, 0);
-    SD.forEach(function(p, k){
-      var chars = $$('.ch', caps[k]), rest = $('.cap-rest', caps[k]), idx = $('.cap-idx', caps[k]);
-      gsap.set(chars, {yPercent: 110}); gsap.set([idx, rest], {autoAlpha: 0, y: 18});
-      var at = 'p' + k, out = 'o' + k;
-      if (k > 0) tl.addLabel('r' + k).to({}, {duration: 0.75});
-      tl.addLabel(at)
-        .to({}, {duration: MORPH_IN}, at)
-        .to(chars, {yPercent: 0, stagger: 0.012, duration: 0.55, ease: 'expo.out'}, at + '+=0.55')
-        .to([idx, rest], {autoAlpha: 1, y: 0, duration: 0.45, ease: 'expo.out', stagger: 0.06}, at + '+=0.65')
-        .to({}, {duration: 0.8})
-        .addLabel(out)
-        .to(chars, {yPercent: -110, stagger: 0.008, duration: 0.4, ease: 'power2.in'}, out)
-        .to([idx, rest], {autoAlpha: 0, y: -18, duration: 0.35, ease: 'power2.in'}, out)
-        .to({}, {duration: MORPH_OUT}, out);
-    });
-    tl.addLabel('fin').to({}, {duration: 0.6}, 'fin')
-      .to('.work-hint', {autoAlpha: 0, duration: 0.3}, 'fin')
-      .fromTo('.work-end', {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0, duration: 0.6, ease: 'expo.out'}, 'fin+=0.3')
-      .to({}, {duration: 0.6});
-
-    var state = {rot: 0, morph: new Array(SN).fill(0), dim: 0, fin: 0, active: -1};
-    function readPlayhead(t){
-      var L = tl.labels, rot = 0, dim = 0, act = -1;
-      for (var k = 0; k < SN; k++){
-        if (k > 0 && L['r' + k] != null) rot -= STEP * io2(clamp01((t - L['r' + k]) / 0.75));
-        var m = io3(clamp01((t - L['p' + k]) / MORPH_IN)) * (1 - io3(clamp01((t - L['o' + k]) / MORPH_OUT)));
-        state.morph[k] = m;
-        if (m > dim){ dim = m; act = k; }
-      }
-      state.rot = rot; state.dim = dim; state.active = dim > 0.6 ? act : -1;
-      state.fin = io3(clamp01((t - L.fin) / 0.6));
-    }
-
-    /* desktop: the globe leans toward the pointer */
-    var tilt = {x: 0, y: 0, tx: 0, ty: 0};
-    if (matchMedia('(hover: hover) and (pointer: fine)').matches){
+    var tilt = {x: 0, y: 0, tx: 0, ty: 0}, finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (finePointer){
       addEventListener('pointermove', function(e){ tilt.tx = (e.clientY / innerHeight - 0.5) * 0.28; tilt.ty = (e.clientX / innerWidth - 0.5) * 0.4; }, {passive: true});
     }
+    function heroAt(x, y){
+      if (!interactive || !G.rects) return -1;
+      for (var k = 0; k < G.rects.length; k++){ var r = G.rects[k]; if (x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h) return k; }
+      return -1;
+    }
+    canvas.addEventListener('pointermove', function(e){ var k = heroAt(e.clientX, e.clientY); hoverK = k; canvas.style.cursor = k >= 0 ? 'pointer' : 'default'; if (k >= 0) canvas.setAttribute('data-cursor', 'view'); else canvas.removeAttribute('data-cursor'); });
+    canvas.addEventListener('pointerleave', function(){ hoverK = -1; });
+    canvas.addEventListener('click', function(e){ var k = heroAt(e.clientX, e.clientY); if (k >= 0) goCat(CATS[k].key); });
 
-    var glOn = false, wasActive = -2;
-    ScrollTrigger.create({trigger: '#work', start: 'top bottom', end: 'bottom top', onToggle: function(self){ glOn = self.isActive; if (!glOn) vids().forEach(function(h){ h.video.pause(); }); }});
-    var t0 = performance.now(), spinAcc = 0, lastNow = 0;
+    var glOn = false;
+    ScrollTrigger.create({trigger: '#work', start: 'top bottom', end: 'bottom top', onToggle: function(self){
+      glOn = self.isActive;
+      if (!glOn) heroes.forEach(function(h){ if (h.video) h.video.pause(); });
+    }});
+    var spin = Math.max(num(M.spin, 0), 5) * D2R, rotY = 0, last = performance.now(), t0 = last;
     gsap.ticker.add(function(){
       if (!glOn || archOpen || !proj.hidden) return;
-      var now = (performance.now() - t0) / 1000;
+      var nowMs = performance.now(), dt = Math.min(0.1, (nowMs - last) / 1000); last = nowMs;
+      var now = (nowMs - t0) / 1000;
       shared.uTime.value = now;
-      var dt = Math.min(0.1, now - (G.last || now)); G.last = now;
-      G.ph = G.ph == null ? tl.time() : G.ph + (tl.time() - G.ph) * (1 - Math.exp(-dt * 9));
-      readPlayhead(G.ph);
-      if (vids().length) heroes.forEach(function(h){ if (!h.video) return; if (h.video.paused) { var pr = h.video.play(); if (pr && pr.catch) pr.catch(function(){}); } });
+      ph += (goal - ph) * (1 - Math.exp(-dt * 7));
+      if (Math.abs(goal - ph) < 0.0004) ph = goal;
+      var p = ph, U = clamp01((p - 0.05) / 0.66);
       tilt.x += (tilt.tx - tilt.x) * 0.06; tilt.y += (tilt.ty - tilt.y) * 0.06;
-      var a = io2(arrive.v);
-      if (state.dim > 0.01) spinAcc += (Math.round(spinAcc / (2 * Math.PI)) * 2 * Math.PI - spinAcc) * 0.08 * state.dim;
-      spinAcc += SPIN * D2R * (1 - state.dim) * Math.min(0.05, now - lastNow); lastNow = now;
-      group.rotation.y = state.rot * D2R + spinAcc + (1 - a) * 2.4 + tilt.y * (1 - state.dim) + Math.sin(now * 0.35) * 0.05 * (1 - state.dim);
-      group.rotation.x = 0.16 + tilt.x * (1 - state.dim) + (1 - a) * -0.5;
-      var stay = FOCUS === 'stay';
-      var sc = G.scale * (0.5 + 0.5 * a) * (stay ? (1 + 0.06 * state.dim) : (1 - 0.12 * state.dim)) * (1 - 0.35 * state.fin);
-      group.scale.setScalar(sc);
-      if (stay){
-        var e2 = io2(state.dim);
-        group.position.x = (G.desk ? G.W * 0.16 : 0) * G.px * e2;
-        group.position.y = (G.desk ? 0 : G.H * 0.12) * G.px * e2;
-      } else group.position.set(0, 0, 0);
+      rotY += spin * dt * (1 - U);
+      var a = easeO(arrive.v), still = 1 - U;
+      group.rotation.y = rotY + (1 - a) * 2.4 + tilt.y * still;
+      group.rotation.x = 0.16 + tilt.x * still + (1 - a) * -0.5;
+      group.scale.setScalar(G.scale * (0.5 + 0.5 * a) * (1 + 0.12 * U));
       group.updateMatrixWorld(true);
-      shared.uFin.value = state.fin;
-      tiles.forEach(function(t){ t.u.uDim.value = state.dim; });
-      if (FOCUS === 'full') shade.style.opacity = state.dim.toFixed(3);
-      heroes.forEach(function(h, k){
-        var m = state.morph[k];
-        if (FOCUS === 'stay'){ h.u.uMorph.value = 0; h.u.uLift.value = m; }
-        else { h.u.uMorph.value = m; h.u.uLift.value = 0; }
-        h.u.uDim.value = state.dim * (1 - m);
-        h.mesh.renderOrder = m > 0.01 ? 2 : 0;
+      var bgDim = ease(clamp01((p - 0.3) / 0.45));
+      tiles.forEach(function(t){
+        if (t.hero != null) return;
+        t.u.uT.value = ease(clamp01((U - t.delay) / 0.68));
+        t.u.uDim.value = bgDim;
       });
-      if (state.active !== wasActive){
-        wasActive = state.active;
-        canvas.style.cursor = state.active >= 0 ? 'pointer' : 'default';
-        if (state.active >= 0) canvas.setAttribute('data-cursor', 'view'); else canvas.removeAttribute('data-cursor');
-      }
+      heroes.forEach(function(h, k){
+        h.u.uT.value = ease(clamp01((p - 0.2 - k * 0.07) / 0.62));
+        var target = (interactive && hoverK === k) ? 1 : 0;
+        h.u.uHover.value += (target - h.u.uHover.value) * (1 - Math.exp(-dt * 10));
+        h.u.uDim.value = interactive && hoverK >= 0 && hoverK !== k ? 0.18 * h.u.uHover.value + 0.18 : 0;
+        if (h.video){ if (p > 0.4 && h.video.paused){ var pr = h.video.play(); if (pr && pr.catch) pr.catch(function(){}); } else if (p <= 0.4 && !h.video.paused) h.video.pause(); }
+        else if (h.vidEl && p > 0.25 && !h.vidLoad){ h.vidLoad = true; h.vidEl.preload = 'auto'; h.vidEl.load(); }
+      });
+      var la = clamp01((p - 0.86) / 0.1), wasI = interactive;
+      interactive = la > 0.6;
+      labels.forEach(function(el, k){
+        el.style.opacity = la;
+        el.style.visibility = la > 0.01 ? 'visible' : 'hidden';
+        el.style.transform = 'translate(' + el._x + 'px,' + (el._y + (1 - la) * 14) + 'px)' + (el._tr || '');
+        el.classList.toggle('on', interactive);
+        el.classList.toggle('is-hover', interactive && hoverK === k);
+      });
+      if (wasI !== interactive) $$('.cat-btn', catsEl).forEach(function(b){ b.tabIndex = interactive ? 0 : -1; });
+      introEl.style.opacity = 1 - clamp01(p / 0.06);
+      hint.style.opacity = la;
       renderer.render(scene, camera);
-    });
-    canvas.addEventListener('click', function(e){
-      var k = state.active;
-      if (k < 0) return;
-      if (FOCUS !== 'out'){ openProject(FEAT[k], e); return; }
-      var r = heroes[k].rect;
-      if (e.clientX >= r.x && e.clientX <= r.x + r.w && e.clientY >= r.y && e.clientY <= r.y + r.h) openProject(FEAT[k], e);
     });
   }
 

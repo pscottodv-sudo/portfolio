@@ -166,8 +166,9 @@ html.no-gl .work-list{display:block}
 .cp{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,4vw,64px);align-items:end}
 .cp.rev{grid-template-columns:minmax(0,4fr) minmax(0,7fr)}
 .cp.rev .cp-media{order:2}
-.cp-media{all:unset;cursor:pointer;display:block;overflow:hidden;background:var(--void);max-width:100%}
-.cp-media img,.cp-media video{display:block;width:100%;height:auto;max-height:82vh;object-fit:cover;transition:transform 1.4s var(--ease)}
+.cp-media{all:unset;cursor:pointer;display:block;overflow:hidden;width:fit-content;max-width:100%;justify-self:start}
+.cp.rev .cp-media{justify-self:end}
+.cp-media img,.cp-media video{display:block;width:auto;height:auto;max-width:100%;max-height:82vh;object-fit:contain;transition:transform 1.4s var(--ease)}
 .cp-media:hover img,.cp-media:hover video{transform:scale(1.03)}
 .cp-media:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 .cp-text{display:grid;gap:14px;align-content:end}
