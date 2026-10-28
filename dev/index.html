@@ -151,6 +151,11 @@ html.no-gl .work-list{display:block}
 .cat-l.side-l .cat-btn{justify-self:end}
 .cat-l.is-hover .cat-btn,.cat-btn:focus-visible{background:var(--ink);color:var(--ground)}
 @media (max-width:767px){.cat-name{font-size:26px}.cat-l .btn-view{min-height:38px;padding:0 13px;font-size:12px}.cat-l{gap:7px}.cb-n{display:none}}
+.cat-l.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:10px;row-gap:0}
+.cat-l.row .cat-name{font-size:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat-l.row .cat-btn{justify-self:end}
+@media (max-width:520px){.nav{gap:10px}.nav-name{font-size:11px;letter-spacing:0}.nav-links{padding:7px 12px;gap:12px}.nav-links a,.nav-links .nav-btn{font-size:12px;letter-spacing:.05em}}
+@media (max-width:350px){.nav-name{white-space:normal;max-width:96px;line-height:1.15}}
 /* ---------- category section ---------- */
 .catsec{padding-block:clamp(96px,14vh,170px) clamp(40px,8vh,90px);scroll-margin-top:0}
 .cs-head{display:grid;gap:12px;margin-bottom:clamp(56px,9vw,130px)}
@@ -1060,17 +1065,18 @@ body{margin:0}
       'mat3 rz(float a){ float c = cos(a), s = sin(a); return mat3(c, s, 0.0, -s, c, 0.0, 0.0, 0.0, 1.0); }',
       'void main(){',
       '  vUv = uv;',
-      '  float lon = uLon + (uv.x - 0.5) * uDLon;',
-      '  float lat = uLat + (uv.y - 0.5) * uDLat;',
-      '  float br = 1.0 + 0.02 * uBreathe * sin(lat * 5.0 + lon * 3.0 + uTime * 1.2) * (1.0 - uT);',
-      '  vec3 s = uR * br * vec3(cos(lat) * sin(lon), sin(lat), cos(lat) * cos(lon));',
+      '  vec3 n = vec3(cos(uLat) * sin(uLon), sin(uLat), cos(uLat) * cos(uLon));',
+      '  vec3 e = vec3(cos(uLon), 0.0, -sin(uLon));',
+      '  vec3 up = vec3(-sin(uLat) * sin(uLon), cos(uLat), -sin(uLat) * cos(uLon));',
+      '  float br = 1.0 + 0.025 * uBreathe * sin(uLat * 5.0 + uLon * 3.0 + uTime * 1.2) * (1.0 - uT);',
+      '  vec3 s = uR * br * n + (uv.x - 0.5) * uR * uDLon * cos(uLat) * e + (uv.y - 0.5) * uR * uDLat * up;',
       '  vec4 sw = uSphere * vec4(s, 1.0);',
       '  vec3 c0 = (uSphere * vec4(0.0, 0.0, 0.0, 1.0)).xyz;',
       '  vec3 l = vec3((uv - 0.5) * uS * (1.0 + 0.04 * uHover), 0.0);',
       '  l = rz(uRot.z * uT) * ry(uRot.y * uT) * rx(uRot.x * uT) * l;',
       '  vec3 drift = uDrift * vec3(sin(uTime * 0.37 + uSeed * 6.1), sin(uTime * 0.29 + uSeed * 3.7), 0.6 * sin(uTime * 0.23 + uSeed * 1.3));',
       '  vec3 p = mix(sw.xyz, uC + drift * uT + l, uT) + uArc * sin(3.14159265 * uT);',
-      '  vFace = mix(normalize(sw.xyz - c0).z, 1.0, uT);',
+      '  vFace = mix(normalize(mat3(uSphere) * n).z, 1.0, uT);',
       '  vT = uT;',
       '  gl_Position = projectionMatrix * viewMatrix * vec4(p, 1.0);',
       '}'
@@ -1211,7 +1217,17 @@ body{margin:0}
       var comp = G.desk ? COMP.desk : COMP.mob;
       G.rects = [];
       heroes.forEach(function(h, k){
-        var c = comp[k], w = c.w(W, H), hh = w / c.ar, s = pxw(c.z);
+        var c = comp[k], w, hh;
+        if (G.desk){ w = c.w(W, H); hh = w / c.ar; }
+        else {
+          var top = 92, bot = H - 36, LH = 52, GAP = 16, AR = 1.6;
+          var ih = (bot - top - 3 * LH - 2 * GAP) / 3; w = Math.min(0.86 * W, ih * AR); hh = w / AR;
+          var slack = (bot - top) - 3 * (hh + LH) - 2 * GAP;
+          var y0 = top + Math.max(0, slack / 2) + k * (hh + LH + GAP);
+          var x0 = k === 1 ? W - 16 - w : 16;
+          c = {cx: (x0 + w / 2) / W, cy: (y0 + hh / 2) / H, ar: AR, z: 1.6, rz: [-1.1, 0.9, -0.7][k], ry: 0, side: 'row'};
+        }
+        var s = pxw(c.z);
         h.u.uC.value.set((c.cx * W - W / 2) * s, (H / 2 - c.cy * H) * s, c.z);
         h.u.uS.value.set(w * s, hh * s);
         h.u.uRot.value.set(0, c.ry * D2R, c.rz * D2R);
@@ -1242,7 +1258,9 @@ body{margin:0}
         el.classList.toggle('side-l', r.side === 'left');
         el.style.width = '';
         var x, y, tr;
-        if (r.side === 'below'){ x = r.x; y = r.y + r.h + 18; tr = ''; el.style.maxWidth = Math.max(220, r.w) + 'px'; }
+        el.classList.toggle('row', r.side === 'row');
+        if (r.side === 'row'){ x = r.x; y = r.y + r.h + 10; tr = ''; el.style.width = r.w + 'px'; el.style.maxWidth = r.w + 'px'; }
+        else if (r.side === 'below'){ x = r.x; y = r.y + r.h + 18; tr = ''; el.style.maxWidth = Math.max(220, r.w) + 'px'; }
         else if (r.side === 'right'){ x = r.x + r.w + 14; y = r.y + r.h; tr = ' translateY(-100%)'; el.style.maxWidth = Math.max(90, G.W - x - 14) + 'px'; }
         else { el.style.maxWidth = Math.max(90, r.x - 28) + 'px'; x = 14; y = r.y + r.h; tr = ' translateY(-100%)'; el.style.width = (r.x - 28) + 'px'; }
         el._x = x; el._y = y; el._tr = tr;
