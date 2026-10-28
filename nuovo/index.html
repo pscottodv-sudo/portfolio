@@ -1137,6 +1137,7 @@ body{margin:0}
       tex.generateMipmaps = !!gl2; tex.minFilter = gl2 ? THREE.LinearMipmapLinearFilter : THREE.LinearFilter; tex.anisotropy = ANISO;
       if (renderer.initTexture) renderer.initTexture(tex);
       t.u.uTex.value = tex; t.u.uReady.value = 1; crops(t);
+      if (t.hero != null && G.W) layout();
     }
     function makeTile(src, lon, lat, dLon, dLat, big){
       var i = tiles.length;
@@ -1191,7 +1192,7 @@ body{margin:0}
           v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('muted', ''); v.preload = 'metadata'; v.src = hv;
           v.addEventListener('loadeddata', function(){
             var vt = new THREE.VideoTexture(v); vt.minFilter = THREE.LinearFilter; vt.generateMipmaps = false;
-            ht.video = v; ht.img = {width: v.videoWidth, height: v.videoHeight}; ht.u.uTex.value = vt; ht.u.uReady.value = 1; crops(ht);
+            ht.video = v; ht.img = {width: v.videoWidth, height: v.videoHeight}; ht.u.uTex.value = vt; ht.u.uReady.value = 1; crops(ht); if (G.W) layout();
           }, {once: true});
           ht.vidEl = v;
         })(ht, hv);
@@ -1227,16 +1228,33 @@ body{margin:0}
       G.scale = target * visH10 / (2 * R * H);
       var comp = G.desk ? COMP.desk : COMP.mob;
       G.rects = [];
+      var iar = heroes.map(function(h, k){ return h.img && h.img.width && h.img.height ? h.img.width / h.img.height : comp[k].ar; });
+      var MB = null;
+      if (!G.desk){
+        /* phone: each photo at its own proportions, stacked and alternating, name + button in the free space beside it */
+        var wh = $('.work-head'), top = Math.max(84, wh ? wh.offsetTop + wh.offsetHeight + 16 : 84), bot = H - 46;
+        var wmax = Math.min(0.58 * W, W - 176), hs = iar.map(function(a){ return wmax / a; });
+        var sum = hs.reduce(function(a, b){ return a + b; }, 0), avail = bot - top - 2 * 14;
+        var sc = sum > avail ? avail / sum : 1;
+        hs = hs.map(function(h){ return h * sc; });
+        sum = sum * sc;
+        var gap = Math.min(44, Math.max(14, (bot - top - sum) / 2));
+        var y = top + Math.max(0, (bot - top - sum - 2 * gap) / 2);
+        MB = hs.map(function(hh, k){ var w = hh * iar[k], x0 = k === 1 ? W - 16 - w : 16, r = {x: x0, y: y, w: w, h: hh}; y += hh + gap; return r; });
+      }
       heroes.forEach(function(h, k){
         var c = comp[k], w, hh;
-        if (G.desk){ w = c.w(W, H); hh = w / c.ar; }
-        else {
-          var top = 92, bot = H - 36, LH = 52, GAP = 16, AR = 1.6;
-          var ih = (bot - top - 3 * LH - 2 * GAP) / 3; w = Math.min(0.86 * W, ih * AR); hh = w / AR;
-          var slack = (bot - top) - 3 * (hh + LH) - 2 * GAP;
-          var y0 = top + Math.max(0, slack / 2) + k * (hh + LH + GAP);
-          var x0 = k === 1 ? W - 16 - w : 16;
-          c = {cx: (x0 + w / 2) / W, cy: (y0 + hh / 2) / H, ar: AR, z: 1.6, rz: [-1.1, 0.9, -0.7][k], ry: 0, side: 'row'};
+        var ia = iar[k];
+        if (G.desk){
+          /* same visual weight as the slot, but the photo keeps its own proportions */
+          var bw = c.w(W, H), bh = bw / c.ar;
+          w = Math.sqrt(bw * bh * ia); hh = w / ia;
+          if (hh > bh * 1.15){ hh = bh * 1.15; w = hh * ia; }
+          if (w > bw * 1.3){ w = bw * 1.3; hh = w / ia; }
+          c = Object.assign({}, c, {ar: ia});
+        } else {
+          var m = MB[k]; w = m.w; hh = m.h;
+          c = {cx: (m.x + w / 2) / W, cy: (m.y + hh / 2) / H, ar: ia, z: 1.6, rz: [-1.1, 0.9, -0.7][k], ry: 0, side: k === 1 ? 'left' : 'right'};
         }
         var s = pxw(c.z);
         h.u.uC.value.set((c.cx * W - W / 2) * s, (H / 2 - c.cy * H) * s, c.z);
@@ -1274,6 +1292,14 @@ body{margin:0}
         else if (r.side === 'below'){ x = r.x; y = r.y + r.h + 18; tr = ''; el.style.maxWidth = Math.max(220, r.w) + 'px'; }
         else if (r.side === 'right'){ x = r.x + r.w + 14; y = r.y + r.h; tr = ' translateY(-100%)'; el.style.maxWidth = Math.max(90, G.W - x - 14) + 'px'; }
         else { el.style.maxWidth = Math.max(90, r.x - 28) + 'px'; x = 14; y = r.y + r.h; tr = ' translateY(-100%)'; el.style.width = (r.x - 28) + 'px'; }
+        var nm = el.querySelector('.cat-name');
+        if (nm){
+          nm.style.fontSize = ''; nm.style.whiteSpace = G.desk ? '' : 'nowrap';
+          if (!G.desk){
+            var av = parseFloat(el.style.maxWidth) || 120, sw = nm.scrollWidth;
+            if (sw > av) nm.style.fontSize = Math.max(14, parseFloat(getComputedStyle(nm).fontSize) * av / sw * 0.97) + 'px';
+          }
+        }
         el._x = x; el._y = y; el._tr = tr;
       });
     }
