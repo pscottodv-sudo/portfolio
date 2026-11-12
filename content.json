@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-12T12:49:21.177Z",
+ "updated": "2026-11-12T15:50:00.000Z",
  "projects": [
   {
    "id": "pmwdhalrmlp2g",
@@ -12,16 +12,16 @@
     "it": "2026"
    },
    "tag": {
-    "en": "DOP · Color grading",
-    "it": "DOP · Color grading"
+    "en": "DoP · Color grading",
+    "it": "DoP · Color grading"
    },
    "short": {
-    "en": "Dop and Color Grading for the Videoclip \"Cristo Santo\" ",
-    "it": "Dop e Color Grading per il Videoclip \"Cristo Santo\" "
+    "en": "DoP and color grading for the music video \"Cristo Santo\".",
+    "it": "DoP e color grading per il videoclip \"Cristo Santo\"."
    },
    "desc": {
-    "en": "Dop and Color Grading for the Videoclip \"Cristo Santo\" ",
-    "it": "Dop e Color Grading per il Videoclip \"Cristo Santo\" "
+    "en": "DoP and color grading for the music video \"Cristo Santo\".",
+    "it": "DoP e color grading per il videoclip \"Cristo Santo\"."
    },
    "cover": "/foto/pmwdhalrmlp2g/cover/mwdhdl1d7yfe.jpg",
    "images": [],
@@ -69,7 +69,7 @@
     }
    ],
    "clips": [],
-   "reel": "https://www.youtube.com/watch?v=mR9X9DScxLM&list=RDmR9X9DScxLM&start_radio=1",
+   "reel": "https://www.youtube.com/watch?v=mR9X9DScxLM",
    "reelPos": "afterGrade",
    "coverImg": {
     "w": 3840,
@@ -188,7 +188,7 @@
   {
    "id": "pmvclg20qdizo",
    "group": "Video",
-   "name": ".Mgc Video Backstage",
+   "name": ".MgC Backstage Video",
    "visible": true,
    "year": {
     "en": "2026",
@@ -199,12 +199,12 @@
     "it": "Backstage · Color grading"
    },
    "short": {
-    "en": "Color grading for the Behind the scenes of the .MgC show at Milan Fashion Week 2026",
-    "it": "Color Grading del video di backstage della sfilata di .MgC alla Milano Fashion Week 2026"
+    "en": "Color grading for the behind-the-scenes video of the .MgC show at Milan Fashion Week 2026.",
+    "it": "Color grading del video di backstage della sfilata di .MgC alla Milano Fashion Week 2026."
    },
    "desc": {
-    "en": "Color grading for the Behind the scenes of the .MgC show at Milan Fashion Week 2026",
-    "it": "Color Grading del video di backstage della sfilata di .MgC alla Milano Fashion Week 2026"
+    "en": "Color grading for the behind-the-scenes video of the .MgC show at Milan Fashion Week 2026.",
+    "it": "Color grading del video di backstage della sfilata di .MgC alla Milano Fashion Week 2026."
    },
    "cover": "/foto/pmvclg20qdizo/cover/mvclxtxu2zmo.jpg",
    "images": [],
@@ -253,7 +253,7 @@
   {
    "id": "pmvcj5wtdliis",
    "group": "Video",
-   "name": " Backstage Out of Place",
+   "name": "Out of Place Backstage Video",
    "visible": true,
    "year": {
     "en": "2026",
@@ -264,12 +264,12 @@
     "it": "Backstage · Color grading"
    },
    "short": {
-    "en": "Color Grading for the Behind the scenes of the Out of Place shoot in Naples’ Rione Sanità",
-    "it": "Color Grading del backstage dello shooting di Out of Place nel Rione Sanità, a Napoli"
+    "en": "Color grading for the behind-the-scenes video of the Out of Place shoot in Naples' Rione Sanità.",
+    "it": "Color grading del video di backstage dello shooting di Out of Place nel Rione Sanità, a Napoli."
    },
    "desc": {
-    "en": "Color Grading for the Behind the scenes of the Out of Place shoot in Naples’ Rione Sanità",
-    "it": "Color Grading del backstage dello shooting di Out of Place nel Rione Sanità, a Napoli"
+    "en": "Color grading for the behind-the-scenes video of the Out of Place shoot in Naples' Rione Sanità.",
+    "it": "Color grading del video di backstage dello shooting di Out of Place nel Rione Sanità, a Napoli."
    },
    "cover": "/foto/pmvcj5wtdliis/cover/mvcjd0ptji71.jpg",
    "images": [],
@@ -325,16 +325,16 @@
     "it": "2026"
    },
    "tag": {
-    "en": "Editorial · Published in Seline Magazine",
-    "it": "Editoriale · pubblicato su Seline Magazine"
+    "en": "Editorial · Seline Magazine",
+    "it": "Editoriale · Seline Magazine"
    },
    "short": {
-    "en": "Published on Seline Magazine, captures Naples' Rione Sanità, between heritage, tourism and belonging.",
-    "it": "Pubblicato su Seline Magazine, racconta Il Rione Sanità tra tradizione, turismo e appartenenza."
+    "en": "Published in Seline Magazine. Shot in Naples' Rione Sanità, between heritage, tourism and belonging.",
+    "it": "Pubblicato su Seline Magazine. Scattato nel Rione Sanità, tra tradizione, turismo e appartenenza."
    },
    "desc": {
-    "en": "Published on Seline Magazine, captures Naples' Rione Sanità, between heritage, tourism and belonging.",
-    "it": "Pubblicato su Seline Magazine, racconta Il Rione Sanità tra tradizione, turismo e appartenenza."
+    "en": "Published in Seline Magazine. Shot in Naples' Rione Sanità, between heritage, tourism and belonging.",
+    "it": "Pubblicato su Seline Magazine. Scattato nel Rione Sanità, tra tradizione, turismo e appartenenza."
    },
    "cover": "/foto/editorial/out-of-place-17899261130621369.jpg",
    "images": [
@@ -438,16 +438,16 @@
     "it": "2026"
    },
    "tag": {
-    "en": "Backstage at MILAN FASHION WEEK",
-    "it": "Backstage alla MILANO FASHION WEEK"
+    "en": "Backstage · Milan Fashion Week",
+    "it": "Backstage · Milano Fashion Week"
    },
    "short": {
-    "en": "Backstage at the .MgC show, a fashion design collective, during Milan Fashion Week 2026",
-    "it": "Backstage della sfilata di .MgC, collettivo di fashion designer, alla Milano Fashion Week 2026"
+    "en": "Backstage at the show of .MgC, a fashion design collective, during Milan Fashion Week 2026.",
+    "it": "Backstage della sfilata di .MgC, collettivo di fashion designer, alla Milano Fashion Week 2026."
    },
    "desc": {
-    "en": "Backstage at the .MgC show, a fashion design collective, during Milan Fashion Week 2026",
-    "it": "Backstage della sfilata di .MgC, collettivo di fashion designer, alla Milano Fashion Week 2026"
+    "en": "Backstage at the show of .MgC, a fashion design collective, during Milan Fashion Week 2026.",
+    "it": "Backstage della sfilata di .MgC, collettivo di fashion designer, alla Milano Fashion Week 2026."
    },
    "cover": "/foto/pmvaruntyuzry/mvarwoq1bvh4.jpg",
    "images": [
@@ -551,16 +551,16 @@
     "it": "2026"
    },
    "tag": {
-    "en": "DOP · Color grading",
-    "it": "DOP · Color grading"
+    "en": "DoP · Color grading",
+    "it": "DoP · Color grading"
    },
    "short": {
-    "en": "DOP and color grading for an IED graduation fashion film.",
-    "it": "DOP e color grading per un fashion film di laurea IED."
+    "en": "DoP and color grading for an IED graduation fashion film.",
+    "it": "DoP e color grading per un fashion film di laurea IED."
    },
    "desc": {
-    "en": "DOP and color grading for an IED graduation fashion film.",
-    "it": "DOP e color grading per un fashion film di laurea IED."
+    "en": "DoP and color grading for an IED graduation fashion film.",
+    "it": "DoP e color grading per un fashion film di laurea IED."
    },
    "cover": "/foto/pmv9lunsjf4y4/cover/mv9mme33zu5b.jpg",
    "images": [],
@@ -628,7 +628,7 @@
     }
    ],
    "clips": [],
-   "reel": "https://youtu.be/OQP4ILPUylI?si=O4rv5s_rBzxbe_Cl",
+   "reel": "https://youtu.be/OQP4ILPUylI",
    "coverImg": {
     "w": 3840,
     "h": 2160,
@@ -803,8 +803,8 @@
     "it": "Un piccolo bagno piastrellato e una sola luce verde."
    },
    "desc": {
-    "en": "A small tiled bathroom lit by a single green light. Tight, uncomfortable framing: a lit match, smoke, running eyeliner, wet hair stuck to the face. As cold as Aethereal is warm.",
-    "it": "Un piccolo bagno piastrellato e una sola luce verde. Inquadrature strette, quasi scomode: un fiammifero acceso, il fumo, l'eyeliner che cola, i capelli bagnati sul viso. Tanto fredda quanto Aethereal è calda."
+    "en": "A small tiled bathroom lit by a single green light. Tight, uncomfortable framing: a lit match, smoke, running eyeliner, wet hair stuck to the face.",
+    "it": "Un piccolo bagno piastrellato e una sola luce verde. Inquadrature strette, quasi scomode: un fiammifero acceso, il fumo, l'eyeliner che cola, i capelli bagnati sul viso."
    },
    "cover": "/foto/editorial/neon-therapy-17805172142622kbp.jpg",
    "images": [
@@ -1495,11 +1495,11 @@
    },
    "short": {
     "en": "The city celebrates Napoli's Serie A title.",
-    "it": "La festa del Napoli campione d'Italia."
+    "it": "La città festeggia lo scudetto del Napoli."
    },
    "desc": {
     "en": "The city celebrates Napoli's Serie A title.",
-    "it": "La festa del Napoli campione d'Italia."
+    "it": "La città festeggia lo scudetto del Napoli."
    },
    "cover": "/foto/reportage/scudetto-1782986978255967.jpg",
    "images": [
