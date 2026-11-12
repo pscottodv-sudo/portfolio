@@ -1,7 +1,83 @@
 {
  "version": 2,
- "updated": "2026-11-12T11:42:26.903Z",
+ "updated": "2026-11-12T11:57:25.483Z",
  "projects": [
+  {
+   "id": "pmwdhalrmlp2g",
+   "group": "Video",
+   "name": "Cristo Santo Videoclip",
+   "visible": true,
+   "year": {
+    "en": "2026",
+    "it": "2026"
+   },
+   "tag": {
+    "en": "DOP · Color grading",
+    "it": "DOP · Color grading"
+   },
+   "short": {
+    "en": "Dop and Color Grading for the Videoclip \"Cristo Santo\" ",
+    "it": "Dop e Color Grading per il Videoclip \"Cristo Santo\" "
+   },
+   "desc": {
+    "en": "",
+    "it": ""
+   },
+   "cover": "/foto/pmwdhalrmlp2g/cover/mwdhdl1d7yfe.jpg",
+   "images": [],
+   "films": [],
+   "pairs": [
+    {
+     "label": "",
+     "log": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmwdhalrmlp2g/grade/mwdhotbxmdvf.jpg",
+      "m": "/foto/pmwdhalrmlp2g/grade/mwdhotbxmdvf.jpg",
+      "g": "/img/g/pmwdhalrmlp2g/grade/mwdhotbxmdvf.jpg",
+      "t": "/img/t/pmwdhalrmlp2g/grade/mwdhotbxmdvf.jpg"
+     },
+     "grade": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmwdhalrmlp2g/grade/mwdhoolrzn3c.jpg",
+      "m": "/foto/pmwdhalrmlp2g/grade/mwdhoolrzn3c.jpg",
+      "g": "/img/g/pmwdhalrmlp2g/grade/mwdhoolrzn3c.jpg",
+      "t": "/img/t/pmwdhalrmlp2g/grade/mwdhoolrzn3c.jpg"
+     }
+    },
+    {
+     "label": "",
+     "log": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmwdhalrmlp2g/grade/mwdhp6h6ihux.jpg",
+      "m": "/foto/pmwdhalrmlp2g/grade/mwdhp6h6ihux.jpg",
+      "g": "/img/g/pmwdhalrmlp2g/grade/mwdhp6h6ihux.jpg",
+      "t": "/img/t/pmwdhalrmlp2g/grade/mwdhp6h6ihux.jpg"
+     },
+     "grade": {
+      "w": 3840,
+      "h": 2160,
+      "src": "/foto/pmwdhalrmlp2g/grade/mwdhp1gyhckc.jpg",
+      "m": "/foto/pmwdhalrmlp2g/grade/mwdhp1gyhckc.jpg",
+      "g": "/img/g/pmwdhalrmlp2g/grade/mwdhp1gyhckc.jpg",
+      "t": "/img/t/pmwdhalrmlp2g/grade/mwdhp1gyhckc.jpg"
+     }
+    }
+   ],
+   "clips": [],
+   "reel": "https://www.youtube.com/watch?v=mR9X9DScxLM&list=RDmR9X9DScxLM&start_radio=1",
+   "reelPos": "afterGrade",
+   "coverImg": {
+    "w": 3840,
+    "h": 2160,
+    "src": "/foto/pmwdhalrmlp2g/cover/mwdhdl1d7yfe.jpg",
+    "m": "/foto/pmwdhalrmlp2g/cover/mwdhdl1d7yfe.jpg",
+    "g": "/img/g/pmwdhalrmlp2g/cover/mwdhdl1d7yfe.jpg",
+    "t": "/img/t/pmwdhalrmlp2g/cover/mwdhdl1d7yfe.jpg"
+   }
+  },
   {
    "id": "pmvl4oktq9011",
    "group": "Fashion editorial",
@@ -1802,7 +1878,8 @@
    "outofplace",
    "pmvl4oktq9011",
    "pmv9lunsjf4y4",
-   "shibuya"
+   "shibuya",
+   "pmwdhalrmlp2g"
   ],
   "tiles": [
    "/img/t/neon/01.jpg",
