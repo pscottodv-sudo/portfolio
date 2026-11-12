@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-12T11:57:25.483Z",
+ "updated": "2026-11-12T12:03:34.679Z",
  "projects": [
   {
    "id": "pmwdhalrmlp2g",
@@ -1981,6 +1981,15 @@
    }
   ],
   "credits": [
+   {
+    "name": "Enzomnia Magazine",
+    "what": {
+     "en": "Cover Photo",
+     "it": "Foto di Copertina"
+    },
+    "proj": "pmvl4oktq9011",
+    "year": "2026"
+   },
    {
     "name": "Seline Magazine",
     "what": {
