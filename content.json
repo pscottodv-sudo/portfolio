@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-10-23T16:10:30.422Z",
+ "updated": "2026-11-12T11:24:49.036Z",
  "projects": [
   {
    "id": "pmvl4oktq9011",
@@ -713,28 +713,12 @@
      "g": "/img/m/neon/03.jpg"
     },
     {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/neon-therapy-1780517224959v2dd.jpg",
-     "m": "/foto/editorial/neon-therapy-1780517224959v2dd.jpg",
-     "t": "/img/t/neon/04.jpg",
-     "g": "/img/m/neon/04.jpg"
-    },
-    {
      "w": 6046,
      "h": 4031,
      "src": "/foto/editorial/neon-therapy-178051722873468i2.jpg",
      "m": "/foto/editorial/neon-therapy-178051722873468i2.jpg",
      "t": "/img/t/neon/05.jpg",
      "g": "/img/m/neon/05.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/neon-therapy-1780517232490jgbr.jpg",
-     "m": "/foto/editorial/neon-therapy-1780517232490jgbr.jpg",
-     "t": "/img/t/neon/06.jpg",
-     "g": "/img/m/neon/06.jpg"
     },
     {
      "w": 6192,
@@ -872,127 +856,6 @@
      "m": "/foto/editorial/punk-ture-1780513111070mcyy.jpg",
      "t": "/img/t/punkture/11.jpg",
      "g": "/img/m/punkture/11.jpg"
-    }
-   ]
-  },
-  {
-   "id": "aethereal",
-   "group": "Fashion editorial",
-   "name": "Aethereal",
-   "visible": true,
-   "year": {
-    "en": "2026",
-    "it": "2026"
-   },
-   "tag": {
-    "en": "Editorial · Portrait · Conceptual",
-    "it": "Editoriale · Ritratto · Concettuale"
-   },
-   "short": {
-    "en": "Late-afternoon light, a white lace dress and a bunch of wildflowers picked in an overgrown park.",
-    "it": "Luce del tardo pomeriggio, un abito di pizzo bianco, un mazzo di fiori di campo raccolto in un parco lasciato crescere."
-   },
-   "desc": {
-    "en": "Late-afternoon light, a white lace dress and a bunch of wildflowers picked in an overgrown park. Warm, blown-out sun, soft focus and one frame dissolving into motion blur: closer to a dream than a document.",
-    "it": "Luce del tardo pomeriggio, un abito di pizzo bianco, un mazzo di fiori di campo raccolto in un parco lasciato crescere. Sole caldo e sovraesposto, fuoco morbido, uno scatto che si trasforma in mosso: più un sogno che un documento."
-   },
-   "cover": "/foto/editorial/aethereal-1780512567270.jpg",
-   "images": [
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512560338.jpg",
-     "m": "/foto/editorial/aethereal-1780512560338.jpg",
-     "t": "/img/t/aethereal/01.jpg",
-     "g": "/img/m/aethereal/01.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512562996.jpg",
-     "m": "/foto/editorial/aethereal-1780512562996.jpg",
-     "t": "/img/t/aethereal/02.jpg",
-     "g": "/img/m/aethereal/02.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512565195.jpg",
-     "m": "/foto/editorial/aethereal-1780512565195.jpg",
-     "t": "/img/t/aethereal/03.jpg",
-     "g": "/img/m/aethereal/03.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512567270.jpg",
-     "m": "/foto/editorial/aethereal-1780512567270.jpg",
-     "t": "/img/t/aethereal/04.jpg",
-     "g": "/img/m/aethereal/04.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512571351.jpg",
-     "m": "/foto/editorial/aethereal-1780512571351.jpg",
-     "t": "/img/t/aethereal/05.jpg",
-     "g": "/img/m/aethereal/05.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512574058.jpg",
-     "m": "/foto/editorial/aethereal-1780512574058.jpg",
-     "t": "/img/t/aethereal/06.jpg",
-     "g": "/img/m/aethereal/06.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512578111.jpg",
-     "m": "/foto/editorial/aethereal-1780512578111.jpg",
-     "t": "/img/t/aethereal/07.jpg",
-     "g": "/img/m/aethereal/07.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512578882.jpg",
-     "m": "/foto/editorial/aethereal-1780512578882.jpg",
-     "t": "/img/t/aethereal/08.jpg",
-     "g": "/img/m/aethereal/08.jpg"
-    },
-    {
-     "w": 3000,
-     "h": 2000,
-     "src": "/foto/editorial/aethereal-1780512581427.jpg",
-     "m": "/foto/editorial/aethereal-1780512581427.jpg",
-     "t": "/img/t/aethereal/09.jpg",
-     "g": "/img/m/aethereal/09.jpg"
-    },
-    {
-     "w": 3000,
-     "h": 2000,
-     "src": "/foto/editorial/aethereal-1780512583085.jpg",
-     "m": "/foto/editorial/aethereal-1780512583085.jpg",
-     "t": "/img/t/aethereal/10.jpg",
-     "g": "/img/m/aethereal/10.jpg"
-    },
-    {
-     "w": 2000,
-     "h": 3000,
-     "src": "/foto/editorial/aethereal-1780512584142.jpg",
-     "m": "/foto/editorial/aethereal-1780512584142.jpg",
-     "t": "/img/t/aethereal/11.jpg",
-     "g": "/img/m/aethereal/11.jpg"
-    },
-    {
-     "w": 3000,
-     "h": 2000,
-     "src": "/foto/editorial/aethereal-1780512585226.jpg",
-     "m": "/foto/editorial/aethereal-1780512585226.jpg",
-     "t": "/img/t/aethereal/12.jpg",
-     "g": "/img/m/aethereal/12.jpg"
     }
    ]
   },
@@ -1997,8 +1860,10 @@
    "spin": 0,
    "size": 1,
    "scroll": 1.45,
-   "density": "media"
-  }
+   "density": "media",
+   "focus": "out"
+  },
+  "categories": {}
  },
  "site": {
   "hero": "/foto/hero-1789932519574.jpg",
