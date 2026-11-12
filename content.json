@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-12T11:24:49.036Z",
+ "updated": "2026-11-12T11:42:26.903Z",
  "projects": [
   {
    "id": "pmvl4oktq9011",
@@ -202,7 +202,7 @@
     }
    ],
    "clips": [],
-   "reel": "https://vimeo.com/1236838140?share=copy&fl=sv&fe=ci",
+   "reel": "https://youtu.be/4BSk98p-23M",
    "coverImg": {
     "w": 1620,
     "h": 1080,
@@ -255,14 +255,6 @@
     {
      "w": 4128,
      "h": 6192,
-     "src": "/foto/editorial/out-of-place-17840332182564093.jpg",
-     "m": "/foto/editorial/out-of-place-17840332182564093.jpg",
-     "t": "/img/t/outofplace/02.jpg",
-     "g": "/img/m/outofplace/02.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
      "src": "/foto/editorial/out-of-place-1784033224318844.jpg",
      "m": "/foto/editorial/out-of-place-1784033224318844.jpg",
      "t": "/img/t/outofplace/03.jpg",
@@ -307,22 +299,6 @@
      "m": "/foto/editorial/out-of-place-17840332519336043.jpg",
      "t": "/img/t/outofplace/08.jpg",
      "g": "/img/m/outofplace/08.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-17840332536545253.jpg",
-     "m": "/foto/editorial/out-of-place-17840332536545253.jpg",
-     "t": "/img/t/outofplace/09.jpg",
-     "g": "/img/m/outofplace/09.jpg"
-    },
-    {
-     "w": 6192,
-     "h": 4128,
-     "src": "/foto/editorial/out-of-place-17840332672343057.jpg",
-     "m": "/foto/editorial/out-of-place-17840332672343057.jpg",
-     "t": "/img/t/outofplace/10.jpg",
-     "g": "/img/m/outofplace/10.jpg"
     },
     {
      "w": 4128,
@@ -566,14 +542,6 @@
      "m": "/foto/editorial/shibuya-osanpo-17899305046742995.jpg",
      "t": "/img/t/shibuya/03.jpg",
      "g": "/img/m/shibuya/03.jpg"
-    },
-    {
-     "w": 4128,
-     "h": 6192,
-     "src": "/foto/editorial/shibuya-osanpo-17899305086732827.jpg",
-     "m": "/foto/editorial/shibuya-osanpo-17899305086732827.jpg",
-     "t": "/img/t/shibuya/04.jpg",
-     "g": "/img/m/shibuya/04.jpg"
     },
     {
      "w": 4073,
