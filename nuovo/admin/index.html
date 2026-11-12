@@ -178,6 +178,18 @@ textarea.inp{min-height:84px;line-height:1.5}
 .clip .n{position:absolute;left:6px;bottom:6px;font-family:var(--mono);font-size:11px;background:rgba(10,10,10,.75);padding:2px 6px;border-radius:6px;max-width:calc(100% - 12px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .add.wide{aspect-ratio:16/9}
 .sub{display:flex;flex-direction:column;gap:10px}
+.sgroups{display:flex;flex-direction:column;gap:14px}
+.sgroup{display:flex;flex-direction:column;gap:10px;padding:10px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.sgroup-h{display:flex;justify-content:space-between;align-items:center}
+.order{display:flex;flex-direction:column;gap:8px;max-width:760px}
+.orow{display:grid;grid-template-columns:20px 26px 64px minmax(0,1fr) 32px 32px;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:var(--panel);cursor:grab}
+.orow.dragging{opacity:.35}.orow.over{border-color:var(--ink)}
+.orow.off{opacity:.5}
+.orow .num{color:var(--muted)}
+.orow img,.orow .oic{width:64px;height:36px;border-radius:6px;object-fit:cover;background:var(--raise);display:grid;place-items:center;color:var(--muted)}
+.orow .ot{display:flex;flex-direction:column;min-width:0}
+.orow .ot span{color:var(--muted);font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.orow .ic:disabled{opacity:.25}
 .sub-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
 .check{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 .check i{font-style:normal;width:16px;height:16px;border-radius:50%;display:grid;place-items:center;font-size:10px;background:var(--raise)}
@@ -461,11 +473,38 @@ function normalize(c){
   c.projects.forEach(function(p){
     ['year','tag','short','desc'].forEach(function(k){ p[k] = p[k] || {en: '', it: ''}; });
     p.images = p.images || [];
-    if (p.group === 'Video'){ p.films = p.films || []; p.pairs = p.pairs || []; p.clips = p.clips || []; p.reel = p.reel || ''; }
+    if (p.group === 'Video') vInit(p);
   });
   ['role','place','intro','statement','p1','p2','marquee','contactTitle'].forEach(function(k){ c.site[k] = c.site[k] || {en: '', it: ''}; });
   c.site.facts = c.site.facts || []; c.site.credits = c.site.credits || [];
   return c;
+}
+
+/* ---------- video page: blocks and their order ---------- */
+/* p.stills = [{id, srcs:[image src…]}] groups of stills (the images live in p.images)
+   p.layout = ['reel', 'pair:<id>', 'stills:<id>', 'films', 'clips'] order of the blocks in the page */
+function vInit(p){
+  p.images = p.images || []; p.films = p.films || []; p.pairs = p.pairs || []; p.clips = p.clips || []; if (p.reel == null) p.reel = '';
+  p.pairs.forEach(function(q){ if (!q.id) q.id = 'g' + stamp(); });
+  if (!p.stills) p.stills = p.images.length ? [{id: 's' + stamp(), srcs: []}] : [];
+  var have = {}, used = {};
+  p.images.forEach(function(i){ have[i.src] = 1; });
+  p.stills.forEach(function(b){ b.srcs = (b.srcs || []).filter(function(x){ if (!have[x] || used[x]) return false; used[x] = 1; return true; }); });
+  var orphan = p.images.filter(function(i){ return !used[i.src]; }).map(function(i){ return i.src; });
+  if (orphan.length){ if (!p.stills.length) p.stills.push({id: 's' + stamp(), srcs: []}); var last = p.stills[p.stills.length - 1]; last.srcs = last.srcs.concat(orphan); }
+  p.layout = vOrder(p);
+}
+function vOrder(p){
+  var pk = p.pairs.map(function(q){ return 'pair:' + q.id; }), sk = p.stills.map(function(b){ return 'stills:' + b.id; });
+  var all = ['reel'].concat(pk, sk, ['films', 'clips']);
+  if (p.layout){
+    var out = p.layout.filter(function(k, i){ return all.indexOf(k) >= 0 && p.layout.indexOf(k) === i; });
+    all.forEach(function(k){ if (out.indexOf(k) < 0) out.push(k); });
+    return out;
+  }
+  var d = pk.concat(['films', 'clips'], sk), pos = p.reelPos || 'top';
+  if (pos === 'bottom') d.push('reel'); else if (pos === 'afterGrade') d.splice(pk.length, 0, 'reel'); else d.unshift('reel');
+  return d;
 }
 
 /* ---------- change list ---------- */
@@ -487,6 +526,8 @@ function changes(){
     if (J(p.films) !== J(o.films)) f.push('lavori video');
     if (J(p.pairs) !== J(o.pairs)) f.push('prima e dopo');
     if (J(p.clips) !== J(o.clips)) f.push('clip');
+    if (J(p.stills || null) !== J(o.stills || null)) f.push('stills');
+    if (J(p.layout || null) !== J(o.layout || null)) f.push('ordine della pagina');
     if (J(p.heroVideo || null) !== J(o.heroVideo || null)) f.push('montaggio hero');
     if (f.length) out.push([p.name, f.join(', ')]);
   });
@@ -632,7 +673,7 @@ function renderEditor(){
   var p = P(cur), ed = $('#editor');
   if (!p){ ed.innerHTML = '<div class="empty"><b style="color:var(--ink)">Scegli un progetto</b><span>Oppure creane uno nuovo con "+ Nuovo".</span></div>'; return; }
   var isV = p.group === 'Video', fi = S.sphere.featured.indexOf(p.id);
-  if (isV){ p.films = p.films || []; p.pairs = p.pairs || []; p.clips = p.clips || []; if (p.reel == null) p.reel = ''; if (!p.reelPos) p.reelPos = 'top'; }
+  if (isV) vInit(p);
   ed.innerHTML = '<div class="ed">' +
    '<div class="ed-head"><button class="btn small back" type="button" id="back">← Progetti</button><h2 id="edTitle">' + esc(p.name || 'Nuovo progetto') + '</h2><button class="btn small danger" type="button" id="delP">Elimina</button></div>' +
    '<div class="sec" style="border-top:0;padding-top:0"><div class="sec-h"><h3>Come appare sulla sfera</h3><div class="seg" role="group" aria-label="Lingua anteprima"><button type="button" data-pl="it" aria-pressed="' + (pvLang === 'it') + '">IT</button><button type="button" data-pl="en" aria-pressed="' + (pvLang === 'en') + '">EN</button></div></div>' +
@@ -652,18 +693,19 @@ function renderEditor(){
        '<div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="ph" style="width:220px;aspect-ratio:16/10;cursor:default">' + (p.cover ? '<img src="' + esc(src((imgOf(p.cover) || {}).g || (imgOf(p.cover) || {}).m || p.cover)) + '" alt="" id="vCover">' : '<div class="ba-empty">Nessuna copertina</div>') + '</div>' +
        '<button class="btn small" type="button" id="vCoverUp">Carica una still</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Montaggio hero</span><span class="hint">MP4 senza audio, che parte da solo in cima alla pagina e sulla sfera. Una versione orizzontale per il computer e una verticale per il telefono (massimo 50 MB l\'una).</span></div><div class="clips" id="heroVid"></div></div>' +
-     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in Rec709 (senza grading) e gradato. Quante ne vuoi.</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
+     '<div class="f"><label class="mono" for="pReel">Video principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
+     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Prima e dopo del grading <span id="pCount"></span></span><span class="hint">Per ogni coppia: lo stesso frame in Rec709 (senza grading) e gradato. Quante ne vuoi: dove compaiono lo decidi in "Struttura della pagina".</span></div><div class="pairs" id="pairs"></div><div><button class="btn small" type="button" id="addPair">+ Aggiungi coppia</button></div></div>' +
+     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Stills</span><span class="hint">Gruppi di foto dal film o dal set. Ogni gruppo è un blocco che puoi mettere dove vuoi nella pagina.</span></div><div class="sgroups" id="stills"></div><div><button class="btn small" type="button" id="addStills">+ Aggiungi gruppo di stills</button></div></div>' +
      '<div class="sub"><div class="sub-h"><span class="mono lab muted">Lavori video</span><span class="hint">Fashion film, cortometraggi, videoclip, spot, contenuti… con il link Vimeo o YouTube.</span></div><div class="rows" id="vcred"></div><div><button class="btn small" type="button" id="addV">+ Aggiungi lavoro</button></div></div>' +
-     '<div class="grid"><div class="f"><label class="mono" for="pReel">Video principale (link Vimeo o YouTube)</label><input class="inp" id="pReel" data-k="reel" placeholder="https://vimeo.com/…"></div>' +
-     '<div class="f"><label class="mono" for="pReelPos">Dove mostrarlo nella pagina</label><select class="inp" id="pReelPos" data-k="reelPos"><option value="top">In cima</option><option value="afterGrade">Dopo il color grading</option><option value="bottom">In fondo</option></select></div></div>' +
-     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Clip brevi in loop</span><span class="hint">MP4 senza audio, pochi secondi, massimo 20 MB.</span></div><div class="clips" id="clips"></div></div></div>'
-   : '') +
-   '<div class="sec"><div class="sec-h"><h3>' + (isV ? 'Frame dal set' : 'Foto') + ' <span class="muted" style="font-weight:400" id="gCount"></span></h3><span class="hint">Trascina per riordinare · ★ copertina · trascina qui i file dal computer</span></div><div class="gal" id="gal"></div></div>' +
+     '<div class="sub"><div class="sub-h"><span class="mono lab muted">Clip brevi in loop</span><span class="hint">MP4 senza audio, pochi secondi, massimo 20 MB.</span></div><div class="clips" id="clips"></div></div></div>' +
+   '<div class="sec"><div class="sec-h"><h3>Struttura della pagina</h3><span class="hint">L\'ordine in cui i blocchi compaiono nella pagina del progetto, dopo il montaggio hero. Trascina o usa le frecce. I blocchi vuoti non si vedono sul sito.</span></div><div class="order" id="order"></div></div>'
+   : '<div class="sec"><div class="sec-h"><h3>Foto <span class="muted" style="font-weight:400" id="gCount"></span></h3><span class="hint">Trascina per riordinare · ★ copertina · trascina qui i file dal computer</span></div><div class="gal" id="gal"></div></div>') +
   '</div>';
   bind(ed, p, function(k){
     if (k === 'name'){ $('#edTitle').textContent = p.name || 'Nuovo progetto'; var r = $('.row[data-id="' + cur + '"] .row-t b'); if (r) r.textContent = p.name || 'Senza titolo'; }
     if (k === 'group'){ renderList(); renderEditor(); return; }
     if (k === 'visible' || k === 'year.it') renderList();
+    if (k === 'reel' && $('#order')) renderOrder(p);
     pv();
   });
   $('#back').addEventListener('click', function(){ $('#split').classList.remove('editing'); });
@@ -679,14 +721,15 @@ function renderEditor(){
   });
   $$('[data-pl]').forEach(function(b){ b.addEventListener('click', function(){ pvLang = b.dataset.pl; $$('[data-pl]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); }); pv(); }); });
   if (isV){
-    renderFilms(p); renderPairs(p); renderClips(p); renderHeroVid(p);
+    renderFilms(p); renderPairs(p); renderClips(p); renderHeroVid(p); renderStills(p);
     $('#addV').addEventListener('click', function(){ p.films.push({title: '', type: '', role: 'DoP · Color', dir: '', link: '', year: ''}); renderFilms(p); dirty(); });
     $('#vCoverUp').addEventListener('click', function(){ pick('image/*', false, function(files){
       addImages([files[0]], p.id + '/cover', function(o){ p.coverImg = o; p.cover = o.src; }).then(function(n){ if (n){ renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); } });
     }); });
-    $('#addPair').addEventListener('click', function(){ p.pairs.push({label: '', log: null, grade: null}); renderPairs(p); dirty(); });
-  }
-  renderGal(p); pv();
+    $('#addPair').addEventListener('click', function(){ p.pairs.push({id: 'g' + stamp(), label: '', log: null, grade: null}); renderPairs(p); dirty(); });
+    $('#addStills').addEventListener('click', function(){ p.stills.push({id: 's' + stamp(), srcs: []}); renderStills(p); dirty(); });
+  } else renderGal(p);
+  pv();
 }
 function pv(){
   var p = P(cur); if (!p) return;
@@ -702,6 +745,7 @@ function renderFilms(p){
     '<button class="ic" type="button" aria-label="Rimuovi" data-rm>✕</button></div>'; }).join('');
   $$('.crow', box).forEach(function(r){ var c = p.films[+r.dataset.i]; bind(r, c); r.querySelector('[data-rm]').addEventListener('click', function(){ p.films.splice(+r.dataset.i, 1); renderFilms(p); dirty(); }); });
   sortable(box, '.crow', function(a, b){ move(p.films, a, b); renderFilms(p); dirty(); });
+  renderOrder(p);
 }
 function renderPairs(p){
   var box = $('#pairs'); $('#pCount').textContent = '· ' + p.pairs.length;
@@ -728,6 +772,7 @@ function renderPairs(p){
     el.querySelector('[data-pcov]').addEventListener('click', function(){ if (!q.grade) return; p.coverImg = q.grade; p.cover = q.grade.src; renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); });
   });
   sortable(box, '.pair', function(a, b){ move(p.pairs, a, b); renderPairs(p); dirty(); });
+  renderOrder(p);
 }
 function renderHeroVid(p){
   var box = $('#heroVid'), hv = p.heroVideo || {};
@@ -758,6 +803,68 @@ function renderClips(p){
     PEND[path] = f; URLS[path] = URL.createObjectURL(f);
     p.clips.push({src: path, name: f.name, mb: mb}); renderClips(p); dirty(); toast('Clip aggiunta');
   }); });
+  renderOrder(p);
+}
+function dropImg(p, im){
+  var i = p.images.indexOf(im); if (i >= 0) p.images.splice(i, 1);
+  S.sphere.tiles = S.sphere.tiles.filter(function(t){ return t !== im.t; });
+}
+function renderStills(p){
+  var box = $('#stills'); if (!box) return;
+  var bySrc = {}; p.images.forEach(function(im){ bySrc[im.src] = im; });
+  box.innerHTML = p.stills.map(function(b, bi){
+    return '<div class="sgroup" data-b="' + bi + '"><div class="sgroup-h"><span class="mono lab">Stills ' + (bi + 1) + ' <span class="muted">· ' + b.srcs.length + ' foto</span></span><button class="ic" type="button" data-brm aria-label="Elimina gruppo" title="Elimina gruppo">✕</button></div><div class="gal">' +
+      b.srcs.map(function(x, i){ var im = bySrc[x] || {src: x}, isC = x === p.cover;
+        return '<div class="ph' + (isC ? ' cover' : '') + '" data-i="' + i + '"><img src="' + esc(src(im.t || im.m || im.src)) + '" alt="" loading="lazy"><span class="n">' + (i + 1) + '</span>' + (isC ? '<span class="tag">Copertina</span>' : '') +
+          '<span class="acts"><button class="ic" type="button" data-cov aria-label="Usa come copertina" title="Usa come copertina">★</button><button class="ic" type="button" data-up aria-label="Sposta prima" title="Sposta prima">←</button><button class="ic" type="button" data-rm aria-label="Rimuovi foto" title="Rimuovi">✕</button></span></div>'; }).join('') +
+      '<button type="button" class="add" data-add><b>+</b><span>Aggiungi stills</span><span class="hint">JPG o PNG, anche più di una</span></button></div></div>';
+  }).join('') || '<p class="hint">Nessuna still. Aggiungi un gruppo.</p>';
+  $$('.sgroup', box).forEach(function(gEl){
+    var b = p.stills[+gEl.dataset.b], gal = gEl.querySelector('.gal');
+    var addF = function(files){ addImages(files, p.id, function(o){ p.images.push(o); b.srcs.push(o.src); }).then(function(n){ if (n && P(cur) === p){ renderStills(p); renderList(); dirty(); } }); };
+    gEl.querySelector('[data-brm]').addEventListener('click', function(){
+      var go = function(){ b.srcs.forEach(function(x){ var im = bySrc[x]; if (im) dropImg(p, im); }); p.stills.splice(p.stills.indexOf(b), 1); renderStills(p); renderList(); dirty(); };
+      if (!b.srcs.length) go(); else confirmBox('Eliminare il gruppo Stills ' + (+gEl.dataset.b + 1) + '?', 'Le sue ' + b.srcs.length + ' foto spariscono dal progetto.', 'Elimina', go);
+    });
+    $$('.ph', gal).forEach(function(el){
+      var i = +el.dataset.i;
+      el.querySelector('[data-cov]').addEventListener('click', function(){ var im = bySrc[b.srcs[i]]; if (!im) return; p.cover = im.src; p.coverImg = im; renderEditor(); renderList(); dirty(); toast('Copertina aggiornata'); });
+      el.querySelector('[data-up]').addEventListener('click', function(){ if (i > 0){ move(b.srcs, i, i - 1); renderStills(p); dirty(); } });
+      el.querySelector('[data-rm]').addEventListener('click', function(){ var x = b.srcs.splice(i, 1)[0], im = bySrc[x]; if (im) dropImg(p, im); renderStills(p); renderList(); dirty(); });
+    });
+    sortable(gal, '.ph', function(a, c){ move(b.srcs, a, c); renderStills(p); dirty(); });
+    var add = gal.querySelector('[data-add]');
+    add.addEventListener('click', function(){ pick('image/*', true, addF); });
+    add.addEventListener('dragover', function(e){ e.preventDefault(); add.classList.add('drop'); });
+    add.addEventListener('dragleave', function(){ add.classList.remove('drop'); });
+    add.addEventListener('drop', function(e){ e.preventDefault(); e.stopPropagation(); add.classList.remove('drop'); if (e.dataTransfer.files.length) addF(e.dataTransfer.files); });
+  });
+  renderOrder(p);
+}
+function renderOrder(p){
+  var box = $('#order'); if (!box) return;
+  p.layout = vOrder(p);
+  var bySrc = {}; p.images.forEach(function(im){ bySrc[im.src] = im; });
+  function info(k){
+    if (k === 'reel') return {t: 'Video principale', s: p.reel ? p.reel.replace(/^https?:\/\/(www\.)?/, '') : 'nessun link', on: !!p.reel, ic: '▶'};
+    if (k === 'films') return {t: 'Lavori video', s: p.films.length + (p.films.length === 1 ? ' lavoro' : ' lavori'), on: p.films.some(function(f){ return f.title; }), ic: '≡'};
+    if (k === 'clips') return {t: 'Clip in loop', s: p.clips.length + (p.clips.length === 1 ? ' clip' : ' clip'), on: !!p.clips.length, ic: '↻'};
+    var id = k.split(':')[1];
+    if (k.indexOf('pair:') === 0){ var j = -1; p.pairs.forEach(function(q, x){ if (q.id === id) j = x; }); var q = p.pairs[j];
+      return {t: 'Prima e dopo ' + (j + 1), s: q.label || (q.log && q.grade ? 'senza didascalia' : 'incompleta'), on: !!(q.log && q.grade), img: q.grade && (q.grade.t || q.grade.m)}; }
+    var bj = -1; p.stills.forEach(function(b, x){ if (b.id === id) bj = x; }); var b = p.stills[bj], f0 = b.srcs[0] && bySrc[b.srcs[0]];
+    return {t: 'Stills ' + (bj + 1), s: b.srcs.length + ' foto', on: !!b.srcs.length, img: f0 && (f0.t || f0.m)};
+  }
+  var n = p.layout.length;
+  box.innerHTML = p.layout.map(function(k, i){ var x = info(k);
+    return '<div class="orow' + (x.on ? '' : ' off') + '" data-i="' + i + '"><span class="grip" aria-hidden="true">⋮⋮</span><span class="mono num">' + String(i + 1).padStart(2, '0') + '</span>' +
+      (x.img ? '<img src="' + esc(src(x.img)) + '" alt="">' : '<span class="oic">' + (x.ic || '') + '</span>') +
+      '<span class="ot"><b>' + esc(x.t) + '</b><span>' + esc(x.s) + (x.on ? '' : ' · non compare') + '</span></span>' +
+      '<button class="ic" type="button" data-mv="-1" aria-label="Sposta su"' + (i ? '' : ' disabled') + '>↑</button><button class="ic" type="button" data-mv="1" aria-label="Sposta giù"' + (i < n - 1 ? '' : ' disabled') + '>↓</button></div>'; }).join('');
+  $$('.orow', box).forEach(function(el){ var i = +el.dataset.i;
+    $$('[data-mv]', el).forEach(function(bt){ bt.addEventListener('click', function(){ var t = i + (+bt.dataset.mv); if (t < 0 || t >= n) return; move(p.layout, i, t); renderOrder(p); dirty(); }); });
+  });
+  sortable(box, '.orow', function(a, b){ move(p.layout, a, b); renderOrder(p); dirty(); });
 }
 function renderGal(p){
   var g = $('#gal'); $('#gCount').textContent = '· ' + p.images.length;

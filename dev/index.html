@@ -550,7 +550,7 @@ body{margin:0}
         it: {year: oi('year'), tag: oi('tag'), short: oi('short'), desc: oi('desc')},
         cover: c.src || c.m, coverG: c.g || c.m || c.src, coverT: c.t || c.g || c.m || c.src, cw: c.w || 1600, ch: c.h || 1067,
         gallery: (p.images || []).map(function(i){ return {src: i.src, m: i.m || i.src, t: i.t, w: i.w, h: i.h}; }),
-        heroVideo: p.heroVideo || null, reel: p.reel || '', reelPos: p.reelPos || 'top', films: p.films || [], pairs: p.pairs || [], clips: p.clips || []};
+        heroVideo: p.heroVideo || null, reel: p.reel || '', reelPos: p.reelPos || 'top', films: p.films || [], pairs: p.pairs || [], clips: p.clips || [], stills: p.stills || null, layout: p.layout || null};
     });
     var at = {}; DATA.forEach(function(d, i){ at[d.slug] = i; });
     var FEAT = (SP.featured || []).map(function(id){ return at[id]; }).filter(function(i){ return i != null; });
@@ -663,7 +663,7 @@ body{margin:0}
   TX.en.formErr = 'Something went wrong. Please write to the email above.'; TX.it.formErr = 'Qualcosa non ha funzionato. Scrivimi all\'email qui sopra.';
   TX.en.formSending = 'Sending…'; TX.it.formSending = 'Invio in corso…';
   TX.en.films = 'Work'; TX.it.films = 'Lavori'; TX.en.watch = 'Watch ↗'; TX.it.watch = 'Guarda ↗';
-  TX.en.clips = 'Motion'; TX.it.clips = 'Clip'; TX.en.frames = 'Frames from set'; TX.it.frames = 'Frame dal set';
+  TX.en.clips = 'Motion'; TX.it.clips = 'Clip'; TX.en.frames = 'Stills'; TX.it.frames = 'Stills';
   TX.en.soon = 'More coming soon'; TX.it.soon = 'Presto altri lavori';
   TX.en.gradeAlt2 = 'Before and after color grading'; TX.it.gradeAlt2 = 'Prima e dopo il color grading';
   var T = function(k){ return TX[LANG][k]; };
@@ -758,27 +758,49 @@ body{margin:0}
       var em = embedUrl(p.reel);
       var reelSec = em ? ('<section class="vp"><p class="mono vp-n">' + '§§' + T('reel') + '</p><div class="vp-embed"><iframe src="' + esc(em) + '" title="Reel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></section>') : '';
       var pairs = (p.pairs || []).filter(function(q){ return q.log && q.grade; });
-      if (pairs.length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('grading') + '</p><div class="grades">' + pairs.map(function(q, j){
+      var pairHTML = function(q){
         var g = q.grade.src || q.grade.m || q.grade, l = q.log.src || q.log.m || q.log;
         return '<div><figure class="grade"><div class="grade-frame"><img src="' + esc(l) + '" alt="' + esc(T('gradeAlt2')) + '" loading="lazy"><div class="grade-top"><img src="' + esc(g) + '" alt="" loading="lazy"></div><div class="grade-line"></div><span class="grade-label l mono" aria-hidden="true">Graded</span><span class="grade-label r mono" aria-hidden="true">Rec709</span>' +
           '<input type="range" min="0" max="100" value="50" aria-label="' + esc(T('drag')) + (q.label ? ' · ' + esc(q.label) : '') + '"></div></figure>' +
           '<p class="mono grade-ctl">' + (q.label ? esc(q.label) + ' · ' : '') + T('drag') + '</p></div>';
-      }).join('') + '</div></section>');
+      };
+      var gradeSec = function(list){ return '<section class="vp"><p class="mono vp-n">' + '§§' + T('grading') + '</p><div class="grades">' + list.map(pairHTML).join('') + '</div></section>'; };
+      var GI = {}; p.gallery.forEach(function(g){ GI[g.src] = g; });
+      var fno = 0;
+      var stillsSec = function(list){ return '<section class="vp"><p class="mono vp-n">' + '§§' + T('frames') + '</p><div class="vp-frames">' + list.map(function(g){ fno++;
+        return '<img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + fno + '" loading="lazy" decoding="async">'; }).join('') + '</div></section>'; };
       var films = (p.films || []).filter(function(f){ return f.title; });
-      if (films.length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('films') + '</p><ul class="films">' + films.map(function(f){
+      var filmsSec = films.length ? '<section class="vp"><p class="mono vp-n">' + '§§' + T('films') + '</p><ul class="films">' + films.map(function(f){
         return '<li class="film"><span class="film-t">' + esc(f.title) + '</span><span class="mono">' + esc([f.type, f.role].filter(Boolean).join(' · ')) + '</span><span class="mono f-dir">' + esc(f.dir || '') + '</span><span class="mono f-year">' + esc(f.year || '') + '</span>' +
           (f.link ? '<a class="btn-view" href="' + esc(f.link) + '" target="_blank" rel="noopener">' + T('watch') + '</a>' : '<span></span>') + '</li>';
-      }).join('') + '</ul></section>');
-      if ((p.clips || []).length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('clips') + '</p><div class="clips">' + p.clips.map(function(c){
-        return '<video src="' + esc(c.src) + '" muted loop autoplay playsinline preload="metadata"></video>'; }).join('') + '</div></section>');
-      if (p.gallery.length) secs.push('<section class="vp"><p class="mono vp-n">' + '§§' + T('frames') + '</p><div class="vp-frames">' + p.gallery.map(function(g, i){
-        return '<img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' + esc(p.name) + ', ' + T('frame') + ' ' + (i + 1) + '" loading="lazy" decoding="async">'; }).join('') + '</div></section>');
-      if (reelSec){
-        var pos = p.reelPos || 'top', gi = pairs.length ? 1 : 0;
-        if (pos === 'bottom') secs.push(reelSec);
-        else if (pos === 'afterGrade') secs.splice(gi, 0, reelSec);
-        else secs.unshift(reelSec);
+      }).join('') + '</ul></section>' : '';
+      var clipsSec = (p.clips || []).length ? '<section class="vp"><p class="mono vp-n">' + '§§' + T('clips') + '</p><div class="clips">' + p.clips.map(function(c){
+        return '<video src="' + esc(c.src) + '" muted loop autoplay playsinline preload="metadata"></video>'; }).join('') + '</div></section>' : '';
+      /* stills groups: every image of the project belongs to one group; images in no group go to a last one */
+      var groups = [], usedG = {};
+      (p.stills || []).forEach(function(b){ var l = (b.srcs || []).filter(function(x){ if (!GI[x] || usedG[x]) return false; usedG[x] = 1; return true; }).map(function(x){ return GI[x]; }); groups.push({id: b.id, list: l}); });
+      var rest = p.gallery.filter(function(g){ return !usedG[g.src]; });
+      if (rest.length) groups.push({id: '_rest', list: rest});
+      var PK = {}; pairs.forEach(function(q, j){ PK['pair:' + (q.id || j)] = q; });
+      var order = (p.layout || []).slice();
+      if (!p.layout){
+        var pos = p.reelPos || 'top', pk = pairs.map(function(q, j){ return 'pair:' + (q.id || j); });
+        order = pk.concat(['films', 'clips']);
+        if (pos === 'bottom') order.push('reel'); else if (pos === 'afterGrade') order.splice(pk.length, 0, 'reel'); else order.unshift('reel');
       }
+      Object.keys(PK).forEach(function(k){ if (order.indexOf(k) < 0) order.push(k); });
+      groups.forEach(function(g){ if (order.indexOf('stills:' + g.id) < 0) order.push('stills:' + g.id); });
+      var run = [];
+      var flush = function(){ if (run.length){ secs.push(gradeSec(run)); run = []; } };
+      order.forEach(function(k){
+        if (PK[k]){ run.push(PK[k]); return; }
+        flush();
+        if (k === 'reel'){ if (reelSec) secs.push(reelSec); }
+        else if (k === 'films'){ if (filmsSec) secs.push(filmsSec); }
+        else if (k === 'clips'){ if (clipsSec) secs.push(clipsSec); }
+        else if (k.indexOf('stills:') === 0){ var g = groups.filter(function(x){ return 'stills:' + x.id === k; })[0]; if (g && g.list.length) secs.push(stillsSec(g.list)); }
+      });
+      flush();
       secs = secs.map(function(s, i){ return s.replace('§§', pad(i + 1) + ' · '); });
       if (!secs.length) secs.push('<div class="vp-slot reel"><span class="mono">' + T('soon') + '</span></div>');
       $('#projGallery').innerHTML = '<div class="vp-wrap">' + secs.join('') + '</div>';
