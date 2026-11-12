@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /vecchio/
+Disallow: /nuovo/
+Disallow: /dev/
+
+Sitemap: https://paoloscotto.it/sitemap.xml
