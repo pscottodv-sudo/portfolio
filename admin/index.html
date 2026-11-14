@@ -411,6 +411,7 @@ html,body{overflow:hidden}
 <input type="file" id="fileIn" accept="image/*" multiple hidden>
 <datalist id="vtypes"><option value="Fashion film"><option value="Cortometraggio"><option value="Videoclip"><option value="Spot"><option value="Contenuto social"><option value="Documentario"><option value="Backstage"></datalist>
 
+<script src="seo.js"></script>
 <script>
 (function(){
 "use strict";
@@ -1158,6 +1159,18 @@ function doPublish(ch, files){
     return gh('/git/ref/heads/' + BRANCH).then(function(r){ head = r.object.sha; return gh('/git/commits/' + head); }).then(function(c){
       base = c.tree.sha;
       var tree = [{path: 'content.json', mode: '100644', type: 'blob', content: text}].concat(files.map(function(k){ return {path: k.replace(/^\//, ''), mode: '100644', type: 'blob', sha: SH[k]}; }));
+      /* pages for Google (project pages, about, index, sitemap) rebuilt from the same content */
+      if (window.SEO && SITE_ROOT === '/'){
+        try {
+          SEO.build(S).forEach(function(f){ tree.push({path: f.path, mode: '100644', type: 'blob', content: f.content}); });
+          var gone = SEO.stale(ORIG, S);
+          if (gone.length) return gh('/git/trees/' + base + '?recursive=1').then(function(bt){
+            var have = {}; (bt.tree || []).forEach(function(x){ have[x.path] = 1; });
+            gone.forEach(function(g){ if (have[g]) tree.push({path: g, mode: '100644', type: 'blob', sha: null}); });
+            return gh('/git/trees', {method: 'POST', body: {base_tree: base, tree: tree}});
+          });
+        } catch (e) { console.warn('SEO pages skipped', e); }
+      }
       return gh('/git/trees', {method: 'POST', body: {base_tree: base, tree: tree}});
     }).then(function(t){
       var msg = 'Pannello: ' + ch.slice(0, 3).map(function(c){ return c[0] + ' (' + c[1] + ')'; }).join('; ') + (ch.length > 3 ? ' e altre ' + (ch.length - 3) : '');
